@@ -1,0 +1,68 @@
+{
+  "name": "fachwerk",
+  "version": "0.0.1",
+  "engines": {
+    "node": "^14.13.1 || >=16.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fachwerkdev/fachwerk.git"
+  },
+  "homepage": "https://github.com/fachwerkdev/fachwerk",
+  "keywords": [
+    "vite",
+    "vue",
+    "vue-component"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "type": "module",
+  "main": "./dist/fachwerk.cjs",
+  "module": "./dist/fachwerk.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/fachwerk.mjs",
+      "require": "./dist/fachwerk.cjs"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "typings": "./dist/lib.es.ts",
+  "scripts": {
+    "dev": "vite --port 3000 --host",
+    "build": "vite build && vite build --mode es && vite build --mode cjs",
+    "preview": "vite preview --port 5000",
+    "test": "vitest",
+    "typecheck": "vue-tsc --noEmit",
+    "release": "vitest --run && npm run build && vue-tsc --declaration --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "katex": "^0.15.1",
+    "pdf-lib": "^1.17.1",
+    "svgpath": "^2.4.0",
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.0",
+    "@types/katex": "^0.11.1",
+    "@types/node": "^17.0.5",
+    "@types/react": "file:src/types",
+    "@vitejs/plugin-vue": "^2.0.0",
+    "gray-matter": "^4.0.3",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.13",
+    "vite": "^2.7.9",
+    "vite-plugin-fonts": "^0.2.2",
+    "vite-plugin-md": "^0.11.7",
+    "vite-plugin-pages": "^0.19.9",
+    "vitepress": "^0.20.10",
+    "vitest": "^0.0.118",
+    "vue-router": "^4.0.12",
+    "vue-tsc": "^0.30.1"
+  }
+}
