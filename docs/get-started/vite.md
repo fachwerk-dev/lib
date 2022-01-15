@@ -4,20 +4,20 @@ There are multiple ways to get started with Vite and Fachwerk:
 
 ### 🅐 Use Slackblitz
 
-[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/fachwerkdev/create-fachwerk/tree/main/vite?file=src%2Findex.md)
+[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md)
 
 Open Vite + Fachwerk project in Stackblitz and start editing the project right in the browser.
 
 ### 🅑 Use Github template
 
-[Clone](https://github.com/fachwerkdev/create-fachwerk/generate) the Github template project [fachwerkdev/fachwerk-vite](https://github.com/fachwerkdev/create-fachwerk)
+[Clone](https://github.com/fachwerk-dev/create-fachwerk/generate) the Github template project [fachwerk-dev/fachwerk-vite](https://github.com/fachwerk-dev/create-fachwerk)
 
 ### 🅒 Use the command line
 
 Run the following commands:
 
 ```bash
-npx degit fachwerkdev/create-fachwerk create-fachwerk
+npx degit fachwerk-dev/create-fachwerk create-fachwerk
 cd create-fachwerk/vite
 npm install
 npm run dev
