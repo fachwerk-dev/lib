@@ -20,7 +20,8 @@ You can only set the hue `h` value, the rest will have the default values.
 {{ hsl(10) }}
 ```
 
-> **Not in a spec** > `hsl(hue)` is not part of the official CSS colors specification, it is provided as a convenience feature by Fachwerk.
+> **Not in a spec**
+> `hsl(hue)` is not part of the official CSS colors specification, it is provided as a convenience feature by Fachwerk.
 
 ## Examples
 
@@ -32,10 +33,10 @@ The main use case for the function is to calculate and format dynamic CSS color 
 Hover or tap over the colors to see how `h` value changes
 
 <svg width="360" height="100">
-  <rect v-for="h in range(0,360)" :x="h" y="0" width="1" height="100" :fill="hsl(h,100,50)" v-on:mouseover="v.h = h" />
+  <rect v-for="h in range(0,360)" :x="h" y="0" width="1" height="100" :fill="hsl(h,100,50)" v-on:mouseover="f.h = h" />
 </svg>
 
-{{ hsl(v.h,100,50) }}
+{{ hsl(f.h,100,50) }}
 ```
 
 #### Usage in template, saturation value
@@ -51,11 +52,11 @@ Hover or tap over the colors to see how `s` value changes
     width="1"
     height="100"
     :fill="hsl(0,s,50)"
-    v-on:mouseover="v.s = s"
+    v-on:mouseover="f.s = s"
   />
 </svg>
 
-{{ hsl(0,v.s,50) }}
+{{ hsl(0,f.s,50) }}
 ```
 
 #### Usage in template, lightness value
@@ -71,11 +72,11 @@ Hover or tap over the colors to see how `l` value changes
     width="1"
     height="100"
     :fill="hsl(0,100,l)"
-    v-on:mouseover="v.l = l"
+    v-on:mouseover="f.l = l"
   />
 </svg>
 
-{{ hsl(0,100,v.l) }}
+{{ hsl(0,100,f.l) }}
 ```
 
 #### Usage in template, alpha value
@@ -91,11 +92,11 @@ Hover or tap over the colors to see how `a` value changes
     width="1"
     height="100"
     :fill="hsl(0,100,50,a)"
-    v-on:mouseover="v.a = a"
+    v-on:mouseover="f.a = a"
   />
 </svg>
 
-{{ hsl(0,100,50,v.a) }}
+{{ hsl(0,100,50,f.a) }}
 ```
 
 # hsla

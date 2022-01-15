@@ -10,11 +10,9 @@ export let sidebar: Link[] = [
     children: [
       { text: "Vite", link: "/get-started/vite" },
       { text: "Vitepress", link: "/get-started/vitepress" },
-      { text: "Slidev", link: "/get-started/slidev" },
       { text: "JS module ", link: "/get-started/esm" },
       { text: "JS global", link: "/get-started/global" },
       { text: "Node", link: "/get-started/node" },
-      { text: "Deno", link: "/get-started/deno" },
     ],
   },
   {

@@ -4,7 +4,7 @@ The most bare-bones way to use Fachwerk is to import VueJS and Fachwerk into a s
 
 By using [ESM imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) and [import maps](https://github.com/WICG/import-maps) we can get the modular Javascript workflow in the browser without any tooling or build steps.
 
-Fachwerk provides ESM-compatible CDN build in https://unpkg.com/fachwerk/dist/fachwerk.js (and also in https://esm.sh/fachwerk and https://cdn.skypack.dev/fachwerk).
+Fachwerk provides ESM-compatible CDN build in https://unpkg.com/fachwerk/dist/fachwerk.js (and also in https://esm.sh/fachwerk)
 
 ```html
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ Fachwerk provides ESM-compatible CDN build in https://unpkg.com/fachwerk/dist/fa
       {
         "imports": {
           "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js",
-          "fachwerk": "https://unpkg.com/fachwerk/dist/fachwerk.js",
+          "fachwerk": "https://unpkg.com/fachwerk/dist/fachwerk.mjs",
           "marked": "https://unpkg.com/marked/lib/marked.esm.js"
         }
       }
@@ -43,19 +43,19 @@ Fachwerk provides ESM-compatible CDN build in https://unpkg.com/fachwerk/dist/fa
           return { x };
         },
         template: parse(`
-# Hello Fachwerk
+# Hello Visualia
 
 ## Local variable
 
-<f-slider v-model="x" />
+<v-slider v-model="x" />
 
-<f-math>x = {{ x }}</f-math>
+<v-math>x = {{ x }}</v-math>
 
 ## Global variable
 
-<f-slider v-model="v.x" />
+<v-slider v-model="f.x" />
 
-<f-math>x = {{ v.x }}</f-math>
+<v-math>x = {{ f.x }}</v-math>
         `),
       };
 

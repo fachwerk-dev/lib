@@ -4,20 +4,20 @@ There are several ways to get started with Vitepress and Fachwerk:
 
 ### 🅐 Use Slackblitz
 
-[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/fachwerkdev/fachwerk-vitepress?file=docs%2Findex.md)
+[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vitepress?file=docs%2Findex.md)
 
 Open Vitepress + Fachwerk sample project in Stackblitz and start editing the project right in the browser.
 
 ### 🅑 Use Github template
 
-[Clone](https://github.com/fachwerkdev/fachwerk-vitepress/generate) the Github template project [fachwerkdev/fachwerk-vitepress](https://github.com/fachwerkdev/fachwerk-vitepress)
+[Clone](https://github.com/fachwerk-dev/create-fachwerk/generate) the Github template project [fachwerk-dev/fachwerk-vite](https://github.com/fachwerk-dev/create-fachwerk)
 
 ### 🅒 Use the command line
 
 Run the following commands:
 
 ```bash
-npx degit fachwerkdev/fachwerk-vitepress
+npx degit fachwerk-dev/fachwerk-vitepress
 npm install
 npm run dev
 ```

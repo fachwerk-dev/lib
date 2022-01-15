@@ -4,21 +4,21 @@ There are multiple ways to get started with Vite and Fachwerk:
 
 ### 🅐 Use Slackblitz
 
-[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/fachwerkdev/fachwerk-vite?file=src%2Findex.md)
+[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md)
 
 Open Vite + Fachwerk project in Stackblitz and start editing the project right in the browser.
 
 ### 🅑 Use Github template
 
-[Clone](https://github.com/fachwerkdev/fachwerk-vite/generate) the Github template project [fachwerkdev/fachwerk-vite](https://github.com/fachwerkdev/fachwerk-vite)
+[Clone](https://github.com/fachwerk-dev/create-fachwerk/generate) the Github template project [fachwerk-dev/fachwerk-vite](https://github.com/fachwerk-dev/create-fachwerk)
 
 ### 🅒 Use the command line
 
 Run the following commands:
 
 ```bash
-npx degit fachwerkdev/fachwerk-vite
-cd fachwerk-vite
+npx degit fachwerk-dev/create-fachwerk create-fachwerk
+cd create-fachwerk/vite
 npm install
 npm run dev
 ```
@@ -31,13 +31,13 @@ Your can also use the standard [Vite installer](https://vitejs.dev/guide/#scaffo
 npm init vite@latest
 ```
 
-Next, install Fachwerk and vite-plugin-md (for Markdown support)
+Next, install Fachwerk and `vite-plugin-md` (for Markdown support)
 
 ```bash
 npm install fachwerk vite-plugin-md
 ```
 
-Next, add reactive variables shortcuts and Markdown support to Vite config.
+Next, add reactive variables shortcuts and Markdown support to `/vite.config.js`.
 
 ```js{3,7-8}
 import { defineConfig } from "vite";
