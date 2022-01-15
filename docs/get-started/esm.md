@@ -55,7 +55,7 @@ Fachwerk provides ESM-compatible CDN build in https://unpkg.com/fachwerk/dist/fa
 
 <v-slider v-model="f.x" />
 
-<v-math>x = {{ v.x }}</v-math>
+<v-math>x = {{ f.x }}</v-math>
         `),
       };
 

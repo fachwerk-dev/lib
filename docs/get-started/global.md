@@ -47,7 +47,7 @@ This allows simply to open the local HTML file in the browser and start explorin
 
 <f-slider v-model="f.x" />
 
-<f-math>x = {{ v.x }}</f-math>
+<f-math>x = {{ f.x }}</f-math>
         `),
       };
 

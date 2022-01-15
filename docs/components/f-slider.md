@@ -5,10 +5,10 @@
 ```md
 <f-slider v-model="f.x" />
 
-The value of x is {{ v.x }}
+The value of x is {{ f.x }}
 ```
 
-Here we assign slider value to a global variable `v.x`.
+Here we assign slider value to a global variable `f.x`.
 
 You can use that variable to control the SVG `<circle />` position on the page (or anything, really).
 
@@ -29,7 +29,7 @@ Since `<f-slider />` is a lightweight wrapper around `<input type="range" />` so
 
 <f-slider v-model="f.x2" step="50" />
 
-The value of x2 is {{ v.x2 }}
+The value of x2 is {{ f.x2 }}
 ```
 
 Note that step attribute can also be set to `step="any"` that makes slider to emit floating point value for those _smooooooth_ animations.
@@ -41,7 +41,7 @@ Note that step attribute can also be set to `step="any"` that makes slider to em
 
 <f-slider v-model="f.x3" max="400" step="any" />
 
-The value of x3 is <br /> {{ v.x3 }}
+The value of x3 is <br /> {{ f.x3 }}
 ```
 
 ## Prior art
