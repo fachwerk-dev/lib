@@ -4,13 +4,13 @@ There are several ways to get started with Vitepress and Fachwerk:
 
 ### 🅐 Use Slackblitz
 
-[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/fachwerkdev/fachwerk-vitepress?file=docs%2Findex.md)
+[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/fachwerkdev/create-fachwerk/tree/main/vitepress?file=docs%2Findex.md)
 
 Open Vitepress + Fachwerk sample project in Stackblitz and start editing the project right in the browser.
 
 ### 🅑 Use Github template
 
-[Clone](https://github.com/fachwerkdev/fachwerk-vitepress/generate) the Github template project [fachwerkdev/fachwerk-vitepress](https://github.com/fachwerkdev/fachwerk-vitepress)
+[Clone](https://github.com/fachwerkdev/create-fachwerk/generate) the Github template project [fachwerkdev/fachwerk-vite](https://github.com/fachwerkdev/create-fachwerk)
 
 ### 🅒 Use the command line
 

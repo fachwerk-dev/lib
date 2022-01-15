@@ -15,7 +15,7 @@ Lets assign <f-math>a</f-math> to a global variable `v.a` and use `<f-slider />`
 ```md
 <f-math>a = \frac{ {{ v.a }} }{10} = {{ v.a / 10 }}</f-math>
 
-<f-slider v-model="v.a" />
+<f-slider v-model="f.a" />
 ```
 
 ## Syntax reference

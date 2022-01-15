@@ -32,7 +32,7 @@ The main use case for the function is to calculate and format dynamic CSS color 
 Hover or tap over the colors to see how `h` value changes
 
 <svg width="360" height="100">
-  <rect v-for="h in range(0,360)" :x="h" y="0" width="1" height="100" :fill="hsl(h,100,50)" v-on:mouseover="v.h = h" />
+  <rect v-for="h in range(0,360)" :x="h" y="0" width="1" height="100" :fill="hsl(h,100,50)" v-on:mouseover="f.h = h" />
 </svg>
 
 {{ hsl(v.h,100,50) }}
@@ -51,7 +51,7 @@ Hover or tap over the colors to see how `s` value changes
     width="1"
     height="100"
     :fill="hsl(0,s,50)"
-    v-on:mouseover="v.s = s"
+    v-on:mouseover="f.s = s"
   />
 </svg>
 
@@ -71,7 +71,7 @@ Hover or tap over the colors to see how `l` value changes
     width="1"
     height="100"
     :fill="hsl(0,100,l)"
-    v-on:mouseover="v.l = l"
+    v-on:mouseover="f.l = l"
   />
 </svg>
 
@@ -91,7 +91,7 @@ Hover or tap over the colors to see how `a` value changes
     width="1"
     height="100"
     :fill="hsl(0,100,50,a)"
-    v-on:mouseover="v.a = a"
+    v-on:mouseover="f.a = a"
   />
 </svg>
 
