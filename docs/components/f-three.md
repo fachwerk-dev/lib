@@ -1,8 +1,8 @@
 # f-three
 
-`<f-three />` is an experimental component that provides high-level declarative interface to Three.js. There is also a way to directly access Three.js 3D objects to provide extra functionality and optimize performance.
+`<f-three />` is an experimental component that provides high-level declarative interface to [Three.js](https://threejs.org/). There is also a way to directly access Three.js 3D objects to provide extra functionality and optimize performance.
 
-> The minimal number of 3D components and APIs Fachwerk provides is by design. If you need richer 3D environments with declarative APIs, go for [TroisJS](https://troisjs.github.io/) or [React-three-fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction).
+> Fachwerk provides a very minimal set of Three.js components by design. If you need richer 3D environments with declarative APIs, go for [TroisJS](https://troisjs.github.io/), [React-three-fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) or [Svelte Cubed](https://svelte-cubed.vercel.app/).
 
 Here is an example of setting up a scene and linking it up with Fachwerk's slider control:
 
