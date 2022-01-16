@@ -1,6 +1,6 @@
-# linepath()
+# linepath
 
-A function that outputs a [SVG path](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) based on array of Points.
+`linepath()` is a function that outputs a [SVG path](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) based on array of Points.
 
 Optionally accepts the `closed` parameter that auto-closes the path.
 

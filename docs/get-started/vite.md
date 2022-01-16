@@ -67,6 +67,6 @@ app.use(Fachwerk);
 app.mount("#app");
 ```
 
-Finally, add `/src/index.md` where you can use Markdown and Fachwerk syntax.
+Finally, add `/src/index.md` to use Markdown and Fachwerk syntax.
 
 Note that `/src/App.vue` is no longer needed and can be removed.

@@ -48,8 +48,7 @@ export default {
 };
 ```
 
-It is also recommended to support Vue's upcoming reactivity
-transforms, an upcoming syntax for reactive variables. Reactivity transforms are not _required_ to use Fachwerk, but a lot of Fachwerk documentation refers to this syntax.
+We recommend VueJS reactivity transforms, an upcoming syntax for reactive variables. Reactivity transforms are not _required_ to use Fachwerk, but a lot of Fachwerk documentation refers to this syntax.
 
 Modify the `config.js` as follows:
 
@@ -64,4 +63,4 @@ export default defineConfig({
 });
 ```
 
-You can now start to use Fachwerk components, utility functions and state in your Markup documents.
+You can now start to use Fachwerk components, utility functions, and state in your Markup documents.
