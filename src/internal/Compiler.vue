@@ -1,6 +1,6 @@
 <script lang="ts">
 import { computed, h, compile, ComponentOptions, defineComponent } from "vue";
-import { utils } from "../lib.es";
+import { utils } from "../lib.esm";
 
 export const compileSource = (source: string) => {
   const errors = [];

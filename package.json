@@ -32,10 +32,10 @@
       "require": "./dist/style.css"
     }
   },
-  "typings": "./dist/lib.es.ts",
+  "typings": "./dist/lib.esm.ts",
   "scripts": {
-    "dev": "vite --port 3000 --host",
-    "build": "vite build && vite build --mode es && vite build --mode cjs",
+    "dev": "vite --port 3000 --host -c vite.config.app.ts",
+    "build": "vite build -c vite.config.esm.ts &&vite build -c vite.config.cjs.ts && vite build -c vite.config.app.ts",
     "preview": "vite preview --port 5000",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
