@@ -10,14 +10,15 @@ Open Vitepress + Fachwerk sample project in Stackblitz and start editing the pro
 
 ### 🅑 Use Github template
 
-[Clone](https://github.com/fachwerk-dev/create-fachwerk/generate) the Github template project [fachwerk-dev/fachwerk-vite](https://github.com/fachwerk-dev/create-fachwerk)
+[Clone](https://github.com/fachwerk-dev/create-fachwerk/generate) the Github template project [fachwerk-dev/create-fachwerk](https://github.com/fachwerk-dev/create-fachwerk)
 
 ### 🅒 Use the command line
 
 Run the following commands:
 
 ```bash
-npx degit fachwerk-dev/fachwerk-vitepress
+npx degit fachwerk-dev/create-fachwerk create-fachwerk
+cd create-fachwerk/vitepress
 npm install
 npm run dev
 ```
@@ -48,7 +49,7 @@ export default {
 ```
 
 It is also recommended to support Vue's upcoming reactivity
-transforms, an upcoming syntax for reactive variables.
+transforms, an upcoming syntax for reactive variables. Reactivity transforms are not _required_ to use Fachwerk, but a lot of Fachwerk documentation refers to this syntax.
 
 Modify the `config.js` as follows:
 
@@ -62,11 +63,5 @@ export default defineConfig({
   // ...rest of the config...
 });
 ```
-
-:::info
-
-Reactivity transforms are not _required_ to use Fachwerk, but a lot of documentation refers to this syntax.
-
-:::
 
 You can now start to use Fachwerk components, utility functions and state in your Markup documents.
