@@ -1,7 +1,7 @@
 <script setup lang="ts">
 //@ts-nocheck
 import { ref, computed, onMounted } from "vue";
-import VCompiler from "./VCompiler.vue";
+import Compiler from "./Compiler.vue";
 import MarkdownIt from "markdown-it";
 
 const { content: inputContent } = defineProps(["content"]);
@@ -34,7 +34,7 @@ onMounted(() => {
       class="outline-none w-full font-mono text-sm whitespace-pre bg-gray-800 text-gray-100 p-4 lg:p-7 leading-6"
     />
     <div class="p-4 lg:p-6 overflow-x-auto">
-      <VCompiler :content="outputContent" />
+      <Compiler :content="outputContent" />
     </div>
   </div>
 </template>
