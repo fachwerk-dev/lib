@@ -20,7 +20,13 @@ export let sidebar: Link[] = [
     children: [
       { text: "f-slider", link: "/components/f-slider" },
       { text: "f-math", link: "/components/f-math" },
+    ],
+  },
+  {
+    text: "Experimental",
+    children: [
       { text: "f-pdf", link: "/components/f-pdf" },
+      { text: "f-three", link: "/components/f-three" },
     ],
   },
   {

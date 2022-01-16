@@ -26,12 +26,12 @@ onMounted(() => {
 </script>
 <template>
   <div
-    class="grid md:grid-cols-2 grid-cols-1 grid-rows-auto shadow-md shadow-gray-100 rounded-md overflow-hidden mb-6"
+    class="grid md:grid-cols-2 grid-cols-1 md:grid-rows-[auto_auto] grid-rows-[33vh_auto] shadow-md shadow-gray-100 rounded-md overflow-hidden mb-6"
   >
     <textarea
       ref="editor"
       v-model="content"
-      class="outline-none w-full font-mono text-sm whitespace-pre bg-gray-800 text-gray-100 p-4 lg:p-7 leading-6"
+      class="outline-none w-full font-mono text-sm whitespace-pre bg-gray-800 text-gray-100 p-4 lg:p-7 leading-6 min-h-12"
     />
     <div class="p-4 lg:p-6 overflow-x-auto">
       <Compiler :content="outputContent" />
