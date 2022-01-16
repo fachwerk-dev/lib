@@ -10,8 +10,11 @@ Here is an example of setting up a scene and linking it up with Fachwerk's slide
 <script setup>
   import { watch } from 'vue'
   import { BoxGeometry } from 'three'
+
   const mesh = $ref()
   const x = $ref(0)
+  const geometry = new BoxGeometry(20, 20, 20)
+
   watch(() => x, () => {
     mesh.mesh.rotation.x = x / 180 * Math.PI
     mesh.update();
@@ -22,7 +25,7 @@ Here is an example of setting up a scene and linking it up with Fachwerk's slide
 
 <f-three>
   <f-three-group ref="mesh">
-    <f-three-mesh :geometry="new BoxGeometry(20, 20, 20)" />
+    <f-three-mesh :geometry="geometry" />
     <f-three-path :path="circlepath(0,0,20)" />
   </f-three-group>
 </f-three>
@@ -31,8 +34,11 @@ Here is an example of setting up a scene and linking it up with Fachwerk's slide
 <script setup>
   import { watch } from 'vue'
   import { BoxGeometry } from 'three'
+
   const mesh = $ref()
   const x = $ref(0)
+  const geometry = new BoxGeometry(20, 20, 20)
+
   watch(() => x, () => {
     mesh.mesh.rotation.x = x / 180 * Math.PI
     mesh.update();
@@ -43,7 +49,7 @@ Here is an example of setting up a scene and linking it up with Fachwerk's slide
 
 <f-three>
   <f-three-group ref="mesh">
-    <f-three-mesh :geometry="new BoxGeometry(20, 20, 20)" />
+    <f-three-mesh :geometry="geometry" />
     <f-three-path :path="circlepath(0,0,20)" />
   </f-three-group>
 </f-three>
