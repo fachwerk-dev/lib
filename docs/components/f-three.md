@@ -1,6 +1,6 @@
 # f-three
 
-`<f-three />` and it's children are experimental components that provide high-level declarative interface to Three.js while also provide a low level access to 3D engine for extra features and perfomance.
+`<f-three />` is an experimental component that provides high-level declarative interface to Three.js. There is also a way to directly access Three.js 3D objects to provide extra functionality and optimize performance.
 
 > The minimal number of 3D components and APIs Fachwerk provides is by design. If you need richer 3D environments with declarative APIs, go for [TroisJS](https://troisjs.github.io/) or [React-three-fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction).
 
@@ -22,8 +22,8 @@ Here is an example of setting up a scene and linking it up with Fachwerk's slide
 
 <f-three>
   <f-three-group ref="mesh">
-  <f-three-mesh :geometry="new BoxGeometry(20, 20, 20)" />
-  <f-three-path :path="circlepath(0,0,20)" />
+    <f-three-mesh :geometry="new BoxGeometry(20, 20, 20)" />
+    <f-three-path :path="circlepath(0,0,20)" />
   </f-three-group>
 </f-three>
 ```
@@ -43,8 +43,8 @@ Here is an example of setting up a scene and linking it up with Fachwerk's slide
 
 <f-three>
   <f-three-group ref="mesh">
-  <f-three-mesh :geometry="new BoxGeometry(20, 20, 20)" />
-  <f-three-path :path="circlepath(0,0,20)" />
+    <f-three-mesh :geometry="new BoxGeometry(20, 20, 20)" />
+    <f-three-path :path="circlepath(0,0,20)" />
   </f-three-group>
 </f-three>
 
