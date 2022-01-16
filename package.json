@@ -45,6 +45,7 @@
     "katex": "^0.15.1",
     "pdf-lib": "^1.17.1",
     "svgpath": "^2.4.0",
+    "three": "^0.136.0",
     "vue": "^3.2.25"
   },
   "devDependencies": {
