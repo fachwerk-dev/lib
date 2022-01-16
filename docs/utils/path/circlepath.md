@@ -1,6 +1,6 @@
 # circlepath
 
-A function that outputs a circle as [SVG path](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths), based on `x`, `y` and `r` arguments.
+`circlepath()` is a function that outputs a circle as [SVG path](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths), based on `x`, `y` and `r` arguments.
 
 ```ts
 function circlepath(x: number, y: number, r: number): string;

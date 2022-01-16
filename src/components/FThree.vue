@@ -1,12 +1,5 @@
 <script lang="ts" setup>
-import {
-  ref,
-  onMounted,
-  defineProps,
-  onBeforeUpdate,
-  provide,
-  onUnmounted,
-} from "vue";
+import { ref, onMounted, onBeforeUpdate, provide, onUnmounted } from "vue";
 import { Scene, PerspectiveCamera, WebGLRenderer, Group } from "three";
 //import { SVGRenderer } from "three/examples/jsm/renderers/SVGRenderer";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
@@ -20,8 +13,8 @@ export type Context = {
 const props = defineProps({ a: { type: Number, default: 1 } });
 
 const el = ref(null);
-const width = 100;
-const height = 100;
+const width = 300;
+const height = 300;
 
 const scene = new Scene();
 const camera = new PerspectiveCamera(100, width / height, 0.1, 1000);

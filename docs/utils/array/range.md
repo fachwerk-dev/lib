@@ -1,6 +1,8 @@
 # range
 
-Generates an array of numbers between `from` and `to` with an optional `step` parameter. Inspired by Python's [range()](https://docs.python.org/3/library/stdtypes.html#range) function.
+`range()` function generates an array of numbers between `from` and `to` with an optional `step` parameter.
+
+Inspired by Python's [range()](https://docs.python.org/3/library/stdtypes.html#range) function.
 
 ```ts
 export function range(from: number, to: number, step: number = 1): number[];
@@ -20,7 +22,7 @@ Generate array of numbers from `1` to `3` with step of `0.5`:
 {{ range(1,3,0.5) }}
 ```
 
-Generate array of numbers from `3` to `1`, in ascending order:
+Generate an array of numbers from `3` to `1`, in ascending order:
 
 ```md
 {{ range(3,1) }}

@@ -1,6 +1,6 @@
 # Node
 
-Fachwerk utility functions are also available in NodeJS, both as CommonJS and ESM packages.
+Fachwerk utility functions are also available in NodeJS, both CommonJS and ESM packages.
 
 ### Installation
 

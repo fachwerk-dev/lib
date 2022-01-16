@@ -1,6 +1,6 @@
 # f-math
 
-f-math displays mathematical expressions.
+f-math displays mathematical expressions using LaTeX / KaTeX syntax.
 
 ## Usage
 

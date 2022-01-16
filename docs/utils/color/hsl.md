@@ -1,6 +1,6 @@
 # hsl
 
-Ouputs a CSS color string in [hsl() notation](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl()>).
+`hsl()` function ouputs a CSS color string in [hsl() notation](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl()>).
 
 ```js
 export function hsl(h = 0, s = 100, l = 50, a = 1)
@@ -14,18 +14,17 @@ Output a CSS color string with `h s l a` parameters:
 {{ hsl(10,20,30,0.1) }}
 ```
 
-You can only set the hue `h` value, the rest will have the default values.
+You can also set only the hue `h` value, the rest will have the default values.
 
 ```md
 {{ hsl(10) }}
 ```
 
-> **Not in a spec**
-> `hsl(hue)` is not part of the official CSS colors specification, it is provided as a convenience feature by Fachwerk.
+> **Not in a spec** > `hsl(hue)` is not part of the official CSS colors specification. It is a convenience feature by Fachwerk.
 
 ## Examples
 
-The main use case for the function is to calculate and format dynamic CSS color values.
+The primary use case for the function is to calculate and format dynamic CSS color values.
 
 #### Usage in template, hue value
 

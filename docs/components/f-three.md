@@ -37,7 +37,7 @@ Here is an example of setting up a scene and linking it up with Fachwerk's slide
 
   const mesh = $ref()
   const x = $ref(0)
-  const geometry = new BoxGeometry(20, 20, 20)
+  const geometry = new BoxGeometry(50, 50, 50)
 
   watch(() => x, () => {
     mesh.mesh.rotation.x = x / 180 * Math.PI
@@ -50,7 +50,7 @@ Here is an example of setting up a scene and linking it up with Fachwerk's slide
 <f-three>
   <f-three-group ref="mesh">
     <f-three-mesh :geometry="geometry" />
-    <f-three-path :path="circlepath(0,0,20)" />
+    <f-three-path :path="circlepath(0,0,50)" />
   </f-three-group>
 </f-three>
 
