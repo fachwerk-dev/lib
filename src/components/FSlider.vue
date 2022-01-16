@@ -1,15 +1,26 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-const props = defineProps(["modelValue"]);
-const emit = defineEmits(["update:modelValue"]);
+type Props = {
+  modelValue: number;
+};
+
+const { modelValue = 0 } = defineProps<Props>();
+
+const emit = defineEmits<{
+  (e: "update:modelValue", value: number): void;
+}>();
 
 const progress = computed({
-  get: () => props.modelValue,
+  get: () => modelValue,
   set: (value) => {
     emit("update:modelValue", value);
   },
 });
+
+emit("update:modelValue", modelValue);
 </script>
 
-<template><input type="range" v-model.number="progress" /></template>
+<template>
+  <input type="range" v-model.number="progress" />
+</template>
