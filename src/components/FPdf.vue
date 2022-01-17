@@ -41,6 +41,7 @@ PDFDocument.create().then((pdfDocument) => {
 });
 
 provide("context", context);
+defineExpose(context);
 </script>
 
 <template>
