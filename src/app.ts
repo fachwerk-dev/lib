@@ -5,6 +5,7 @@ import routes from "virtual:generated-pages";
 import { Fachwerk } from "./lib.esm";
 import App from "./App.vue";
 import Editor from "./internal/Editor.vue";
+import Grid from "./internal/Grid.vue";
 
 import "./app.css";
 
@@ -17,4 +18,5 @@ const app = createApp(App);
 app.use(router);
 app.use(Fachwerk);
 app.component("Editor", Editor);
+app.component("Grid", Grid);
 app.mount("#app");
