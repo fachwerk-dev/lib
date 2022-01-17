@@ -6,7 +6,7 @@
 
 Click here to launch a sample project right in your browser:
 
-<a href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md" target="_blank"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg"/></a>
+<a href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Fachwerk+Vite" target="_blank"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg"/></a>
 
 Alternatively, run the follwing in the command to get started with a sample Fachwerk project:
 
