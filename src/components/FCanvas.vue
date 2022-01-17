@@ -39,6 +39,8 @@ onBeforeUpdate(() => {
 });
 
 provide("context", context);
+
+defineExpose(context);
 </script>
 
 <template>

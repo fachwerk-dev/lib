@@ -28,4 +28,5 @@ https://en.wikibooks.org/wiki/LaTeX/Mathematics
 ## Prior art
 
 https://designstem.github.io/fachwerk/docs/#/f-math
-https://fachwerk.github.io/fachwerk_original/#math
+
+https://visualia.github.io/visualia_original/#math

@@ -61,3 +61,9 @@ Note that the Three.js scene only updates when `mesh.update()` is called to save
 import { useRafFn as raf } from "@vueuse/core";
 raf(() => mesh?.update());
 ```
+
+## Prior art
+
+https://designstem.github.io/fachwerk/docs/#/f-scene3
+
+https://visualia.github.io/visualia_original/#graphics_scene

@@ -19,3 +19,43 @@
 
 rotation: {{ f.r }}
 ```
+
+`<f-canvas>` also allows low-level access to underlying Canvas context for extra functionality and performance:
+
+```
+<script setup>
+import { watch } from 'vue'
+import { range } from '../../src/lib.esm'
+import { whenever } from '@vueuse/core'
+
+const context = $ref(null);
+
+whenever(() => context, () => {
+  context.ctx.fillStyle = 'black';
+  range(0,10000).forEach(i => context.ctx.fillRect(Math.random() * 300,Math.random() * 300,1,1));
+})
+</script>
+
+<f-canvas ref="context"></f-canvas>
+```
+
+<script setup>
+import { watch } from 'vue'
+import { range } from '../../src/lib.esm'
+import { whenever } from '@vueuse/core'
+
+const context = $ref(null);
+
+whenever(() => context, () => {
+  context.ctx.fillStyle = 'black';
+  range(0,10000).forEach(i => context.ctx.fillRect(Math.random() * 300,Math.random() * 300,1,1));
+})
+</script>
+
+<f-canvas ref="context"></f-canvas>
+
+## Prior art
+
+https://designstem.github.io/fachwerk/docs/#/f-canvas
+
+https://visualia.github.io/visualia_original/#graphics_scene
