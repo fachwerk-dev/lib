@@ -1,65 +1,78 @@
 <script setup>
-import { watch } from 'vue'
-import { range } from '../../src/lib.esm'
-import { whenever } from '@vueuse/core'
+  import { watch } from 'vue'
+  import { BoxGeometry } from 'three'
 
-const context = $ref(null);
+  const mesh = $ref()
+  const x = $ref(0)
+  const geometry = new BoxGeometry(50, 50, 50)
 
-whenever(() => context, () => {
-  context.ctx.fillStyle = 'black';
-  range(0,10000).forEach(i => context.ctx.fillRect(Math.random() * 300,Math.random() * 300,1,1));
-})
+  watch(() => x, () => {
+    mesh.mesh.rotation.x = x / 180 * Math.PI
+    mesh.update();
+  })
 </script>
 
-# f-canvas
+# f-three
 
-`<f-canvas />` is an experimental component that provides a declarative interface to [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
+`<f-three />` is an experimental component that provides high-level declarative interface to [Three.js](https://threejs.org/). There is also a way to directly access Three.js 3D objects to provide extra functionality and optimize performance.
 
-```md
-<f-canvas>
-  <f-canvas-path
-    :path="circlepath(150,150,50)"
-    :opacity="0.25"
-  />
-  <f-canvas-path
-    :rotate="f.r"
-    :path="linepath(rectpoints(50, 50, 100, 100), true)"
-    :opacity="0.5"
-  />
-</f-canvas>
+> Fachwerk provides a very minimal set of Three.js components by design. If you need richer 3D environments with declarative APIs, go for [TroisJS](https://troisjs.github.io/), [React-three-fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) or [Svelte Cubed](https://svelte-cubed.vercel.app/).
 
-<f-slider v-model="f.r" max="360" step="any" />
-
-rotation: {{ f.r }}
-```
-
-`<f-canvas>` also allows low-level access to underlying Canvas context for extra functionality and performance:
+Here is an example of setting up a scene and linking it up with Fachwerk's slider control:
 
 <Grid>
 
 ```
 <script setup>
-import { watch } from 'vue'
-import { range } from '../../src/lib.esm'
-import { whenever } from '@vueuse/core'
+  import { watch } from 'vue'
+  import { BoxGeometry } from 'three'
 
-const context = $ref(null);
+  const mesh = $ref()
+  const x = $ref(0)
+  const geometry = new BoxGeometry(20, 20, 20)
 
-whenever(() => context, () => {
-  context.ctx.fillStyle = 'black';
-  range(0,10000).forEach(i => context.ctx.fillRect(Math.random() * 300,Math.random() * 300,1,1));
-})
+  watch(() => x, () => {
+    mesh.mesh.rotation.x = x / 180 * Math.PI
+    mesh.update();
+  })
 </script>
 
-<f-canvas ref="context"></f-canvas>
+<f-slider v-model="x" step="any" max="360" />
+
+<f-three>
+  <f-three-group ref="mesh">
+    <f-three-mesh :geometry="geometry" />
+    <f-three-path :path="circlepath(0,0,20)" />
+  </f-three-group>
+</f-three>
 ```
 
-<f-canvas ref="context" style="padding: 1.5rem"></f-canvas>
+<div style="padding: 1.5em">
 
+<f-three>
+  <f-three-group ref="mesh">
+    <f-three-mesh :geometry="geometry" />
+    <f-three-path :path="circlepath(0,0,50)" />
+  </f-three-group>
+</f-three>
+
+<f-slider v-model="x" step="any" max="360" />
+   
+Rotation: {{ x }}
+
+ </div>
 </Grid>
+
+Note that the Three.js scene only updates when `mesh.update()` is called to save the resources. If there is a need to update the scene on each frame (say, to use video textures), one can use a helper function [useRafFn](https://vueuse.org/core/useraffn/) (a requestAnimationFrame wrapper exposed as Vue composable).
+
+```js
+// In <script setup>
+import { useRafFn as raf } from "@vueuse/core";
+raf(() => mesh?.update());
+```
 
 ## Prior art
 
-https://designstem.github.io/fachwerk/docs/#/f-canvas
+https://designstem.github.io/fachwerk/docs/#/f-scene3
 
 https://visualia.github.io/visualia_original/#graphics_scene
