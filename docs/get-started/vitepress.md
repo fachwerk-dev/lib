@@ -8,22 +8,17 @@ There are several ways to get started with Vitepress and Fachwerk:
 
 Open Vitepress + Fachwerk sample project in Stackblitz and start editing the project right in the browser.
 
-### 🅑 Use Github template
+### 🅑 Use the command line
 
-[Clone](https://github.com/fachwerk-dev/create-fachwerk/generate) the Github template project [fachwerk-dev/create-fachwerk](https://github.com/fachwerk-dev/create-fachwerk)
-
-### 🅒 Use the command line
-
-Run the following commands:
+Run the following command:
 
 ```bash
-npx degit fachwerk-dev/create-fachwerk create-fachwerk
-cd create-fachwerk/vitepress
-npm install
-npm run dev
+npm init fachwerk
 ```
 
-### 🅓 Modify existing Vitepress installation
+Next, pick a **Vitepress** template and follow the on-screen instructions.
+
+### 🅒 Add Fachwerk to existing Vitepress project
 
 It is easy to modify Vitepress installation to support Fachwerk. First, install Fachwerk:
 
@@ -63,4 +58,4 @@ export default defineConfig({
 });
 ```
 
-You can now start to use Fachwerk components, utility functions, and state in your Markup documents.
+You can now start to use Fachwerk components, utility functions, and state in Vitepress documents.

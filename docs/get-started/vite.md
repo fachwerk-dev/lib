@@ -8,27 +8,22 @@ There are multiple ways to get started with Vite and Fachwerk:
 
 Open Vite + Fachwerk project in Stackblitz and start editing the project right in the browser.
 
-### 🅑 Use Github template
+### 🅑 Use the command line
 
-[Clone](https://github.com/fachwerk-dev/create-fachwerk/generate) the Github template project [fachwerk-dev/fachwerk-vite](https://github.com/fachwerk-dev/create-fachwerk)
-
-### 🅒 Use the command line
-
-Run the following commands:
+Run the following command:
 
 ```bash
-npx degit fachwerk-dev/create-fachwerk create-fachwerk
-cd create-fachwerk/vite
-npm install
-npm run dev
+npm init fachwerk
 ```
 
-### 🅓 Use Vite installer and add Fachwerk
+Next, pick a **Vite** template and follow the on-screen instructions.
+
+### 🅒 Add Fachwerk to existing Vite project
 
 Your can also use the standard [Vite installer](https://vitejs.dev/guide/#scaffolding-your-first-vite-project). Choose either `vue` or `vue-ts` project when setting up a project.
 
 ```bash
-npm init vite@latest
+npm init vite
 ```
 
 Next, install Fachwerk and `vite-plugin-md` (for Markdown support)
@@ -67,6 +62,4 @@ app.use(Fachwerk);
 app.mount("#app");
 ```
 
-Finally, add `/src/index.md` to use Markdown and Fachwerk syntax.
-
-Note that `/src/App.vue` is no longer needed and can be removed.
+Finally, add `/src/index.md` to use Markdown and Fachwerk syntax. Note that `/src/App.vue` is no longer needed and can be removed.
