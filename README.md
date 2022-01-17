@@ -2,7 +2,7 @@
 
 VueJS and Markdown framework for creating interactive learning materials
 
-https://fachwerk.dev/
+https://fachwerk.dev
 
 ## Get started
 
