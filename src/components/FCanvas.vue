@@ -4,8 +4,8 @@ import { onBeforeUpdate, onMounted, provide, ref } from "vue";
 const canvasEl = ref<HTMLCanvasElement | null>(null);
 const ctx = ref<CanvasRenderingContext2D | null>(null);
 const updated = ref(false);
-const width = 100;
-const height = 100;
+const width = 300;
+const height = 300;
 
 export type Context = {
   width: number;
