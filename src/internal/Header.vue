@@ -9,8 +9,11 @@ MIT
   <header
     class="bg-gray-800 text-gray-200 hover:text-gray-100 p-5 font-medium flex justify-between"
   >
-    <ul>
+    <ul class="flex gap-6">
       <li><router-link to="/">Fachwerk</router-link></li>
+      <li>
+        <a href="https://editor.fachwerk.dev" target="_blank"> Editor </a>
+      </li>
     </ul>
     <ul>
       <li>
