@@ -46,9 +46,11 @@
     "pdf-lib": "^1.17.1",
     "svgpath": "^2.4.0",
     "three": "^0.136.0",
+    "unplugin-icons": "^0.13.0",
     "vue": "^3.2.25"
   },
   "devDependencies": {
+    "@iconify-json/tabler": "^1.0.11",
     "@tailwindcss/typography": "^0.5.0",
     "@types/katex": "^0.11.1",
     "@types/node": "^17.0.5",
