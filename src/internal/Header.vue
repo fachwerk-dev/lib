@@ -7,7 +7,7 @@ npm run build npm run preview ``` ### Release ``` npm run release ``` ## Licence
 MIT
 <template>
   <header
-    class="bg-gray-800 text-gray-200 hover:text-gray-100 p-5 font-medium flex justify-between"
+    class="bg-gray-900 text-gray-200 hover:text-gray-100 p-5 font-medium flex justify-between"
   >
     <ul class="flex gap-6">
       <li><router-link to="/">Fachwerk</router-link></li>

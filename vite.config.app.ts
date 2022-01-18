@@ -1,11 +1,12 @@
 import fs from "fs";
 import path from "path";
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import pages from "vite-plugin-pages";
-import markdown from "vite-plugin-md";
 import matter from "gray-matter";
+import ViteVue from "@vitejs/plugin-vue";
+import VitePages from "vite-plugin-pages";
+import ViteMarkdown from "vite-plugin-md";
 import ViteFonts from "vite-plugin-fonts";
+import ViteIcons from "unplugin-icons/vite";
 
 function editorPlugin(md) {
   const defaultFence = md.renderer.rules.fence;
@@ -30,8 +31,8 @@ export default defineConfig({
     },
   },
   plugins: [
-    vue({ reactivityTransform: true, include: [/\.vue$/, /\.md$/] }),
-    pages({
+    ViteVue({ reactivityTransform: true, include: [/\.vue$/, /\.md$/] }),
+    VitePages({
       extensions: ["vue", "md"],
       dirs: "docs",
       extendRoute(route) {
@@ -42,7 +43,7 @@ export default defineConfig({
         return route;
       },
     }),
-    markdown({
+    ViteMarkdown({
       markdownItOptions: { typographer: false, breaks: true },
       markdownItSetup: (md) => md.use(editorPlugin),
     }),
@@ -58,6 +59,7 @@ export default defineConfig({
         ],
       },
     }),
+    ViteIcons({ autoInstall: true }),
   ],
   build: {
     emptyOutDir: false,
