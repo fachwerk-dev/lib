@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import { sidebar } from "../../docs/config";
+import { state } from "../internal/state";
 </script>
 <template>
-  <nav class="leading-8 text-gray-600">
-    <ul>
+  <nav
+    :class="{ block: state.menuOpen, hidden: !state.menuOpen }"
+    class="md:block"
+  >
+    <ul class="leading-8 text-gray-600">
       <li v-for="link in sidebar" class="pb-2 last:pb-0">
         <router-link
+          @click="state.menuOpen = !state.menuOpen"
           v-if="link.link && !link.children"
           :to="link.link"
           class="font-medium block hover:text-sky-600"
@@ -17,6 +22,7 @@ import { sidebar } from "../../docs/config";
         <ul v-if="link.children" class="pl-4">
           <li v-for="child in link.children">
             <router-link
+              @click="state.menuOpen = !state.menuOpen"
               :to="child.link"
               class="block hover:text-sky-600"
               active-class="text-sky-600 underline underline-offset-2"
