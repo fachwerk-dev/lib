@@ -32,14 +32,14 @@ export let sidebar: Link[] = [
   },
   {
     text: "Point utilities",
-    children: [
-      { text: "linepath", link: "/utils/path/linepath" },
-      { text: "circlepath", link: "/utils/path/circlepath" },
-    ],
+    children: [{ text: "rectpoints", link: "/utils/point/rectpoints" }],
   },
   {
-    text: "Point utilities",
-    children: [{ text: "rectpoints", link: "/utils/point/rectpoints" }],
+    text: "Path utilities",
+    children: [
+      { text: "polygonpath", link: "/utils/path/polygonpath" },
+      { text: "circlepath", link: "/utils/path/circlepath" },
+    ],
   },
   {
     text: "Array utilities",
