@@ -1,6 +1,6 @@
 import type { Point } from "./point";
 
-export function linepath(points: Point[], closed: boolean = false): string {
+export function polygonpath(points: Point[], closed: boolean = false): string {
   const start = points.shift();
 
   const path = [

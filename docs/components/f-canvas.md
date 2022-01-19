@@ -10,7 +10,7 @@
   />
   <f-canvas-path
     :rotate="f.r"
-    :path="linepath(rectpoints(50, 50, 100, 100), true)"
+    :path="polygonpath(rectpoints(50, 50, 100, 100), true)"
     :opacity="0.5"
   />
 </f-canvas>

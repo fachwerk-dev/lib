@@ -1,9 +1,9 @@
 import { test, assert } from "vitest";
-import { linepath } from "./path";
+import { polygonpath } from "./path";
 
-test("linepath 0,0 to 10,10 to 10,0", () =>
+test("polygonpath 0,0 to 10,10 to 10,0", () =>
   assert.equal(
-    linepath([
+    polygonpath([
       { x: 0, y: 0 },
       { x: 10, y: 10 },
       { x: 10, y: 0 },
@@ -11,9 +11,9 @@ test("linepath 0,0 to 10,10 to 10,0", () =>
     "M 0,0 L 10,10 L 10,0"
   ));
 
-test("linepath 0,0 to 10,10 to 10,0 closed", () =>
+test("polygonpath 0,0 to 10,10 to 10,0 closed", () =>
   assert.equal(
-    linepath(
+    polygonpath(
       [
         { x: 0, y: 0 },
         { x: 10, y: 10 },
