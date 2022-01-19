@@ -3,5 +3,8 @@
 @tailwind utilities;
 
 svg {
+  @apply block;
+}
+.prose svg {
   @apply mb-4;
 }
