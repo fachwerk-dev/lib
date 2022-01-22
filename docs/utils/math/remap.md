@@ -17,3 +17,9 @@ function remap(
 ```md
 {{ remap(0.5, 0, 1, 0, 360) }}
 ```
+
+## Prior art
+
+https://visualia.github.io/visualia_original/#helper-functions_scale
+
+https://designstem.github.io/fachwerk/docs/#/scale
