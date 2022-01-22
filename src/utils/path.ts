@@ -1,3 +1,4 @@
+import { arc } from "d3-shape";
 import { deg2rad } from "../lib.esm";
 import type { Point } from "./point";
 

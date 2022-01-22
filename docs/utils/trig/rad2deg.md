@@ -1,5 +1,7 @@
 # rad2deg
 
+Converts radians to degrees.
+
 ```md
 {{ rad2deg(PI / 2) }}
 ```
