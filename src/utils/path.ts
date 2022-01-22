@@ -1,3 +1,4 @@
+import { deg2rad } from "../lib.esm";
 import type { Point } from "./point";
 
 export function polygonpath(points: Point[], closed: boolean = false): string {
@@ -26,4 +27,20 @@ export function circlepath(x: number, y: number, r: number): string {
     .trim();
 
   return path;
+}
+
+export function arcpath(
+  startAngle: number,
+  endAngle: number,
+  innerRadius: number,
+  outerRadius?: number,
+  cornerRadius?: number
+): string | null {
+  //@ts-ignore
+  return arc()
+    .startAngle(deg2rad(startAngle))
+    .endAngle(deg2rad(endAngle))
+    .innerRadius(innerRadius)
+    .outerRadius(outerRadius || innerRadius)
+    .cornerRadius(cornerRadius || 0)();
 }

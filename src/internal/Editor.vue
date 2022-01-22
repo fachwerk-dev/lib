@@ -34,7 +34,6 @@ function utoa(data: string): string {
 function atou(base64: string): string {
   return decodeURIComponent(escape(atob(base64)));
 }
-console.log(utoa("1"), "MQ==");
 const link = computed(
   () => `https://editor.fachwerk.dev/#${utoa(content.value)}`
 );
