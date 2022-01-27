@@ -19,6 +19,6 @@ export function rectpoints(
   ];
 }
 
-export function polarpoints(count: number, r: number): Point[] {
+export function circlepoints(count: number, r: number): Point[] {
   return range(0, count - 1).map((a) => pol2car(a * (360 / count), r));
 }
