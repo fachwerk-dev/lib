@@ -19,6 +19,9 @@ export function rectpoints(
   ];
 }
 
-export function circlepoints(count: number, r: number): Point[] {
-  return range(0, count - 1).map((a) => pol2car(a * (360 / count), r));
+export function circlepoints(count: number, r: number): Point[] | null {
+  if (count > 0) {
+    return range(0, count - 1).map((a) => pol2car(a * (360 / count), r));
+  }
+  return null;
 }

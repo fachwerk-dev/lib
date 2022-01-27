@@ -16,7 +16,7 @@ function arcpath(startAngle: number, endAngle: number, radius: number): string;
 
 ```md
 <svg>
- <g transform="translate(75,75)">
+ <g transform="translate(150,75)">
     <path
       :d="arcpath(0, 270, 25, 50, 5)"
       fill="none"

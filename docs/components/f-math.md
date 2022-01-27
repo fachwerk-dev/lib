@@ -23,6 +23,7 @@ Lets assign <f-math>a</f-math> to a global variable `f.a` and use `<f-slider />`
 Here are some references and examples how to express math in LaTeX / KaTeX format:
 
 https://katex.org/docs/supported.html
+
 https://en.wikibooks.org/wiki/LaTeX/Mathematics
 
 ## Prior art

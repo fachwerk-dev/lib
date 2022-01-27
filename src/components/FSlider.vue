@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 
 type Props = {
   modelValue: number;
+  value?: number;
 };
 
-const { modelValue = 0 } = defineProps<Props>();
+const { modelValue = 0, value: defaultValue } = defineProps<Props>();
 
 const emit = defineEmits<{
   (e: "update:modelValue", value: number): void;
@@ -18,7 +19,9 @@ const progress = computed({
   },
 });
 
-emit("update:modelValue", modelValue);
+onMounted(() => {
+  progress.value = defaultValue ? defaultValue : 0;
+});
 </script>
 
 <template>

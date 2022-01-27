@@ -16,7 +16,11 @@ function circlepath(x: number, y: number, r: number): string;
 
 ```md
 <svg>
-  <circle cx="50" cy="75" r="25" />
-  <path :d="circlepath(100,75,25)" fill="skyblue" />
+  <path
+    :d="circlepath(150,75,50)"
+    fill="none"
+    stroke="skyblue"
+    stroke-width="2"
+  />
 </svg>
 ```
