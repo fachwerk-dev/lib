@@ -27,6 +27,15 @@ function polygonpath(points: Point[], closed: boolean = false): string;
 
 ```md
 <svg>
-  <path :d="polygonpath([{ x: 0, y: 0 }, { x: 100, y: 100 }])" stroke="skyblue" stroke-width="2" />
+  <path :d="polygonpath([
+    { x: 0, y: 0 },
+    { x: 100, y: 100 },
+    { x: 200, y: 0 },
+    { x: 300, y: 100 }
+  ])"
+  stroke="skyblue"
+  stroke-width="2"
+  fill="none"
+/>
 </svg>
 ```
