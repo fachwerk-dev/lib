@@ -7,6 +7,7 @@ import { Fachwerk } from "./lib.esm";
 import App from "./App.vue";
 import Layout from "./internal/Layout.vue";
 import Editor from "./internal/Editor.vue";
+import Button from "./internal/Button.vue";
 
 import "./app.css";
 
@@ -20,4 +21,5 @@ app.use(router);
 app.use(Fachwerk);
 app.component("Layout", Layout);
 app.component("Editor", Editor);
+app.component("Button", Button);
 app.mount("#app");
