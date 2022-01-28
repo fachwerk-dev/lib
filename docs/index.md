@@ -1,4 +1,4 @@
-# Fachwerk
+# ▦ Fachwerk
 
 <p class="lead">VueJS and Markdown framework for creating interactive learning materials</p>
 
