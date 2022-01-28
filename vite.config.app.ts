@@ -44,6 +44,7 @@ export default defineConfig({
       },
     }),
     ViteMarkdown({
+      wrapperComponent: "Layout",
       markdownItOptions: { typographer: false, breaks: true },
       markdownItSetup: (md) => md.use(editorPlugin),
     }),

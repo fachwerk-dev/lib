@@ -4,7 +4,7 @@ import { state } from "../internal/state";
 </script>
 <template>
   <header
-    class="bg-gray-900 text-gray-200 hover:text-gray-100 p-5 font-medium flex justify-between"
+    class="bg-slate-800 text-slate-200 hover:text-gray-100 p-5 font-medium flex justify-between"
   >
     <ul class="flex gap-6">
       <li class="md:hidden block">
@@ -14,6 +14,7 @@ import { state } from "../internal/state";
         />
       </li>
       <li><router-link to="/">Fachwerk</router-link></li>
+      <li><router-link to="/get-started/vite">Docs</router-link></li>
       <li>
         <a href="https://editor.fachwerk.dev" target="_blank"> Editor </a>
       </li>

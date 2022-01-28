@@ -1,0 +1,60 @@
+<script setup lang="ts">
+import Button from "./Button.vue";
+</script>
+<template>
+  <article class="p-5 md:p-12 bg-[skyblue] grid gap-4">
+    <h1 class="md:text-6xl text-5xl font-bold tracking-tighter mb-4 md:mb-0">
+      ▦ Fachwerk
+    </h1>
+    <p class="text-xl md:text-2xl">
+      VueJS and Markdown framework for creating interactive learning materials
+    </p>
+    <p />
+    <div class="grid md:flex gap-4">
+      <Button class="bg-white" to="/get-started/vite">Read the docs</Button>
+      <Button href="https://editor.fachwerk.dev">Try the online editor</Button>
+      <Button
+        href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Fachwerk+Vite"
+        >Open in StackBlitz</Button
+      >
+    </div>
+
+    <p />
+
+    <p class="md:text-lg w-full md:w-3/4">
+      Alternatively, run the following in the command in the terminal to get
+      started with ViteJS, Vitepress or other starter templates.
+    </p>
+    <div
+      class="md:place-self-start inline-block bg-black text-white font-mono px-6 py-4 rounded"
+    >
+      npm init fachwerk
+    </div>
+
+    <p class="h-6" />
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid gap-4">
+        <h2 class="font-semibold text-xl">Declarative delight</h2>
+        <p>
+          Fachwerk is composed of VueJS components that allow simple HTML-like
+          tags for complex visualizations.
+        </p>
+      </div>
+      <div class="grid gap-4">
+        <h2 class="font-semibold text-xl">Sophisticated state</h2>
+        <p>
+          All elements on the page can talk to the other elements, either via
+          the global state for values or with a global event bus for events.
+        </p>
+      </div>
+      <div class="grid gap-4">
+        <h2 class="font-semibold text-xl">Useful utilites</h2>
+        <p>
+          There is wide range of JS utility functions available, from array
+          manipulations to color calculations.
+        </p>
+      </div>
+    </div>
+  </article>
+</template>
