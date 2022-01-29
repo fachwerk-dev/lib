@@ -31,7 +31,7 @@ function rectpoints(
     :cx="point.x"
     :cy="point.y"
     r="10"
-    fill="skyblue"
+    fill="lightblue"
   />
 </svg>
 ```

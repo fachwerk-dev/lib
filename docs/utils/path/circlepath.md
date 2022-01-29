@@ -19,7 +19,7 @@ function circlepath(x: number, y: number, r: number): string;
   <path
     :d="circlepath(150,75,50)"
     fill="none"
-    stroke="skyblue"
+    stroke="lightblue"
     stroke-width="2"
   />
 </svg>

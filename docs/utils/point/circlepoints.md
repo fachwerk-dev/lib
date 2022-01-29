@@ -26,7 +26,7 @@ function circlepoints(count: number, r: number): Point[];
     :cx="point.x + 75"
     :cy="point.y + 75"
     r="10"
-    fill="skyblue"
+    fill="lightblue"
   />
 </svg>
 ```
