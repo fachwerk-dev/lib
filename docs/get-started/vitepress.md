@@ -2,13 +2,13 @@
 
 There are several ways to get started with Vitepress and Fachwerk:
 
-### 🅐 Use Slackblitz
+### Use Slackblitz
 
-<a href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vitepress?file=docs%2Findex.md&title=Fachwerk+Vite" target="_blank"><img src="/open_in_stackblitz.svg"/></a>
+<Button href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vitepress?file=docs%2Findex.md&title=Fachwerk+Vite">Open in Slackblitz</Button>
 
 Open Vitepress + Fachwerk sample project in Stackblitz and start editing the project right in the browser.
 
-### 🅑 Use the command line
+### Use the command line
 
 Run the following command:
 
@@ -18,7 +18,7 @@ npm init fachwerk
 
 Next, pick a **Vitepress** template and follow the on-screen instructions.
 
-### 🅒 Add Fachwerk to existing Vitepress project
+### Add Fachwerk to existing Vitepress project
 
 It is easy to modify Vitepress installation to support Fachwerk. First, install Fachwerk:
 

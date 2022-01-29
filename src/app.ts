@@ -8,6 +8,7 @@ import App from "./App.vue";
 import Layout from "./internal/Layout.vue";
 import Editor from "./internal/Editor.vue";
 import Button from "./internal/Button.vue";
+import IconOne from "~icons/tabler/circle-1";
 
 import "./app.css";
 
@@ -22,4 +23,5 @@ app.use(Fachwerk);
 app.component("Layout", Layout);
 app.component("Editor", Editor);
 app.component("Button", Button);
+app.component("IconOne", IconOne);
 app.mount("#app");

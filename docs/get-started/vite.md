@@ -2,7 +2,7 @@
 
 There are multiple ways to get started with Vite and Fachwerk:
 
-### 🅐 Use Slackblitz
+### Use Slackblitz
 
 <Button href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Fachwerk+Vite">Open in Stackblitz</Button>
 
