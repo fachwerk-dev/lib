@@ -32,7 +32,7 @@ Since `<f-slider />` is a lightweight wrapper around `<input type="range" />` so
 The value of x2 is {{ f.x2 }}
 ```
 
-Note that step attribute can also be set to `step="any"` that makes slider to emit floating point value for those _smooooooth_ animations.
+Note that `step` attribute can also be set to `step="any"` that makes slider to emit floating point value for those _smooooooth_ animations.
 
 ```md
 <svg>
