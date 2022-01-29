@@ -1,17 +1,21 @@
 <script setup lang="ts">
 import IconMenu from "~icons/tabler/menu-2";
 import { state } from "../internal/state";
+import IconOpen from "~icons/tabler/layers-subtract";
+import IconGithub from "~icons/tabler/brand-github";
 </script>
 <template>
   <header
-    class="flex justify-between bg-sky-900 p-5 font-medium text-slate-200 hover:text-gray-100"
+    class="flex items-center justify-between bg-sky-900 p-5 font-medium text-slate-200 hover:text-gray-100"
   >
-    <ul class="flex gap-6">
+    <ul class="flex gap-3 md:gap-4">
       <li class="block md:hidden">
-        <IconMenu
+        <div
           @click="state.menuOpen = !state.menuOpen"
           class="cursor-pointer text-sky-200 hover:text-sky-300"
-        />
+        >
+          ▦
+        </div>
       </li>
       <li>
         <router-link
@@ -34,9 +38,10 @@ import { state } from "../internal/state";
         <a
           href="https://editor.fachwerk.dev"
           target="_blank"
-          class="text-sky-200 hover:text-sky-300"
+          class="flex items-center gap-2 text-sky-200 hover:text-sky-300"
         >
           Editor
+          <IconOpen class="text-slate-600" />
         </a>
       </li>
     </ul>
@@ -47,7 +52,7 @@ import { state } from "../internal/state";
           target="_blank"
           class="text-sky-200 hover:text-sky-300"
         >
-          Github
+          <IconGithub />
         </a>
       </li>
     </ul>

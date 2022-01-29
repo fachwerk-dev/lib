@@ -56,5 +56,15 @@ import Button from "./Button.vue";
         </p>
       </div>
     </div>
+    <p class="h-12" />
+    <p class="text-slate-500">
+      All code is licenced under
+      <a href="https://choosealicense.com/licenses/mit/">MIT licence. </a>
+      <br class="hidden md:inline" />
+      All content is licenced under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+        Creative Commons BY-NC-SA 4.0 International License.
+      </a>
+    </p>
   </article>
 </template>

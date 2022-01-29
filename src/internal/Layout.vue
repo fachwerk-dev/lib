@@ -13,7 +13,7 @@ const isFrontpage = frontmatter?.layout === "frontpage";
     <Header class="sticky top-0 z-50 md:relative" />
     <main v-if="isFrontpage" class="">
       <Hero />
-      <Content><slot /></Content>
+      <!-- <Content><slot /></Content> -->
     </main>
     <main
       v-else
