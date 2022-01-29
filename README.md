@@ -52,6 +52,10 @@ npm run preview
 npm run release
 ```
 
+## Credits
+
+Icons by [Tabler Icons](https://icones.js.org/collection/tabler)
+
 ## Licence
 
 MIT

@@ -40,23 +40,23 @@ const link = computed(
 </script>
 <template>
   <div
-    class="grid md:grid-cols-2 grid-cols-1 md:grid-rows-[auto_auto] grid-rows-[33vh_auto] shadow-md shadow-gray-100 rounded-md overflow-hidden mb-6"
+    class="-mx-5 mb-6 grid grid-cols-1 grid-rows-[33vh_auto] overflow-hidden rounded-none shadow-md shadow-gray-100 md:mx-0 md:grid-cols-2 md:grid-rows-[auto_auto] md:rounded-md"
   >
-    <div class="relative flex min-h-12">
+    <div class="min-h-12 relative flex">
       <textarea
         ref="editor"
         v-model="content"
-        class="outline-none w-full font-mono text-sm whitespace-pre bg-gray-800 text-gray-100 p-6 lg:p-8 leading-6"
+        class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
       />
       <a
-        class="absolute md:top-2 md:right-2 top-1 right-1 !text-gray-600 hover:!text-gray-400"
+        class="absolute top-1 right-1 !text-gray-600 hover:!text-gray-400 md:top-2 md:right-2"
         :href="link"
         target="_blank"
       >
         <IconOpen class="w-4 stroke-current" />
       </a>
     </div>
-    <div class="p-4 lg:p-6 overflow-x-auto">
+    <div class="overflow-x-auto p-4 lg:p-6">
       <Compiler :content="outputContent" />
     </div>
   </div>

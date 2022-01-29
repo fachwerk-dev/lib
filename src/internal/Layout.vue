@@ -1,19 +1,32 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import Header from "./Header.vue";
+import Hero from "./Hero.vue";
 import Nav from "./Nav.vue";
+import Content from "./Content.vue";
+
+const { frontmatter } = defineProps(["frontmatter"]);
+const isFrontpage = frontmatter?.layout === "frontpage";
 </script>
 
 <template>
-  <Header class="md:relative sticky top-0 z-50" />
-  <main
-    class="grid md:grid-cols-[250px_1fr] grid-cols-1 md:grid-rows-1 grid-rows-[100vh_2fr]"
-  >
-    <Nav class="bottom-0 p-4 md:p-8 shadow-xl overflow-auto sticky" />
-    <article
-      class="max-w-none p-5 md:p-12 prose prose-headings:text-gray-600 prose-strong:font-medium prose-a:text-sky-600 prose-a:underline prose-a:underline-offset-2 prose-a:break-words prose-pre:text-sm prose-pre:bg-sky-100 prose-pre:p-4 lg:prose-pre:p-6 prose-code:before:content-none prose-code:after:content-none prose-code:text-sky-700 prose-code:bg-sky-100 prose-code:font-normal prose-code:px-[0.2em] prose-code:py-[0.1em] prose-p:before:content-none prose-p:after:content-none prose-p:mt-0 prose-blockquote:border-l-4 prose-blockquote:border-yellow-400 prose-blockquote:not-italic prose-blockquote:font-normal prose-blockquote:pl-6 prose-p:w-auto lg:prose-p:w-[64ch] prose-lead:w-[64ch]"
+  <div>
+    <Header class="sticky top-0 z-50 md:relative" />
+    <main v-if="isFrontpage" class="">
+      <Nav
+        class="sticky bottom-0 block overflow-auto border-r-2 border-r-gray-100 p-4 md:hidden md:p-8"
+      />
+      <Hero />
+      <!-- <Content><slot /></Content> -->
+    </main>
+    <main
+      v-else
+      class="grid grid-cols-1 grid-rows-[100vh_2fr] md:grid-cols-[250px_1fr] md:grid-rows-1"
     >
-      <slot />
-    </article>
-  </main>
+      <Nav
+        v-if="!isFrontpage"
+        class="sticky bottom-0 overflow-auto border-r-2 border-r-gray-100 p-4 md:p-8"
+      />
+      <Content><slot /></Content>
+    </main>
+  </div>
 </template>

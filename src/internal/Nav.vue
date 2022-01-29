@@ -30,8 +30,8 @@ const onClick = () => {
             <router-link
               @click="onClick"
               :to="child.link"
-              class="block hover:text-sky-600"
-              active-class="text-sky-600 underline underline-offset-2"
+              class="block hover:text-sky-700"
+              active-class="text-sky-700 underline underline-offset-2"
             >
               {{ child.text }}
             </router-link>
