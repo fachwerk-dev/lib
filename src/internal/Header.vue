@@ -6,13 +6,13 @@ import IconGithub from "~icons/tabler/brand-github";
 </script>
 <template>
   <header
-    class="flex items-center justify-between bg-sky-900 p-5 font-medium text-slate-200 hover:text-gray-100"
+    class="flex items-center justify-between bg-slate-900 p-5 font-medium text-slate-200 hover:text-gray-100"
   >
     <ul class="flex gap-3 md:gap-4">
       <li class="block md:hidden">
         <div
           @click="state.menuOpen = !state.menuOpen"
-          class="cursor-pointer text-sky-200 hover:text-sky-300"
+          class="cursor-pointer text-slate-400 hover:text-slate-300"
         >
           ▦
         </div>
@@ -20,8 +20,8 @@ import IconGithub from "~icons/tabler/brand-github";
       <li>
         <router-link
           to="/"
-          class="text-sky-200 hover:text-sky-300"
-          active-class="text-sky-500"
+          class="text-slate-400 hover:text-slate-300"
+          active-class="text-slate-100"
         >
           Fachwerk
         </router-link>
@@ -29,8 +29,8 @@ import IconGithub from "~icons/tabler/brand-github";
       <li>
         <router-link
           to="/get-started/vite"
-          class="text-sky-200 hover:text-sky-300"
-          active-class="text-sky-500"
+          class="text-slate-400 hover:text-slate-300"
+          active-class="text-slate-100"
           >Docs</router-link
         >
       </li>
@@ -38,10 +38,10 @@ import IconGithub from "~icons/tabler/brand-github";
         <a
           href="https://editor.fachwerk.dev"
           target="_blank"
-          class="flex items-center gap-2 text-sky-200 hover:text-sky-300"
+          class="group flex items-center gap-2 text-slate-400 hover:text-slate-300"
         >
           Editor
-          <IconOpen class="text-slate-600" />
+          <IconOpen class="text-slate-600 group-hover:text-slate-500" />
         </a>
       </li>
     </ul>
@@ -50,7 +50,7 @@ import IconGithub from "~icons/tabler/brand-github";
         <a
           href="https://github.com/fachwerk-dev/fachwerk"
           target="_blank"
-          class="text-sky-200 hover:text-sky-300"
+          class="text-slate-400 hover:text-slate-300"
         >
           <IconGithub />
         </a>

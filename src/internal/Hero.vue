@@ -6,8 +6,9 @@ import Button from "./Button.vue";
     <h1 class="mb-4 text-5xl font-bold tracking-tighter md:mb-0 md:text-6xl">
       ▦ Fachwerk
     </h1>
-    <p class="text-xl md:text-2xl">
-      VueJS and Markdown framework for creating interactive learning materials
+    <p class="w-full text-xl md:w-3/4 md:text-2xl">
+      An upcoming Javascript framework for interactive notebooks and
+      presentations built on top of VueJS and ViteJS.
     </p>
     <p />
     <div class="grid gap-4 md:flex">
@@ -23,7 +24,7 @@ import Button from "./Button.vue";
 
     <p class="w-full md:w-3/4 md:text-lg">
       Alternatively, run the following in the command in the terminal to get
-      started with ViteJS, Vitepress or other starter templates.
+      started with starter templates:
     </p>
     <div
       class="inline-block rounded bg-black px-6 py-4 font-mono text-white md:place-self-start"
