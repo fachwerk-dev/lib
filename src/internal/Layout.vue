@@ -12,6 +12,9 @@ const isFrontpage = frontmatter?.layout === "frontpage";
   <div>
     <Header class="sticky top-0 z-50 md:relative" />
     <main v-if="isFrontpage" class="">
+      <Nav
+        class="sticky bottom-0 block overflow-auto border-r-2 border-r-gray-100 p-4 md:hidden md:p-8"
+      />
       <Hero />
       <!-- <Content><slot /></Content> -->
     </main>
