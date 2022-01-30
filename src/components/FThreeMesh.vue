@@ -18,7 +18,7 @@ type Props = {
 
 const {
   geometry = new BoxGeometry(10, 10, 10),
-  material = new MeshBasicMaterial({ color: "skyblue" }),
+  material = new MeshBasicMaterial({ color: "lightblue" }),
 } = defineProps<Props>();
 
 const mesh = new Mesh(geometry, material);

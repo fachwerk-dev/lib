@@ -20,7 +20,7 @@ const isFrontpage = frontmatter?.layout === "frontpage";
     </main>
     <main
       v-else
-      class="grid grid-cols-1 grid-rows-[100vh_2fr] md:grid-cols-[250px_1fr] md:grid-rows-1"
+      class="grid grid-cols-1 md:grid-cols-[250px_1fr] md:grid-rows-1"
     >
       <Nav
         v-if="!isFrontpage"

@@ -8,7 +8,7 @@ There are multiple ways to get started with Vite and Fachwerk:
 
 Open Vite + Fachwerk project in Stackblitz and start editing the project right in the browser.
 
-### 🅑 Use the command line
+### Use the command line
 
 Run the following command:
 
@@ -18,7 +18,7 @@ npm init fachwerk
 
 Next, pick a **Vite** template and follow the on-screen instructions.
 
-### 🅒 Add Fachwerk to existing Vite project
+### Add Fachwerk to existing Vite project
 
 Your can also use the standard [Vite installer](https://vitejs.dev/guide/#scaffolding-your-first-vite-project). Choose either `vue` or `vue-ts` project when setting up a project.
 

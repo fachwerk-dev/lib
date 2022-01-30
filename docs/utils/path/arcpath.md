@@ -20,7 +20,7 @@ function arcpath(startAngle: number, endAngle: number, radius: number): string;
     <path
       :d="arcpath(0, 270, 25, 50, 5)"
       fill="none"
-      stroke="skyblue"
+      stroke="lightblue"
       stroke-width="2"
     />
   </g>

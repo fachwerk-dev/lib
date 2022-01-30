@@ -14,7 +14,7 @@ Output a CSS color string with `h s l a` parameters:
 {{ hsl(10,20,30,0.1) }}
 ```
 
-You can also set only the hue `h` value, the rest will have the default values.
+You can also set only the hue `h` parameter:
 
 ```md
 {{ hsl(10) }}
