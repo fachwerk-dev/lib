@@ -20,7 +20,7 @@ function linepoints(
 ## Usage
 
 ```md
-{{ linepoints(4,0,0,100-1,100-1) }}
+{{ linepoints(4,0,0,100,100) }}
 ```
 
 ## Example
@@ -28,7 +28,7 @@ function linepoints(
 ```md
 <svg>
   <circle
-    v-for="point in linepoints(4,0,0,100-1,100-1)"
+    v-for="point in linepoints(4,0,0,100,100)"
     :cx="point.x"
     :cy="point.y"
     r="10"
