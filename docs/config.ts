@@ -33,6 +33,7 @@ export let sidebar: Link[] = [
   {
     text: "Point utilities",
     children: [
+      { text: "linepoints", link: "/utils/point/linepoints" },
       { text: "rectpoints", link: "/utils/point/rectpoints" },
       { text: "circlepoints", link: "/utils/point/circlepoints" },
     ],
