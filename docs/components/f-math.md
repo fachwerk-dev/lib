@@ -20,7 +20,7 @@ Lets assign <f-math>a</f-math> to a global variable `f.a` and use `<f-slider />`
 
 ## Syntax reference
 
-Here are some references and examples how to express math in LaTeX / KaTeX format:
+Here are some references and examples of how to express math in LaTeX / KaTeX format:
 
 https://katex.org/docs/supported.html
 

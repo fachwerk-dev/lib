@@ -15,12 +15,16 @@ function polygonpath(points: Point[], closed: boolean = false): string;
 
 ## Usage
 
-```md
-{{ polygonpath([{ x: 0, y: 0 }, { x: 100, y: 100 }]) }}
-```
+Open path:
 
 ```md
-{{ polygonpath([{ x: 0, y: 0 }, { x: 100, y: 100 }], closed = true) }}
+{{ polygonpath([{ x: 0, y: 0 }, { x: 100, y: 100 }, { x: 100, y: 100 }]) }}
+```
+
+Closed path:
+
+```md
+{{ polygonpath([{ x: 0, y: 0 }, { x: 100, y: 100 }, { x: 100, y: 100 }], closed = true) }}
 ```
 
 ## Example
@@ -33,7 +37,7 @@ function polygonpath(points: Point[], closed: boolean = false): string;
     { x: 200, y: 0 },
     { x: 300, y: 100 }
   ])"
-  stroke="skyblue"
+  stroke="lightblue"
   stroke-width="2"
   fill="none"
 />
