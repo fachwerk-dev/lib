@@ -22,7 +22,7 @@ function rectgridpoints(count: number, step: number): Point[];
 ```md
 <svg height="300">
   <circle
-    v-for="point in rectgridpoints(5,30)"
+    v-for="point in rectgridpoints(10,30)"
     :cx="point.x"
     :cy="point.y"
     r="10"

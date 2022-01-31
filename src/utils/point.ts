@@ -23,15 +23,16 @@ export function linepoints(count: number, step: number): Point[] {
   return range(count).map((x) => ({ x: x * step, y: 0 }));
 }
 
-export function circlepoints(count: number, r: number): Point[] | null {
-  if (count > 0) {
-    return range(0, count - 1).map((a) => pol2car(a * (360 / count), r));
-  }
-  return null;
+export function circlepoints(count: number, r: number): Point[] {
+  return range(count).map((a) => pol2car(a * (360 / count), r));
 }
 
 export function rectgridpoints(count: number, step: number): Point[] {
-  return range(0, count - 1).flatMap((y) =>
+  return range(count).flatMap((y) =>
     linepoints(count, step).map(({ x }) => ({ x, y: y * step }))
   );
+}
+
+export function circlegridpoints(count: number, step: number): Point[] {
+  return range(count).flatMap((r) => circlepoints(count, r * step));
 }
