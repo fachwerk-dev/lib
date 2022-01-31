@@ -19,17 +19,8 @@ export function rectpoints(
   ];
 }
 
-export function linepoints(
-  count: number,
-  x1: number,
-  y1: number,
-  x2: number,
-  y2: number
-): Point[] {
-  return range(0, count - 1).map((i) => ({
-    x: remap(i, 0, count - 1, x1, x2),
-    y: remap(i, 0, count - 1, y1, y2),
-  }));
+export function linepoints(count: number, step: number): Point[] {
+  return range(count).map((x) => ({ x: x * step, y: 0 }));
 }
 
 export function circlepoints(count: number, r: number): Point[] | null {
@@ -37,4 +28,10 @@ export function circlepoints(count: number, r: number): Point[] | null {
     return range(0, count - 1).map((a) => pol2car(a * (360 / count), r));
   }
   return null;
+}
+
+export function rectgridpoints(count: number, step: number): Point[] {
+  return range(0, count - 1).flatMap((y) =>
+    linepoints(count, step).map(({ x }) => ({ x, y: y * step }))
+  );
 }

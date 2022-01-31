@@ -1,6 +1,6 @@
 # rectpoints
 
-`rectpoints()` is a function that outputs an array of `Point`s, based on `x y width height` arguments.
+`rectpoints()` is a function that outputs an array of `Point`'s, based on `x y width height` arguments.
 
 ```ts
 type Point = {

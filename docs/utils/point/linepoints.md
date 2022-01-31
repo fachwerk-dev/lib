@@ -1,6 +1,6 @@
 # linepoints
 
-`linepoints()` outputs an array of `Point`s along the line.
+`linepoints()` outputs an array of `Point`'s along the line.
 
 ```ts
 type Point = {
@@ -8,19 +8,13 @@ type Point = {
   y: number;
 };
 
-function linepoints(
-  count: number,
-  x1: number,
-  y1: number,
-  x2: number,
-  y2: number
-): Point[];
+function linepoints(count: number, step: number): Point[];
 ```
 
 ## Usage
 
 ```md
-{{ linepoints(4,0,0,100,100) }}
+{{ linepoints(10,30) }}
 ```
 
 ## Example
@@ -28,7 +22,7 @@ function linepoints(
 ```md
 <svg>
   <circle
-    v-for="point in linepoints(4,0,0,100,100)"
+    v-for="point in linepoints(10,30)"
     :cx="point.x"
     :cy="point.y"
     r="10"

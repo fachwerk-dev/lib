@@ -1,6 +1,6 @@
 # circlepoints
 
-`circlepoints()` is a function that outputs an array of `Point`s in a circle.
+`circlepoints()` is a function that outputs an array of `Point`'s in a circle.
 
 ```ts
 type Point = {
