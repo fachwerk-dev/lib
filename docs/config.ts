@@ -47,7 +47,10 @@ export let sidebar: Link[] = [
   },
   {
     text: "Math utilities",
-    children: [{ text: "remap", link: "/utils/math/remap" }],
+    children: [
+      { text: "remap", link: "/utils/math/remap" },
+      { text: "random", link: "/utils/math/random" },
+    ],
   },
   {
     text: "Trig utilities",

@@ -7,3 +7,11 @@ export function remap(
 ): number {
   return ((value - start1) / (stop1 - start1)) * (stop2 - start2) + start2;
 }
+
+export function random(min: number = 0, max: number = 1): number {
+  return min + Math.random() * (max - min);
+}
+
+export function randomint(min: number, max: number): number {
+  return Math.floor(random(min, max));
+}
