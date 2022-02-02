@@ -23,13 +23,17 @@ function useDownloadSvg(svgRef: Ref<SVGElement | null>, filename: string) {
   return download;
 }
 
-function useDownloadPng(svgRef: Ref<SVGElement | null>, filename: string) {
+function useDownloadPng(
+  svgRef: Ref<SVGElement | null>,
+  filename: string,
+  width: number,
+  height: number
+) {
   const download = () => {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
-    // TODO: get sizes from svgRef
-    canvas.width = 300;
-    canvas.height = 300;
+    canvas.width = width;
+    canvas.height = height;
     const image = new Image();
     image.src = "data:image/svg+xml;base64," + btoa(svgRef.value!.outerHTML);
     ctx?.drawImage(image, 0, 0);
@@ -79,8 +83,8 @@ const svgData = computed(() => {
   return { viewBox, style };
 });
 
-const downloadSvg = useDownloadSvg(svgRef, id || "fachwerk");
-const downloadPng = useDownloadPng(svgRef, id || "fachwerk");
+const downloadSvg = useDownloadSvg(svgRef, id || "fachwerk", width, height);
+const downloadPng = useDownloadPng(svgRef, id || "fachwerk", width, height);
 
 on("downloadsvg", (svgId: string) => {
   if (id && id === svgId) {
