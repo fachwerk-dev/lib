@@ -2,13 +2,25 @@
 
 `<f-svg>` is a thin wrapper component around the `<svg>` element, providing quality-of-life enhancements: mobile support, content padding, content centering, and download capability.
 
-### Features
+## Props
 
-#### Padding
+```
+defineProps<{
+  width?: number | string;
+  height?: number | string;
+  padding?: number | string;
+  centered?: boolean;
+  id?: string;
+}>()
+```
+
+## Features
+
+### Padding
 
 SVG default coordinate system starts at the top-left corner at the `0 0` position. This might lead to visual artifacts when elements get close to the edge of the SVG document.
 
-`<f-svg>` provides a `padding` attribute to avoid visual artifacts near the edges. Here is `<f-svg>` with `padding` of {{ f.padding }}:
+`<f-svg>` provides a `padding` prop to avoid visual artifacts near the edges. Here is `<f-svg>` with `padding` of {{ f.padding }}:
 
 ```md
 Padding: {{ f.padding }}
@@ -26,11 +38,11 @@ Padding: {{ f.padding }}
 </f-svg>
 ```
 
-#### Centered
+### Centered
 
 In many _circumstances_ it is handy to set the SVG coordinate system to the center of the SVG, especially when working with radial symmetry.
 
-While it is possible to group and transform all contents of SVG or alter `viewBox` attribute values, its easier to use `centered` attribute on `<f-svg>`:
+While it is possible to group and transform all contents of SVG or alter `viewBox` attribute values, its easier to use `centered` prop on `<f-svg>`:
 
 ```md
 <f-svg centered width="300" height="300">
@@ -45,14 +57,14 @@ While it is possible to group and transform all contents of SVG or alter `viewBo
 </f-svg>
 ```
 
-#### Download
+### Download
 
-`<f-svg>` can react to the `"download"` global event that allows downloading the SVG contents as a file.
+`<f-svg>` can react to the `"downloadsvg"` global event that allows downloading the SVG contents as a file.
 
 As there might be many SVGs on a page, you need to identify the SVG with the `id` attribute and pass it to the emitted event. The `id` parameter is also the filename of the downloaded SVG file.
 
 ```md
-<f-svg id="test" width="200" height="200"  centered>
+<f-svg id="test" width="300" height="300"  centered>
    <circle
     v-for="p in circlepoints(8,50)"
     :cx="p.x"
@@ -66,11 +78,11 @@ As there might be many SVGs on a page, you need to identify the SVG with the `id
 <button v-on:click="emit(`downloadsvg`,`test`)">Download test.svg</button>
 ```
 
-#### Mobile support
+### Mobile support
 
 When viewing the SVG on mobile devices `<f-svg>` adjusts its contents to the page width.
 
-### Prior art
+## Prior art
 
 [Fachwerk f-scene](https://designstem.github.io/fachwerk/docs/#/f-scene)
 
