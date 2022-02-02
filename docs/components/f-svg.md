@@ -59,7 +59,7 @@ While it is possible to group and transform all contents of SVG or alter `viewBo
 
 ### Download
 
-`<f-svg>` can react to the `downloadsvg` and `downloadpng` global events that allows downloading the contents of as SVG or PNG file.
+`<f-svg>` listens the `downloadsvg` and `downloadpng` global events that allows downloading the contents of as SVG or PNG file.
 
 As there might be many several `<f-svg>`s on a page, you need to identify the SVG with the `id` attribute and pass it to the emitted event. The `id` parameter is also the filename of the downloaded SVG file.
 
