@@ -2,43 +2,43 @@
 
 `<f-svg>` is a thin wrapper component around the `<svg>` element, providing quality-of-life enhancements: mobile support, content padding, content centering, and download capability.
 
-#### Mobile support
-
-When viewing the SVG on mobile devices `<f-svg>` adjusts its contents to the page width.
+### Features
 
 #### Padding
 
-SVG default coordinate system starts at the top-left corner at the `0 0` position. While geometrically correct, it might lead to visual artifacts when SVG elements get close to the edge of the SVG elements: borders, grids, etc.
+SVG default coordinate system starts at the top-left corner at the `0 0` position. This might lead to visual artifacts when elements get close to the edge of the SVG document.
 
-Note the uneven widths of rectangle borders and sizes of grid dots:
-
-```md
-<svg width="300" height="300">
-  <circle v-for="p in rectgridpoints(10 + 1,30)" :cx="p.x" :cy="p.y" r="10" fill="lightblue" />
-</svg>
-```
-
-`<f-svg>` provides a `padding` attribute to avoid visual artifacts near the edges.
-
-Here is `<f-svg>` with `padding` of `10`:
+`<f-svg>` provides a `padding` attribute to avoid visual artifacts near the edges. Here is `<f-svg>` with `padding` of {{ f.padding }}:
 
 ```md
-<f-svg padding="10" width="300" height="300" >
-  <circle v-for="p in rectgridpoints(10 + 1,30)" :cx="p.x" :cy="p.y" r="10" fill="lightblue" />
+Padding: {{ f.padding }}
+
+<f-slider v-model="f.padding" max="10" />
+
+<f-svg :padding="f.padding" width="300" height="300">
+  <circle
+    v-for="p in rectgridpoints(11,30)"
+    :cx="p.x"
+    :cy="p.y"
+    r="10"
+    fill="lightblue"
+  />
 </f-svg>
 ```
 
 #### Centered
 
-In many circumstances it is handy to set the SVG coordinate system to the center of the SVG, especially when working on radial symmetry. While it is possible to adjust `viewBox` attribute values manually, its easier to use `centered` attribute on `<f-svg>`:
+In many _circumstances_ it is handy to set the SVG coordinate system to the center of the SVG, especially when working with radial symmetry.
+
+While it is possible to group and transform all contents of SVG or alter `viewBox` attribute values, its easier to use `centered` attribute on `<f-svg>`:
 
 ```md
 <f-svg centered width="300" height="300">
   <circle
-    v-for="p in circlepoints(8,50)"
+    v-for="p in circlepoints(16,100)"
     :cx="p.x"
     :cy="p.y"
-    r="50"
+    r="10"
     fill="lightblue"
     style="mix-blend-mode: multiply"
   />
@@ -63,12 +63,14 @@ As there might be many SVGs on a page, you need to identify the SVG with the `id
   />
 </f-svg>
 
-`{{ f.a }}`
-
-<button v-on:click="emit(`download`,`test`)">Download test.svg</button>
+<button v-on:click="emit(`downloadsvg`,`test`)">Download test.svg</button>
 ```
 
-#### Prior art
+#### Mobile support
+
+When viewing the SVG on mobile devices `<f-svg>` adjusts its contents to the page width.
+
+### Prior art
 
 [Fachwerk f-scene](https://designstem.github.io/fachwerk/docs/#/f-scene)
 

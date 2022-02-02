@@ -2,6 +2,7 @@
 import { computed, ref } from "vue";
 import { on } from "../lib.esm";
 
+// TODO: Move to utilities
 function useSvgDownload(svgRef: any, filename: string = "fachwerk") {
   const download = () => {
     if (svgRef.value) {
@@ -53,7 +54,7 @@ const svgData = computed(() => {
 if (id) {
   const download = useSvgDownload(svgRef, id);
 
-  on("download", (svgId: string) => {
+  on("downloadsvg", (svgId: string) => {
     if (id && id === svgId) {
       download();
     }
