@@ -4,14 +4,14 @@
 
 ## Props
 
-```
+```ts
 defineProps<{
   width?: number | string;
   height?: number | string;
   padding?: number | string;
   centered?: boolean;
   id?: string;
-}>()
+}>();
 ```
 
 ## Features
@@ -84,8 +84,8 @@ When viewing the SVG on mobile devices `<f-svg>` adjusts its contents to the pag
 
 ## Prior art
 
-[Fachwerk f-scene](https://designstem.github.io/fachwerk/docs/#/f-scene)
+https://designstem.github.io/fachwerk/docs/#/f-scene
 
-[Fachwerk f-artboard](https://designstem.github.io/fachwerk/docs/#/f-artboard)
+https://designstem.github.io/fachwerk/docs/#/f-artboard
 
-[Visualia v-scene](https://visualia.github.io/visualia_original/#graphics_scene)
+https://visualia.github.io/visualia_original/#graphics_scene
