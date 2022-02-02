@@ -1,6 +1,6 @@
 # f-svg
 
-`<f-svg>` is a thin wrapper component around the `<svg>` element, providing quality-of-life enhancements: mobile support, content padding, content centering, and download capability.
+`<f-svg>` is a thin wrapper component around the `<svg>` element, providing quality-of-life enhancements: content padding, content centering, download capability and mobile support.
 
 ## Props
 
@@ -20,7 +20,7 @@ defineProps<{
 
 SVG default coordinate system starts at the top-left corner at the `0 0` position. This might lead to visual artifacts when elements get close to the edge of the SVG document.
 
-`<f-svg>` provides a `padding` prop to avoid visual artifacts near the edges. Here is `<f-svg>` with `padding` of {{ f.padding }}:
+`<f-svg>` provides a `padding` prop to avoid visual artifacts near the edges:
 
 ```md
 Padding: {{ f.padding }}
@@ -40,7 +40,7 @@ Padding: {{ f.padding }}
 
 ### Centered
 
-In many _circumstances_ it is handy to set the SVG coordinate system to the center of the SVG, especially when working with radial symmetry.
+In many *circum*stances it is handy to set the SVG coordinate system to the center of the SVG, especially when working with radial symmetry.
 
 While it is possible to group and transform all contents of SVG or alter `viewBox` attribute values, its easier to use `centered` prop on `<f-svg>`:
 
@@ -59,9 +59,9 @@ While it is possible to group and transform all contents of SVG or alter `viewBo
 
 ### Download
 
-`<f-svg>` can react to the `"downloadsvg"` global event that allows downloading the SVG contents as a file.
+`<f-svg>` can react to the `downloadsvg` and `downloadpng` global events that allows downloading the contents of as SVG or PNG file.
 
-As there might be many SVGs on a page, you need to identify the SVG with the `id` attribute and pass it to the emitted event. The `id` parameter is also the filename of the downloaded SVG file.
+As there might be many several `<f-svg>`s on a page, you need to identify the SVG with the `id` attribute and pass it to the emitted event. The `id` parameter is also the filename of the downloaded SVG file.
 
 ```md
 <f-svg id="test" width="300" height="300"  centered>
@@ -75,12 +75,14 @@ As there might be many SVGs on a page, you need to identify the SVG with the `id
   />
 </f-svg>
 
-<button v-on:click="emit(`downloadsvg`,`test`)">Download test.svg</button> <button v-on:click="emit(`downloadpng`,`test`)">Download test.png</button>
+<button v-on:click="emit(`downloadsvg`,`test`)">Download test.svg</button>
+
+<button v-on:click="emit(`downloadpng`,`test`)">Download test.png</button>
 ```
 
 ### Mobile support
 
-When viewing the SVG on mobile devices `<f-svg>` adjusts its contents to the page width.
+When viewing the SVG on mobile devices, `<f-svg>` adjusts its contents to the page width.
 
 ## Prior art
 
