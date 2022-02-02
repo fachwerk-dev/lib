@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, Ref, ref } from "vue";
 import { on } from "../lib.esm";
 
 // TODO: Move to utilities
-function useSvgDownload(svgRef: any, filename: string = "fachwerk") {
+
+function useSvgDownload(svgRef: Ref<SVGElement | null>, filename: string) {
   const download = () => {
     if (svgRef.value) {
       const svgBlob = new Blob([svgRef.value!.outerHTML], {
@@ -18,6 +19,32 @@ function useSvgDownload(svgRef: any, filename: string = "fachwerk") {
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
     }
+  };
+  return download;
+}
+
+function usePngDownload(svgRef: Ref<SVGElement | null>, filename: string) {
+  const download = () => {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 300;
+    canvas.height = 300;
+    const image = new Image();
+    image.src = "data:image/svg+xml;base64," + btoa(svgRef.value!.outerHTML);
+    ctx?.drawImage(image, 0, 0);
+
+    canvas.toBlob((svgBlob) => {
+      if (svgBlob) {
+        const url = URL.createObjectURL(svgBlob);
+        const link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.setAttribute("download", `${filename}.png`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      }
+    });
   };
   return download;
 }
@@ -52,7 +79,7 @@ const svgData = computed(() => {
 });
 
 if (id) {
-  const download = useSvgDownload(svgRef, id);
+  const download = usePngDownload(svgRef, id);
 
   on("downloadsvg", (svgId: string) => {
     if (id && id === svgId) {
