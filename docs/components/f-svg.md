@@ -77,7 +77,7 @@ As there might be many SVGs on a page, you need to identify the SVG with the `id
   />
 </f-svg>
 
-<button v-on:click="emit(`downloadsvg`,`test`)">Download test.svg</button>
+<button v-on:click="emit(`downloadsvg`,`test`)">Download test.svg</button> <button v-on:click="emit(`downloadpng`,`test`)">Download test.png</button>
 ```
 
 ### Mobile support

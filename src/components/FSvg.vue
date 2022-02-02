@@ -4,7 +4,7 @@ import { on } from "../lib.esm";
 
 // TODO: Move to utilities
 
-function useSvgDownload(svgRef: Ref<SVGElement | null>, filename: string) {
+function useDownloadSvg(svgRef: Ref<SVGElement | null>, filename: string) {
   const download = () => {
     if (svgRef.value) {
       const svgBlob = new Blob([svgRef.value!.outerHTML], {
@@ -23,10 +23,11 @@ function useSvgDownload(svgRef: Ref<SVGElement | null>, filename: string) {
   return download;
 }
 
-function usePngDownload(svgRef: Ref<SVGElement | null>, filename: string) {
+function useDownloadPng(svgRef: Ref<SVGElement | null>, filename: string) {
   const download = () => {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
+    // TODO: get sizes from svgRef
     canvas.width = 300;
     canvas.height = 300;
     const image = new Image();
@@ -78,15 +79,20 @@ const svgData = computed(() => {
   return { viewBox, style };
 });
 
-if (id) {
-  const download = usePngDownload(svgRef, id);
+const downloadSvg = useDownloadSvg(svgRef, id || "fachwerk");
+const downloadPng = useDownloadPng(svgRef, id || "fachwerk");
 
-  on("downloadsvg", (svgId: string) => {
-    if (id && id === svgId) {
-      download();
-    }
-  });
-}
+on("downloadsvg", (svgId: string) => {
+  if (id && id === svgId) {
+    downloadSvg();
+  }
+});
+
+on("downloadpng", (pngId: string) => {
+  if (id && id === pngId) {
+    downloadPng();
+  }
+});
 </script>
 
 <template>
