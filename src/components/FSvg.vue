@@ -1,16 +1,38 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import { on } from "../lib.esm";
+
+function useSvgDownload(svgRef: any, filename: string = "fachwerk") {
+  const download = () => {
+    if (svgRef.value) {
+      const svgBlob = new Blob([svgRef.value!.outerHTML], {
+        type: "image/svg+xml",
+      });
+      const url = URL.createObjectURL(svgBlob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      link.setAttribute("download", `${filename}.svg`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+  };
+  return download;
+}
 
 const {
   width = 300,
   height = 300,
   padding = 0,
   centered = false,
+  id = null,
 } = defineProps<{
   width?: number | string;
   height?: number | string;
   padding?: number | string;
   centered?: boolean;
+  id?: string;
 }>();
 
 const svgRef = ref(null);
@@ -27,17 +49,25 @@ const svgData = computed(() => {
   };
   return { viewBox, style };
 });
+
+if (id) {
+  const download = useSvgDownload(svgRef, id);
+
+  on("download", (svgId: string) => {
+    if (id && id === svgId) {
+      download();
+    }
+  });
+}
 </script>
 
 <template>
-  <p>
-    <svg
-      ref="svgRef"
-      xmlns="http://www.w3.org/2000/svg"
-      :view-box.camel="svgData.viewBox"
-      :style="svgData.style"
-    >
-      <slot />
-    </svg>
-  </p>
+  <svg
+    ref="svgRef"
+    xmlns="http://www.w3.org/2000/svg"
+    :view-box.camel="svgData.viewBox"
+    :style="svgData.style"
+  >
+    <slot />
+  </svg>
 </template>
