@@ -1,6 +1,6 @@
 {
   "name": "fachwerk",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
