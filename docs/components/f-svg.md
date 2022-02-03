@@ -1,6 +1,6 @@
 # f-svg
 
-`<f-svg>` is a thin wrapper component around the `<svg>` element, providing quality-of-life enhancements: content padding, content centering, download capability and mobile support.
+`<f-svg>` is a thin wrapper component around the `<svg>` element, providing several quality-of-life enhancements when working with SVG: content padding, content centering, downloading, and mobile support.
 
 ## Props
 
@@ -40,7 +40,7 @@ Padding: {{ f.padding }}
 
 ### Centered
 
-In many *circum*stances it is handy to set the SVG coordinate system to the center of the SVG, especially when working with radial symmetry.
+In many *circum*stances, it is handy to set the SVG coordinate system to the center of the SVG, especially when working with radial symmetry.
 
 While it is possible to group and transform all contents of SVG or alter `viewBox` attribute values, its easier to use `centered` prop on `<f-svg>`:
 
@@ -59,7 +59,7 @@ While it is possible to group and transform all contents of SVG or alter `viewBo
 
 ### Download
 
-`<f-svg>` listens the `downloadsvg` and `downloadpng` global events that allows downloading the contents of as SVG or PNG file.
+`<f-svg>` listens to the `downloadsvg` and `downloadpng` global events that allow downloading the contents of as SVG or PNG file.
 
 As there might be many several `<f-svg>`s on a page, you need to identify the SVG with the `id` attribute and pass it to the emitted event. The `id` parameter is also the filename of the downloaded SVG file.
 
