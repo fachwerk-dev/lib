@@ -23,32 +23,6 @@ function useSvgDownload(svgRef: Ref<SVGElement | null>, filename: string) {
   return download;
 }
 
-function usePngDownload(svgRef: Ref<SVGElement | null>, filename: string) {
-  const download = () => {
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    canvas.width = 300;
-    canvas.height = 300;
-    const image = new Image();
-    image.src = "data:image/svg+xml;base64," + btoa(svgRef.value!.outerHTML);
-    ctx?.drawImage(image, 0, 0);
-
-    canvas.toBlob((svgBlob) => {
-      if (svgBlob) {
-        const url = URL.createObjectURL(svgBlob);
-        const link = document.createElement("a");
-        link.setAttribute("href", url);
-        link.setAttribute("download", `${filename}.png`);
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-      }
-    });
-  };
-  return download;
-}
-
 const {
   width = 300,
   height = 300,
@@ -78,13 +52,15 @@ const svgData = computed(() => {
   return { viewBox, style };
 });
 
-const download = usePngDownload(svgRef, id || "fachwerk");
+if (id) {
+  const download = useSvgDownload(svgRef, id);
 
-on("downloadsvg", (svgId: string) => {
-  if (id && id === svgId) {
-    download();
-  }
-});
+  on("downloadsvg", (svgId: string) => {
+    if (id && id === svgId) {
+      download();
+    }
+  });
+}
 </script>
 
 <template>
