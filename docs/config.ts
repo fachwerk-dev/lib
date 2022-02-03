@@ -20,14 +20,7 @@ export let sidebar: Link[] = [
     children: [
       { text: "f-slider", link: "/components/f-slider" },
       { text: "f-math", link: "/components/f-math" },
-    ],
-  },
-  {
-    text: "Experimental",
-    children: [
-      { text: "f-pdf", link: "/components/f-pdf" },
-      { text: "f-three", link: "/components/f-three" },
-      { text: "f-canvas", link: "/components/f-canvas" },
+      { text: "f-svg", link: "/components/f-svg" },
     ],
   },
   {
@@ -72,5 +65,13 @@ export let sidebar: Link[] = [
   {
     text: "Color utilities",
     children: [{ text: "hsl", link: "/utils/color/hsl" }],
+  },
+  {
+    text: "Experimental",
+    children: [
+      { text: "f-pdf", link: "/components/f-pdf" },
+      { text: "f-three", link: "/components/f-three" },
+      { text: "f-canvas", link: "/components/f-canvas" },
+    ],
   },
 ];

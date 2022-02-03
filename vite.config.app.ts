@@ -13,14 +13,14 @@ function editorPlugin(md) {
   md.renderer.rules.fence = function () {
     const [tokens, idx, _options, _env, _slf] = arguments;
     const info = tokens[idx].info.trim();
+    const content = tokens[idx].content;
     if (info === "md") {
       return `
-        <Editor content='${tokens[idx].content}' />
+        <Editor content='${content}' />
       `;
     }
     return defaultFence(...arguments);
   };
-
   return md;
 }
 
