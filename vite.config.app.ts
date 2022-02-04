@@ -8,9 +8,7 @@ import ViteMarkdown from "vite-plugin-md";
 import ViteFonts from "vite-plugin-fonts";
 import ViteIcons from "unplugin-icons/vite";
 
-function utoa(data: string): string {
-  return btoa(unescape(encodeURIComponent(data)));
-}
+import { utoa } from "./src/internal/encoding";
 
 function editorPlugin(md) {
   const defaultFence = md.renderer.rules.fence;

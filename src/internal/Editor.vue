@@ -1,17 +1,11 @@
 <script setup lang="ts">
 //@ts-nocheck
 import { ref, computed, onMounted } from "vue";
-import Compiler from "./Compiler.vue";
 import MarkdownIt from "markdown-it";
 import IconOpen from "~icons/tabler/layers-subtract";
 
-function utoa(data: string): string {
-  return btoa(unescape(encodeURIComponent(data)));
-}
-
-function atou(base64: string): string {
-  return decodeURIComponent(escape(atob(base64)));
-}
+import Compiler from "./Compiler.vue";
+import { atou, utoa } from "../internal/encoding";
 
 const { content: inputContent } = defineProps(["content"]);
 const content = ref(atou(inputContent));
