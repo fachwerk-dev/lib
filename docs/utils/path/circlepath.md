@@ -11,29 +11,29 @@ function circlepath(r: number, xOrPoint: number | Point, y?: number);
 Circle path with the radius of `50` and center in `0,0`:
 
 ```md
-{{ circlepath(50) }}
+{{ circlepath(100) }}
 ```
 
 Circle path with the radius of `50` and center in `150,150`:
 
 ```md
-{{ circlepath(50,150,150) }}
+{{ circlepath(100,150,150) }}
 ```
 
 Circle path with the radius of `50` and center in `150,150`, defined as a `Point`:
 
 ```md
-{{ circlepath(50,{x: 150, y: 150}) }}
+{{ circlepath(100,{x: 150, y: 150}) }}
 ```
 
 ## Example
 
-Let's draw a circle with a radius of `50`:
+Let's draw a circle with a radius of `100`:
 
 ```md
 <f-svg centered>
   <path
-    :d="circlepath(50)"
+    :d="circlepath(100)"
     fill="none"
     stroke="lightblue"
     stroke-width="2"
