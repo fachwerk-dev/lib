@@ -46,7 +46,10 @@ Now let's combine the `circlepoints()` and `circlepath()` functions:
 ```md
 <f-svg centered>
   <path
-    :d="circlepoints(16,50).map(point => circlepath(50,point)).join(` `)"
+    :d="circlepoints(16,50)
+      .map(point => circlepath(50,point))
+      .join(' ')
+    "
     fill="none"
     stroke="lightblue"
     stroke-width="2"
