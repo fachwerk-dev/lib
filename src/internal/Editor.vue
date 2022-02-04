@@ -1,13 +1,15 @@
 <script setup lang="ts">
 //@ts-nocheck
 import { ref, computed, onMounted } from "vue";
-import Compiler from "./Compiler.vue";
 import MarkdownIt from "markdown-it";
 import IconOpen from "~icons/tabler/layers-subtract";
 
-const { content: inputContent } = defineProps(["content"]);
+import Compiler from "./Compiler.vue";
+import { atou, utoa } from "../internal/encoding";
 
-const content = ref(inputContent);
+const { content: inputContent } = defineProps(["content"]);
+const content = ref(atou(inputContent));
+
 const md = new MarkdownIt({ linkify: true, html: true, breaks: true });
 const outputContent = computed(() => md.render(content.value));
 const editor = ref<HTMLTextAreaElement | null>(null);
@@ -27,13 +29,6 @@ onMounted(() => {
   }
 });
 
-function utoa(data: string): string {
-  return btoa(unescape(encodeURIComponent(data)));
-}
-
-function atou(base64: string): string {
-  return decodeURIComponent(escape(atob(base64)));
-}
 const link = computed(
   () => `https://editor.fachwerk.dev/#${utoa(content.value)}`
 );

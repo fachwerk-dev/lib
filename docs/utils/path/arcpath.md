@@ -15,14 +15,12 @@ function arcpath(startAngle: number, endAngle: number, radius: number): string;
 ### Example
 
 ```md
-<svg>
- <g transform="translate(150,75)">
-    <path
-      :d="arcpath(0, 270, 25, 50, 5)"
-      fill="none"
-      stroke="lightblue"
-      stroke-width="2"
-    />
-  </g>
+<f-svg centered>
+  <path
+    :d="arcpath(0, 270, 25, 50, 5)"
+    fill="none"
+    stroke="lightblue"
+    stroke-width="2"
+  />
 </svg>
 ```
