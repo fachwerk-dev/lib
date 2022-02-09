@@ -1,9 +1,15 @@
-# hsl
+# hsl / hsla
 
 `hsl()` function ouputs a CSS color string in [hsl() notation](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl()>).
 
 ```js
-export function hsl(h = 0, s = 100, l = 50, a = 1)
+function hsl(h = 0, s = 100, l = 50, a = 1)
+```
+
+`hsla()` is an alias to `hsl()`.
+
+```js
+function hsla(h = 0, s = 100, l = 50, a = 1)
 ```
 
 ## Usage
@@ -20,13 +26,13 @@ You can also set only the hue `h` parameter:
 {{ hsl(10) }}
 ```
 
-> **Not in a spec** > `hsl(hue)` is not part of the official CSS colors specification. It is a convenience feature by Fachwerk.
+> #### Not in a spec
+>
+> `hsl(hue)` is not part of the official CSS colors specification. It is a convenience feature by Fachwerk.
 
 ## Examples
 
-The primary use case for the function is to calculate and format dynamic CSS color values.
-
-#### Usage in template, hue value
+### Hue
 
 ```md
 Hover or tap over the colors to see how `h` value changes
@@ -55,7 +61,7 @@ Hover or tap over the colors to see how `h` value changes
 {{ hsl(f.h,100,50) }}
 ```
 
-#### Usage in template, saturation value
+### Saturation
 
 ```md
 Hover or tap over the colors to see how `s` value changes
@@ -84,7 +90,7 @@ Hover or tap over the colors to see how `s` value changes
 {{ hsl(0,f.s,50) }}
 ```
 
-#### Usage in template, lightness value
+### Lightness
 
 ```md
 Hover or tap over the colors to see how `l` value changes
@@ -113,7 +119,7 @@ Hover or tap over the colors to see how `l` value changes
 {{ hsl(0,100,f.l) }}
 ```
 
-#### Usage in template, alpha value
+### Alpha
 
 ```md
 Hover or tap over the colors to see how `a` value changes
@@ -141,10 +147,6 @@ Hover or tap over the colors to see how `a` value changes
 
 {{ hsl(0,100,50,f.a) }}
 ```
-
-# hsla
-
-`hsla()` is an alias to `hsl()`.
 
 ## Prior art
 
