@@ -1,6 +1,6 @@
 # TODO
 
-## Points functions
+## Points
 
 ### hexgridpoints
 
@@ -8,7 +8,7 @@ https://designstem.github.io/fachwerk/docs/#/f-hex-pattern
 
 https://visualia.netlify.app/utils/hexgrid.html
 
-## Paths functions
+## Paths
 
 ### regularpolygonpath
 
@@ -28,33 +28,13 @@ https://visualia.github.io/visualia_original/#graphics_hexagon
 
 https://visualia.netlify.app/utils/hexagonpath.html
 
-### rectgridpath
-
-https://designstem.github.io/fachwerk/docs/#/f-grid
-
-https://designstem.github.io/fachwerk/docs/#/f-axis
-
 ### circlegridpath
 
 https://designstem.github.io/fachwerk/docs/#/f-polargrid
 
-## Transform funcitons
-
-https://visualia.netlify.app/utils/transforms.html#translate
-
-https://designstem.github.io/fachwerk/docs/#/f-rotation
-
-https://visualia.netlify.app/utils/transforms.html#rotate
-
-https://visualia.netlify.app/utils/transforms.html#scale
-
-https://visualia.netlify.app/utils/transforms.html#skewx
-
-https://visualia.netlify.app/utils/transforms.html#skewy
+## Transforms
 
 https://visualia.netlify.app/utils/transforms.html#combining-transforms
-
-https://visualia.netlify.app/utils/matrix.html
 
 ## String functions
 

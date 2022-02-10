@@ -54,7 +54,7 @@ In CSS, scale origin is at the centre of the object by default.
 To scale from `0,0` coordinates, you will need to the following property to the element:
 
 ```
-<rect
+<div
   style="transform-origin: 0 0"
   ...
 />

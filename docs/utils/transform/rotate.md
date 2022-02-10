@@ -1,6 +1,6 @@
 # rotate
 
-`rotate()` returns a [CSS rotate](<https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate()>) / [SVG rotate](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#rotate) transform function as a string.
+`rotate()` returns a [SVG rotate](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#rotate) / [CSS rotate](<https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate()>) / transform function as a string.
 
 ```ts
 function rotate(angle: number = 0, unit?: "deg" | "rad" | "turn"): string;
@@ -12,10 +12,6 @@ function rotate(angle: number = 0, unit?: "deg" | "rad" | "turn"): string;
 {{ rotate(10) }}
 
 {{ rotate(10,'deg') }}
-
-{{ rotate(10,'rad') }}
-
-{{ rotate(10,'turn') }}
 ```
 
 ## Examples
@@ -63,7 +59,7 @@ In CSS, rotation origin is at the object's center by default.
 To rotate around the `0,0` coordinates, add the following property to the element:
 
 ```
-<rect
+<div
   style="transform-origin: 0 0"
   ...
 />

@@ -1,6 +1,6 @@
 # translate
 
-`translate()` returns a [CSS translate](<https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate()>) / [SVG translate](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#translate) transform function as a string.
+`translate()` returns a [SVG translate](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#translate) / [CSS translate](<https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate()>) transform function as a string.
 
 ```ts
 function translate(x: number = 0, y: number = 0, unit?: "px" | "%"): string;

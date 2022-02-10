@@ -49,6 +49,7 @@ export let sidebar: Link[] = [
       { text: "translate", link: "/utils/transform/translate" },
       { text: "rotate", link: "/utils/transform/rotate" },
       { text: "scale", link: "/utils/transform/scale" },
+      { text: "Other transforms", link: "/utils/transform/other" },
     ],
   },
   {
