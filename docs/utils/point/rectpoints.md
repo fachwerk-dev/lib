@@ -1,6 +1,6 @@
 # rectpoints
 
-`rectpoints()` is a function that outputs an array of `Point`'s, based on `x y width height` arguments.
+`rectpoints()` is a function that outputs an array of `Point`'s.
 
 ```ts
 type Point = {
@@ -9,17 +9,17 @@ type Point = {
 };
 
 function rectpoints(
-  x: number,
-  y: number,
   width: number,
-  height: number
+  height: number,
+  xOrPoint: Point | number,
+  y?: number
 ): Point[];
 ```
 
 ## Usage
 
 ```md
-{{ rectpoints(50, 50, 50, 50)}}
+{{ rectpoints(50, 50)}}
 ```
 
 ## Example

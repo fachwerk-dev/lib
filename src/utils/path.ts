@@ -2,6 +2,7 @@ import { arc } from "d3-shape";
 import { deg2rad } from "../lib.esm";
 import { resolvePoint } from "../internal/point";
 import type { Point } from "./point";
+import { rectpoints } from ".";
 
 export function polygonpath(points: Point[], closed: boolean = false): string {
   const start = points.shift();
@@ -18,11 +19,21 @@ export function polygonpath(points: Point[], closed: boolean = false): string {
   return path;
 }
 
+export function rectpath(
+  width: number,
+  height: number,
+  xOrPoint: Point | number,
+  y?: number
+) {
+  const originPoint = resolvePoint(xOrPoint, y);
+  return polygonpath(rectpoints(width, height, xOrPoint, y), true);
+}
+
 export function circlepath(r: number, xOrPoint: Point | number, y?: number) {
-  const point = resolvePoint(xOrPoint, y);
+  const originPoint = resolvePoint(xOrPoint, y);
   const path = [
     "M",
-    `${point.x - r}, ${point.y}`,
+    `${originPoint.x - r}, ${originPoint.y}`,
     `a ${r},${r} 0 1,0 ${r * 2},0`,
     `a ${r},${r} 0 1,0 -${r * 2},0`,
   ]
