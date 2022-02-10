@@ -3,11 +3,7 @@
 `translate()` function returns a [CSS translate](<https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate()>) / [SVG translate](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#translate) function as a string.
 
 ```ts
-function translate(
-  x: number = 0,
-  y: number = 0,
-  unit?: undefined | "px" | "%"
-): string;
+function translate(x: number = 0, y: number = 0, unit?: "px" | "%"): string;
 ```
 
 ## Usage

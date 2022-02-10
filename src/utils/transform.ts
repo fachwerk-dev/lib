@@ -1,21 +1,23 @@
 export function translate(
   x: number = 0,
   y: number = 0,
-  unit?: undefined | "px" | "%"
+  unit?: "px" | "%"
 ): string {
   return `translate(${x}${unit ?? ""}, ${y}${unit ?? ""})`;
 }
 
 export function rotate(
   angle: number = 0,
-  unit?: undefined | "deg" | "rad" | "turn"
+  unit?: "deg" | "rad" | "turn"
 ): string {
   return `rotate(${angle}${unit ?? ""})`;
 }
 
-export function scale(scaleX: number = 1, scaleY?: number): string {
-  return `scale(${scaleX}, ${scaleY || scaleX})`;
+export function scale(scaleX: number = 1, scaleY?: number, unit?: "%"): string {
+  return `scale(${scaleX}${unit ?? ""}, ${scaleY || scaleX}${unit ?? ""})`;
 }
+
+/*
 
 export function skewX(angle: number = 0): string {
   return `skewX(${angle})`;
@@ -35,3 +37,5 @@ export function matrix(
 ): string {
   return `matrix(${a} ${b} ${c} ${d} ${e} ${f})`;
 }
+
+*/

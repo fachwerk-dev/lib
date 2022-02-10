@@ -3,10 +3,7 @@
 `rotate()` function returns a [CSS rotate](<https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate()>) / [SVG rotate](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#rotate) function as a string.
 
 ```ts
-function rotate(
-  angle: number = 0,
-  unit?: undefined | "deg" | "rad" | "turn"
-): string;
+function rotate(angle: number = 0, unit?: "deg" | "rad" | "turn"): string;
 ```
 
 ## Usage
@@ -37,6 +34,8 @@ In SVG, rotation origin is at `0,0` coordinates by default.
   />
   <rect
     :transform="rotate(f.a)"
+    transform-origin="center"
+    style="transform-box: fill-box"
     width="50"
     height="50"
     fill="none"
@@ -51,7 +50,7 @@ In SVG, rotation origin is at `0,0` coordinates by default.
 
 ### CSS transform example
 
-In SVG, rotation origin is at the centre of the object by default. Also, you will need to pass an unit to the `transform()` function, either `deg`, `rad` or `turn`.
+In CSS, rotation origin is at the centre of the object by default. Also, you will need to pass an unit to the `transform()` function, either `deg`, `rad` or `turn`.
 
 ```md
 <div
