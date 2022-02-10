@@ -24,6 +24,16 @@ function rotate(angle: number = 0, unit?: "deg" | "rad" | "turn"): string;
 
 In SVG, rotation origin is at `0,0` coordinates by default.
 
+To rotate around the centre of the object, you will need to add following properties to the element:
+
+```
+<rect
+  transform-origin="center"
+  style="transform-box: fill-box"
+  ...
+/>
+```
+
 ```md
 <f-svg width="250" height="250" padding="1">
   <path
@@ -34,8 +44,6 @@ In SVG, rotation origin is at `0,0` coordinates by default.
   />
   <rect
     :transform="rotate(f.a)"
-    transform-origin="center"
-    style="transform-box: fill-box"
     width="50"
     height="50"
     fill="none"
@@ -50,7 +58,18 @@ In SVG, rotation origin is at `0,0` coordinates by default.
 
 ### CSS transform example
 
-In CSS, rotation origin is at the centre of the object by default. Also, you will need to pass an unit to the `transform()` function, either `deg`, `rad` or `turn`.
+In CSS, rotation origin is at the centre of the object by default.
+
+To rotate around the `0,0` coordinates, you will need to the following property to the element:
+
+```
+<rect
+  style="transform-origin: 0 0"
+  ...
+/>
+```
+
+Note that CSS `transform()` function requires an unit, either `deg`, `rad` or `turn`.
 
 ```md
 <div

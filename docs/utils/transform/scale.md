@@ -51,6 +51,15 @@ Also note that we use `step="any"` on the `f-slider` component. It is one of pos
 
 In CSS, scale origin is at the centre of the object by default.
 
+To scale from `0,0` coordinates, you will need to the following property to the element:
+
+```
+<rect
+  style="transform-origin: 0 0"
+  ...
+/>
+```
+
 Note that you can also set scale unit to `%`.
 
 ```md
