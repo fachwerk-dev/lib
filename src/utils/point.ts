@@ -1,4 +1,5 @@
 import { pol2car, range, remap } from ".";
+import { resolvePoint } from "../internal/point";
 
 export type Point = {
   x: number;
@@ -6,16 +7,17 @@ export type Point = {
 };
 
 export function rectpoints(
-  x: number,
-  y: number,
   width: number,
-  height: number
+  height: number,
+  xOrPoint: Point | number,
+  y?: number
 ): Point[] {
+  const point = resolvePoint(xOrPoint, y);
   return [
-    { x, y },
-    { x: x + width, y },
-    { x: x + width, y: y + height },
-    { x, y: y + height },
+    { x: point.x, y: point.y },
+    { x: point.x + width, y: point.y },
+    { x: point.x + width, y: point.y + height },
+    { x: point.x, y: point.y + height },
   ];
 }
 
