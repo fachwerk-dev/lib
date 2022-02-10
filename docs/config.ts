@@ -80,6 +80,7 @@ export let sidebar: Link[] = [
   {
     text: "Experimental",
     children: [
+      { text: "f-mouse", link: "/components/f-mouse" },
       { text: "f-pdf", link: "/components/f-pdf" },
       { text: "f-three", link: "/components/f-three" },
       { text: "f-canvas", link: "/components/f-canvas" },

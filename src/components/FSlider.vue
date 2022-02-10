@@ -12,7 +12,7 @@ const emit = defineEmits<{
   (e: "update:modelValue", value: number): void;
 }>();
 
-const progress = computed({
+const computedValue = computed({
   get: () => modelValue,
   set: (value) => {
     emit("update:modelValue", value);
@@ -20,10 +20,10 @@ const progress = computed({
 });
 
 onMounted(() => {
-  progress.value = defaultValue ? defaultValue : 0;
+  computedValue.value = defaultValue ? defaultValue : 0;
 });
 </script>
 
 <template>
-  <input type="range" v-model.number="progress" />
+  <input type="range" v-model.number="computedValue" />
 </template>
