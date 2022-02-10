@@ -2,7 +2,7 @@
 import Button from "./Button.vue";
 </script>
 <template>
-  <article class="grid gap-4 bg-sky-500 p-5 md:p-12">
+  <article class="grid min-h-screen auto-rows-min gap-4 bg-sky-500 p-5 md:p-12">
     <h1 class="mb-4 text-5xl font-bold tracking-tighter md:mb-0 md:text-6xl">
       ▦ Fachwerk
     </h1>
@@ -34,7 +34,7 @@ import Button from "./Button.vue";
 
     <p class="h-6" />
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3 xl:w-3/4">
       <div class="grid gap-4">
         <h2 class="text-xl font-semibold">Declarative delight</h2>
         <p>
