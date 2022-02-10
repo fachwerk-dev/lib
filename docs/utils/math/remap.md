@@ -23,3 +23,5 @@ function remap(
 https://visualia.github.io/visualia_original/#helper-functions_scale
 
 https://designstem.github.io/fachwerk/docs/#/scale
+
+https://visualia.netlify.app/utils/math.html#map
