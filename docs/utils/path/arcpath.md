@@ -24,3 +24,9 @@ function arcpath(startAngle: number, endAngle: number, radius: number): string;
   />
 </svg>
 ```
+
+## Prior art
+
+https://designstem.github.io/fachwerk/docs/#/f-arc
+
+https://visualia.netlify.app/utils/arcpath.html

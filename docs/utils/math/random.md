@@ -23,3 +23,5 @@
 https://designstem.github.io/fachwerk/docs/#/random
 
 https://visualia.github.io/visualia_original/#helper-functions_random
+
+https://visualia.netlify.app/utils/random.html

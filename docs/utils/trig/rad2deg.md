@@ -11,3 +11,5 @@ Converts radians to degrees.
 https://designstem.github.io/fachwerk/docs/#/rad2deg
 
 https://visualia.github.io/visualia_original/#helper-functions_rad2deg
+
+https://visualia.netlify.app/utils/trig.html#rad2deg

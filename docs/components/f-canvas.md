@@ -19,3 +19,13 @@
 
 rotation: {{ f.r }}
 ```
+
+## Prior art
+
+https://designstem.github.io/fachwerk/docs/#/f-canvas
+
+https://designstem.github.io/fachwerk/docs/#/f-pixel
+
+https://designstem.github.io/fachwerk/docs/#/f-pixels
+
+https://visualia.github.io/visualia_original/#graphics_scene

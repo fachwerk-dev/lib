@@ -89,3 +89,5 @@ https://designstem.github.io/fachwerk/docs/#/f-scene
 https://designstem.github.io/fachwerk/docs/#/f-artboard
 
 https://visualia.github.io/visualia_original/#graphics_scene
+
+https://visualia.netlify.app/components/v-svg.html

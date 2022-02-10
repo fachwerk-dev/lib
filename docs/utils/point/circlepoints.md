@@ -33,6 +33,10 @@ function circlepoints(count: number, r: number): Point[];
 
 ## Prior art
 
+https://designstem.github.io/fachwerk/docs/#/f-circle-pattern
+
 https://designstem.github.io/fachwerk/docs/#/circlepoints
 
 https://visualia.github.io/visualia_original/#helper-functions_circlepoints
+
+https://visualia.netlify.app/utils/polargrid.html
