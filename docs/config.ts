@@ -74,4 +74,8 @@ export let sidebar: Link[] = [
       { text: "f-canvas", link: "/components/f-canvas" },
     ],
   },
+  {
+    text: "Development",
+    children: [{ text: "TODO", link: "/todo" }],
+  },
 ];

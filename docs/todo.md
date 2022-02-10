@@ -2,7 +2,7 @@
 
 ## Points functions
 
-### hexgrid
+### hexgridpoints
 
 https://designstem.github.io/fachwerk/docs/#/f-hex-pattern
 
@@ -18,7 +18,7 @@ https://designstem.github.io/fachwerk/docs/#/f-triangle
 
 https://visualia.netlify.app/utils/linepath.html
 
-! https://designstem.github.io/fachwerk/docs/#/f-roundedpolygon
+⚠️ https://designstem.github.io/fachwerk/docs/#/f-roundedpolygon
 
 ### hexagonpath
 
@@ -310,7 +310,7 @@ https://designstem.github.io/fachwerk/docs/#/f-video
 
 https://designstem.github.io/fachwerk/docs/#/f-table
 
-## 3D components
+### 3D components
 
 https://designstem.github.io/fachwerk/docs/#/f-scene3
 
@@ -350,7 +350,7 @@ https://designstem.github.io/fachwerk/docs/#/f-grid-pattern3
 
 https://visualia.github.io/visualia_original/#graphics_sphere
 
-## Interaction components
+### Interaction components
 
 https://designstem.github.io/fachwerk/docs/#/f-value
 
@@ -364,7 +364,7 @@ https://designstem.github.io/fachwerk/docs/#/f-mouse
 
 https://designstem.github.io/fachwerk/docs/#/f-drag
 
-## Data components
+### Data components
 
 https://designstem.github.io/fachwerk/docs/#/f-array
 
@@ -376,13 +376,13 @@ https://designstem.github.io/fachwerk/docs/#/f-sheet
 
 https://designstem.github.io/fachwerk/docs/#/f-websocket
 
-## VR components
+### VR components
 
 https://designstem.github.io/fachwerk/docs/#/f-aframe
 
 https://designstem.github.io/fachwerk/docs/#/f-aframe-button
 
-## Layout components
+### Layout components
 
 https://designstem.github.io/fachwerk/docs/#/f-sidebar
 
@@ -420,18 +420,16 @@ https://visualia.github.io/visualia_original/#integrations_figma
 
 https://visualia.github.io/visualia_original/#integrations_observable
 
-## Other
-
-### Types
+## Types
 
 https://designstem.github.io/fachwerk/docs/#/isarray
 
-### Events
+## Events
 
 https://visualia.github.io/visualia_original/#live-variables_events
 
 https://visualia.netlify.app/utils/events.html
 
-### Variables?
+## Variables?
 
 https://visualia.netlify.app/utils/variables.html#local-variables
