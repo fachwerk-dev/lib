@@ -15,3 +15,5 @@ https://designstem.github.io/fachwerk/docs/#/polarxy
 https://designstem.github.io/fachwerk/docs/#/polarxy
 
 https://visualia.github.io/visualia_original/#helper-functions_circlexy
+
+https://visualia.netlify.app/utils/trig.html#polar

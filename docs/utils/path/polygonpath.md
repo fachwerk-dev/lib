@@ -43,3 +43,9 @@ Closed path:
 />
 </svg>
 ```
+
+## Prior art
+
+https://designstem.github.io/fachwerk/docs/#/f-polygon
+
+https://visualia.netlify.app/utils/linepath.html

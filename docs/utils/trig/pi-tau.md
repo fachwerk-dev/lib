@@ -27,3 +27,9 @@ const TAU: number;
 ```md
 {{ TAU }}
 ```
+
+## Prior art
+
+https://visualia.netlify.app/utils/trig.html#pi
+
+https://visualia.netlify.app/utils/trig.html#tau

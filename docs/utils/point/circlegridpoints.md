@@ -30,3 +30,7 @@ function circlegridpoints(count: number, step: number): Point[];
   />
 </svg>
 ```
+
+## Prior art
+
+https://designstem.github.io/fachwerk/docs/#/f-polargrid

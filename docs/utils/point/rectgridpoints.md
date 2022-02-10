@@ -30,3 +30,13 @@ function rectgridpoints(count: number, step: number): Point[];
   />
 </svg>
 ```
+
+## Prior art
+
+https://designstem.github.io/fachwerk/docs/#/f-grid-pattern
+
+https://visualia.github.io/visualia_original/#grids-and-patterns_pointgrid
+
+https://visualia.github.io/visualia_original/#helper-functions_gridpoints
+
+https://visualia.netlify.app/utils/rectgrid.html

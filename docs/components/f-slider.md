@@ -49,3 +49,5 @@ The value of x3 is <br /> {{ f.x3 }}
 https://designstem.github.io/fachwerk/docs/#/f-slider
 
 https://visualia.github.io/visualia_original/#live-variables_slider
+
+https://visualia.netlify.app/components/v-slider.html

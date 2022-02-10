@@ -33,3 +33,5 @@ Generate an array of numbers from `3` to `1`, in ascending order:
 https://designstem.github.io/fachwerk/docs/#/range
 
 https://visualia.github.io/visualia_original/#helper-functions_range
+
+https://visualia.netlify.app/utils/arrays.html#range
