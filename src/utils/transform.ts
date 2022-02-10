@@ -35,24 +35,3 @@ export function matrix(
 ): string {
   return `matrix(${a},${b},${c},${d},${e},${f})`;
 }
-
-/*
-
-
-
-export function skewY(anglec: number = 0): string {
-  return `skewY(${angle})`;
-}
-
-export function matrix(
-  a: number = 1, // scaleX
-  b: number = 0, // skewY
-  c: number = 0, // skewX
-  d: number = 1, // scaleY
-  e: number = 0, // translateX
-  f: number = 0 // translateY
-): string {
-  return `matrix(${a} ${b} ${c} ${d} ${e} ${f})`;
-}
-
-*/
