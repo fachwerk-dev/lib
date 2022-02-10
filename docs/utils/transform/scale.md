@@ -67,7 +67,10 @@ Note that you can also set scale unit to `%`.
   style="
     width: 250px;
     height: 250px;
-    border: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    background-size: 25px 25px;
+    background-image: linear-gradient(to right, whitesmoke 2px, transparent 2px), linear-gradient(to bottom, whitesmoke 2px, transparent 2px);
   "
 >
   <div
