@@ -36,10 +36,11 @@ export let sidebar: Link[] = [
   {
     text: "Path utilities",
     children: [
-      { text: "rectpath", link: "/utils/path/rectpath" },
       { text: "polygonpath", link: "/utils/path/polygonpath" },
       { text: "circlepath", link: "/utils/path/circlepath" },
       { text: "arcpath", link: "/utils/path/arcpath" },
+      { text: "rectpath", link: "/utils/path/rectpath" },
+      { text: "rectgridpath", link: "/utils/path/rectgridpath" },
     ],
   },
   {

@@ -1,7 +1,7 @@
 import { arc } from "d3-shape";
 import { deg2rad } from "../lib.esm";
 import { resolvePoint } from "../internal/point";
-import type { Point } from "./point";
+import { Point, rectgridpoints } from "./point";
 import { rectpoints } from ".";
 
 export function polygonpath(points: Point[], closed: boolean = false): string {
@@ -25,7 +25,6 @@ export function rectpath(
   xOrPoint: Point | number,
   y?: number
 ) {
-  const originPoint = resolvePoint(xOrPoint, y);
   return polygonpath(rectpoints(width, height, xOrPoint, y), true);
 }
 
@@ -57,4 +56,10 @@ export function arcpath(
     .innerRadius(innerRadius)
     .outerRadius(outerRadius || innerRadius)
     .cornerRadius(cornerRadius || 0)();
+}
+
+export function rectgridpath(count: number, step: number): string {
+  return rectgridpoints(count, step)
+    .map((point) => rectpath(step, step, point))
+    .join("");
 }
