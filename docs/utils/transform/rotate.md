@@ -1,6 +1,6 @@
 # rotate
 
-`rotate()` function returns a [CSS rotate](<https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate()>) / [SVG rotate](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#rotate) function as a string.
+`rotate()` returns a [CSS rotate](<https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate()>) / [SVG rotate](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#rotate) transform function as a string.
 
 ```ts
 function rotate(angle: number = 0, unit?: "deg" | "rad" | "turn"): string;
@@ -24,7 +24,7 @@ function rotate(angle: number = 0, unit?: "deg" | "rad" | "turn"): string;
 
 In SVG, rotation origin is at `0,0` coordinates by default.
 
-To rotate around the centre of the object, you will need to add following properties to the element:
+To rotate around the center of the object, add the following properties to the element:
 
 ```
 <rect
@@ -43,7 +43,7 @@ To rotate around the centre of the object, you will need to add following proper
     stroke-width="2"
   />
   <rect
-    :transform="rotate(f.a)"
+    :transform="rotate(f.angle)"
     width="50"
     height="50"
     fill="none"
@@ -52,15 +52,15 @@ To rotate around the centre of the object, you will need to add following proper
   />
 </f-svg>
 
-`f.a` is `{{ f.a }}`
-<f-slider v-model="f.a" max="360" />
+`f.angle` is `{{ f.angle }}`
+<f-slider v-model="f.angle" max="360" />
 ```
 
 ### CSS transform example
 
-In CSS, rotation origin is at the centre of the object by default.
+In CSS, rotation origin is at the object's center by default.
 
-To rotate around the `0,0` coordinates, you will need to the following property to the element:
+To rotate around the `0,0` coordinates, add the following property to the element:
 
 ```
 <rect
@@ -84,19 +84,19 @@ Note that CSS `transform()` function requires an unit, either `deg`, `rad` or `t
 >
   <div
     style="
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       border: 2px solid lightblue;
       position: relative;
     "
-    :style="{transform: rotate(f.a, 'deg')}"
+    :style="{transform: rotate(f.angle, 'deg')}"
   /> 
 </div>
 
 <br />
 
-`f.r` is `{{ f.a }}`
-<f-slider v-model="f.a" max="360" />
+`f.angle` is `{{ f.angle }}`
+<f-slider v-model="f.angle" max="360" />
 ```
 
 ## Prior art

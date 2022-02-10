@@ -1,6 +1,6 @@
 # scale
 
-`scale()` function returns a [SVG scale](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#scale) / [CSS scale](<https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale()>) function as a string.
+`scale()` returns a [SVG scale](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#scale) / [CSS scale](<https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale()>) transform function as a string.
 
 ```
 function scale(scaleX: number = 1, scaleY?: number, unit?: "%"): string
@@ -33,7 +33,7 @@ Also note that we use `step="any"` on the `f-slider` component. It is one of pos
     stroke-width="2"
   />
   <rect
-    :transform="scale(f.s)"
+    :transform="scale(f.scale)"
     width="50"
     height="50"
     fill="none"
@@ -43,8 +43,8 @@ Also note that we use `step="any"` on the `f-slider` component. It is one of pos
   />
 </f-svg>
 
-`f.s` is `{{ f.s }}`
-<f-slider v-model="f.s" max="4" step="any" :value="1" />
+`f.scale` is `{{ f.scale }}`
+<f-slider v-model="f.scale" max="4" step="any" :value="1" />
 ```
 
 ### CSS scale example
@@ -79,14 +79,14 @@ Note that you can also set scale unit to `%`.
       height: 50px;
       border: 2px solid lightblue;
     "
-    :style="{transform: scale(f.s)}"
+    :style="{transform: scale(f.scale)}"
   /> 
 </div>
 
 <br />
 
-`f.s` is `{{ f.s }}`
-<f-slider v-model="f.s" max="4" step="any" :value="1" />
+`f.scale` is `{{ f.scale }}`
+<f-slider v-model="f.scale" max="4" step="any" :value="1" />
 ```
 
 ## Prior art
