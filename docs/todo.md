@@ -433,3 +433,21 @@ https://visualia.netlify.app/utils/events.html
 ## Variables?
 
 https://visualia.netlify.app/utils/variables.html#local-variables
+
+## Snippets
+
+Combined with point-generating functions, we can make a simple coordinate grid:
+
+```md
+<svg width="300" height="300">
+  <path :d="
+    rectgridpoints(4,75)
+      .map(point => rectpath(50,50,point))
+      .join(' ')
+    "
+    stroke="lightblue"
+    stroke-width="2"
+    fill="none"
+  />
+</svg>
+```
