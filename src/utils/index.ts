@@ -5,6 +5,5 @@ export * from "./math";
 export * from "./path";
 export * from "./point";
 export * from "./state";
+export * from "./transform";
 export * from "./trig";
-
-export const log = (a: any) => console.log(a);
