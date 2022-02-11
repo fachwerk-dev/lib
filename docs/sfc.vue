@@ -16,6 +16,8 @@ const source = ref(`
   />
 </svg>
 
+<br />
+
 {{ hsl(f.h,100,50) }}
 `);
 const id = "FCompiler.vue";
@@ -36,8 +38,15 @@ watch(
 </script>
 
 <template>
-  <div class="flex w-full">
-    <textarea class="h-32 font-mono" v-model="source" />
-    <iframe frameborder="0" :srcdoc="srcdoc" />
+  <div class="flex w-full border-2 border-red-500">
+    <textarea
+      class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
+      v-model="source"
+    />
+    <iframe
+      class="w-full whitespace-pre p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
+      frameborder="0"
+      :srcdoc="srcdoc"
+    />
   </div>
 </template>
