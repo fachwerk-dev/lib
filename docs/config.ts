@@ -87,6 +87,9 @@ export let sidebar: Link[] = [
   },
   {
     text: "Development",
-    children: [{ text: "TODO", link: "/todo" }],
+    children: [
+      { text: "TODO", link: "/todo" },
+      { text: "test", link: "/test" },
+    ],
   },
 ];
