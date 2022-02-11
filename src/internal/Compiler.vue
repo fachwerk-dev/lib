@@ -1,10 +1,19 @@
 <script lang="ts">
-import { computed, h, compile, ComponentOptions, defineComponent } from "vue";
+import {
+  h,
+  compile,
+  ComponentOptions,
+  watch,
+  ref,
+  RenderFunction,
+  shallowRef,
+} from "vue";
+import type { CompilerError } from "@vue/compiler-core";
 import { utils } from "../lib.esm";
 
 export const compileSource = (source: string) => {
   const errors = [];
-  let code = null;
+  let code: RenderFunction | null = null;
   try {
     const compiledCode = compile(source, {
       onError: (err: any) => {
@@ -18,25 +27,45 @@ export const compileSource = (source: string) => {
   return { code, errors };
 };
 
+const renderComponent = (render: RenderFunction) => {
+  return {
+    setup() {
+      return { ...utils };
+    },
+    render,
+  };
+};
+
 export default {
   props: ["content"],
   setup(props: any) {
-    const errors: any[] = [];
-    const compiledContent = computed(() => {
-      const { code } = compileSource(props.content);
-      return {
-        setup() {
-          return { ...utils };
-        },
-        render: code,
-      };
-    });
+    const compilerErrors = ref<CompilerError[] | null>(null);
+    const compiledContent = shallowRef<ComponentOptions | null>(null);
+
+    watch(
+      () => props.content,
+      (content, prevContent) => {
+        const { code, errors } = compileSource(content);
+        compilerErrors.value = errors as CompilerError[];
+        if (errors.length) {
+          const { code: prevCode } = compileSource(prevContent);
+          compiledContent.value = renderComponent(prevCode as RenderFunction);
+        } else {
+          compiledContent.value = renderComponent(code as RenderFunction);
+        }
+      },
+      { immediate: true }
+    );
     return () =>
-      errors.length
-        ? errors
-            .map(String)
-            .map((e) => h("div", { style: { color: "red" } }, e))
-        : h(compiledContent.value as ComponentOptions);
+      compiledContent.value
+        ? [
+            h(compiledContent.value),
+            h(
+              "div",
+              compilerErrors.value?.map(String).map((e) => h("blockquote", e))
+            ),
+          ]
+        : null;
   },
 };
 </script>
