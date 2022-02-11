@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { compileTemplate, compileScript, parse } from "@vue/compiler-sfc";
-import { onErrorCaptured, ref, watch } from "vue";
+import { compileScript, parse } from "@vue/compiler-sfc";
+import { ref, watch } from "vue";
 import sfcTemplate from "./sfcTemplate.txt?raw";
 import sfcCode from "./sfcCode.txt?raw";
 
-const id = "FCompiler.vue";
+const id = "Sfc.vue";
 
 const compile = (source) => {
   const regex = /(?:<script\s+setup>)([^]*?)(?:<\/script>)/gm;
@@ -30,13 +30,6 @@ const compile = (source) => {
     reactivityTransform: true,
     id: "id",
     inlineTemplate: true,
-    // templateOptions: {
-    //   compilerOptions: {
-    //     onError: (err: any) => {
-    //       console.log(err);
-    //     },
-    //   },
-    // },
   });
 
   return content.replace("export default {", "const App = {");
@@ -55,7 +48,7 @@ watch(
 </script>
 
 <template>
-  <div class="flex w-full border-2 border-red-500">
+  <div class="flex h-screen w-screen">
     <textarea
       class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
       v-model="source"
@@ -64,6 +57,7 @@ watch(
       class="w-full whitespace-pre p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
       frameborder="0"
       :srcdoc="srcdoc"
+      style="height: 100vh"
     />
   </div>
 </template>

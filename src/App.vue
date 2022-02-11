@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onErrorCaptured } from "vue";
 
-onErrorCaptured((err) => {
+onErrorCaptured(() => {
   return false;
 });
 </script>
