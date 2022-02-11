@@ -55,8 +55,8 @@ const link = computed(
   () => `https://editor.fachwerk.dev/#${utoa(content.value)}`
 );
 
-const error = ref<any[] | null>(null);
-const onError = (e) => (error.value = e);
+const error = ref(null);
+const onError = (e: CompilerError[] | null) => (error.value = e);
 </script>
 <template>
   <div

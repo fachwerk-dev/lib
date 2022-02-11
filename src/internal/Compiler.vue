@@ -14,8 +14,7 @@ import { utils } from "../lib.esm";
 import { on } from "../utils";
 
 export const compileSource = (source: string) => {
-  console.log(source);
-  const errors = [];
+  const errors: CompilerError[] = [];
   let code: RenderFunction | null = null;
   try {
     const compiledCode = compile(source, {
@@ -23,10 +22,9 @@ export const compileSource = (source: string) => {
         errors.push(err);
       },
     });
-    console.log(compiledCode);
     code = compiledCode;
   } catch (e) {
-    errors.push(e);
+    errors.push(e as CompilerError);
   }
   return { code, errors };
 };
