@@ -10,8 +10,30 @@ import { atou, utoa } from "../internal/encoding";
 const { content: inputContent } = defineProps(["content"]);
 const content = ref(atou(inputContent));
 
-const md = new MarkdownIt({ linkify: true, html: true, breaks: true });
-const outputContent = computed(() => md.render(content.value));
+function preProcess(template: string) {
+  return template.replace(/\n{2,}/gm, "\n");
+}
+
+function editorPlugin(md) {
+  md.renderer.rules.code_inline = function () {
+    const [tokens, idx, _options, _env, _slf] = arguments;
+    return tokens[idx].content;
+  };
+  md.renderer.rules.code_block = function () {
+    const [tokens, idx, _options, _env, _slf] = arguments;
+    return tokens[idx].content;
+  };
+  return md;
+}
+
+const md = new MarkdownIt({ linkify: true, html: true, breaks: true }).use(
+  editorPlugin
+);
+
+const outputContent = computed(() => {
+  const r = md.render(preProcess(content.value));
+  return r;
+});
 const editor = ref<HTMLTextAreaElement | null>(null);
 
 onMounted(() => {
@@ -32,6 +54,9 @@ onMounted(() => {
 const link = computed(
   () => `https://editor.fachwerk.dev/#${utoa(content.value)}`
 );
+
+const error = ref(null);
+const onError = (e: CompilerError[] | null) => (error.value = e);
 </script>
 <template>
   <div
@@ -51,8 +76,11 @@ const link = computed(
         <IconOpen class="w-4 stroke-current" />
       </a>
     </div>
-    <div class="overflow-x-auto p-4 lg:p-6">
-      <Compiler :content="outputContent" />
+    <div
+      class="overflow-x-auto border-l-2 border-white p-4 lg:p-6"
+      :class="{ '!border-red-500': error }"
+    >
+      <Compiler :content="outputContent" @error="onError" />
     </div>
   </div>
 </template>
