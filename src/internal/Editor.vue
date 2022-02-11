@@ -3,6 +3,7 @@
 import { ref, computed, onMounted } from "vue";
 import MarkdownIt from "markdown-it";
 import IconOpen from "~icons/tabler/layers-subtract";
+import IconPrettier from "~icons/tabler/macro";
 import { format } from "prettier";
 import parserHtml from "prettier/esm/parser-html.mjs";
 import parserMarkdown from "prettier/esm/parser-markdown.mjs";
@@ -29,17 +30,28 @@ const md = new MarkdownIt({ linkify: true, html: true, breaks: true }).use(
   editorPlugin
 );
 
-const prettierContent = (str) => {
-  return format(content.value, {
+const prettierHtml = (str: string, printWidth = 20) => {
+  return format(str, {
     parser: "html",
     plugins: [parserHtml],
-    printWidth: 80,
+    printWidth,
+  });
+};
+
+const prettierMarkdown = (str: string, printWidth = 40) => {
+  return format(str, {
+    parser: "markdown",
+    plugins: [parserMarkdown],
+    printWidth,
   });
 };
 
 const outputContent = computed(() => {
-  return prettierContent(md.render(content.value));
+  return prettierHtml(md.render(content.value));
 });
+
+const onPrettier = () => (content.value = prettierHtml(content.value));
+
 const editor = ref<HTMLTextAreaElement | null>(null);
 
 onMounted(() => {
@@ -74,22 +86,25 @@ const onError = (e: CompilerError[] | null) => (error.value = e);
         v-model="content"
         class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
       />
-      <a
-        class="absolute top-1 right-1 !text-gray-600 hover:!text-gray-400 md:top-2 md:right-2"
-        :href="link"
-        target="_blank"
-      >
-        <IconOpen class="w-4 stroke-current" />
-      </a>
+      <div class="absolute top-1 right-1 flex gap-1 md:top-2 md:right-2">
+        <IconPrettier
+          @click="onPrettier"
+          class="w-4 stroke-current text-gray-600 hover:!text-gray-400"
+        />
+        <a
+          class="!text-gray-600 hover:!text-gray-400"
+          :href="link"
+          target="_blank"
+        >
+          <IconOpen class="w-4 stroke-current" />
+        </a>
+      </div>
     </div>
     <div
       class="overflow-x-auto border-l-2 border-white p-4 lg:p-6"
       :class="{ '!border-red-500': error }"
     >
       <Compiler :content="outputContent" @error="onError" />
-      <button @click="() => (content = prettierContent(content))">
-        prettier
-      </button>
     </div>
   </div>
 </template>
