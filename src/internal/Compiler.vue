@@ -4,7 +4,6 @@ import {
   compile,
   ComponentOptions,
   watch,
-  ref,
   RenderFunction,
   shallowRef,
 } from "vue";
@@ -12,8 +11,10 @@ import type { CompilerError } from "@vue/compiler-core";
 
 import Error from "./Error.vue";
 import { utils } from "../lib.esm";
+import { on } from "../utils";
 
 export const compileSource = (source: string) => {
+  console.log(source);
   const errors = [];
   let code: RenderFunction | null = null;
   try {
@@ -22,6 +23,7 @@ export const compileSource = (source: string) => {
         errors.push(err);
       },
     });
+    console.log(compiledCode);
     code = compiledCode;
   } catch (e) {
     errors.push(e);
@@ -43,7 +45,6 @@ export default {
   emits: ["error"],
   setup(props: any, ctx: any) {
     const compiledContent = shallowRef<ComponentOptions | null>(null);
-
     watch(
       () => props.content,
       (content, prevContent) => {
