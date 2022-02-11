@@ -54,6 +54,9 @@ onMounted(() => {
 const link = computed(
   () => `https://editor.fachwerk.dev/#${utoa(content.value)}`
 );
+
+const error = ref<any[] | null>(null);
+const onError = (e) => (error.value = e);
 </script>
 <template>
   <div
@@ -73,8 +76,11 @@ const link = computed(
         <IconOpen class="w-4 stroke-current" />
       </a>
     </div>
-    <div class="overflow-x-auto p-4 lg:p-6">
-      <Compiler :content="outputContent" />
+    <div
+      class="overflow-x-auto border-l-2 border-white p-4 lg:p-6"
+      :class="{ '!border-red-500': error }"
+    >
+      <Compiler :content="outputContent" @error="onError" />
     </div>
   </div>
 </template>
