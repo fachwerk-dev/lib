@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { compileTemplate } from "@vue/compiler-sfc";
+import { ref, watch } from "vue";
 import template from "./sfc.txt?raw";
-const source = `
+
+const source = ref(`
 <svg width="360" height="50">
   <rect
     v-for="h in range(0,360)"
@@ -10,19 +12,32 @@ const source = `
     width="1"
     height="50"
     :fill="hsl(h,100,50)"
-    v-on:mouseover="f.h = h" 
+    v-on:mouseover="f.h = h"
   />
 </svg>
 
 {{ hsl(f.h,100,50) }}
-`;
+`);
 const id = "FCompiler.vue";
-const { code } = compileTemplate({ source, id, filename: id });
-const srcdoc = template.replace("CODE", code);
+
+const srcdoc = ref("");
+watch(
+  source,
+  () => {
+    const { code } = compileTemplate({
+      source: source.value,
+      id,
+      filename: id,
+    });
+    srcdoc.value = template.replace("CODE", code);
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
-  <div>
+  <div class="flex w-full">
+    <textarea class="h-32 font-mono" v-model="source" />
     <iframe frameborder="0" :srcdoc="srcdoc" />
   </div>
 </template>
