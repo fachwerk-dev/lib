@@ -4,58 +4,45 @@ import { ref, watch } from "vue";
 import template from "./sfc.txt?raw";
 import str from "./sfc2.txt?raw";
 
+const id = "FCompiler.vue";
+
 const regex = /(?:<script\s+setup>)([^]*?)(?:<\/script>)/gm;
 const results = [...str.matchAll(regex)][0];
 const sfc = {
   script_setup: results[1].trim(),
   template: str.replace(results[0], "").trim(),
 };
-console.log(sfc);
-// const content = compileScript(a2.descriptor, {
-//   reactivityTransform: true,
-//   id: "id",
-// });
 
-// console.log(content);
+const stringifySfc = (sfc) => {
+  return Object.entries(sfc)
+    .map(
+      ([tag, content]) =>
+        `<${tag.replace("_", " ")}>${content}</${tag.split("_")[0]}>`
+    )
+    .join("");
+};
 
-// console.log(content.content);
+const { descriptor } = parse(stringifySfc(sfc));
 
-//console.log(setup2);
+const { content: scriptContent } = compileScript(descriptor, {
+  reactivityTransform: true,
+  id: "id",
+});
 
-// console.log(content);
-// console.log(content.content);
+const { code: templateContent } = compileTemplate({
+  source: sfc.template,
+  id,
+  filename: id,
+});
 
-// const content = compileScript(setup2.descriptor, {
-//   reactivityTransform: true,
-//   id: "id",
-// });
-// const content = compileScript(
-//   {
-//     filename: "Compiler.vue",
-//     scriptSetup: {
-//       type: "script",
-//       // setup: setup,
-//       content: setup,
-//       attrs: null,
-//       loc: { start: { offset: 0 }, end: { offset: 0 } },
-//     },
-//     template: {
-//       type: "template",
-//       ast: null,
-//       content: "",
-//       attrs: null,
-//       loc: null,
-//     },
-//     script: null,
-//     source: setup,
-//     styles: null,
-//     customBlocks: null,
-//     cssVars: [],
-//     slotted: null,
-//     shouldForceReload: null,
-//   } as SFCDescriptor,
-//   { id: "id", reactivityTransform: true }
-// );
+const content = `
+${templateContent}
+${scriptContent.replace(
+  "export default {",
+  `const App = {
+  render,`
+)}
+`;
 
 const source = ref(`
 <svg width="360" height="50">
@@ -75,7 +62,6 @@ const source = ref(`
 {{ a }}
 {{ hsl(f.h,100,50) }}
 `);
-const id = "FCompiler.vue";
 
 const srcdoc = ref("");
 watch(
