@@ -23,6 +23,10 @@
       }
     </script>
     <script type="module">
+      window.onerror = function (msg, url, lineNo, columnNo, error) {
+        console.log(msg);
+        return false;
+      }
       import { createApp, ref } from "vue";
       import { Fachwerk } from "fachwerk";
 

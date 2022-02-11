@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { compileTemplate, compileScript, parse } from "@vue/compiler-sfc";
-import { ref, watch } from "vue";
+import { onErrorCaptured, ref, watch } from "vue";
 import sfcTemplate from "./sfcTemplate.txt?raw";
 import sfcCode from "./sfcCode.txt?raw";
 
@@ -30,6 +30,13 @@ const compile = (source) => {
     reactivityTransform: true,
     id: "id",
     inlineTemplate: true,
+    // templateOptions: {
+    //   compilerOptions: {
+    //     onError: (err: any) => {
+    //       console.log(err);
+    //     },
+    //   },
+    // },
   });
 
   return content.replace("export default {", "const App = {");
