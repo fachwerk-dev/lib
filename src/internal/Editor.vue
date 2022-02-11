@@ -26,7 +26,7 @@ const md = new MarkdownIt({ linkify: true, html: true, breaks: true }).use(
   editorPlugin
 );
 
-const initialContent = ref(md.render(preProcess(content.value)));
+const initialContent = ref(md.render(content.value));
 
 const outputContent = computed(() => {
   const r = md.render(content.value);
@@ -79,12 +79,12 @@ const onError = (e: any | null) => (error.value = e);
       class="relative overflow-x-auto border-l-2 border-white p-4 lg:p-6"
       :class="{ '!border-red-500': error }"
     >
-      <Compiler class="opacity-0" :content="initialContent" />
-      <Compiler
-        class="absolute inset-4 lg:inset-6"
-        :content="outputContent"
-        @error="onError"
-      />
+      <div class="opacity-0">
+        <Compiler :content="initialContent" />
+      </div>
+      <div class="absolute inset-4 lg:inset-6">
+        <Compiler :content="outputContent" @error="onError" />
+      </div>
     </div>
   </div>
 </template>
