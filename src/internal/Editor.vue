@@ -30,10 +30,13 @@ const md = new MarkdownIt({ linkify: true, html: true, breaks: true }).use(
   editorPlugin
 );
 
+const initialContent = ref(md.render(preProcess(content.value)));
+
 const outputContent = computed(() => {
   const r = md.render(preProcess(content.value));
   return r;
 });
+
 const editor = ref<HTMLTextAreaElement | null>(null);
 
 onMounted(() => {
@@ -56,7 +59,7 @@ const link = computed(
 );
 
 const error = ref(null);
-const onError = (e: CompilerError[] | null) => (error.value = e);
+const onError = (e: any | null) => (error.value = e);
 </script>
 <template>
   <div
@@ -77,10 +80,15 @@ const onError = (e: CompilerError[] | null) => (error.value = e);
       </a>
     </div>
     <div
-      class="overflow-x-auto border-l-2 border-white p-4 lg:p-6"
+      class="relative overflow-x-auto border-l-2 border-white p-4 lg:p-6"
       :class="{ '!border-red-500': error }"
     >
-      <Compiler :content="outputContent" @error="onError" />
+      <Compiler class="opacity-0" :content="initialContent" />
+      <Compiler
+        class="absolute inset-4 lg:inset-6"
+        :content="outputContent"
+        @error="onError"
+      />
     </div>
   </div>
 </template>
