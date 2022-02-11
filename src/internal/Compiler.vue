@@ -9,6 +9,8 @@ import {
   shallowRef,
 } from "vue";
 import type { CompilerError } from "@vue/compiler-core";
+
+import Error from "./Error.vue";
 import { utils } from "../lib.esm";
 
 export const compileSource = (source: string) => {
@@ -62,7 +64,7 @@ export default {
             h(compiledContent.value),
             h(
               "div",
-              compilerErrors.value?.map(String).map((e) => h("blockquote", e))
+              compilerErrors.value?.map(String).map((e) => h(Error, e))
             ),
           ]
         : null;
