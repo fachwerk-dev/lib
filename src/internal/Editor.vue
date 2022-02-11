@@ -33,7 +33,7 @@ const prettierContent = (str) => {
   return format(content.value, {
     parser: "html",
     plugins: [parserHtml],
-    printWidth: 30,
+    printWidth: 80,
   });
 };
 
