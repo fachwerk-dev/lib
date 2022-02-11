@@ -1,7 +1,10 @@
 <script setup>
 const a = $ref(10)
+const b = 10
 </script>
 
-<div>{{ a }}</div>
+<div>b: {{ b }}</div>
 
-<f-slider v-model="a" />
+<div>a: {{ a }}</div>
+
+<input type="range" v-model="a" />

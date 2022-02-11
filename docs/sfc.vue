@@ -44,6 +44,11 @@ ${scriptContent.replace(
 )}
 `;
 
+const srcdoc = ref("");
+
+srcdoc.value = template.replace("CONTENT", content);
+
+/*
 const source = ref(`
 <svg width="360" height="50">
   <rect
@@ -76,14 +81,15 @@ watch(
   },
   { immediate: true }
 );
+*/
 </script>
 
 <template>
   <div class="flex w-full border-2 border-red-500">
-    <textarea
+    <!-- <textarea
       class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
       v-model="source"
-    />
+    /> -->
     <iframe
       class="w-full whitespace-pre p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
       frameborder="0"

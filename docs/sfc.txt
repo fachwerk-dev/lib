@@ -26,9 +26,9 @@
       import { createApp, ref } from "vue";
       import { Fachwerk } from "fachwerk";
 
-      CODE
+      CONTENT
 
-      const app = createApp({ render });
+      const app = createApp(App);
       app.use(Fachwerk);
       app.mount("#app");
     </script>
