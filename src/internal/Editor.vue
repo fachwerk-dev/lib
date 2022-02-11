@@ -3,6 +3,9 @@
 import { ref, computed, onMounted } from "vue";
 import MarkdownIt from "markdown-it";
 import IconOpen from "~icons/tabler/layers-subtract";
+import { format } from "prettier";
+import parserHtml from "prettier/esm/parser-html.mjs";
+import parserMarkdown from "prettier/esm/parser-markdown.mjs";
 
 import Compiler from "./Compiler.vue";
 import { atou, utoa } from "../internal/encoding";
@@ -26,9 +29,16 @@ const md = new MarkdownIt({ linkify: true, html: true, breaks: true }).use(
   editorPlugin
 );
 
+const prettierContent = (str) => {
+  return format(content.value, {
+    parser: "html",
+    plugins: [parserHtml],
+    printWidth: 30,
+  });
+};
+
 const outputContent = computed(() => {
-  const r = md.render(content.value);
-  return r;
+  return prettierContent(md.render(content.value));
 });
 const editor = ref<HTMLTextAreaElement | null>(null);
 
@@ -77,6 +87,9 @@ const onError = (e: CompilerError[] | null) => (error.value = e);
       :class="{ '!border-red-500': error }"
     >
       <Compiler :content="outputContent" @error="onError" />
+      <button @click="() => (content = prettierContent(content))">
+        prettier
+      </button>
     </div>
   </div>
 </template>
