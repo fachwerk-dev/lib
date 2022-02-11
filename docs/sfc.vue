@@ -1,8 +1,41 @@
 <script setup lang="ts">
-import { compileTemplate } from "@vue/compiler-sfc";
+import { compileTemplate, compileScript } from "@vue/compiler-sfc";
 import { ref, watch } from "vue";
+import { SFCDescriptor } from "vue/compiler-sfc";
 import template from "./sfc.txt?raw";
 
+import { ref as _ref } from "vue";
+
+const setup = `const a = $ref(); const b = $compiled(() => a + 1);const c = 10`;
+const content = compileScript(
+  {
+    filename: "Compiler.vue",
+    scriptSetup: {
+      type: "script",
+      // setup: setup,
+      content: setup,
+      attrs: null,
+      loc: { start: { offset: 0 }, end: { offset: 0 } },
+    },
+    template: {
+      type: "template",
+      ast: null,
+      content: "",
+      attrs: null,
+      loc: null,
+    },
+    script: null,
+    source: setup,
+    styles: null,
+    customBlocks: null,
+    cssVars: [],
+    slotted: null,
+    shouldForceReload: null,
+  } as SFCDescriptor,
+  { id: "id", reactivityTransform: true }
+);
+console.log(content);
+console.log(content.content);
 const source = ref(`
 <svg width="360" height="50">
   <rect
@@ -18,6 +51,7 @@ const source = ref(`
 
 <br />
 
+{{ a }}
 {{ hsl(f.h,100,50) }}
 `);
 const id = "FCompiler.vue";
