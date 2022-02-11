@@ -1,0 +1,5 @@
+<script setup>
+const a = $ref(10)
+</script>
+
+{{ a }}

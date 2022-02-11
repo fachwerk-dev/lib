@@ -1,41 +1,62 @@
 <script setup lang="ts">
-import { compileTemplate, compileScript } from "@vue/compiler-sfc";
+import { compileTemplate, compileScript, parse } from "@vue/compiler-sfc";
 import { ref, watch } from "vue";
-import { SFCDescriptor } from "vue/compiler-sfc";
 import template from "./sfc.txt?raw";
+import str from "./sfc2.txt?raw";
 
-import { ref as _ref } from "vue";
+const regex = /(?:<script\s+setup>)([^]*?)(?:<\/script>)/gm;
+const results = [...str.matchAll(regex)][0];
+const sfc = {
+  script_setup: results[1].trim(),
+  template: str.replace(results[0], "").trim(),
+};
+console.log(sfc);
+// const content = compileScript(a2.descriptor, {
+//   reactivityTransform: true,
+//   id: "id",
+// });
 
-const setup = `const a = $ref(); const b = $compiled(() => a + 1);const c = 10`;
-const content = compileScript(
-  {
-    filename: "Compiler.vue",
-    scriptSetup: {
-      type: "script",
-      // setup: setup,
-      content: setup,
-      attrs: null,
-      loc: { start: { offset: 0 }, end: { offset: 0 } },
-    },
-    template: {
-      type: "template",
-      ast: null,
-      content: "",
-      attrs: null,
-      loc: null,
-    },
-    script: null,
-    source: setup,
-    styles: null,
-    customBlocks: null,
-    cssVars: [],
-    slotted: null,
-    shouldForceReload: null,
-  } as SFCDescriptor,
-  { id: "id", reactivityTransform: true }
-);
-console.log(content);
-console.log(content.content);
+// console.log(content);
+
+// console.log(content.content);
+
+//console.log(setup2);
+
+// console.log(content);
+// console.log(content.content);
+
+// const content = compileScript(setup2.descriptor, {
+//   reactivityTransform: true,
+//   id: "id",
+// });
+// const content = compileScript(
+//   {
+//     filename: "Compiler.vue",
+//     scriptSetup: {
+//       type: "script",
+//       // setup: setup,
+//       content: setup,
+//       attrs: null,
+//       loc: { start: { offset: 0 }, end: { offset: 0 } },
+//     },
+//     template: {
+//       type: "template",
+//       ast: null,
+//       content: "",
+//       attrs: null,
+//       loc: null,
+//     },
+//     script: null,
+//     source: setup,
+//     styles: null,
+//     customBlocks: null,
+//     cssVars: [],
+//     slotted: null,
+//     shouldForceReload: null,
+//   } as SFCDescriptor,
+//   { id: "id", reactivityTransform: true }
+// );
+
 const source = ref(`
 <svg width="360" height="50">
   <rect
