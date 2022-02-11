@@ -4,9 +4,9 @@ import { ref, watch } from "vue";
 import sfcTemplate from "./sfcTemplate.txt?raw";
 import sfcCode from "./sfcCode.txt?raw";
 
-const compile = (source) => {
-  const id = "FCompiler.vue";
+const id = "FCompiler.vue";
 
+const compile = (source) => {
   const regex = /(?:<script\s+setup>)([^]*?)(?:<\/script>)/gm;
   const results = [...source.matchAll(regex)][0];
 
@@ -26,56 +26,17 @@ const compile = (source) => {
 
   const { descriptor } = parse(stringifySfc(sfc));
 
-  const { content: scriptContent } = compileScript(descriptor, {
+  const { content } = compileScript(descriptor, {
     reactivityTransform: true,
     id: "id",
+    inlineTemplate: true,
   });
 
-  const { code: templateContent } = compileTemplate({
-    source: sfc.template,
-    id,
-    filename: id,
-  });
-
-  const content = `
-${templateContent}
-${scriptContent.replace(
-  "export default {",
-  `const App = {
-  render,`
-)}
-`;
-  return content;
+  return content.replace("export default {", "const App = {");
 };
-
-// const srcdoc = ref("");
-
-//srcdoc.value = template.replace("CONTENT", content);
-
-/*
-const source = ref(`
-<svg width="360" height="50">
-  <rect
-    v-for="h in range(0,360)"
-    :x="h"
-    y="0"
-    width="1"
-    height="50"
-    :fill="hsl(h,100,50)"
-    v-on:mouseover="f.h = h"
-  />
-</svg>
-
-<br />
-
-{{ a }}
-{{ hsl(f.h,100,50) }}
-`);
-*/
 
 const source = ref(sfcCode);
 const srcdoc = ref("");
-const id = "IframeCompiler.vue";
 watch(
   source,
   () => {
