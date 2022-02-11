@@ -10,8 +10,30 @@ import { atou, utoa } from "../internal/encoding";
 const { content: inputContent } = defineProps(["content"]);
 const content = ref(atou(inputContent));
 
-const md = new MarkdownIt({ linkify: true, html: true, breaks: true });
-const outputContent = computed(() => md.render(content.value));
+function preProcess(template: string) {
+  return template.replace(/\n{2,}/gm, "\n");
+}
+
+function editorPlugin(md) {
+  md.renderer.rules.code_inline = function () {
+    const [tokens, idx, _options, _env, _slf] = arguments;
+    return tokens[idx].content;
+  };
+  md.renderer.rules.code_block = function () {
+    const [tokens, idx, _options, _env, _slf] = arguments;
+    return tokens[idx].content;
+  };
+  return md;
+}
+
+const md = new MarkdownIt({ linkify: true, html: true, breaks: true }).use(
+  editorPlugin
+);
+
+const outputContent = computed(() => {
+  const r = md.render(preProcess(content.value));
+  return r;
+});
 const editor = ref<HTMLTextAreaElement | null>(null);
 
 onMounted(() => {
