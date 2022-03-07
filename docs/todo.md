@@ -340,8 +340,6 @@ https://designstem.github.io/fachwerk/docs/#/f-buttons
 
 https://designstem.github.io/fachwerk/docs/#/f-keyboard
 
-https://designstem.github.io/fachwerk/docs/#/f-mouse
-
 https://designstem.github.io/fachwerk/docs/#/f-drag
 
 ### Data components
