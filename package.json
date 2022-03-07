@@ -1,6 +1,6 @@
 {
   "name": "fachwerk",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
@@ -39,7 +39,8 @@
     "preview": "vite preview --port 5000",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
-    "release": "vitest --run && npm run build && vue-tsc --declaration --emitDeclarationOnly"
+    "release": "vitest --run && npm run build && vue-tsc --declaration --emitDeclarationOnly",
+    "bump": "bumpp --commit \"chore: v%s\""
   },
   "dependencies": {
     "d3-shape": "^3.1.0",
@@ -60,6 +61,7 @@
     "@types/three": "^0.136.1",
     "@vitejs/plugin-vue": "^2.0.0",
     "@vueuse/core": "^7.5.3",
+    "bumpp": "^7.1.1",
     "gray-matter": "^4.0.3",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
