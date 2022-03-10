@@ -31,16 +31,27 @@ import IconGithub from "~icons/tabler/brand-github";
           to="/get-started/vite"
           class="text-slate-400 hover:text-slate-300"
           active-class="text-slate-100"
-          >Docs</router-link
         >
+          Docs
+        </router-link>
       </li>
       <li>
         <a
           href="https://editor.fachwerk.dev"
           target="_blank"
-          class="group flex items-center gap-2 text-slate-400 hover:text-slate-300"
+          class="group flex items-center gap-1 text-slate-400 hover:text-slate-300"
         >
           Editor
+          <IconOpen class="text-slate-600 group-hover:text-slate-500" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://slides.fachwerk.dev"
+          target="_blank"
+          class="group flex items-center gap-1 text-slate-400 hover:text-slate-300"
+        >
+          Slides
           <IconOpen class="text-slate-600 group-hover:text-slate-500" />
         </a>
       </li>
