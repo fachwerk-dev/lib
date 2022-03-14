@@ -14,18 +14,18 @@ const onClick = () => {
     class="md:block"
   >
     <ul class="leading-8 text-gray-600">
-      <li v-for="link in sidebar" class="pb-2 last:pb-0">
+      <li v-for="link in sidebar" class="pb-6 last:pb-0">
         <router-link
           @click="onClick"
           v-if="link.link && !link.children"
           :to="link.link"
-          class="font-medium block hover:text-sky-600"
-          active-class="text-sky-600 underline underline-offset-2"
+          class="block font-medium hover:text-sky-600"
+          active-class="text-sky-600 underline underline-offset-2 xl:text-lg"
         >
           {{ link.text }}
         </router-link>
         <div v-if="!link.link" class="font-medium">{{ link.text }}</div>
-        <ul v-if="link.children" class="pl-4">
+        <ul v-if="link.children">
           <li v-for="child in link.children">
             <router-link
               @click="onClick"

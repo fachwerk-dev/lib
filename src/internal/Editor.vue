@@ -65,7 +65,7 @@ const onError = (e: any | null) => (error.value = e);
       <textarea
         ref="editor"
         v-model="content"
-        class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
+        class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8 lg:text-base"
       />
       <a
         class="absolute top-1 right-1 !text-gray-600 hover:!text-gray-400 md:top-2 md:right-2"
@@ -82,7 +82,7 @@ const onError = (e: any | null) => (error.value = e);
       <div class="opacity-0">
         <Compiler :content="initialContent" />
       </div>
-      <div class="absolute inset-4 lg:inset-6">
+      <div class="absolute inset-4 lg:inset-6 xl:inset-8">
         <Compiler :content="outputContent" @error="onError" />
       </div>
     </div>

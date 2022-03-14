@@ -9,24 +9,19 @@ const isFrontpage = frontmatter?.layout === "frontpage";
 </script>
 
 <template>
-  <div>
+  <div class="">
     <Header class="sticky top-0 z-50 md:relative" />
-    <main v-if="isFrontpage" class="">
-      <Nav
-        class="sticky bottom-0 block overflow-auto border-r-2 border-r-gray-100 p-4 md:hidden md:p-8"
-      />
-      <Hero />
-      <!-- <Content><slot /></Content> -->
-    </main>
+    <Hero v-if="isFrontpage" class="mx:px-12 mx-auto max-w-7xl px-4" />
     <main
-      v-else
-      class="grid grid-cols-1 md:grid-cols-[250px_1fr] md:grid-rows-1"
+      class="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-[250px_1fr] md:grid-rows-1"
     >
-      <Nav
-        v-if="!isFrontpage"
-        class="sticky bottom-0 overflow-auto border-r-2 border-r-gray-100 p-4 md:p-8"
-      />
-      <Content><slot /></Content>
+      <div
+        :class="isFrontpage ? 'isFrontpage block md:hidden' : ''"
+        class="border-r-2 border-r-gray-100 p-4 md:p-12"
+      >
+        <Nav class="sticky bottom-0 overflow-auto" />
+      </div>
+      <Content class="p-4 md:p-12"><slot /></Content>
     </main>
   </div>
 </template>
