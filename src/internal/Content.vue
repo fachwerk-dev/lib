@@ -3,13 +3,13 @@
   <article
     class="
       prose
-      max-w-none
+      max-w-[100ch]
       prose-headings:text-slate-600
       prose-lead:w-[64ch]
       prose-p:mt-0
       prose-p:w-auto
       prose-p:before:content-none
-      prose-p:after:content-none
+      prose-p:after:content-non
       prose-a:break-words
       prose-a:text-lightblue-700
       prose-a:underline
@@ -33,12 +33,11 @@
       prose-pre:p-4
       prose-pre:text-sm
       prose-pre:md:-mx-0
-      prose-pre:md:rounded
+      prose-pre:xl:rounded
       md:p-12
       lg:prose-lg
       lg:prose-p:w-[64ch]
       lg:prose-pre:p-6
-      xl:prose-xl
     ">
     <slot/>
   </article>

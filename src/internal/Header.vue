@@ -5,11 +5,11 @@ import IconOpen from "~icons/tabler/layers-subtract";
 import IconGithub from "~icons/tabler/brand-github";
 </script>
 <template>
-  <div class="bg-slate-900">
+  <div class="overflow-auto bg-slate-900">
     <header
-      class="mx-auto flex w-full max-w-7xl items-center justify-between py-5 font-medium text-slate-200 hover:text-gray-100"
+      class="mx-auto flex w-full max-w-7xl items-center justify-between py-5 px-4 font-medium text-slate-200 hover:text-gray-100 md:px-12"
     >
-      <ul class="flex gap-3 md:gap-4">
+      <ul class="flex gap-4 md:gap-5">
         <li class="block md:hidden">
           <div
             @click="state.menuOpen = !state.menuOpen"
