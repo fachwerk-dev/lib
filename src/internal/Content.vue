@@ -21,8 +21,7 @@
       prose-blockquote:not-italic
       prose-strong:font-medium
       prose-code:bg-lightblue-50
-      prose-code:px-[0.2em]
-      prose-code:py-[0.1em]
+      prose-code:py-px
       prose-code:font-normal
       prose-code:text-lightblue-700
       prose-code:before:content-none
