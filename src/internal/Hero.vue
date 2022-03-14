@@ -2,7 +2,7 @@
 import Button from "./Button.vue";
 </script>
 <template>
-  <article class="grid min-h-screen auto-rows-min gap-4 bg-sky-500 p-5 md:p-12">
+  <article class="grid min-h-screen auto-rows-min gap-4 md:p-12 lg:gap-6">
     <h1 class="mb-4 text-5xl font-bold tracking-tighter md:mb-0 md:text-6xl">
       ▦ Fachwerk
     </h1>
@@ -16,8 +16,9 @@ import Button from "./Button.vue";
       <Button href="https://editor.fachwerk.dev">Try the online editor</Button>
       <Button
         href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Fachwerk+Vite"
-        >Open in StackBlitz</Button
       >
+        Open in StackBlitz
+      </Button>
     </div>
 
     <p />
