@@ -7,7 +7,7 @@ import IconGithub from "~icons/tabler/brand-github";
 <template>
   <div class="bg-slate-900">
     <header
-      class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-5 font-medium text-slate-200 hover:text-gray-100 md:px-12"
+      class="mx-auto flex w-full max-w-7xl items-center justify-between py-5 font-medium text-slate-200 hover:text-gray-100"
     >
       <ul class="flex gap-3 md:gap-4">
         <li class="block md:hidden">

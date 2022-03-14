@@ -20,7 +20,7 @@ const onClick = () => {
           v-if="link.link && !link.children"
           :to="link.link"
           class="block font-medium hover:text-sky-600"
-          active-class="text-sky-600 underline underline-offset-2"
+          active-class="text-sky-600 underline underline-offset-2 xl:text-lg"
         >
           {{ link.text }}
         </router-link>

@@ -10,21 +10,20 @@ const isFrontpage = frontmatter?.layout === "frontpage";
 
 <template>
   <div>
-    <Header class="sticky top-0 z-50 md:relative" />
-    <main v-if="isFrontpage" class="bg-sky-500">
+    <Header class="sticky top-0 z-50 px-4 md:relative md:px-12" />
+    <main v-if="isFrontpage" class="bg-lightblue-500 p-4">
       <Nav
-        class="sticky bottom-0 block overflow-auto border-r-2 border-r-gray-100 p-4 md:hidden md:p-8"
+        class="sticky bottom-0 block overflow-auto border-r-2 border-r-gray-100 p-4 pl-0 md:hidden"
       />
       <Hero class="mx-auto max-w-7xl" />
-      <!-- <Content><slot /></Content> -->
     </main>
     <main
       v-else
-      class="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-[250px_1fr] md:grid-rows-1"
+      class="mx-auto grid max-w-7xl grid-cols-1 p-4 md:grid-cols-[250px_1fr] md:grid-rows-1"
     >
       <Nav
         v-if="!isFrontpage"
-        class="sticky bottom-0 overflow-auto border-r-2 border-r-gray-100 p-4 md:p-8"
+        class="sticky bottom-0 overflow-auto border-r-2 border-r-gray-100 p-4 pl-0 md:pt-12"
       />
       <Content><slot /></Content>
     </main>

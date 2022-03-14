@@ -7,7 +7,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        sky: {
+        lightblue: {
           50: "#F7FBFD",
           100: "#EFF8FA",
           200: "#E0F0F5",
