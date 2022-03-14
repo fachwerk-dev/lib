@@ -35,7 +35,7 @@ import Button from "./Button.vue";
       started with starter templates:
     </p>
     <div
-      class="-mx-4 inline-block rounded-none bg-black px-6 py-4 font-mono text-white md:mx-0 md:place-self-start md:rounded lg:text-lg"
+      class="-mx-4 inline-block rounded-none bg-black px-8 py-6 font-mono text-white md:mx-0 md:place-self-start md:rounded lg:text-lg"
     >
       npm init fachwerk
     </div>
