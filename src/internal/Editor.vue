@@ -66,6 +66,7 @@ const onError = (e: any | null) => (error.value = e);
         ref="editor"
         v-model="content"
         class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8 lg:text-base"
+        spellcheck="false"
       />
       <a
         class="absolute top-1 right-1 !text-gray-600 hover:!text-gray-400 md:top-2 md:right-2"
