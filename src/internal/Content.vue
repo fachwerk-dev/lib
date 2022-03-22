@@ -4,7 +4,7 @@
     class="
       prose
       max-w-[100ch]
-      prose-headings:text-slate-600
+      prose-headings:text-slate-800
       prose-lead:w-[64ch]
       prose-p:mt-0
       prose-p:w-auto
@@ -20,6 +20,7 @@
       prose-blockquote:font-normal
       prose-blockquote:not-italic
       prose-strong:font-medium
+      prose-code:text-sm
       prose-code:bg-lightblue-50
       prose-code:py-px
       prose-code:font-normal
@@ -30,7 +31,6 @@
       prose-pre:rounded-none
       prose-pre:bg-lightblue-50
       prose-pre:p-4
-      prose-pre:text-sm
       prose-pre:md:-mx-0
       prose-pre:xl:rounded
       md:p-12
