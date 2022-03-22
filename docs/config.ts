@@ -55,7 +55,6 @@ export let sidebar: Link[] = [
   {
     text: "Math utilities",
     children: [
-      { text: "seq", link: "/utils/math/seq" },
       { text: "remap", link: "/utils/math/remap" },
       { text: "random", link: "/utils/math/random" },
     ],
@@ -72,7 +71,10 @@ export let sidebar: Link[] = [
   },
   {
     text: "Array utilities",
-    children: [{ text: "range", link: "/utils/array/range" }],
+    children: [
+      { text: "seq", link: "/utils/math/seq" },
+      { text: "range", link: "/utils/array/range" },
+    ],
   },
   {
     text: "Color utilities",

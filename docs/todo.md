@@ -78,8 +78,6 @@ https://visualia.github.io/visualia_original/#helper-functions_slug
 
 ### array?
 
-range(length) ?
-
 https://visualia.github.io/visualia_original/#helper-functions_array
 
 ### shuffle
