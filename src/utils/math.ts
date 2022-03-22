@@ -1,3 +1,13 @@
+export function seq(
+  count: number,
+  step: number | ((current: number, index?: number) => number) = 1,
+  start: number = 0
+) {
+  return Array.from({ length: count }).map((_, i) => {
+    typeof step === "function" ? step(i + start, i) : i * step + start;
+  });
+}
+
 export function remap(
   value: number,
   start1: number,
