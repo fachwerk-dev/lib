@@ -1,6 +1,6 @@
 export function seq(
   count: number,
-  step: number | ((current: number) => number) = 1,
+  step: number | ((current: number) => any) = 1,
   start: number = 0
 ) {
   return Array.from({ length: count }).map((_, i) =>
