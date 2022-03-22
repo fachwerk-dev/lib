@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { ref, Ref, provide } from "vue";
 import { PDFDocument, PDFPage } from "pdf-lib";
-
-const width = 100;
-const height = 100;
-
 export type Context = {
   pdf: Ref<PDFDocument | null>;
   page: Ref<PDFPage | null>;
@@ -13,6 +9,9 @@ export type Context = {
   update: () => void;
   transforms: string[];
 };
+
+const width = 100;
+const height = 100;
 
 const context: Context = {
   pdf: ref(null),
