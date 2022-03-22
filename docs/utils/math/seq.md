@@ -2,14 +2,14 @@
 
 `seq()` function generates array of `count` of numbers, incrementing by `step` (1 by default), starting from `start` (0 by default).
 
-In [math definitions](https://mathigon.org/course/sequences/arithmetic-geometric) it generates a _fixed-length arithmethic or geometric sequence of numbers_.
+In math it is called [fixed-length arithmethic sequence of numbers](https://mathigon.org/course/sequences/arithmetic-geometric).
 
 ### Signature
 
 ```ts
 function seq(
   count: number,
-  step: number | ((current: number, index?: number) => number) = 1,
+  step: number | ((current: number) => number) = 1,
   start: number = 0
 );
 ```
@@ -35,7 +35,7 @@ Alternatively, you can define `step` parameter as a function that allows to crea
 {{ seq(4, n => n * n) }}
 ```
 
-Finally, you can define a `start` parameter when you want a sequence to start with something else than `0`:
+<mark>Experimental</mark>You can also define third `start` parameter when you want a sequence to start with something else than `0`:
 
 ```md
 {{ seq(4, 2, 10) }}

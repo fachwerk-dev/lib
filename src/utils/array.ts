@@ -1,19 +1,19 @@
-export function range(
-  fromOrLength: number,
-  to: number | undefined = undefined,
-  step: number = 1
-): number[] {
-  if (to === undefined) {
-    return Array.from({ length: fromOrLength }).map((_, i) => i);
-  } else {
-    const reversed = to < fromOrLength;
-    if (reversed) {
-      [to, fromOrLength] = [fromOrLength, to];
-    }
-    const length = Math.floor((to - fromOrLength) / step) + 1;
-    const output = Array.from({ length }).map(
-      (_, i) => fromOrLength + i * step
-    );
-    return reversed ? output.reverse() : output;
+export function seq(
+  count: number,
+  step: number | ((current: number) => number) = 1,
+  start: number = 0
+) {
+  return Array.from({ length: count }).map((_, i) =>
+    typeof step === "function" ? step(i + start) : i * step + start
+  );
+}
+
+export function range(from: number, to: number, step: number = 1): number[] {
+  const reversed = to < from;
+  if (reversed) {
+    [to, from] = [from, to];
   }
+  const length = Math.floor((to - from) / step) + 1;
+  const output = seq(length, step, from);
+  return reversed ? output.reverse() : output;
 }

@@ -1,5 +1,26 @@
 import { test, assert } from "vitest";
-import { range } from "./array";
+import { range, seq } from "./array";
+
+test("seq 3 with default step 1", () =>
+  assert.sameOrderedMembers(seq(3), [0, 1, 2]));
+
+test("seq 3 with step 2", () =>
+  assert.sameOrderedMembers(seq(3, 2), [0, 2, 4]));
+
+test("seq 3 with step -2", () =>
+  assert.sameOrderedMembers(seq(3, -2), [0, -2, -4]));
+
+test("seq 3 with step n ** 2", () =>
+  assert.sameOrderedMembers(
+    seq(3, (n) => n ** 2),
+    [0, 1, 4]
+  ));
+
+test("seq 3 with step 2, starting from 10", () =>
+  assert.sameOrderedMembers(seq(3, 2, 10), [10, 12, 14]));
+
+test("seq 3 with step 2, starting from -10", () =>
+  assert.sameOrderedMembers(seq(3, 2, -10), [-10, -8, -6]));
 
 test("range 1 to 3", () => assert.sameOrderedMembers(range(1, 3), [1, 2, 3]));
 
