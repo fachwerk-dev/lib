@@ -3,9 +3,9 @@ export function seq(
   step: number | ((current: number, index?: number) => number) = 1,
   start: number = 0
 ) {
-  return Array.from({ length: count }).map((_, i) => {
-    typeof step === "function" ? step(i + start, i) : i * step + start;
-  });
+  return Array.from({ length: count }).map((_, i) =>
+    typeof step === "function" ? step(i + start, i) : i * step + start
+  );
 }
 
 export function remap(

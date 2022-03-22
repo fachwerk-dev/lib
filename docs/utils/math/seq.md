@@ -16,6 +16,8 @@ function seq(
 
 ### Usage
 
+To create a simplest sequence just use `seq(count)`:
+
 ```md
 {{ seq(4) }}
 ```
@@ -44,25 +46,17 @@ Finally, you can define a `start` parameter when you want a sequence to start wi
 ```md
 <f-svg width="400" height="100">
   <rect
-    v-for="x in seq(4,100)"
+    v-for="x in seq(f.count,f.step,f.start)"
     :x="x"
     width="2"
     height="100"
     fill="lightblue"
   />
 </f-svg>
-```
 
-```md
-<f-svg width="400" height="400" centered>
-  <path
-    v-for="a in seq(4,360/4)"
-    :d="arcpath(a,a + 360/4,100,50)"
-    fill="none"
-    stroke="lightblue"
-    stroke-width="2"
-  />
-</f-svg>
-```
+<f-slider v-model="f.count" :value="40" min="1" /> Count: {{ f.count }}
 
-#### More info
+<f-slider v-model="f.step" :value="10" min="1" /> Step: {{ f.step }}
+
+<f-slider v-model="f.start" :value="0" /> Start: {{ f.start }}
+```
