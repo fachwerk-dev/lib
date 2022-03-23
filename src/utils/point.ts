@@ -1,4 +1,4 @@
-import { pol2car, range, remap, seq, trunc } from ".";
+import { $pol2car, pol2car, range, remap, seq, trunc } from ".";
 import { resolvePoint } from "../internal/point";
 
 export type Point = {
@@ -39,13 +39,6 @@ export function $rectpoints(
 
 export function linepoints(length: number, step: number): Point[] {
   return seq(length).map((x) => ({ x: x * step, y: 0 }));
-}
-
-export function $pol2car(a: number = 0, r: number = 0): $Point {
-  return [
-    Math.cos((a - 90) * (Math.PI / 180)) * r,
-    Math.sin((a - 90) * (Math.PI / 180)) * r,
-  ].map((p) => trunc(p)) as $Point;
 }
 
 export function circlepoints(length: number, r: number): Point[] {

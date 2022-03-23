@@ -4,6 +4,8 @@ Converts Cartesian coordinates to polar coordinates. Inspired by [cart2pol()](ht
 
 ```md
 {{ car2pol(0, 10) }}
+
+{{ $car2pol([0, 10]) }}
 ```
 
 ## Prior art

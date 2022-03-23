@@ -26,22 +26,26 @@ export let sidebar: Link[] = [
   {
     text: "Point utilities",
     children: [
-      { text: "linepoints", link: "/utils/point/linepoints" },
       { text: "rectpoints", link: "/utils/point/rectpoints" },
       { text: "circlepoints", link: "/utils/point/circlepoints" },
-      { text: "rectgridpoints", link: "/utils/point/rectgridpoints" },
-      { text: "circlegridpoints", link: "/utils/point/circlegridpoints" },
     ],
+  },
+  {
+    text: "Point grid utilities",
+    children: [{ text: "rectgridpoints", link: "/utils/point/rectgridpoints" }],
   },
   {
     text: "Path utilities",
     children: [
-      { text: "polygonpath", link: "/utils/path/polygonpath" },
+      { text: "rectpath", link: "/utils/path/rectpath" },
       { text: "circlepath", link: "/utils/path/circlepath" },
       { text: "arcpath", link: "/utils/path/arcpath" },
-      { text: "rectpath", link: "/utils/path/rectpath" },
-      { text: "rectgridpath", link: "/utils/path/rectgridpath" },
+      { text: "polygonpath", link: "/utils/path/polygonpath" },
     ],
+  },
+  {
+    text: "Path grid utilities",
+    children: [{ text: "rectgridpath", link: "/utils/path/rectgridpath" }],
   },
   {
     text: "Transform utilities",
