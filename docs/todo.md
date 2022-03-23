@@ -134,7 +134,7 @@ https://visualia.github.io/visualia_original/#helper-functions_distance
 
 ### pointatline
 
-https://visualia.github.io/visualia_original/#helper-functions_pointatline
+https://visualia.github.io/visualia_original/#helper-functions$Pointatline
 
 https://designstem.github.io/fachwerk/docs/#/linepoint
 
@@ -228,7 +228,7 @@ https://designstem.github.io/fachwerk/docs/#/f-group
 
 https://designstem.github.io/fachwerk/docs/#/f-point
 
-https://visualia.github.io/visualia_original/#graphics_point
+https://visualia.github.io/visualia_original/#graphics$Point
 
 ### f-line
 

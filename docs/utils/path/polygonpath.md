@@ -18,7 +18,9 @@ function polygonpath(points: Point[], closed: boolean = false): string;
 Open path:
 
 ```md
-{{ polygonpath([{ x: 0, y: 0 }, { x: 100, y: 100 }, { x: 100, y: 100 }]) }}
+{{ polygonpath([{ x: 0, y: 0 },{ x: 100, y: 100 },{ x: 200, y: 0 },{ x: 300, y: 100 }]) }}
+
+{{ $polygonpath([[0,0],[100,100],[200,0],[300,100]]) }}
 ```
 
 Closed path:
@@ -41,6 +43,16 @@ Closed path:
   stroke-width="2"
   fill="none"
 />
+</svg>
+```
+
+```md
+<svg>
+  <path :d="$polygonpath([[0,0],[100,100],[200,0],[300,100]])"
+    stroke="lightblue"
+    stroke-width="2"
+    fill="none"
+  />
 </svg>
 ```
 

@@ -26,15 +26,27 @@ return polygonpath(rectpoints(width, height, xOrPoint, y), true);
 
 ```md
 {{ rectpath(50,50) }}
+
+{{ $rectpath(50,50) }}
 ```
 
 ## Example
 
-Drawing a simple rectangle:
+Get a path for `50 × 50` rectangle, with `25,25` top-left corner:
 
 ```md
 <svg>
-  <path :d="rectpath(50,50,50,50)"
+  <path :d="rectpath(50,50,25,25)"
+    stroke="lightblue"
+    stroke-width="2"
+    fill="none"
+  />
+</svg>
+```
+
+```md
+<svg>
+  <path :d="$rectpath(50,50,[25,25])"
     stroke="lightblue"
     stroke-width="2"
     fill="none"

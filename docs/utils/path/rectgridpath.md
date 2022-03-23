@@ -3,7 +3,9 @@
 ## Usage
 
 ```md
-{{ rectgridpath(5,30) }}
+{{ rectgridpath(4,30) }}
+
+{{ $rectgridpath(4,30) }}
 ```
 
 ## Example
@@ -12,6 +14,17 @@
 <svg height="300">
   <path
     :d="rectgridpath(10,30)"
+    fill="none"
+    stroke="lightblue"
+    stroke-width="2"
+  />
+</svg>
+```
+
+```md
+<svg height="300">
+  <path
+    :d="$rectgridpath(10,30)"
     fill="none"
     stroke="lightblue"
     stroke-width="2"

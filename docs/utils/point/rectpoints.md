@@ -20,16 +20,34 @@ function rectpoints(
 
 ```md
 {{ rectpoints(50, 50)}}
+
+{{ $rectpoints(50, 50)}}
 ```
 
 ## Example
 
+Get points for `50 × 50` rectangle, with `x = 25` and `y = 25` top-left corner:
+
 ```md
-<svg>
+<svg height="100">
   <circle
-    v-for="point in rectpoints(50, 50, 50, 50)"
+    v-for="point in rectpoints(50, 50, 25, 25)"
     :cx="point.x"
     :cy="point.y"
+    r="10"
+    fill="lightblue"
+  />
+</svg>
+```
+
+Alternative `$rectpoints` syntax:
+
+```md
+<svg height="100">
+  <circle
+    v-for="[x,y] in $rectpoints(50, 50, [25,25])"
+    :cx="x"
+    :cy="y"
     r="10"
     fill="lightblue"
   />
