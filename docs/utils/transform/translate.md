@@ -23,7 +23,7 @@ function translate(x: number = 0, y: number = 0, unit?: "px" | "%"): string;
 SVG transforms are unitless, so we can just pass numeric values to `translate()` function:
 
 ```md
-<f-svg width="250" height="250" padding="1">
+<f-svg width="250" height="250">
   <path
     :d="rectgridpath(10,25)"
     fill="none"

@@ -21,7 +21,7 @@ function rectpoints(
 ## Example
 
 ```md
-<f-svg width="400" height="400" padding="1" rectgrid>
+<f-svg width="400" height="400" rectgrid>
   <circle
     v-for="[x,y] in rectpoints(200, 200, [100,100])"
     :cx="x"

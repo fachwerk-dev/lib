@@ -15,17 +15,17 @@ function circlepoints(
 ## Usage
 
 ```md
-{{ circlepoints(16, 100) }}
+{{ circlepoints(8, 100) }}
 ```
 
 ## Examples
 
-Drawing a `16` points on circle with radius of `100`, centered at `200,200`. Note we are unstructuring `point` into `[x,y]`:
+Drawing a `16` points on circle with radius of `100`, centered at `200,200`. Note we are unstructuring each point into `[x,y]`:
 
 ```md
-<f-svg width="400" height="400" padding="1" rectgrid>
+<f-svg width="400" height="400" rectgrid>
   <circle
-    v-for="[x,y] in circlepoints(16, 100, [200,200])"
+    v-for="[x,y] in circlepoints(8, 100, [200,200])"
     :cx="x"
     :cy="y"
     r="10"

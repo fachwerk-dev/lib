@@ -25,7 +25,7 @@ By default SVG scales the border size of the element along with the rest of the 
 Also note that we use `step="any"` on the `f-slider` component. It is one of possible values of `step` property of `<input type="range" />` tag.
 
 ```md
-<f-svg width="250" height="250" padding="1">
+<f-svg width="250" height="250">
   <path
     :d="rectgridpath(10,25)"
     fill="none"

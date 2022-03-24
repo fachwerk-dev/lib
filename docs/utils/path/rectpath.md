@@ -11,19 +11,19 @@ function rectpath(width: number, height: number, position: Point = [0, 0]);
 ## Usage
 
 ```md
-{{ rectpath(50,50) }}
+{{ rectpath(200,200,[100,100]) }}
 ```
 
 ## Example
 
-Get a path for `50 × 50` rectangle, with `25,25` top-left corner:
+Draw a path for `200 × 200` rectangle, with top-left corner at `100,100`:
 
 ```md
-<svg>
-  <path :d="rectpath(50,50,[25,25])"
+<f-svg width="400" height="400" rectgrid>
+  <path :d="rectpath(200,200,[100,100])"
     stroke="lightblue"
     stroke-width="2"
     fill="none"
   />
-</svg>
+</f-svg>
 ```

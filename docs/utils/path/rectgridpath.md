@@ -3,20 +3,20 @@
 ## Usage
 
 ```md
-{{ rectgridpath(4,30) }}
+{{ rectgridpath(4,100) }}
 ```
 
 ## Example
 
 ```md
-<svg height="300">
+<f-svg width="400" height="400">
   <path
-    :d="rectgridpath(10,30)"
+    :d="rectgridpath(4,100)"
     fill="none"
     stroke="lightblue"
     stroke-width="2"
   />
-</svg>
+</f-svg>
 ```
 
 ## Prior art

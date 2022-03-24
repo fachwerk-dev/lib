@@ -31,7 +31,7 @@ To rotate around the center of the object, add the following properties to the e
 ```
 
 ```md
-<f-svg width="250" height="250" padding="1">
+<f-svg width="250" height="250">
   <path
     :d="rectgridpath(10,25)"
     fill="none"

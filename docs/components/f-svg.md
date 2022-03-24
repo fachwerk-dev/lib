@@ -51,7 +51,7 @@ Centered: {{ ['false','true'][f.centered] }}
 
 <f-slider v-model="f.centered" max="1" />
 
-<f-svg :centered="f.centered" width="400" height="400" padding="1" rectgrid>
+<f-svg :centered="f.centered" width="400" height="400" rectgrid>
   <circle
     v-for="[x,y] in circlepoints(8,100)"
     :cx="x"
@@ -79,7 +79,7 @@ TODO
 As there might be many several `<f-svg>`s on a page, you need to identify the SVG with the `id` attribute and pass it to the emitted event. The `id` parameter is also the filename of the downloaded SVG file.
 
 ```md
-<f-svg id="test" width="400" height="400" centered padding="1" rectgrid>
+<f-svg id="test" width="400" height="400" centered rectgrid>
    <circle
     v-for="[x,y] in circlepoints(8,100)"
     :cx="x"

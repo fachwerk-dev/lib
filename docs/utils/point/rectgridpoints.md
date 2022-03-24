@@ -15,7 +15,7 @@ function rectgridpoints(
 ## Usage
 
 ```md
-{{ rectgridpoints(2,10) }}
+{{ rectgridpoints(3,100,[100,100]) }}
 ```
 
 ## Example
@@ -23,7 +23,7 @@ function rectgridpoints(
 Using `rectgridpoints()` with `3 × 3` grid with step `100` and `100,100` offset from top left corner:
 
 ```md
-<f-svg width="400" height="400" padding="1" rectgrid>
+<f-svg width="400" height="400" rectgrid>
   <circle
     v-for="[x,y] in rectgridpoints(3,100,[100,100])"
     :cx="x"

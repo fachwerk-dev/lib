@@ -28,7 +28,7 @@ function useSvgDownload(svgRef: Ref<SVGElement | null>, filename: string) {
 const {
   width = 300,
   height = 300,
-  padding = 0,
+  padding = 1,
   centered = false,
   linegrid = false,
   rectgrid = false,

@@ -22,12 +22,12 @@ Circle path with the radius of `50` and center in `150,150`:
 
 ## Example
 
-Let's draw a circle with a radius of `100`:
+Let's draw a circle with a radius of `100` with center at `200,200`:
 
 ```md
-<f-svg centered>
+<f-svg width="400" height="400" rectgrid>
   <path
-    :d="circlepath(100)"
+    :d="circlepath(100,[200,200])"
     fill="none"
     stroke="lightblue"
     stroke-width="2"
@@ -38,15 +38,15 @@ Let's draw a circle with a radius of `100`:
 Now let's combine the `circlepoints()` and `circlepath()` functions:
 
 ```md
-<svg height="300">
+<f-svg width="400" height="400" rectgrid>
   <path
-    :d="circlepoints(16,50,[150,150])
-      .map(point => circlepath(50,point))
+    :d="circlepoints(8,100,[200,200])
+      .map(point => circlepath(100,point))
       .join('')
     "
     fill="none"
     stroke="lightblue"
     stroke-width="2"
   />
-</svg>
+</f-svg>
 ```

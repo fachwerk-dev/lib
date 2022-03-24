@@ -16,20 +16,18 @@ Open and closed paths:
 
 ```md
 {{ polygonpath([[0,0],[100,100],[200,0],[300,100]]) }}
-
-{{ polygonpath([[0,0],[100,100],[200,0],[300,100]], true) }}
 ```
 
 ## Example
 
 ```md
-<svg>
-  <path :d="polygonpath([[0,0],[100,100],[200,0],[300,100]])"
+<f-svg width="400" height="400" rectgrid>
+  <path :d="polygonpath([[100,100],[300,100],[300,300],[100,300]])"
     stroke="lightblue"
     stroke-width="2"
     fill="none"
   />
-</svg>
+</f-svg>
 ```
 
 ## Prior art
