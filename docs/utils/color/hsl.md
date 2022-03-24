@@ -162,17 +162,16 @@ https://visualia.netlify.app/utils/colors.html#hue
 
 ## Appendix
 
-<f-svg width="300" height="300" centered>
+<f-svg width="400" height="400" centered>
   <path
     v-for="h in 360"
-    :d="arcpath(h,h + 1,50,100)"
+    :d="arcpath(h,h + 1,100,200)"
     :fill="hsl(h)"
     v-on:mouseover="f.h = h" 
   />
   <circle
-    :cx="pol2car(f.h,75).x"
-    :cy="pol2car(f.h,75).y"
-    r="10"
+    :transform="translate(...pol2car(f.h,150))"
+    r="20"
     :fill="hsl(f.h,100,50)"
     style="pointer-events: none"
     stroke="white"
