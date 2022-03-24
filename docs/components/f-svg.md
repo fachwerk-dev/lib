@@ -29,10 +29,9 @@ Padding: {{ f.padding }}
 
 <f-svg :padding="f.padding" width="400" height="400" rectgrid>
   <circle
-    v-for="[x,y] in circlepoints(8,100,[200,200])"
-    :cx="x"
-    :cy="y"
-    r="100"
+    cx="200"
+    cy="200"
+    r="200"
     fill="none"
     stroke="lightblue"
     stroke-width="2"
@@ -52,11 +51,8 @@ Centered: {{ ['false','true'][f.centered] }}
 <f-slider v-model="f.centered" max="1" />
 
 <f-svg :centered="f.centered" width="400" height="400" rectgrid>
-  <circle
-    v-for="[x,y] in circlepoints(8,100)"
-    :cx="x"
-    :cy="y"
-    r="100"
+ <circle
+    r="200"
     fill="none"
     stroke="lightblue"
     stroke-width="2"
@@ -73,10 +69,10 @@ As there might be many several `<f-svg>`s on a page, you need to identify the SV
 ```md
 <f-svg id="test" width="400" height="400" centered rectgrid>
    <circle
-    v-for="[x,y] in circlepoints(8,100)"
+    v-for="[x,y] in circlepoints(8,50)"
     :cx="x"
     :cy="y"
-    r="100"
+    r="50"
     fill="lightblue"
     style="mix-blend-mode: multiply"
   />

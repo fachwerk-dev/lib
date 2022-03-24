@@ -40,8 +40,8 @@ Now let's combine the `circlepoints()` and `circlepath()` functions:
 ```md
 <f-svg width="400" height="400" rectgrid>
   <path
-    :d="circlepoints(8,100,[200,200])
-      .map(point => circlepath(100,point))
+    :d="circlepoints(8,50,[200,200])
+      .map(point => circlepath(50,point))
       .join('')
     "
     fill="none"

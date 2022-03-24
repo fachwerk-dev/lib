@@ -97,7 +97,7 @@ if (id) {
         fill="none"
         stroke="black"
         stroke-width="2"
-        opacity="0.1"
+        opacity="0.05"
       />
     </template>
     <template v-if="rectgrid">
@@ -108,7 +108,7 @@ if (id) {
         fill="none"
         stroke="black"
         stroke-width="2"
-        opacity="0.1"
+        opacity="0.05"
       />
     </template>
   </svg>
