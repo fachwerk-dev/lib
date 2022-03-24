@@ -7,10 +7,11 @@
 ```md
 <f-pdf>
   <f-pdf-path
-    :path="polygonpath(rectpoints(0, 0, 100, 100), true)" transform="translate(10,10)"
-  />
-   <f-pdf-path
-    :path="circlepath(0,0,50)"
+    :d="
+      circlepoints(8,50,[200,200])
+         .map(point => circlepath(50,point))
+         .join('')
+      "
   />
 </f-pdf>
 ```

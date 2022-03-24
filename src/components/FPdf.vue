@@ -10,8 +10,8 @@ export type Context = {
   transforms: string[];
 };
 
-const width = 100;
-const height = 100;
+const width = 400;
+const height = 400;
 
 const context: Context = {
   pdf: ref(null),

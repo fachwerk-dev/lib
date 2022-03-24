@@ -64,14 +64,6 @@ Centered: {{ ['false','true'][f.centered] }}
 </f-svg>
 ```
 
-### Linegrid
-
-TODO
-
-### Rectgrid
-
-TODO
-
 ### Download
 
 `<f-svg>` listens to the `downloadsvg` and `downloadpng` global events that allow downloading the contents of as SVG or PNG file.

@@ -9,7 +9,7 @@ function car2pol(point: Point): [number, number];
 ## Usage
 
 ```md
-{{ car2pol(0, 10) }}
+{{ car2pol([0, 10]) }}
 ```
 
 ## Prior art

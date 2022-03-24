@@ -22,8 +22,6 @@ function scale(scaleX: number = 1, scaleY?: number, unit?: "%"): string
 
 By default SVG scales the border size of the element along with the rest of the element. To to keep the original border width on scale, there is a CSS style [vector-effect: non-scaling-stroke](https://www.w3.org/TR/SVGTiny12/painting.html#NonScalingStroke) available.
 
-Also note that we use `step="any"` on the `f-slider` component. It is one of possible values of `step` property of `<input type="range" />` tag.
-
 ```md
 <f-svg width="400" height="400" padding="5" rectgrid>
   <rect
@@ -62,18 +60,18 @@ Note that you can also set scale unit to `%`.
 ```md
 <div
   style="
-    width: 250px;
-    height: 250px;
+    width: 400px;
+    height: 400px;
     border-right: 2px solid whitesmoke;
     border-bottom: 2px solid whitesmoke;
-    background-size: 25px 25px;
+    background-size: 100px 100px;
     background-image: linear-gradient(to right, whitesmoke 2px, transparent 2px), linear-gradient(to bottom, whitesmoke 2px, transparent 2px);
   "
 >
   <div
     style="
-      width: 50px;
-      height: 50px;
+      width: 100px;
+      height: 100px;
       border: 2px solid lightblue;
     "
     :style="{transform: scale(f.scale)}"
@@ -82,7 +80,7 @@ Note that you can also set scale unit to `%`.
 
 <br />
 
-`f.scale` is `{{ f.scale }}`
+CSS scaling factor is {{ f.scale }}
 <f-slider v-model="f.scale" max="4" step="any" :value="1" />
 ```
 

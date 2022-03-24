@@ -26,7 +26,7 @@ Here is an example of setting up a scene and linking it up with Fachwerk's slide
 <f-three>
   <f-three-group ref="mesh">
     <f-three-mesh :geometry="geometry" />
-    <f-three-path :path="circlepath(0,0,20)" />
+    <f-three-path :path="circlepath(50)" />
   </f-three-group>
 </f-three>
 ```
@@ -50,7 +50,7 @@ Here is an example of setting up a scene and linking it up with Fachwerk's slide
 <f-three>
   <f-three-group ref="mesh">
     <f-three-mesh :geometry="geometry" />
-    <f-three-path :path="circlepath(0,0,50)" />
+    <f-three-path :path="circlepath(50)" />
   </f-three-group>
 </f-three>
 
