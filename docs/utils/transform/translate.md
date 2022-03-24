@@ -9,11 +9,11 @@ function translate(x: number = 0, y: number = 0, unit?: "px" | "%"): string;
 ## Usage
 
 ```md
-{{ translate(10,10) }}
+{{ translate(100,100) }}
 
-{{ translate(10,10,'px') }}
+{{ translate(100,100,'px') }}
 
-{{ translate(10,10,'%') }}
+{{ translate(100,100,'%') }}
 ```
 
 ## Examples
@@ -23,28 +23,22 @@ function translate(x: number = 0, y: number = 0, unit?: "px" | "%"): string;
 SVG transforms are unitless, so we can just pass numeric values to `translate()` function:
 
 ```md
-<f-svg width="250" height="250">
-  <path
-    :d="rectgridpath(10,25)"
-    fill="none"
-    stroke="whitesmoke"
-    stroke-width="2"
-  />
+<f-svg width="400" height="400" rectgrid>
   <rect
     :transform="translate(f.x,f.y)"
-    width="50"
-    height="50"
+    width="100"
+    height="100"
     fill="none"
     stroke="lightblue"
     stroke-width="2"
   />
 </f-svg>
 
-`f.x` is `{{ f.x }}`
-<f-slider v-model="f.x" max="250" step="25" />
+SVG x transform is {{ f.x }}
+<f-slider v-model="f.x" max="400" step="100" />
 
-`f.y` is `{{ f.y }}`
-<f-slider v-model="f.y" max="250" step="25" />
+SVG y transform is {{ f.y }}
+<f-slider v-model="f.y" max="400" step="100" />
 ```
 
 ### CSS translate example
@@ -54,18 +48,18 @@ Note that for the CSS transform you will need to pass an unit to the `transform(
 ```md
 <div
   style="
-    width: 250px;
-    height: 250px;
+    width: 400px;
+    height: 400px;
     border-right: 2px solid whitesmoke;
     border-bottom: 2px solid whitesmoke;
-    background-size: 25px 25px;
+    background-size: 100px 100px;
     background-image: linear-gradient(to right, whitesmoke 2px, transparent 2px), linear-gradient(to bottom, whitesmoke 2px, transparent 2px);
   "
 >
   <div
     style="
-      width: 50px;
-      height: 50px;
+      width: 100px;
+      height: 100px;
       border: 2px solid lightblue;
     "
     :style="{transform: translate(f.x,f.y,'px')}"
@@ -74,11 +68,11 @@ Note that for the CSS transform you will need to pass an unit to the `transform(
 
 <br />
 
-`f.x` is `{{ f.x }}`
-<f-slider v-model="f.x" max="250" step="25" />
+CSS x transform is {{ f.x }}
+<f-slider v-model="f.x" max="400" step="100" />
 
-`f.y` is `{{ f.y }}`
-<f-slider v-model="f.y" max="250" step="25" />
+CSS y transform is {{ f.y }}
+<f-slider v-model="f.y" max="400" step="100" />
 ```
 
 ## Prior art
