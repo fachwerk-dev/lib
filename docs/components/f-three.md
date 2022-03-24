@@ -6,22 +6,24 @@
 
 Here is an example of setting up a scene and linking it up with Fachwerk's slider control:
 
-```
+```vue
 <script setup>
-  import { watch } from 'vue'
-  import { BoxGeometry } from 'three'
+import { watch } from "vue";
+import { BoxGeometry } from "three";
+import { deg2rad } from "fachwerk";
 
-  const mesh = $ref()
-  const x = $ref(0)
-  const geometry = new BoxGeometry(20, 20, 20)
+const mesh = $ref();
+const x = $ref(0);
+const geometry = new BoxGeometry(75, 75, 75);
 
-  watch(() => x, () => {
-    mesh.mesh.rotation.x = x / 180 * Math.PI
+watch(
+  () => x,
+  () => {
+    mesh.mesh.rotation.x = deg2rad(x);
     mesh.update();
-  })
+  }
+);
 </script>
-
-<f-slider v-model="x" step="any" max="360" />
 
 <f-three>
   <f-three-group ref="mesh">
@@ -29,30 +31,37 @@ Here is an example of setting up a scene and linking it up with Fachwerk's slide
     <f-three-path :path="circlepath(50)" />
   </f-three-group>
 </f-three>
+
+x rotation angle is
+{{ x }}
+<f-slider v-model="x" step="any" max="360" />
 ```
 
 <script setup>
   import { watch } from 'vue'
   import { BoxGeometry } from 'three'
+  import { deg2rad } from '../../src/lib.esm'
 
   const mesh = $ref()
   const x = $ref(0)
-  const geometry = new BoxGeometry(50, 50, 50)
+  const geometry = new BoxGeometry(75, 75, 75)
 
   watch(() => x, () => {
-    mesh.mesh.rotation.x = x / 180 * Math.PI
+    mesh.mesh.rotation.x = deg2rad(x)
     mesh.update();
   })
 </script>
 
-<f-slider v-model="x" step="any" max="360" />
-
 <f-three>
   <f-three-group ref="mesh">
     <f-three-mesh :geometry="geometry" />
-    <f-three-path :path="circlepath(50)" />
+    <f-three-path :path="circlepath(100)" />
   </f-three-group>
 </f-three>
+
+x rotation angle is
+{{ x }}
+<f-slider v-model="x" step="any" max="360" />
 
 Note that the Three.js scene only updates when `mesh.update()` is called to save the resources. If there is a need to update the scene on each frame (say, to use video textures), one can use a helper function [useRafFn](https://vueuse.org/core/useraffn/) (a requestAnimationFrame wrapper exposed as Vue composable).
 
