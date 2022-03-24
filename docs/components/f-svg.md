@@ -25,15 +25,17 @@ SVG default coordinate system starts at the top-left corner at the `0 0` positio
 ```md
 Padding: {{ f.padding }}
 
-<f-slider v-model="f.padding" max="10" />
+<f-slider v-model="f.padding" max="5" />
 
 <f-svg :padding="f.padding" width="400" height="400" rectgrid>
   <circle
-    v-for="[x,y] in rectgridpoints(9,50)"
+    v-for="[x,y] in circlepoints(8,100,[200,200])"
     :cx="x"
     :cy="y"
-    r="10"
-    fill="lightblue"
+    r="100"
+    fill="none"
+    stroke="lightblue"
+    stroke-width="2"
   />
 </f-svg>
 ```
@@ -45,14 +47,19 @@ In many *circum*stances, it is handy to set the SVG coordinate system to the cen
 While it is possible to group and transform all contents of SVG or alter `viewBox` attribute values, its easier to use `centered` prop on `<f-svg>`:
 
 ```md
-<f-svg centered width="400" height="400" padding="1" rectgrid>
+Centered: {{ ['false','true'][f.centered] }}
+
+<f-slider v-model="f.centered" max="1" />
+
+<f-svg :centered="f.centered" width="400" height="400" padding="1" rectgrid>
   <circle
-    v-for="[x,y] in circlepoints(16,100)"
+    v-for="[x,y] in circlepoints(8,100)"
     :cx="x"
     :cy="y"
-    r="10"
-    fill="lightblue"
-    style="mix-blend-mode: multiply"
+    r="100"
+    fill="none"
+    stroke="lightblue"
+    stroke-width="2"
   />
 </f-svg>
 ```

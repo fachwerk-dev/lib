@@ -20,18 +20,18 @@ function rectgridpoints(
 
 ## Example
 
-Using `rectgridpoints()` with `10 × 10` grid with step `20` and `10,10` offset from top left corner:
+Using `rectgridpoints()` with `3 × 3` grid with step `100` and `100,100` offset from top left corner:
 
 ```md
-<svg height="200">
+<f-svg width="400" height="400" padding="1" rectgrid>
   <circle
-    v-for="[x,y] in rectgridpoints(10,20,[10,10])"
+    v-for="[x,y] in rectgridpoints(3,100,[100,100])"
     :cx="x"
     :cy="y"
     r="10"
     fill="lightblue"
   />
-</svg>
+</f-svg>
 ```
 
 ## Prior art
