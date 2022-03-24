@@ -20,31 +20,28 @@ function scale(scaleX: number = 1, scaleY?: number, unit?: "%"): string
 
 ### SVG scale example
 
-By default SVG scales the border size of the element along with the rest of the element. To to keep the original border width on scale, there is a [non-scaling-stroke](https://www.w3.org/TR/SVGTiny12/painting.html#NonScalingStroke) effect available.
+By default SVG scales the border size of the element along with the rest of the element. To to keep the original border width on scale, there is a CSS style [vector-effect: non-scaling-stroke](https://www.w3.org/TR/SVGTiny12/painting.html#NonScalingStroke) available.
 
 Also note that we use `step="any"` on the `f-slider` component. It is one of possible values of `step` property of `<input type="range" />` tag.
 
 ```md
-<f-svg width="250" height="250">
-  <path
-    :d="rectgridpath(10,25)"
-    fill="none"
-    stroke="whitesmoke"
-    stroke-width="2"
-  />
+<f-svg width="400" height="400" padding="5" rectgrid>
   <rect
     :transform="scale(f.scale)"
-    width="50"
-    height="50"
+    width="100"
+    height="100"
     fill="none"
     stroke="lightblue"
     stroke-width="2"
-    vector-effect="non-scaling-stroke"
+    :vector-effect="['','non-scaling-stroke'][f.nss]"
   />
 </f-svg>
 
-`f.scale` is `{{ f.scale }}`
+SVG scaling factor is {{ f.scale }}
 <f-slider v-model="f.scale" max="4" step="any" :value="1" />
+
+Non scaling stroke is {{ ['false','true'][f.nss] }}
+<f-slider v-model="f.nss" max="1" />
 ```
 
 ### CSS scale example
