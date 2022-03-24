@@ -27,11 +27,11 @@ Padding: {{ f.padding }}
 
 <f-slider v-model="f.padding" max="10" />
 
-<f-svg :padding="f.padding" width="300" height="300">
+<f-svg :padding="f.padding" width="400" height="400" rectgrid>
   <circle
-    v-for="p in rectgridpoints(11,30)"
-    :cx="p.x"
-    :cy="p.y"
+    v-for="[x,y] in rectgridpoints(9,50)"
+    :cx="x"
+    :cy="y"
     r="10"
     fill="lightblue"
   />
@@ -45,17 +45,25 @@ In many *circum*stances, it is handy to set the SVG coordinate system to the cen
 While it is possible to group and transform all contents of SVG or alter `viewBox` attribute values, its easier to use `centered` prop on `<f-svg>`:
 
 ```md
-<f-svg centered width="300" height="300">
+<f-svg centered width="400" height="400" padding="1" rectgrid>
   <circle
-    v-for="p in circlepoints(16,100)"
-    :cx="p.x"
-    :cy="p.y"
+    v-for="[x,y] in circlepoints(16,100)"
+    :cx="x"
+    :cy="y"
     r="10"
     fill="lightblue"
     style="mix-blend-mode: multiply"
   />
 </f-svg>
 ```
+
+### Linegrid
+
+TODO
+
+### Rectgrid
+
+TODO
 
 ### Download
 
@@ -64,12 +72,12 @@ While it is possible to group and transform all contents of SVG or alter `viewBo
 As there might be many several `<f-svg>`s on a page, you need to identify the SVG with the `id` attribute and pass it to the emitted event. The `id` parameter is also the filename of the downloaded SVG file.
 
 ```md
-<f-svg id="test" width="300" height="300"  centered>
+<f-svg id="test" width="400" height="400" centered padding="1" rectgrid>
    <circle
-    v-for="p in circlepoints(8,50)"
-    :cx="p.x"
-    :cy="p.y"
-    r="50"
+    v-for="[x,y] in circlepoints(8,100)"
+    :cx="x"
+    :cy="y"
+    r="100"
     fill="lightblue"
     style="mix-blend-mode: multiply"
   />

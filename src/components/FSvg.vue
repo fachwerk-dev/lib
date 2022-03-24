@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, Ref, ref } from "vue";
-import { on } from "../lib.esm";
+import { on, seq, polygonpath, rectgridpath, translate } from "../lib.esm";
 
 // TODO: Move to utilities
 
@@ -23,17 +23,23 @@ function useSvgDownload(svgRef: Ref<SVGElement | null>, filename: string) {
   return download;
 }
 
+// TODO: Move to Props type
+
 const {
   width = 300,
   height = 300,
   padding = 0,
   centered = false,
+  linegrid = false,
+  rectgrid = false,
   id = null,
 } = defineProps<{
   width?: number | string;
   height?: number | string;
   padding?: number | string;
   centered?: boolean;
+  linegrid?: boolean;
+  rectgrid?: boolean;
   id?: string;
 }>();
 
@@ -49,7 +55,10 @@ const svgData = computed(() => {
   const style = {
     maxWidth: `${w}px`,
   };
-  return { viewBox, style };
+  const translate = centered
+    ? [parseFloat(String(width)) / -2, parseFloat(String(height)) / -2]
+    : [0, 0];
+  return { viewBox, style, translate };
 });
 
 if (id) {
@@ -71,5 +80,36 @@ if (id) {
     :style="svgData.style"
   >
     <slot />
+    <template v-if="linegrid">
+      <path
+        id="linegrid"
+        :d="
+          seq(5)
+            .map((n) =>
+              polygonpath([
+                [n * 100, 0],
+                [n * 100, 50],
+              ])
+            )
+            .join('')
+        "
+        :transform="translate(...svgData.translate)"
+        fill="none"
+        stroke="black"
+        stroke-width="2"
+        opacity="0.1"
+      />
+    </template>
+    <template v-if="rectgrid">
+      <path
+        id="rectgrid"
+        :d="rectgridpath(4, 100)"
+        :transform="translate(...svgData.translate)"
+        fill="none"
+        stroke="black"
+        stroke-width="2"
+        opacity="0.1"
+      />
+    </template>
   </svg>
 </template>
