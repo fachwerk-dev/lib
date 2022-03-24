@@ -22,7 +22,7 @@ function arcpath(startAngle: number, endAngle: number, radius: number): string;
     stroke="lightblue"
     stroke-width="2"
   />
-</svg>
+</f-svg>
 ```
 
 ## Prior art

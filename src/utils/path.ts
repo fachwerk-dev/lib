@@ -1,80 +1,17 @@
 import { arc } from "d3-shape";
 import { deg2rad } from "../lib.esm";
-import { resolvePoint } from "../internal/point";
-import {
-  Point,
-  $Point,
-  rectgridpoints,
-  $rectgridpoints,
-  $rectpoints,
-} from "./point";
+import { Point, rectgridpoints } from "./point";
 import { rectpoints } from ".";
-
-export function polygonpath(points: Point[], closed: boolean = false): string {
-  const start = points.shift();
-
-  const path = [
-    "M",
-    `${start?.x || 0},${start?.y || 0}`,
-    ...points.map((p) => `L ${p.x},${p.y}`),
-    closed ? "Z" : "",
-  ]
-    .join(" ")
-    .trim();
-
-  return path;
-}
-
-export function $polygonpath(
-  points: $Point[],
-  closed: boolean = false
-): string {
-  const [startX, startY] = points.shift() || [0, 0];
-
-  const path = [
-    "M",
-    `${startX || 0},${startY}`,
-    ...points.map(([x, y]) => `L ${x},${y}`),
-    closed ? "Z" : "",
-  ]
-    .join(" ")
-    .trim();
-
-  return path;
-}
 
 export function rectpath(
   width: number,
   height: number,
-  xOrPoint: Point | number,
-  y?: number
+  position: Point = [0, 0]
 ) {
-  return polygonpath(rectpoints(width, height, xOrPoint, y), true);
+  return polygonpath(rectpoints(width, height, position), true);
 }
 
-export function $rectpath(
-  width: number,
-  height: number,
-  position: $Point = [0, 0]
-) {
-  return $polygonpath($rectpoints(width, height, position), true);
-}
-
-export function circlepath(r: number, xOrPoint: Point | number, y?: number) {
-  const originPoint = resolvePoint(xOrPoint, y);
-  const path = [
-    "M",
-    `${originPoint.x - r}, ${originPoint.y}`,
-    `a ${r},${r} 0 1,0 ${r * 2},0`,
-    `a ${r},${r} 0 1,0 -${r * 2},0`,
-  ]
-    .join(" ")
-    .trim();
-
-  return path;
-}
-
-export function $circlepath(r: number, position: $Point = [0, 0]) {
+export function circlepath(r: number, position: Point = [0, 0]) {
   const [px, py] = position;
   const path = [
     "M",
@@ -104,18 +41,27 @@ export function arcpath(
     .cornerRadius(cornerRadius || 0)();
 }
 
-export function rectgridpath(count: number, step: number): string {
-  return rectgridpoints(count, step)
-    .map((point) => rectpath(step, step, point))
-    .join("");
+export function polygonpath(points: Point[], closed: boolean = false): string {
+  const [startX, startY] = points.shift() || [0, 0];
+
+  const path = [
+    "M",
+    `${startX || 0},${startY}`,
+    ...points.map(([x, y]) => `L ${x},${y}`),
+    closed ? "Z" : "",
+  ]
+    .join(" ")
+    .trim();
+
+  return path;
 }
 
-export function $rectgridpath(
+export function rectgridpath(
   count: number,
   step: number,
-  position: $Point = [0, 0]
+  position: Point = [0, 0]
 ): string {
-  return $rectgridpoints(count, step, position)
-    .map((point) => $rectpath(step, step, point))
+  return rectgridpoints(count, step, position)
+    .map((point) => rectpath(step, step, point))
     .join("");
 }

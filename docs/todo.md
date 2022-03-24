@@ -18,7 +18,11 @@ https://designstem.github.io/fachwerk/docs/#/f-triangle
 
 https://visualia.netlify.app/utils/linepath.html
 
-⚠️ https://designstem.github.io/fachwerk/docs/#/f-roundedpolygon
+### rounded polygon / polygonpath
+
+https://designstem.github.io/fachwerk/docs/#/f-roundedpolygon
+
+https://github.com/BrunoFenzl/svg-round-corners
 
 ### hexagonpath
 
@@ -134,7 +138,7 @@ https://visualia.github.io/visualia_original/#helper-functions_distance
 
 ### pointatline
 
-https://visualia.github.io/visualia_original/#helper-functions$Pointatline
+https://visualia.github.io/visualia_original/#helper-functionsPointatline
 
 https://designstem.github.io/fachwerk/docs/#/linepoint
 
@@ -228,7 +232,7 @@ https://designstem.github.io/fachwerk/docs/#/f-group
 
 https://designstem.github.io/fachwerk/docs/#/f-point
 
-https://visualia.github.io/visualia_original/#graphics$Point
+https://visualia.github.io/visualia_original/#graphicsPoint
 
 ### f-line
 

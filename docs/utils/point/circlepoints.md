@@ -1,56 +1,31 @@
 # circlepoints
 
-`circlepoints()` is a function that outputs an array of `Point`'s in a circle.
+`circlepoints()` is a function that outputs an array of `Point`'s on a circle.
 
 ```ts
-type Point = {
-  x: number;
-  y: number;
-};
+type Point = [x: number, y: number];
 
-function circlepoints(count: number, r: number): Point[];
-```
-
-```ts
-type $Point = [x: number, y: number];
-
-function $circlepoints(
+function circlepoints(
   length: number,
   r: number,
-  position: $Point = [0, 0]
-): $Point[];
+  position: Point = [0, 0]
+): Point[];
 ```
 
 ## Usage
 
 ```md
 {{ circlepoints(4, 50) }}
-
-{{ $circlepoints(4, 50) }}
 ```
 
 ## Examples
 
-Classic `circlepoints()` returning array of objects:
+Drawing a `8` points on circle with radius of `50`, centered at `75,75`. Note we are unstructuring `point` into `[x,y]`:
 
 ```md
 <svg>
   <circle
-    v-for="point in circlepoints(8, 50)"
-    :cx="point.x + 75"
-    :cy="point.y + 75"
-    r="10"
-    fill="lightblue"
-  />
-</svg>
-```
-
-Using `$circlepoints()` with array of coordinate pair arrays. Note we are unstructuring `point` into `[x,y]`:
-
-```md
-<svg>
-  <circle
-    v-for="[x,y] in $circlepoints(8, 50, [75,75])"
+    v-for="[x,y] in circlepoints(8, 50, [75,75])"
     :cx="x"
     :cy="y"
     r="10"
@@ -59,12 +34,12 @@ Using `$circlepoints()` with array of coordinate pair arrays. Note we are unstru
 </svg>
 ```
 
-Keeping the `point` and passing it to `translate()` function as a [rest parameter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
+Passing `point` to `translate()` function as a [rest parameter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
 
 ```md
 <svg>
   <circle
-    v-for="point in $circlepoints(8, 50, [75,75])"
+    v-for="point in circlepoints(8, 50, [75,75])"
     :transform="translate(...point)"
     r="10"
     fill="lightblue"
