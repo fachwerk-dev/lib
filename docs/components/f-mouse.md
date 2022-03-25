@@ -17,11 +17,7 @@
   </f-svg>
 </f-mouse>
 
-`f.mouse.x` is `{{ f.mouse?.x }}`
-
-`f.mouse.y` is `{{ f.mouse?.y }}`
-
-`f.mouse.pressed` is `{{ f.mouse?.pressed }}`
+f.mouse is {{ f.mouse }}
 ```
 
 ## Prior art
