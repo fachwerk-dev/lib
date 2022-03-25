@@ -4,8 +4,6 @@
 
 In math it is called [fixed-length arithmethic sequence of numbers](https://mathigon.org/course/sequences/arithmetic-geometric).
 
-### Signature
-
 ```ts
 function seq(
   count: number,
@@ -44,11 +42,11 @@ Alternatively, you can define `step` parameter as a function that allows to crea
 ### Example
 
 ```md
-<f-svg width="400" height="50" linegrid>
+<f-svg width="400" height="50" padding="1" linegrid>
   <rect
     v-for="x in seq(f.count,f.step,f.start)"
     :x="x"
-    width="2"
+    width="1"
     height="100"
     fill="lightblue"
   />
