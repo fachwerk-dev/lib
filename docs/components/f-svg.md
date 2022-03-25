@@ -28,10 +28,9 @@ Padding: {{ f.padding }}
 <f-slider v-model="f.padding" max="5" />
 
 <f-svg :padding="f.padding" width="400" height="400" rectgrid>
-  <circle
-    cx="200"
-    cy="200"
-    r="200"
+  <rect
+    width="400"
+    height="400"
     fill="none"
     stroke="lightblue"
     stroke-width="2"
@@ -52,7 +51,7 @@ Centered: {{ ['false','true'][f.centered] }}
 
 <f-svg :centered="f.centered" width="400" height="400" rectgrid>
  <circle
-    r="200"
+    r="100"
     fill="none"
     stroke="lightblue"
     stroke-width="2"

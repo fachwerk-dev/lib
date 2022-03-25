@@ -159,22 +159,3 @@ https://visualia.netlify.app/utils/colors.html#hsl
 https://visualia.netlify.app/utils/colors.html#hsla
 
 https://visualia.netlify.app/utils/colors.html#hue
-
-## Appendix
-
-<f-svg width="400" height="400" centered>
-  <path
-    v-for="h in 360"
-    :d="arcpath(h,h + 1,100,200)"
-    :fill="hsl(h)"
-    v-on:mouseover="f.h = h" 
-  />
-  <circle
-    :transform="translate(...pol2car(f.h,150))"
-    r="20"
-    :fill="hsl(f.h,100,50)"
-    style="pointer-events: none"
-    stroke="white"
-    stroke-width="2"
-  />
-</f-svg>
