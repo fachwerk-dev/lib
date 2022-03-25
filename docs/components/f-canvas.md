@@ -5,19 +5,16 @@
 ```md
 <f-canvas>
   <f-canvas-path
-    :path="circlepath(150,150,50)"
-    :opacity="0.25"
+    :path="circlepath(100,[200,200])"
   />
   <f-canvas-path
     :rotate="f.r"
-    :path="polygonpath(rectpoints(50, 50, 100, 100), true)"
-    :opacity="0.5"
+    :path="polygonpath(rectpoints(100, 100, [150, 150]), true)"
   />
 </f-canvas>
 
+Rotation: {{ f.r }}
 <f-slider v-model="f.r" max="360" step="any" />
-
-rotation: {{ f.r }}
 ```
 
 ## Prior art

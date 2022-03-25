@@ -2,8 +2,14 @@
 
 Converts polar coordinates to Cartesian coordinates. Inspired by [pol2cart()](https://rdrr.io/cran/useful/man/pol2cart.html) function in R and Matlab.
 
+```ts
+function pol2car(angle: number, radius: number): Point;
+```
+
+## Usage
+
 ```md
-{{ pol2car(90, 10)}}
+{{ pol2car(90, 10) }}
 ```
 
 ## Prior art

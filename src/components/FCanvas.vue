@@ -11,8 +11,8 @@ export type Context = {
 const canvasEl = ref<HTMLCanvasElement | null>(null);
 const ctx = ref<CanvasRenderingContext2D | null>(null);
 const updated = ref(false);
-const width = 300;
-const height = 300;
+const width = 400;
+const height = 400;
 
 const context: Context = {
   width,

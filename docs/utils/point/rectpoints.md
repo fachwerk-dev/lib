@@ -3,16 +3,12 @@
 `rectpoints()` is a function that outputs an array of `Point`'s.
 
 ```ts
-type Point = {
-  x: number;
-  y: number;
-};
+type Point = [x: number, y: number];
 
 function rectpoints(
   width: number,
   height: number,
-  xOrPoint: Point | number,
-  y?: number
+  position: Point = [0, 0]
 ): Point[];
 ```
 
@@ -25,13 +21,13 @@ function rectpoints(
 ## Example
 
 ```md
-<svg>
+<f-svg width="400" height="400" rectgrid>
   <circle
-    v-for="point in rectpoints(50, 50, 50, 50)"
-    :cx="point.x"
-    :cy="point.y"
+    v-for="[x,y] in rectpoints(200, 200, [100,100])"
+    :cx="x"
+    :cy="y"
     r="10"
     fill="lightblue"
   />
-</svg>
+</f-svg>
 ```

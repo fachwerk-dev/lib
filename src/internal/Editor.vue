@@ -59,13 +59,13 @@ const onError = (e: any | null) => (error.value = e);
 </script>
 <template>
   <div
-    class="-mx-5 mb-6 grid grid-cols-1 grid-rows-[33vh_auto] overflow-hidden rounded-none shadow-md shadow-gray-100 md:mx-0 md:grid-cols-2 md:grid-rows-[auto_auto] md:rounded-md"
+    class="-mx-5 mb-6 grid grid-cols-1 grid-rows-[33vh_auto] overflow-hidden rounded-none shadow-md shadow-gray-100 md:mx-0 md:grid-cols-[2fr_3fr] md:grid-rows-[auto_auto] md:rounded-md"
   >
-    <div class="min-h-12 relative flex">
+    <div class="relative flex">
       <textarea
         ref="editor"
         v-model="content"
-        class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8 lg:text-base"
+        class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
         spellcheck="false"
       />
       <a

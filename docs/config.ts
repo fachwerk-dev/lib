@@ -26,22 +26,26 @@ export let sidebar: Link[] = [
   {
     text: "Point utilities",
     children: [
-      { text: "linepoints", link: "/utils/point/linepoints" },
       { text: "rectpoints", link: "/utils/point/rectpoints" },
       { text: "circlepoints", link: "/utils/point/circlepoints" },
-      { text: "rectgridpoints", link: "/utils/point/rectgridpoints" },
-      { text: "circlegridpoints", link: "/utils/point/circlegridpoints" },
     ],
+  },
+  {
+    text: "Point grid utilities",
+    children: [{ text: "rectgridpoints", link: "/utils/point/rectgridpoints" }],
   },
   {
     text: "Path utilities",
     children: [
-      { text: "polygonpath", link: "/utils/path/polygonpath" },
+      { text: "rectpath", link: "/utils/path/rectpath" },
       { text: "circlepath", link: "/utils/path/circlepath" },
       { text: "arcpath", link: "/utils/path/arcpath" },
-      { text: "rectpath", link: "/utils/path/rectpath" },
-      { text: "rectgridpath", link: "/utils/path/rectgridpath" },
+      { text: "polygonpath", link: "/utils/path/polygonpath" },
     ],
+  },
+  {
+    text: "Path grid utilities",
+    children: [{ text: "rectgridpath", link: "/utils/path/rectgridpath" }],
   },
   {
     text: "Transform utilities",
@@ -55,7 +59,6 @@ export let sidebar: Link[] = [
   {
     text: "Math utilities",
     children: [
-      { text: "seq", link: "/utils/math/seq" },
       { text: "remap", link: "/utils/math/remap" },
       { text: "random", link: "/utils/math/random" },
     ],
@@ -72,7 +75,10 @@ export let sidebar: Link[] = [
   },
   {
     text: "Array utilities",
-    children: [{ text: "range", link: "/utils/array/range" }],
+    children: [
+      { text: "seq", link: "/utils/math/seq" },
+      { text: "range", link: "/utils/array/range" },
+    ],
   },
   {
     text: "Color utilities",
@@ -89,9 +95,6 @@ export let sidebar: Link[] = [
   },
   {
     text: "Development",
-    children: [
-      { text: "TODO", link: "/todo" },
-      { text: "test", link: "/test" },
-    ],
+    children: [{ text: "TODO", link: "/todo" }],
   },
 ];

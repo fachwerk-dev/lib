@@ -9,7 +9,9 @@
       prose-p:mt-0
       prose-p:w-auto
       prose-p:before:content-none
-      prose-p:after:content-non
+      prose-p:after:content-none
+      first:prose-p:mt-0
+      only-of-type:prose-p:my-0
       prose-a:break-words
       prose-a:text-lightblue-700
       prose-a:underline

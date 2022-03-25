@@ -4,6 +4,7 @@ Converts degrees to radians.
 
 ```md
 {{ deg2rad(90) }}
+
 {{ PI / 2 }}
 ```
 

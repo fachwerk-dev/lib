@@ -37,7 +37,7 @@ You can also set only the hue `h` parameter:
 ```md
 Hover or tap over the colors to see how `h` value changes
 
-<svg width="360" height="50">
+<f-svg width="400" height="50">
   <rect
     v-for="h in range(0,360)"
     :x="h"
@@ -56,7 +56,7 @@ Hover or tap over the colors to see how `h` value changes
     stroke="white"
     stroke-width="2"
   />
-</svg>
+</f-svg>
 
 {{ hsl(f.h,100,50) }}
 ```
@@ -66,7 +66,7 @@ Hover or tap over the colors to see how `h` value changes
 ```md
 Hover or tap over the colors to see how `s` value changes
 
-<svg :width="100" height="50">
+<f-svg width="400" height="50">
   <rect
     v-for="s in range(0,100)"
     :x="s"
@@ -85,7 +85,7 @@ Hover or tap over the colors to see how `s` value changes
     stroke="white"
     stroke-width="2"
   />
-</svg>
+</f-svg>
 
 {{ hsl(0,f.s,50) }}
 ```
@@ -95,7 +95,7 @@ Hover or tap over the colors to see how `s` value changes
 ```md
 Hover or tap over the colors to see how `l` value changes
 
-<svg :width="100" height="50">
+<f-svg width="400" height="50">
   <rect
     v-for="l in range(0,100)"
     :x="l"
@@ -114,7 +114,7 @@ Hover or tap over the colors to see how `l` value changes
     stroke="white"
     stroke-width="2"
   />
-</svg>
+</f-svg>
 
 {{ hsl(0,100,f.l) }}
 ```
@@ -124,7 +124,7 @@ Hover or tap over the colors to see how `l` value changes
 ```md
 Hover or tap over the colors to see how `a` value changes
 
-<svg :width="100" height="50">
+<f-svg width="400" height="50">
   <rect
     v-for="a in range(0,1,1/100)"
     :x="a * 100"
@@ -143,7 +143,7 @@ Hover or tap over the colors to see how `a` value changes
     stroke="white"
     stroke-width="2"
   />
-</svg>
+</f-svg>
 
 {{ hsl(0,100,50,f.a) }}
 ```
@@ -159,23 +159,3 @@ https://visualia.netlify.app/utils/colors.html#hsl
 https://visualia.netlify.app/utils/colors.html#hsla
 
 https://visualia.netlify.app/utils/colors.html#hue
-
-## Appendix
-
-<f-svg width="300" height="300" centered>
-  <path
-    v-for="h in 360"
-    :d="arcpath(h,h + 1,50,100)"
-    :fill="hsl(h)"
-    v-on:mouseover="f.h = h" 
-  />
-  <circle
-    :cx="pol2car(f.h,75).x"
-    :cy="pol2car(f.h,75).y"
-    r="10"
-    :fill="hsl(f.h,100,50)"
-    style="pointer-events: none"
-    stroke="white"
-    stroke-width="2"
-  />
-</f-svg>

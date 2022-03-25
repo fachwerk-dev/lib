@@ -21,7 +21,9 @@ watch(
 
       context.ctx.value?.save();
       context.ctx.value.globalAlpha = opacity;
-      context.ctx.value?.fill(p);
+      context.ctx.value.strokeStyle = "lightblue";
+      context.ctx.value.lineWidth = 2;
+      context.ctx.value?.stroke(p);
       context.ctx.value?.restore();
     }
   },

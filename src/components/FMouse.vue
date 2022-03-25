@@ -6,11 +6,6 @@ type Props = {
   modelValue: any;
 };
 
-type Mouse = {
-  x: number;
-  y: number;
-};
-
 defineProps<Props>();
 
 const emit = defineEmits(["update:modelValue"]);
@@ -23,11 +18,11 @@ const { pressed } = useMousePressed({ target });
 watch(
   [elementX, elementY, pressed],
   () => {
-    emit("update:modelValue", {
-      x: elementX.value,
-      y: elementY.value,
-      pressed: pressed.value,
-    });
+    emit("update:modelValue", [
+      Math.floor(elementX.value),
+      Math.floor(elementY.value),
+      pressed.value,
+    ]);
   },
   { immediate: true }
 );

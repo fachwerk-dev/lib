@@ -1,34 +1,37 @@
 # circlepoints
 
-`circlepoints()` is a function that outputs an array of `Point`'s in a circle.
+`circlepoints()` is a function that outputs an array of `Point`'s on a circle.
 
 ```ts
-type Point = {
-  x: number;
-  y: number;
-};
+type Point = [x: number, y: number];
 
-function circlepoints(count: number, r: number): Point[];
+function circlepoints(
+  length: number,
+  r: number,
+  position: Point = [0, 0]
+): Point[];
 ```
 
 ## Usage
 
 ```md
-{{ circlepoints(4, 50) }}
+{{ circlepoints(8, 100) }}
 ```
 
-## Example
+## Examples
+
+Drawing a `16` points on circle with radius of `100`, centered at `200,200`. Note we are unstructuring each point into `[x,y]`:
 
 ```md
-<svg>
+<f-svg width="400" height="400" rectgrid>
   <circle
-    v-for="point in circlepoints(8, 50)"
-    :cx="point.x + 75"
-    :cy="point.y + 75"
+    v-for="[x,y] in circlepoints(8, 100, [200,200])"
+    :cx="x"
+    :cy="y"
     r="10"
     fill="lightblue"
   />
-</svg>
+</f-svg>
 ```
 
 ## Prior art
@@ -40,3 +43,7 @@ https://designstem.github.io/fachwerk/docs/#/circlepoints
 https://visualia.github.io/visualia_original/#helper-functions_circlepoints
 
 https://visualia.netlify.app/utils/polargrid.html
+
+```
+
+```
