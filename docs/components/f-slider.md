@@ -11,9 +11,9 @@ Here we assign slider value to a global variable `f.x`:
   <circle :cx="f.x" cy="25" r="10" fill="lightblue" />
 </f-svg>
 
-<f-slider v-model="f.x" />
-
 The value of f.x is {{ f.x }}
+
+<f-slider v-model="f.x" />
 ```
 
 ## Setting attributes
@@ -25,9 +25,9 @@ Since `<f-slider />` is a lightweight wrapper around `<input type="range" />` so
   <circle :cx="f.x2" cy="25" r="10" fill="lightblue" />
 </f-svg>
 
-<f-slider v-model="f.x2" max="400" step="100" />
-
 The value of x2 is {{ f.x2 }}
+
+<f-slider v-model="f.x2" max="400" step="100" />
 ```
 
 Note that `step` attribute can also be set to `step="any"` that makes slider to [emit floating point values](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#step).
@@ -35,10 +35,10 @@ Note that `step` attribute can also be set to `step="any"` that makes slider to 
 This is expecially useful for sliders emitting values between `0` and `1`:
 
 ```md
-<f-slider v-model="f.x3" max="1" step="any" />
-
 The value of x3 is
 {{ f.x3 }}
+
+<f-slider v-model="f.x3" max="1" step="any" />
 ```
 
 ## Prior art
