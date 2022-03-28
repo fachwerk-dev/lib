@@ -2,7 +2,6 @@
 
 ## General
 
-- remap no example
 - random no signature / example
 - trig\* no signatures / examples
 
