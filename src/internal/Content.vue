@@ -12,6 +12,7 @@
       prose-p:after:content-none
       first:prose-p:mt-0
       only-of-type:prose-p:my-0
+      prose-a:font-normal
       prose-a:break-words
       prose-a:text-lightblue-700
       prose-a:underline
