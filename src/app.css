@@ -5,12 +5,6 @@
 input[type="range"] {
   @apply w-full  accent-lightblue-700 md:w-1/2;
 }
-input[type="range"]::-webkit-slider-thumb {
-  @apply scale-[175%] md:scale-100;
-}
-input[type="range"]::-moz-range-thumb {
-  @apply scale-[175%] md:scale-100;
-}
 .prose svg {
   @apply mb-4 block;
 }
