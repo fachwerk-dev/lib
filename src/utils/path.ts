@@ -1,7 +1,9 @@
 import { arc } from "d3-shape";
+import svgpath from "svgpath";
+
 import { deg2rad } from "../lib.esm";
 import { Point, rectgridpoints } from "./point";
-import { rectpoints } from ".";
+import { PRECISION, rectpoints } from ".";
 
 export function rectpath(
   width: number,
@@ -33,12 +35,13 @@ export function arcpath(
   cornerRadius?: number
 ): string | null {
   //@ts-ignore
-  return arc()
+  const path = arc()
     .startAngle(deg2rad(startAngle))
     .endAngle(deg2rad(endAngle))
     .innerRadius(innerRadius)
     .outerRadius(outerRadius || innerRadius)
     .cornerRadius(cornerRadius || 0)();
+  return svgpath(path).round(PRECISION).toString();
 }
 
 export function polygonpath(points: Point[], closed: boolean = false): string {

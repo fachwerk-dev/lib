@@ -2,8 +2,6 @@
 
 ## General
 
-- arcpath wrong headings
-- rectgridpath no signature
 - remap no example
 - random no signature / example
 - trig\* no signatures / examples

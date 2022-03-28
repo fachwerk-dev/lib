@@ -3,16 +3,24 @@
 Generates arc as a SVG path. Powered by [d3.arc()](https://github.com/d3/d3-shape#arcs).
 
 ```ts
-function arcpath(startAngle: number, endAngle: number, radius: number): string;
+arcpath(
+  startAngle: number,
+  endAngle: number,
+  innerRadius: number,
+  outerRadius?: number,
+  cornerRadius?: number
+): string
 ```
 
-### Usage
+## Usage
 
 ```md
 {{ arcpath(0, 180, 100) }}
 ```
 
-### Example
+## Example
+
+Drawing a simple arc from `0` to `180` degrees with radius of `100`:
 
 ```md
 <f-svg width="400" height="400" centered rectgrid>
@@ -24,6 +32,8 @@ function arcpath(startAngle: number, endAngle: number, radius: number): string;
   />
 </f-svg>
 ```
+
+Drawing a more complex arc from `0` to `180` degrees, with inner radius of `100`, outer radius of `200` and border radius of `10`:
 
 ```md
 <f-svg width="400" height="400" centered rectgrid>
