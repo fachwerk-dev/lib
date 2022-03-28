@@ -1,10 +1,5 @@
 # TODO
 
-## General
-
-- random no signature / example
-- trig\* no signatures / examples
-
 ## Points
 
 ### hexgridpoints
