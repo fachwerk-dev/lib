@@ -20,7 +20,7 @@ function remap(
 
 ## Example
 
-Here we map the input value `0 to 100` to output value `200 to 400`. Yes it can be also written <f-math>output = input \times 2 + 100</f-math> but `remap()` provides a easier way to do such conversions.
+Here we map the input value `0 → 100` to output value `200 → 400`. Yes it can be also written <f-math>output = input \times 2 + 100</f-math> but `remap()` provides a easier way to do such conversions.
 
 ```md
 <f-svg width="400" height="50" padding="10" linegrid>
@@ -40,16 +40,16 @@ Remapped value:
 <f-slider v-model="f.value" max="100" />
 ```
 
-Remapping can be done on anything numeric, here we are mapping the input `0 to 19` into `0 to 360` hue value: `hsl(remap(x,0,19,0,360))`.
+Remapping can be done on anything numeric, here we are mapping the input `0 → 19` into HSL hue value ranging `0 → 360`
 
 ```md
 <f-svg width="400" height="50" padding="10">
   <circle
     v-for="x in seq(20)"
+    :fill="hsl(remap(x,0,19,0,360))"
     :cx="x * 20"
     cy="25"
     r="10"
-    :fill="hsl(remap(x,0,19,0,360))"
   />
 </f-svg>
 ```
