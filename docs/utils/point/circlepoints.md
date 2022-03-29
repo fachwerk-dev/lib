@@ -43,7 +43,3 @@ https://designstem.github.io/fachwerk/docs/#/circlepoints
 https://visualia.github.io/visualia_original/#helper-functions_circlepoints
 
 https://visualia.netlify.app/utils/polargrid.html
-
-```
-
-```

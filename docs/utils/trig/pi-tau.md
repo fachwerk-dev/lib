@@ -21,7 +21,7 @@ const PI: number;
   <circle
     v-for="x in range(-PI,PI,0.01)"
     :cx="remap(x,-PI,PI,-200,200)"
-    :cy="remap(Math.cos(x),-1,1,-50,50)"
+    :cy="remap(Math.sin(x),-1,1,-50,50)"
     r="1"
     fill="lightblue"
   />
@@ -49,7 +49,7 @@ const TAU: number;
   <circle
     v-for="x in range(-TAU,TAU,0.01)"
     :cx="remap(x,-TAU,TAU,-200,200)"
-    :cy="remap(Math.cos(x),-1,1,-50,50)"
+    :cy="remap(Math.sin(x),-1,1,-50,50)"
     r="1"
     fill="lightblue"
   />
