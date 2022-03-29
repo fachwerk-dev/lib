@@ -1,5 +1,15 @@
 # rectgridpath
 
+`rectgridpath()` outputs a rectangular grid as SVG path.
+
+```
+function rectgridpath(
+  count: number,
+  step: number,
+  position: Point = [0, 0]
+): string
+```
+
 ## Usage
 
 ```md
