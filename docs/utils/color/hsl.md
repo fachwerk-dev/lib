@@ -1,4 +1,4 @@
-# hsl / hsla
+# hsl
 
 `hsl()` function ouputs a CSS color string in [hsl() notation](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl()>).
 
@@ -29,122 +29,55 @@ You can also set only the hue `h` parameter:
 >
 > `hsl(hue)` is not part of the official CSS colors specification. It is a convenience feature by Fachwerk.
 
-## Examples
-
-### Hue
+## Example
 
 ```md
-Hover or tap over the colors to see how `h` value changes
-
-<f-svg width="400" height="50">
+<f-svg width="360" height="50">
   <rect
-    v-for="h in range(0,360)"
+    v-for="h in seq(36,10)"
     :x="h"
-    y="0"
-    width="1"
-    height="50"
+    y="2"
+    :width="12"
+    :height="50 - 4"
     :fill="hsl(h,100,50)"
-    v-on:mouseover="f.h = h" 
+    v-on:click="f.h = h"
   />
-  <circle
-    :cx="f.h"
-    cy="25"
-    r="10"
-    :fill="hsl(f.h,100,50)"
-    style="pointer-events: none"
-    stroke="white"
-    stroke-width="2"
-  />
-</f-svg>
-
-{{ hsl(f.h,100,50) }}
-```
-
-### Saturation
-
-```md
-Hover or tap over the colors to see how `s` value changes
-
-<f-svg width="400" height="50">
-  <rect
-    v-for="s in range(0,100)"
-    :x="s"
-    y="0"
-    width="1"
+ <rect
+    :x="remap(f.h,0,36 * 10,0,400)"
+    :width="10"
     height="50"
-    :fill="hsl(0,s,50)"
-    v-on:mouseover="f.s = s"
-  />
-  <circle
-    :cx="f.s"
-    cy="25"
-    r="10"
-    :fill="hsl(0,f.s,50)"
-    style="pointer-events: none"
+    fill="none"
     stroke="white"
     stroke-width="2"
+    style="pointer-events: none"
   />
 </f-svg>
 
-{{ hsl(0,f.s,50) }}
-```
-
-### Lightness
-
-```md
-Hover or tap over the colors to see how `l` value changes
-
-<f-svg width="400" height="50">
+<f-svg width="400" height="400">
   <rect
-    v-for="l in range(0,100)"
-    :x="l"
-    y="0"
-    width="1"
-    height="50"
-    :fill="hsl(0,100,l)"
-    v-on:mouseover="f.l = l"
+    v-for="[s,l] in rectgridpoints(10,10)"
+    :x="s * 4"
+    :y="l * 4"
+    width="40"
+    height="40"
+    :fill="hsl(f.h,s,l)"
+    v-on:click="f.s = s; f.l = l"
   />
-  <circle
-    :cx="f.l"
-    cy="25"
-    r="10"
-    :fill="hsl(0,100,f.l)"
-    style="pointer-events: none"
-    stroke="white"
-    stroke-width="2"
-  />
-</f-svg>
-
-{{ hsl(0,100,f.l) }}
-```
-
-### Alpha
-
-```md
-Hover or tap over the colors to see how `a` value changes
-
-<f-svg width="400" height="50">
   <rect
-    v-for="a in range(0,1,1/100)"
-    :x="a * 100"
-    y="0"
-    width="1"
-    height="50"
-    :fill="hsl(0,100,50,a)"
-    v-on:mouseover="f.a = a"
-  />
-   <circle
-    :cx="f.a * 100"
-    cy="25"
-    r="10"
-    :fill="hsl(0,100,50,f.a)"
-    style="pointer-events: none"
+    :x="f.s * 4"
+    :y="f.l * 4"
+    width="40"
+    height="40"
+    fill="none"
     stroke="white"
     stroke-width="2"
   />
 </f-svg>
 
-{{ hsl(0,100,50,f.a) }}
+{{ hsl(f.h,f.s,f.l) }}
+<f-slider v-model="f.h" max="360" step="10" />
+<f-slider v-model="f.s" max="100" step="10" />
+<f-slider v-model="f.l" max="100" step="10" />
 ```
 
 ## Prior art

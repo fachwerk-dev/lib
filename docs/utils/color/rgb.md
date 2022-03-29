@@ -21,14 +21,14 @@ Output a CSS color string with `r b g a` parameters:
 
 ## Example
 
-Let's draw a RGB colormap:
+Let's draw a RGB color picker:
 
 ### Red
 
 ```md
 <f-svg width="255" height="255">
   <rect
-    v-for="[r,g] in rectgridpoints(25,10)"
+    v-for="[r,g] in rectgridpoints(26,10)"
     :x="r"
     :y="g"
     width="10"
