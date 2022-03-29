@@ -26,12 +26,19 @@ export let sidebar: Link[] = [
   {
     text: "Point utilities",
     children: [
+      { text: "circlepoint", link: "/utils/trig/circlepoint" },
+      { text: "pointcircle", link: "/utils/trig/pointcircle" },
+    ],
+  },
+  {
+    text: "Points utilities",
+    children: [
       { text: "rectpoints", link: "/utils/point/rectpoints" },
       { text: "circlepoints", link: "/utils/point/circlepoints" },
     ],
   },
   {
-    text: "Point grid utilities",
+    text: "Gridpoints utilities",
     children: [{ text: "rectgridpoints", link: "/utils/point/rectgridpoints" }],
   },
   {
@@ -44,7 +51,7 @@ export let sidebar: Link[] = [
     ],
   },
   {
-    text: "Path grid utilities",
+    text: "Gridpath utilities",
     children: [{ text: "rectgridpath", link: "/utils/path/rectgridpath" }],
   },
   {
@@ -57,23 +64,6 @@ export let sidebar: Link[] = [
     ],
   },
   {
-    text: "Math utilities",
-    children: [
-      { text: "remap", link: "/utils/math/remap" },
-      { text: "random", link: "/utils/math/random" },
-    ],
-  },
-  {
-    text: "Trig utilities",
-    children: [
-      { text: "circlepoint", link: "/utils/trig/circlepoint" },
-      { text: "pointcircle", link: "/utils/trig/pointcircle" },
-      { text: "PI and TAU", link: "/utils/trig/pi-tau" },
-      { text: "deg2rad", link: "/utils/trig/deg2rad" },
-      { text: "rad2deg", link: "/utils/trig/rad2deg" },
-    ],
-  },
-  {
     text: "Array utilities",
     children: [
       { text: "seq", link: "/utils/math/seq" },
@@ -81,8 +71,23 @@ export let sidebar: Link[] = [
     ],
   },
   {
+    text: "Math utilities",
+    children: [
+      { text: "remap", link: "/utils/math/remap" },
+      { text: "random", link: "/utils/math/random" },
+    ],
+  },
+  {
     text: "Color utilities",
     children: [{ text: "hsl", link: "/utils/color/hsl" }],
+  },
+  {
+    text: "Trig utilities",
+    children: [
+      { text: "PI and TAU", link: "/utils/trig/pi-tau" },
+      { text: "deg2rad", link: "/utils/trig/deg2rad" },
+      { text: "rad2deg", link: "/utils/trig/rad2deg" },
+    ],
   },
   {
     text: "Experimental",
