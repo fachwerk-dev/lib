@@ -2,14 +2,13 @@
 
 `hsl()` function ouputs a CSS color string in [hsl() notation](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl()>).
 
-```js
-function hsl(h = 0, s = 100, l = 50, a = 1)
-```
-
-`hsla()` is an alias to `hsl()`.
-
-```js
-function hsla(h = 0, s = 100, l = 50, a = 1)
+```ts
+function hsl(
+  h: number = 0,
+  s: number = 100,
+  l: number = 50,
+  a: number = 1
+): string;
 ```
 
 ## Usage

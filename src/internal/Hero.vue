@@ -44,21 +44,21 @@ import Button from "./Button.vue";
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-3 xl:w-3/4">
       <div class="grid gap-4">
-        <h2 class="text-xl font-semibold lg:text-2xl">Declarative delight</h2>
+        <h2 class="text-xl font-medium lg:text-2xl">Declarative delight</h2>
         <p class="lg:text-xl">
           Fachwerk is composed of VueJS components that allow simple HTML-like
           tags for complex visualizations.
         </p>
       </div>
       <div class="grid gap-4">
-        <h2 class="text-xl font-semibold lg:text-2xl">Sophisticated state</h2>
+        <h2 class="text-xl font-medium lg:text-2xl">Sophisticated state</h2>
         <p class="lg:text-xl">
           All elements on the page can talk to the other elements, either via
           the global state for values or with a global event bus for events.
         </p>
       </div>
       <div class="grid gap-4">
-        <h2 class="text-xl font-semibold lg:text-2xl">Useful utilites</h2>
+        <h2 class="text-xl font-medium lg:text-2xl">Useful utilites</h2>
         <p class="lg:text-xl">
           There is wide range of JS utility functions available, from array
           manipulations to color calculations.

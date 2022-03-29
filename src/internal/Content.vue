@@ -5,6 +5,9 @@
       prose
       max-w-[100ch]
       prose-headings:text-slate-800
+      prose-h3:!text-xl
+      prose-h4:!text-xl
+      prose-h4:!font-medium
       prose-lead:w-[64ch]
       prose-p:mt-0
       prose-p:w-auto

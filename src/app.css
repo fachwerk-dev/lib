@@ -15,5 +15,5 @@ input[type="range"] {
   @apply mr-1 rounded-sm bg-yellow-300 px-1;
 }
 .prose button {
-  @apply inline-block rounded border-2 border-sky-800 px-3 py-1 text-center font-semibold text-lightblue-800 hover:bg-black/5;
+  @apply inline-block rounded border-2 border-sky-800 px-3 py-1 text-center font-medium text-lightblue-800 hover:bg-black/5;
 }
