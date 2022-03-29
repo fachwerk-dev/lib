@@ -55,19 +55,19 @@ You can also set only the hue `h` parameter:
 
 <f-svg width="400" height="400">
   <rect
-    v-for="[s,l] in rectgridpoints(10,10)"
+    v-for="[s,l] in rectgridpoints(20,5)"
     :x="s * 4"
     :y="l * 4"
-    width="40"
-    height="40"
+    width="20"
+    height="20"
     :fill="hsl(f.h,s,l)"
     v-on:click="f.s = s; f.l = l"
   />
   <rect
     :x="f.s * 4"
     :y="f.l * 4"
-    width="40"
-    height="40"
+    width="20"
+    height="20"
     fill="none"
     stroke="white"
     stroke-width="2"
@@ -76,8 +76,8 @@ You can also set only the hue `h` parameter:
 
 {{ hsl(f.h,f.s,f.l) }}
 <f-slider v-model="f.h" max="360" step="10" />
-<f-slider v-model="f.s" max="100" step="10" />
-<f-slider v-model="f.l" max="100" step="10" />
+<f-slider v-model="f.s" max="100" step="5" />
+<f-slider v-model="f.l" max="100" step="5" />
 ```
 
 ## Prior art

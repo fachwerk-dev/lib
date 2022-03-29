@@ -26,49 +26,55 @@ Let's draw a RGB color picker:
 ### Red
 
 ```md
-<f-svg width="255" height="255">
+<f-svg width="255" height="255" padding="10">
   <rect
-    v-for="[r,g] in rectgridpoints(26,10)"
+    v-for="[r,g] in rectgridpoints(40,255/40)"
     :x="r"
     :y="g"
-    width="10"
-    height="10"
+    :width="10"
+    :height="10"
     :fill="rgb(r,g,0)"
   />
-  <rect
-    :x="f.r"
-    :y="f.g"
-    width="10"
-    height="10"
-    fill="none"
+  <circle
+    :cx="f.r"
+    :cy="f.g"
+    r="10"
+    :fill="rgb(f.r,f.g,0)"
     stroke="white"
     stroke-width="2"
-    style="pointer-events: none"
   />
 </f-svg>
 
-<f-svg width="255" height="50">
+<f-svg width="255" height="50" padding="10">
   <rect
-    v-for="b in seq(25,10)"
+    v-for="b in seq(40,255/40)"
     :x="b"
-    y="2"
-    :width="10"
-    :height="50 - 4"
+    width="10"
+    height="50"
     :fill="rgb(f.r,f.g,b)"
   />
- <rect
-    :x="f.b"
-    :width="10"
-    height="50"
-    fill="none"
+  <circle
+    :cx="f.b"
+    cy="25"
+    r="10"
+    :fill="rgb(f.r,f.g,f.b)"
     stroke="white"
     stroke-width="2"
-    style="pointer-events: none"
   />
 </f-svg>
 
 {{ rgb(f.r,f.g,f.b) }}
-<f-slider v-model="f.r" max="255" step="5" />
-<f-slider v-model="f.g" max="255" step="5" />
-<f-slider v-model="f.b" max="255" step="5" />
+<f-slider v-model="f.r" max="255" />
+<f-slider v-model="f.g" max="255" />
+<f-slider v-model="f.b" max="255" />
 ```
+
+## Prior art
+
+https://designstem.github.io/fachwerk/docs/#/rgb
+
+https://visualia.github.io/visualia_original/#helper-functions_rgb
+
+https://visualia.netlify.app/utils/colors.html#rgb
+
+https://visualia.netlify.app/utils/colors.html#rgba
