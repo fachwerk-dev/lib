@@ -8,6 +8,12 @@ type Point = [x: number, y: number];
 function pointcircle(point: Point): [angle: number, radius: number];
 ```
 
+## Alias
+
+```ts
+function car2pol(point: Point): [angle: number, radius: number];
+```
+
 ## Usage
 
 ```md
