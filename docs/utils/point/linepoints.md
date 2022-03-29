@@ -3,10 +3,7 @@
 `linepoints()` outputs an array of `Point`'s along the line.
 
 ```ts
-type Point = {
-  x: number;
-  y: number;
-};
+type Point = [x: number, y: number];
 
 function linepoints(count: number, step: number): Point[];
 ```
