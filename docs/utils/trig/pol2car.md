@@ -44,8 +44,8 @@ function pol2car(angle: number, radius: number): Point;
 </f-svg>
 
 Degrees: {{ f.deg }}
-Radius: 100
 Cartesian: {{ pol2car(f.deg,100) }}
+Radius: 100
 
 <f-slider v-model="f.deg" max="360" :value="180" />
 ```
