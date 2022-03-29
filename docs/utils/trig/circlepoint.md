@@ -11,7 +11,7 @@ function circlepoint(angle: number, radius: number): Point;
 ## Usage
 
 ```md
-{{ circlepoint(180, 100) }}
+{{ circlepoint(0, 100) }}
 ```
 
 ## Example
@@ -25,7 +25,7 @@ function circlepoint(angle: number, radius: number): Point;
     :x2="circlepoint(f.deg,100)[0]"
     y2="200"
     fill="none"
-    stroke="lightblue"
+    stroke="lightgray"
     stroke-width="2"
   />
   <line
@@ -34,14 +34,14 @@ function circlepoint(angle: number, radius: number): Point;
     x2="200"
     :y2="circlepoint(f.deg,100)[1]"
     fill="none"
-    stroke="lightblue"
+    stroke="lightgray"
     stroke-width="2"
   />
-  <path
-    :d="arcpath(0,f.deg,100)"
-    fill="none"
-    stroke="steelblue"
-    stroke-width="2"
+  <circle
+    :cx="circlepoint(f.deg,100)[0]"
+    :cy="circlepoint(f.deg,100)[1]"
+    r="10"
+    fill="lightblue"
   />
 </f-svg>
 
@@ -49,7 +49,7 @@ Degrees: {{ f.deg }}
 Radius: 100
 Point: {{ circlepoint(f.deg,100) }}
 
-<f-slider v-model="f.deg" max="360" :value="180" step="15" />
+<f-slider v-model="f.deg" max="360" step="30" />
 ```
 
 ## Prior art

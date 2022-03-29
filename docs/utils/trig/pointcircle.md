@@ -11,7 +11,7 @@ function pointcircle(point: Point): [angle: number, radius: number];
 ## Usage
 
 ```md
-{{ pointcircle([0, 100]) }}
+{{ pointcircle([0, -100]) }}
 ```
 
 ## Prior art

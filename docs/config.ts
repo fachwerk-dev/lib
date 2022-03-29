@@ -33,8 +33,8 @@ export let sidebar: Link[] = [
   {
     text: "Points utilities",
     children: [
-      { text: "rectpoints", link: "/utils/point/rectpoints" },
       { text: "circlepoints", link: "/utils/point/circlepoints" },
+      { text: "rectpoints", link: "/utils/point/rectpoints" },
     ],
   },
   {
@@ -44,9 +44,9 @@ export let sidebar: Link[] = [
   {
     text: "Path utilities",
     children: [
-      { text: "rectpath", link: "/utils/path/rectpath" },
       { text: "circlepath", link: "/utils/path/circlepath" },
       { text: "arcpath", link: "/utils/path/arcpath" },
+      { text: "rectpath", link: "/utils/path/rectpath" },
       { text: "polygonpath", link: "/utils/path/polygonpath" },
     ],
   },
