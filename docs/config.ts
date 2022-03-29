@@ -79,7 +79,10 @@ export let sidebar: Link[] = [
   },
   {
     text: "Color utilities",
-    children: [{ text: "hsl", link: "/utils/color/hsl" }],
+    children: [
+      { text: "hsl", link: "/utils/color/hsl" },
+      { text: "rgb", link: "/utils/color/rgb" },
+    ],
   },
   {
     text: "Trig utilities",
