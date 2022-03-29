@@ -32,43 +32,39 @@ You can also set only the hue `h` parameter:
 ## Example
 
 ```md
-<f-svg width="360" height="50">
+<f-svg width="360" height="50" padding="10">
   <rect
-    v-for="h in seq(36,10)"
+    v-for="h in seq(100,360/100)"
     :x="h"
-    y="2"
-    :width="12"
-    :height="50 - 4"
-    :fill="hsl(h,100,50)"
-    v-on:click="f.h = h"
-  />
- <rect
-    :x="remap(f.h,0,36 * 10,0,400)"
-    :width="10"
+    :width="360/100"
     height="50"
-    fill="none"
+    :fill="hsl(h,100,50)"
+  />
+ <circle
+    :cx="f.h"
+    cy="25"
+    r="10"
+    :fill="hsl(f.h,100,50)"
     stroke="white"
     stroke-width="2"
-    style="pointer-events: none"
   />
 </f-svg>
 
-<f-svg width="400" height="400">
+<f-svg width="200" height="200" padding="10">
   <rect
-    v-for="[s,l] in rectgridpoints(20,5)"
-    :x="s * 4"
-    :y="l * 4"
-    width="20"
-    height="20"
-    :fill="hsl(f.h,s,l)"
+    v-for="[s,l] in rectgridpoints(40,5)"
+    :x="s"
+    :y="l"
+    width="10"
+    height="10"
+    :fill="hsl(f.h,s / 2,l / 2)"
     v-on:click="f.s = s; f.l = l"
   />
-  <rect
-    :x="f.s * 4"
-    :y="f.l * 4"
-    width="20"
-    height="20"
-    fill="none"
+  <circle
+    :cx="f.s * 2"
+    :cy="f.l * 2"
+    r="10"
+    :fill="hsl(f.h,f.s,f.l)"
     stroke="white"
     stroke-width="2"
   />
@@ -76,8 +72,8 @@ You can also set only the hue `h` parameter:
 
 {{ hsl(f.h,f.s,f.l) }}
 <f-slider v-model="f.h" max="360" step="10" />
-<f-slider v-model="f.s" max="100" step="5" />
-<f-slider v-model="f.l" max="100" step="5" />
+<f-slider v-model="f.s" max="100" step="5" :value="100" />
+<f-slider v-model="f.l" max="100" step="5" :value="50" />
 ```
 
 ## Prior art

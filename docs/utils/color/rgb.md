@@ -23,8 +23,6 @@ Output a CSS color string with `r b g a` parameters:
 
 Let's draw a RGB color picker:
 
-### Red
-
 ```md
 <f-svg width="255" height="255" padding="10">
   <rect
