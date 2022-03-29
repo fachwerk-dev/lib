@@ -31,9 +31,10 @@ export const pol2car = circlepoint;
  */
 export function pointcircle(point: Point): [number, number] {
   const [x, y] = point;
-  return [Math.atan2(y, x) * (180 / Math.PI), Math.sqrt(x * x + y * y)].map(
-    (p) => trunc(p)
-  ) as [number, number];
+  return [
+    Math.atan2(y, x) * (180 / Math.PI) + 90,
+    Math.sqrt(x * x + y * y),
+  ].map((p) => trunc(p)) as [number, number];
 }
 
 export const car2pol = pointcircle;

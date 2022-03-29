@@ -49,7 +49,7 @@ Degrees: {{ f.deg }}
 Radius: 100
 Point: {{ circlepoint(f.deg,100) }}
 
-<f-slider v-model="f.deg" max="360" step="30" />
+<f-slider v-model="f.deg" max="360" />
 ```
 
 ## Prior art
