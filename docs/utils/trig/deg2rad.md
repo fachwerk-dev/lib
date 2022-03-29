@@ -20,13 +20,13 @@ function deg2rad(deg: number = 0): number
   <path
     :d="circlepath(100)"
     fill="none"
-    stroke="lightgray"
+    stroke="whitesmoke"
     stroke-width="2"
   />
   <path
     :d="arcpath(0,f.deg,100)"
     fill="none"
-    stroke="steelblue"
+    stroke="lightblue"
     stroke-width="2"
   />
 </f-svg>
@@ -35,7 +35,7 @@ function deg2rad(deg: number = 0): number
 
 deg: {{ f.deg }} deg
 rad: {{ deg2rad(f.deg) }}
-π: {{ deg2rad(f.deg) / PI }}
+rad / π: {{ deg2rad(f.deg) / PI }}
 ```
 
 ## See also

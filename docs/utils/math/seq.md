@@ -58,3 +58,9 @@ Alternatively, you can define `step` parameter as a function that allows to crea
 
 <f-slider v-model="f.start" :value="0" /> Start: {{ f.start }}
 ```
+
+### Prior art
+
+https://designstem.github.io/fachwerk/docs/#/f-array
+
+https://visualia.github.io/visualia_original/#helper-functions_array
