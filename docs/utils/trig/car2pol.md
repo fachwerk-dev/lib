@@ -3,7 +3,9 @@
 Converts Cartesian coordinates to polar coordinates. Inspired by [cart2pol()](https://rdrr.io/github/jaredlander/useful/man/cart2pol.html) function in R and Matlab.
 
 ```ts
-function car2pol(point: Point): [number, number];
+type Point = [x: number, y: number];
+
+function car2pol(point: Point): [angle: number, radius: number];
 ```
 
 ## Usage

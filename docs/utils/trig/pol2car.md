@@ -3,7 +3,13 @@
 Converts polar coordinates to Cartesian coordinates. Inspired by [pol2cart()](https://rdrr.io/cran/useful/man/pol2cart.html) function in R and Matlab.
 
 ```ts
+type Point = [x: number, y: number];
+
 function pol2car(angle: number, radius: number): Point;
+
+function pol2carx(angle: number, radius: number): number;
+
+function pol2cary(angle: number, radius: number): number;
 ```
 
 ## Usage
@@ -18,9 +24,9 @@ function pol2car(angle: number, radius: number): Point;
 <f-svg width="400" height="400" centered rectgrid>
   <path :d="circlepath(100)" fill="none" stroke="lightgray" stroke-width="2" />
   <line
-    :x1="pol2car(f.deg,100)[0]"
+    :x1="pol2carx(f.deg,100)"
     y1="-200"
-    :x2="pol2car(f.deg,100)[0]"
+    :x2="pol2carx(f.deg,100)"
     y2="200"
     fill="none"
     stroke="lightblue"
@@ -28,9 +34,9 @@ function pol2car(angle: number, radius: number): Point;
   />
   <line
     x1="-200"
-    :y1="pol2car(f.deg,100)[1]"
+    :y1="pol2cary(f.deg,100)"
     x2="200"
-    :y2="pol2car(f.deg,100)[1]"
+    :y2="pol2cary(f.deg,100)"
     fill="none"
     stroke="lightblue"
     stroke-width="2"

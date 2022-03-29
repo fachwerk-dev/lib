@@ -24,6 +24,14 @@ export function pol2car(angle: number, radius: number): Point {
   ].map((p) => trunc(p)) as Point;
 }
 
+export function pol2carx(angle: number, radius: number): number {
+  return pol2car(angle, radius)[0];
+}
+
+export function pol2cary(angle: number, radius: number): number {
+  return pol2car(angle, radius)[1];
+}
+
 /**
  * Converts Cartesian coordinates to polar coordinates
  */
