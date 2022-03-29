@@ -1,4 +1,4 @@
-import { pol2car, seq } from ".";
+import { circlepoint, seq } from ".";
 
 export type Point = [x: number, y: number];
 
@@ -24,7 +24,7 @@ export function circlepoints(
   const [px, py] = position;
 
   return seq(length, (n) => n * (360 / length))
-    .map((a) => pol2car(a, r))
+    .map((a) => circlepoint(a, r))
     .map(([x, y]) => [x + px, y + py]);
 }
 

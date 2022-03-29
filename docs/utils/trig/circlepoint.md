@@ -1,21 +1,17 @@
-# pol2car
+# circlepoint
 
-Converts polar coordinates to Cartesian coordinates. Inspired by [pol2cart()](https://rdrr.io/cran/useful/man/pol2cart.html) function in R and Matlab.
+Converts polar coordinates to `Point` in cartesian coordinates. Inspired by [pol2cart()](https://rdrr.io/cran/useful/man/pol2cart.html) function in R and Matlab.
 
 ```ts
 type Point = [x: number, y: number];
 
-function pol2car(angle: number, radius: number): Point;
-
-function pol2carx(angle: number, radius: number): number;
-
-function pol2cary(angle: number, radius: number): number;
+function circlepoint(angle: number, radius: number): Point;
 ```
 
 ## Usage
 
 ```md
-{{ pol2car(90, 10) }}
+{{ circlepoint(180, 100) }}
 ```
 
 ## Example
@@ -24,9 +20,9 @@ function pol2cary(angle: number, radius: number): number;
 <f-svg width="400" height="400" centered rectgrid>
   <path :d="circlepath(100)" fill="none" stroke="lightgray" stroke-width="2" />
   <line
-    :x1="pol2carx(f.deg,100)"
+    :x1="circlepoint(f.deg,100)[0]"
     y1="-200"
-    :x2="pol2carx(f.deg,100)"
+    :x2="circlepoint(f.deg,100)[0]"
     y2="200"
     fill="none"
     stroke="lightblue"
@@ -34,9 +30,9 @@ function pol2cary(angle: number, radius: number): number;
   />
   <line
     x1="-200"
-    :y1="pol2cary(f.deg,100)"
+    :y1="circlepoint(f.deg,100)[1]"
     x2="200"
-    :y2="pol2cary(f.deg,100)"
+    :y2="circlepoint(f.deg,100)[1]"
     fill="none"
     stroke="lightblue"
     stroke-width="2"
@@ -50,10 +46,10 @@ function pol2cary(angle: number, radius: number): number;
 </f-svg>
 
 Degrees: {{ f.deg }}
-Cartesian: {{ pol2car(f.deg,100) }}
 Radius: 100
+Point: {{ circlepoint(f.deg,100) }}
 
-<f-slider v-model="f.deg" max="360" :value="180" />
+<f-slider v-model="f.deg" max="360" :value="180" step="15" />
 ```
 
 ## Prior art
