@@ -26,22 +26,33 @@ export let sidebar: Link[] = [
   {
     text: "Point utilities",
     children: [
-      { text: "linepoints", link: "/utils/point/linepoints" },
-      { text: "rectpoints", link: "/utils/point/rectpoints" },
-      { text: "circlepoints", link: "/utils/point/circlepoints" },
-      { text: "rectgridpoints", link: "/utils/point/rectgridpoints" },
-      { text: "circlegridpoints", link: "/utils/point/circlegridpoints" },
+      { text: "circlepoint", link: "/utils/trig/circlepoint" },
+      { text: "pointcircle", link: "/utils/trig/pointcircle" },
     ],
+  },
+  {
+    text: "Points utilities",
+    children: [
+      { text: "circlepoints", link: "/utils/point/circlepoints" },
+      { text: "rectpoints", link: "/utils/point/rectpoints" },
+    ],
+  },
+  {
+    text: "Gridpoints utilities",
+    children: [{ text: "rectgridpoints", link: "/utils/point/rectgridpoints" }],
   },
   {
     text: "Path utilities",
     children: [
-      { text: "polygonpath", link: "/utils/path/polygonpath" },
       { text: "circlepath", link: "/utils/path/circlepath" },
       { text: "arcpath", link: "/utils/path/arcpath" },
       { text: "rectpath", link: "/utils/path/rectpath" },
-      { text: "rectgridpath", link: "/utils/path/rectgridpath" },
+      { text: "polygonpath", link: "/utils/path/polygonpath" },
     ],
+  },
+  {
+    text: "Gridpath utilities",
+    children: [{ text: "rectgridpath", link: "/utils/path/rectgridpath" }],
   },
   {
     text: "Transform utilities",
@@ -53,6 +64,13 @@ export let sidebar: Link[] = [
     ],
   },
   {
+    text: "Array utilities",
+    children: [
+      { text: "seq", link: "/utils/math/seq" },
+      { text: "range", link: "/utils/array/range" },
+    ],
+  },
+  {
     text: "Math utilities",
     children: [
       { text: "remap", link: "/utils/math/remap" },
@@ -60,26 +78,24 @@ export let sidebar: Link[] = [
     ],
   },
   {
-    text: "Trig utilities",
+    text: "Color utilities",
     children: [
-      { text: "deg2rad", link: "/utils/trig/deg2rad" },
-      { text: "rad2deg", link: "/utils/trig/rad2deg" },
-      { text: "pol2car", link: "/utils/trig/pol2car" },
-      { text: "car2pol", link: "/utils/trig/car2pol" },
-      { text: "PI and TAU", link: "/utils/trig/pi-tau" },
+      { text: "hsl", link: "/utils/color/hsl" },
+      { text: "rgb", link: "/utils/color/rgb" },
     ],
   },
   {
-    text: "Array utilities",
-    children: [{ text: "range", link: "/utils/array/range" }],
-  },
-  {
-    text: "Color utilities",
-    children: [{ text: "hsl", link: "/utils/color/hsl" }],
+    text: "Trig utilities",
+    children: [
+      { text: "PI and TAU", link: "/utils/trig/pi-tau" },
+      { text: "deg2rad", link: "/utils/trig/deg2rad" },
+      { text: "rad2deg", link: "/utils/trig/rad2deg" },
+    ],
   },
   {
     text: "Experimental",
     children: [
+      { text: "f-mouse", link: "/components/f-mouse" },
       { text: "f-pdf", link: "/components/f-pdf" },
       { text: "f-three", link: "/components/f-three" },
       { text: "f-canvas", link: "/components/f-canvas" },
@@ -87,9 +103,6 @@ export let sidebar: Link[] = [
   },
   {
     text: "Development",
-    children: [
-      { text: "TODO", link: "/todo" },
-      { text: "test", link: "/test" },
-    ],
+    children: [{ text: "TODO", link: "/todo" }],
   },
 ];

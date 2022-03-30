@@ -1,19 +1,18 @@
 <script setup lang="ts">
-import { onBeforeUpdate, onMounted, provide, ref } from "vue";
+import { onBeforeUpdate, onMounted, provide, Ref, ref } from "vue";
+export type Context = {
+  width: number;
+  height: number;
+  ctx: Ref<CanvasRenderingContext2D | null>;
+  updated: Ref<boolean>;
+  update: Function;
+};
 
 const canvasEl = ref<HTMLCanvasElement | null>(null);
 const ctx = ref<CanvasRenderingContext2D | null>(null);
 const updated = ref(false);
-const width = 300;
-const height = 300;
-
-export type Context = {
-  width: number;
-  height: number;
-  ctx: typeof ctx;
-  updated: typeof updated;
-  update: Function;
-};
+const width = 400;
+const height = 400;
 
 const context: Context = {
   width,

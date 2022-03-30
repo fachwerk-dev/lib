@@ -1,9 +1,15 @@
 # rad2deg
 
-Converts radians to degrees.
+`rad2deg()` function converts radians to degrees.
+
+```
+function rad2deg(rad: number = 0): number
+```
+
+## Usage
 
 ```md
-{{ rad2deg(PI / 2) }}
+{{ rad2deg(PI) }}
 ```
 
 ## Prior art

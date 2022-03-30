@@ -2,12 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-svg {
-  @apply block;
+input[type="range"] {
+  @apply w-full  accent-lightblue-700 md:w-1/2;
 }
 .prose svg {
+  @apply mb-4 block;
+}
+.prose canvas {
   @apply mb-4;
 }
-button {
-  @apply inline-block rounded border-2 border-sky-800 px-3 py-1 text-center font-semibold text-sky-800 hover:bg-black/5;
+.prose mark {
+  @apply mr-1 rounded-sm bg-yellow-300 px-1;
+}
+.prose button {
+  @apply inline-block rounded border-2 border-sky-800 px-3 py-1 text-center font-medium text-lightblue-800 hover:bg-black/5;
 }

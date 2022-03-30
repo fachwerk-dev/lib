@@ -15,10 +15,6 @@ const { content: inputContent, mode = "template" } = defineProps([
 ]);
 const content = ref(atou(inputContent));
 
-function preProcess(template: string) {
-  return template.replace(/\n{2,}/gm, "\n");
-}
-
 function editorPlugin(md) {
   md.renderer.rules.code_inline = function () {
     const [tokens, idx, _options, _env, _slf] = arguments;
@@ -35,10 +31,13 @@ const md = new MarkdownIt({ linkify: true, html: true, breaks: true }).use(
   editorPlugin
 );
 
+const initialContent = ref(md.render(content.value));
+
 const outputContent = computed(() => {
-  const r = md.render(preProcess(content.value));
+  const r = md.render(content.value);
   return r;
 });
+
 const editor = ref<HTMLTextAreaElement | null>(null);
 
 onMounted(() => {
@@ -61,17 +60,18 @@ const link = computed(
 );
 
 const error = ref(null);
-const onError = (e: CompilerError[] | null) => (error.value = e);
+const onError = (e: any | null) => (error.value = e);
 </script>
 <template>
   <div
-    class="-mx-5 mb-6 grid grid-cols-1 grid-rows-[33vh_auto] overflow-hidden rounded-none shadow-md shadow-gray-100 md:mx-0 md:grid-cols-2 md:grid-rows-[auto_auto] md:rounded-md"
+    class="-mx-6 mb-6 grid grid-cols-1 grid-rows-[33vh_auto] overflow-hidden rounded-none shadow-md shadow-gray-100 md:mx-0 md:grid-cols-[2fr_3fr] md:grid-rows-[auto_auto] md:rounded-md"
   >
-    <div class="min-h-12 relative flex">
+    <div class="relative flex">
       <textarea
         ref="editor"
         v-model="content"
         class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
+        spellcheck="false"
       />
       <a
         class="absolute top-1 right-1 !text-gray-600 hover:!text-gray-400 md:top-2 md:right-2"
@@ -82,7 +82,7 @@ const onError = (e: CompilerError[] | null) => (error.value = e);
       </a>
     </div>
     <div
-      class="overflow-x-auto border-l-2 border-white p-4 lg:p-6"
+      class="relative overflow-x-auto border-l-2 border-white p-4 lg:p-6"
       :class="{ '!border-red-500': error }"
     >
       <CompilerTemplate

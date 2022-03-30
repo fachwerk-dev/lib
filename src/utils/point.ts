@@ -1,40 +1,40 @@
-import { pol2car, range, remap } from ".";
-import { resolvePoint } from "../internal/point";
+import { circlepoint, seq } from ".";
 
-export type Point = {
-  x: number;
-  y: number;
-};
+export type Point = [x: number, y: number];
 
 export function rectpoints(
   width: number,
   height: number,
-  xOrPoint: Point | number,
-  y?: number
+  position: Point = [0, 0]
 ): Point[] {
-  const point = resolvePoint(xOrPoint, y);
+  const [px, py] = position;
   return [
-    { x: point.x, y: point.y },
-    { x: point.x + width, y: point.y },
-    { x: point.x + width, y: point.y + height },
-    { x: point.x, y: point.y + height },
+    [px, py],
+    [px + width, py],
+    [px + width, py + height],
+    [px, py + height],
   ];
 }
 
-export function linepoints(count: number, step: number): Point[] {
-  return range(count).map((x) => ({ x: x * step, y: 0 }));
+export function circlepoints(
+  length: number,
+  r: number,
+  position: Point = [0, 0]
+): Point[] {
+  const [px, py] = position;
+
+  return seq(length, (n) => n * (360 / length))
+    .map((a) => circlepoint(a, r))
+    .map(([x, y]) => [x + px, y + py]);
 }
 
-export function circlepoints(count: number, r: number): Point[] {
-  return range(count).map((a) => pol2car(a * (360 / count), r));
-}
-
-export function rectgridpoints(count: number, step: number): Point[] {
-  return range(count).flatMap((y) =>
-    linepoints(count, step).map(({ x }) => ({ x, y: y * step }))
-  );
-}
-
-export function circlegridpoints(count: number, step: number): Point[] {
-  return range(count).flatMap((r) => circlepoints(count, r * step));
+export function rectgridpoints(
+  length: number,
+  step: number,
+  position: Point = [0, 0]
+): Point[] {
+  const [px, py] = position;
+  return seq(length, (y) =>
+    seq(length, (x) => [x * step + px, y * step + py])
+  ).flat();
 }

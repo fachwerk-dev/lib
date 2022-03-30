@@ -14,6 +14,20 @@ const PI: number;
 {{ PI }}
 ```
 
+#### Example
+
+```md
+<f-svg width="400" height="400" centered rectgrid>
+  <circle
+    v-for="x in range(-PI,PI,0.01)"
+    :cx="remap(x,-PI,PI,-200,200)"
+    :cy="remap(Math.sin(x),-1,1,-50,50)"
+    r="1"
+    fill="lightblue"
+  />
+</f-svg>
+```
+
 ## TAU
 
 Returns <f-math>\tau = 2 \times \pi</f-math> value. Inspired by the [Tau Manifesto](https://tauday.com/tau-manifesto).
@@ -26,6 +40,20 @@ const TAU: number;
 
 ```md
 {{ TAU }}
+```
+
+#### Example
+
+```md
+<f-svg width="400" height="400" centered rectgrid>
+  <circle
+    v-for="x in range(-TAU,TAU,0.01)"
+    :cx="remap(x,-TAU,TAU,-200,200)"
+    :cy="remap(Math.sin(x),-1,1,-50,50)"
+    r="1"
+    fill="lightblue"
+  />
+</f-svg>
 ```
 
 ## Prior art

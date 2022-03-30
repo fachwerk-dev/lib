@@ -13,8 +13,8 @@ export type Context = {
 const props = defineProps({ a: { type: Number, default: 1 } });
 
 const el = ref(null);
-const width = 300;
-const height = 300;
+const width = 400;
+const height = 400;
 
 const scene = new Scene();
 const camera = new PerspectiveCamera(100, width / height, 0.1, 1000);

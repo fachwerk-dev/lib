@@ -18,7 +18,11 @@ https://designstem.github.io/fachwerk/docs/#/f-triangle
 
 https://visualia.netlify.app/utils/linepath.html
 
-⚠️ https://designstem.github.io/fachwerk/docs/#/f-roundedpolygon
+### rounded polygon / polygonpath
+
+https://designstem.github.io/fachwerk/docs/#/f-roundedpolygon
+
+https://github.com/BrunoFenzl/svg-round-corners
 
 ### hexagonpath
 
@@ -78,8 +82,6 @@ https://visualia.github.io/visualia_original/#helper-functions_slug
 
 ### array?
 
-range(length) ?
-
 https://visualia.github.io/visualia_original/#helper-functions_array
 
 ### shuffle
@@ -136,7 +138,7 @@ https://visualia.github.io/visualia_original/#helper-functions_distance
 
 ### pointatline
 
-https://visualia.github.io/visualia_original/#helper-functions_pointatline
+https://visualia.github.io/visualia_original/#helper-functionsPointatline
 
 https://designstem.github.io/fachwerk/docs/#/linepoint
 
@@ -230,7 +232,7 @@ https://designstem.github.io/fachwerk/docs/#/f-group
 
 https://designstem.github.io/fachwerk/docs/#/f-point
 
-https://visualia.github.io/visualia_original/#graphics_point
+https://visualia.github.io/visualia_original/#graphicsPoint
 
 ### f-line
 
@@ -339,8 +341,6 @@ https://designstem.github.io/fachwerk/docs/#/f-toggle
 https://designstem.github.io/fachwerk/docs/#/f-buttons
 
 https://designstem.github.io/fachwerk/docs/#/f-keyboard
-
-https://designstem.github.io/fachwerk/docs/#/f-mouse
 
 https://designstem.github.io/fachwerk/docs/#/f-drag
 

@@ -1,3 +1,5 @@
+export const PRECISION = 8;
+
 export function remap(
   value: number,
   start1: number,
@@ -14,4 +16,8 @@ export function random(min: number = 0, max: number = 1): number {
 
 export function randomint(min: number, max: number): number {
   return Math.floor(random(min, max));
+}
+
+export function trunc(value: number, precision = 8): number {
+  return parseFloat(value.toFixed(PRECISION));
 }
