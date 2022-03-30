@@ -1,27 +1,31 @@
 ```vue
 <script setup>
-import { watch } from "vue";
+import { watchEffect } from "vue";
 import { BoxGeometry, MeshNormalMaterial } from "three";
 import { deg2rad } from "fachwerk";
+import { useRafFn } from "@vueuse/core";
 
 const mesh = $ref();
 const y = $ref(0);
 const geometry = new BoxGeometry(100, 100, 100);
 const material = new MeshNormalMaterial();
 
-watch(
-  () => y,
-  () => {
+watchEffect(() => {
+  if (mesh) {
     mesh.mesh.rotation.y = deg2rad(y);
-    //mesh.update();
+    mesh.update();
   }
-);
+});
 
-import { useRafFn as raf } from "@vueuse/core";
-raf(() => mesh?.update());
+useRafFn(() => {
+  if (mesh) {
+    mesh.mesh.rotation.y += deg2rad(0.5);
+    mesh.update();
+  }
+});
 </script>
 
-<input type="range" v-model="y" step="any" max="360" />
+<input type="range" v-model="y" step="0.5" max="360" />
 
 <f-three>
   <f-three-mesh
