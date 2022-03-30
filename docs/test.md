@@ -28,10 +28,6 @@ useRafFn(() => {
 <input type="range" v-model="y" step="0.5" max="360" />
 
 <f-three>
-  <f-three-mesh
-    ref="mesh"
-    :geometry="geometry"
-    :material="material"
-  />
+  <f-three-mesh ref="mesh" :geometry="geometry" :material="material" />
 </f-three>
 ```
