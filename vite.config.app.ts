@@ -18,7 +18,12 @@ function editorPlugin(md) {
     const content = tokens[idx].content;
     if (info === "md") {
       return `
-        <Editor content="${utoa(content)}" />
+        <Editor content="${utoa(content)}" mode="template" />
+      `;
+    }
+    if (info === "vue") {
+      return `
+        <Editor content="${utoa(content)}" mode="setup" />
       `;
     }
     return defaultFence(...arguments);

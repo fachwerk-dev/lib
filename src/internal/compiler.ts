@@ -10,8 +10,6 @@ export function compilerSetup(source: string) {
       }
     : { script_setup: "{}", template: source };
 
-  console.log(sfc);
-
   const stringifySfc = (sfc: any) => {
     return Object.entries(sfc)
       .map(

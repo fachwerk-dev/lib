@@ -16,4 +16,6 @@ watch(
 );
 </script>
 
-<template><iframe frameborder="0" :srcdoc="srcdoc" /></template>
+<template>
+  <iframe class="h-screen" frameborder="0" :srcdoc="srcdoc" />
+</template>

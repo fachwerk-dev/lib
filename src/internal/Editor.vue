@@ -9,7 +9,10 @@ import CompilerSetup from "./CompilerSetup.vue";
 
 import { atou, utoa } from "../internal/encoding";
 
-const { content: inputContent } = defineProps(["content"]);
+const { content: inputContent, mode = "template" } = defineProps([
+  "content",
+  "mode",
+]);
 const content = ref(atou(inputContent));
 
 function preProcess(template: string) {
@@ -82,8 +85,12 @@ const onError = (e: CompilerError[] | null) => (error.value = e);
       class="overflow-x-auto border-l-2 border-white p-4 lg:p-6"
       :class="{ '!border-red-500': error }"
     >
-      <!-- <CompilerTemplate :content="outputContent" @error="onError" /> -->
-      <CompilerSetup :content="outputContent" />
+      <CompilerTemplate
+        v-if="mode === 'template'"
+        :content="outputContent"
+        @error="onError"
+      />
+      <CompilerSetup v-if="mode === 'setup'" :content="outputContent" />
     </div>
   </div>
 </template>
