@@ -1,9 +1,6 @@
-<script setup lang="ts">
-import { ref, watch } from "vue";
 import { compileScript, parse } from "@vue/compiler-sfc";
-import sfcTemplate from "./CompilerIframe.txt?raw";
 
-const compile = (source: string) => {
+export function compilerSetup(source: string) {
   const regex = /(?:<script\s+setup>)([^]*?)(?:<\/script>)/gm;
   const results = [...source.matchAll(regex)][0];
   const sfc = results
@@ -27,25 +24,10 @@ const compile = (source: string) => {
   const { descriptor } = parse(stringifySfc(sfc));
 
   const { content } = compileScript(descriptor, {
-    id: "CompilerIframe.vue",
+    id: "id",
     reactivityTransform: true,
     inlineTemplate: true,
   });
 
   return content.replace("export default {", "const App = {");
-};
-
-const { content } = defineProps(["content"]);
-const srcdoc = ref("");
-
-watch(
-  () => content,
-  () => {
-    const code = compile(content);
-    srcdoc.value = sfcTemplate.replace("CODE;", code);
-  },
-  { immediate: true }
-);
-</script>
-
-<template><iframe frameborder="0" :srcdoc="srcdoc" /></template>
+}

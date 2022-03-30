@@ -20,7 +20,7 @@ const progress = computed({
 });
 
 onMounted(() => {
-  progress.value = defaultValue ? defaultValue : 0;
+  progress.value = modelValue ? modelValue : defaultValue ? defaultValue : 0;
 });
 </script>
 
