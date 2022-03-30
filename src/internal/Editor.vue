@@ -5,6 +5,7 @@ import MarkdownIt from "markdown-it";
 import IconOpen from "~icons/tabler/layers-subtract";
 
 import Compiler from "./Compiler.vue";
+import CompilerIframe from "./CompilerIframe.vue";
 import { atou, utoa } from "../internal/encoding";
 
 const { content: inputContent } = defineProps(["content"]);
@@ -80,7 +81,8 @@ const onError = (e: CompilerError[] | null) => (error.value = e);
       class="overflow-x-auto border-l-2 border-white p-4 lg:p-6"
       :class="{ '!border-red-500': error }"
     >
-      <Compiler :content="outputContent" @error="onError" />
+      <!-- <Compiler :content="outputContent" @error="onError" /> -->
+      <CompilerIframe :content="outputContent" />
     </div>
   </div>
 </template>
