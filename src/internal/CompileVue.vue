@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import { compileVue } from "./compile";
-import template from "./CompileVue?raw";
+import template from "./CompileVue.htm?raw";
 
 const { source } = defineProps(["source"]);
 const emit = defineEmits(["error"]);
