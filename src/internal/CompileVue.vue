@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import { compileSetup } from "./compiler";
-import template from "./CompilerSetup.txt?raw";
+import template from "./CompileVue?raw";
 
 const { content } = defineProps(["content"]);
 const srcdoc = ref("");

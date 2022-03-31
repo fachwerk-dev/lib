@@ -5,7 +5,7 @@ import MarkdownIt from "markdown-it";
 import IconOpen from "~icons/tabler/layers-subtract";
 
 import CompilerTemplate from "./CompilerTemplate.vue";
-import CompilerSetup from "./CompilerSetup.vue";
+import CompileVue from "./CompileVue.vue";
 
 import { atou, utoa } from "../internal/encoding";
 
@@ -90,7 +90,7 @@ const onError = (e: any | null) => (error.value = e);
         :content="outputContent"
         @error="onError"
       />
-      <CompilerSetup v-if="mode === 'setup'" :content="outputContent" />
+      <CompileVue v-if="mode === 'setup'" :content="outputContent" />
     </div>
   </div>
 </template>
