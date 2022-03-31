@@ -86,11 +86,11 @@ const onError = (e: any | null) => (error.value = e);
       :class="{ '!border-red-500': error }"
     >
       <CompileMd
-        v-if="mode === 'template'"
+        v-if="mode === 'md'"
         :content="outputContent"
         @error="onError"
       />
-      <CompileVue v-if="mode === 'setup'" :content="outputContent" />
+      <CompileVue v-if="mode === 'vue'" :content="outputContent" />
     </div>
   </div>
 </template>

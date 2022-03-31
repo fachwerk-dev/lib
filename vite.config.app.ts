@@ -14,16 +14,11 @@ function editorPlugin(md) {
   const defaultFence = md.renderer.rules.fence;
   md.renderer.rules.fence = function () {
     const [tokens, idx, _options, _env, _slf] = arguments;
-    const info = tokens[idx].info.trim();
+    const lang = tokens[idx].info.trim();
     const content = tokens[idx].content;
-    if (info === "md") {
+    if (["md", "vue"].includes(lang)) {
       return `
-        <Editor content="${utoa(content)}" mode="template" />
-      `;
-    }
-    if (info === "vue") {
-      return `
-        <Editor content="${utoa(content)}" mode="setup" />
+        <Editor content="${utoa(content)}" mode="${lang}" />
       `;
     }
     return defaultFence(...arguments);

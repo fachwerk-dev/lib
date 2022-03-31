@@ -1,3 +1,9 @@
+```md
+<f-slider v-model="f.a" />
+
+{{ f.a }}
+```
+
 ```vue
 <script setup>
 import { watchEffect } from "vue";
