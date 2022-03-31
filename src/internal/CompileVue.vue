@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import { compileVue } from "./compile";
+import { compileSfc } from "./compile";
 import template from "./CompileVue.htm?raw";
 
 const { source } = defineProps(["source"]);
@@ -11,7 +11,7 @@ const iframeRef = ref<HTMLIFrameElement | null>(null);
 watch(
   () => source,
   () => {
-    const { code, errors } = compileVue(source);
+    const { code, errors } = compileSfc(source);
     if (errors.length) {
       emit("error", errors);
     }

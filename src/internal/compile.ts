@@ -1,6 +1,23 @@
-import { compileScript, parse } from "@vue/compiler-sfc";
+import { compile, RenderFunction } from "vue";
+import { compileScript, parse, CompilerError } from "@vue/compiler-sfc";
 
-export function compileVue(source: string) {
+export function compileTemplate(source: string) {
+  const errors: CompilerError[] = [];
+  let code: RenderFunction | undefined = undefined;
+  try {
+    const compiledCode = compile(source, {
+      onError: (err: any) => {
+        errors.push(err);
+      },
+    });
+    code = compiledCode || (() => null);
+  } catch (e) {
+    errors.push(e as CompilerError);
+  }
+  return { code, errors };
+}
+
+export function compileSfc(source: string) {
   const regex = /(?:<script\s+setup>)([^]*?)(?:<\/script>)/gm;
   const results = [...source.matchAll(regex)][0];
   const sfc = results
