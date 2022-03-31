@@ -3,14 +3,14 @@ import { ref, watch } from "vue";
 import { compileSetup } from "./compiler";
 import template from "./CompileVue?raw";
 
-const { content } = defineProps(["content"]);
+const { source } = defineProps(["source"]);
 const srcdoc = ref("");
 const iframeRef = ref<HTMLIFrameElement | null>(null);
 
 watch(
-  () => content,
+  () => source,
   () => {
-    const code = compileSetup(content);
+    const code = compileSetup(source);
     srcdoc.value = template.replace("CODE;", code);
   },
   { immediate: true }

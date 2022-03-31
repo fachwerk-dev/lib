@@ -39,26 +39,22 @@ const renderComponent = (render: RenderFunction) => {
 };
 
 export default {
-  props: ["content"],
+  props: ["source"],
   emits: ["error"],
   setup(props: any, ctx: any) {
-    const compiledContent = shallowRef<ComponentOptions | null>(null);
+    const compiledSource = shallowRef<ComponentOptions | null>(null);
     watch(
-      () => props.content,
-      (content, prevContent) => {
-        const { code, errors } = compileSource(content);
+      () => props.source,
+      (source) => {
+        const { code, errors } = compileSource(source);
         if (errors.length) {
           ctx.emit("error", errors);
-          const { code: prevCode } = compileSource(prevContent);
-          compiledContent.value = renderComponent(prevCode as RenderFunction);
-        } else {
-          ctx.emit("error", null);
-          compiledContent.value = renderComponent(code as RenderFunction);
         }
+        compiledSource.value = renderComponent(code as RenderFunction);
       },
       { immediate: true }
     );
-    return () => (compiledContent.value ? h(compiledContent.value) : null);
+    return () => (compiledSource.value ? h(compiledSource.value) : null);
   },
 };
 </script>

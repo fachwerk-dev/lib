@@ -86,7 +86,7 @@ const onError = (e: any | null) => (error.value = e);
     >
       <component
         :is="{ md: CompileMd, vue: CompileVue }[lang]"
-        :content="outputSource"
+        :source="outputSource"
         @error="onError"
       />
     </div>
