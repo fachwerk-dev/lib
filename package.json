@@ -1,6 +1,6 @@
 {
   "name": "fachwerk",
-  "version": "0.0.17",
+  "version": "0.0.18-beta.1",
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
@@ -27,6 +27,10 @@
       "import": "./dist/fachwerk.mjs",
       "require": "./dist/fachwerk.cjs"
     },
+    "./internal": {
+      "import": "./dist/internal.mjs",
+      "require": "./dist/internal.cjs"
+    },
     "./style.css": {
       "import": "./dist/style.css",
       "require": "./dist/style.css"
@@ -35,7 +39,7 @@
   "typings": "./dist/lib.esm.ts",
   "scripts": {
     "dev": "vite --port 3000 --host -c vite.config.app.ts --open",
-    "build": "vite build -c vite.config.esm.ts && vite build -c vite.config.cjs.ts && vite build -c vite.config.app.ts",
+    "build": "vite build -c vite.config.esm.ts && vite build -c vite.config.cjs.ts && vite build -c vite.config.app.ts && vite build -c vite.config.internal.ts",
     "preview": "vite preview --port 5000",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
