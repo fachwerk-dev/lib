@@ -10,11 +10,11 @@ import CompileVue from "./CompileVue.vue";
 import { atou, utoa } from "../internal/encoding";
 
 type Props = {
-  content: string;
+  source: string;
   lang?: "md" | "vue";
 };
-const { content: inputContent, lang = "md" } = defineProps<Props>();
-const content = ref(atou(inputContent));
+const { source: inputSource, lang = "md" } = defineProps<Props>();
+const source = ref(atou(inputSource));
 
 function editorPlugin(md) {
   md.renderer.rules.code_inline = function () {
@@ -32,8 +32,8 @@ const md = new MarkdownIt({ linkify: true, html: true, breaks: true }).use(
   editorPlugin
 );
 
-const outputContent = computed(() => {
-  const r = md.render(content.value);
+const outputSource = computed(() => {
+  const r = md.render(source.value);
   return r;
 });
 
@@ -55,7 +55,7 @@ onMounted(() => {
 });
 
 const link = computed(
-  () => `https://editor.fachwerk.dev/#${utoa(content.value)}`
+  () => `https://editor.fachwerk.dev/#${utoa(source.value)}`
 );
 
 const error = ref(null);
@@ -68,7 +68,7 @@ const onError = (e: any | null) => (error.value = e);
     <div class="relative flex">
       <textarea
         ref="editor"
-        v-model="content"
+        v-model="source"
         class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
         spellcheck="false"
       />
@@ -86,7 +86,7 @@ const onError = (e: any | null) => (error.value = e);
     >
       <component
         :is="{ md: CompileMd, vue: CompileVue }[lang]"
-        :content="outputContent"
+        :content="outputSource"
         @error="onError"
       />
     </div>

@@ -18,7 +18,7 @@ function editorPlugin(md) {
     const content = tokens[idx].content;
     if (["md", "vue"].includes(lang)) {
       return `
-        <Editor content="${utoa(content)}" lang="${lang}" />
+        <Editor source="${utoa(content)}" lang="${lang}" />
       `;
     }
     return defaultFence(...arguments);
