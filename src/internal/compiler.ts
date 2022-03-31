@@ -1,6 +1,6 @@
 import { compileScript, parse } from "@vue/compiler-sfc";
 
-export function compilerSetup(source: string) {
+export function compileSetup(source: string) {
   const regex = /(?:<script\s+setup>)([^]*?)(?:<\/script>)/gm;
   const results = [...source.matchAll(regex)][0];
   const sfc = results

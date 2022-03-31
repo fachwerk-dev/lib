@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import { compilerSetup } from "./compiler";
+import { compileSetup } from "./compiler";
 import template from "./CompilerSetup.txt?raw";
 
 const { content } = defineProps(["content"]);
@@ -8,9 +8,9 @@ const srcdoc = ref("");
 const iframeRef = ref<HTMLIFrameElement | null>(null);
 
 watch(
-  [() => content, () => iframeRef.value],
+  () => content,
   () => {
-    const code = compilerSetup(content);
+    const code = compileSetup(content);
     srcdoc.value = template.replace("CODE;", code);
   },
   { immediate: true }
