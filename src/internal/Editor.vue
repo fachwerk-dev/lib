@@ -9,10 +9,11 @@ import CompileVue from "./CompileVue.vue";
 
 import { atou, utoa } from "../internal/encoding";
 
-const { content: inputContent, mode = "template" } = defineProps([
-  "content",
-  "mode",
-]);
+type Props = {
+  content: string;
+  lang?: "md" | "vue";
+};
+const { content: inputContent, lang = "md" } = defineProps<Props>();
 const content = ref(atou(inputContent));
 
 function editorPlugin(md) {
@@ -30,8 +31,6 @@ function editorPlugin(md) {
 const md = new MarkdownIt({ linkify: true, html: true, breaks: true }).use(
   editorPlugin
 );
-
-const initialContent = ref(md.render(content.value));
 
 const outputContent = computed(() => {
   const r = md.render(content.value);
@@ -85,12 +84,11 @@ const onError = (e: any | null) => (error.value = e);
       class="relative overflow-x-auto border-l-2 border-white p-4 lg:p-6"
       :class="{ '!border-red-500': error }"
     >
-      <CompileMd
-        v-if="mode === 'md'"
+      <component
+        :is="{ md: CompileMd, vue: CompileVue }[lang]"
         :content="outputContent"
         @error="onError"
       />
-      <CompileVue v-if="mode === 'vue'" :content="outputContent" />
     </div>
   </div>
 </template>
