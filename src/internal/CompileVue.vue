@@ -1,16 +1,20 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import { compileSetup } from "./compiler";
+import { compileVue } from "./compile";
 import template from "./CompileVue?raw";
 
 const { source } = defineProps(["source"]);
+const emit = defineEmits(["error"]);
 const srcdoc = ref("");
 const iframeRef = ref<HTMLIFrameElement | null>(null);
 
 watch(
   () => source,
   () => {
-    const code = compileSetup(source);
+    const { code, errors } = compileVue(source);
+    if (errors.length) {
+      emit("error", errors);
+    }
     srcdoc.value = template.replace("CODE;", code);
   },
   { immediate: true }

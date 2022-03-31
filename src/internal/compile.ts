@@ -1,6 +1,6 @@
 import { compileScript, parse } from "@vue/compiler-sfc";
 
-export function compileSetup(source: string) {
+export function compileVue(source: string) {
   const regex = /(?:<script\s+setup>)([^]*?)(?:<\/script>)/gm;
   const results = [...source.matchAll(regex)][0];
   const sfc = results
@@ -19,7 +19,7 @@ export function compileSetup(source: string) {
       .join("");
   };
 
-  const { descriptor } = parse(stringifySfc(sfc));
+  const { descriptor, errors } = parse(stringifySfc(sfc));
 
   const { content } = compileScript(descriptor, {
     id: "id",
@@ -27,5 +27,7 @@ export function compileSetup(source: string) {
     inlineTemplate: true,
   });
 
-  return content.replace("export default {", "const App = {");
+  const code = content.replace("export default {", "const App = {");
+
+  return { code, errors };
 }
