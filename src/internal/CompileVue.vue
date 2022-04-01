@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { debouncedWatch } from "@vueuse/core";
 import { ref, watch } from "vue";
 import { compileSfc } from "./compile";
 import template from "./CompileVue.htm?raw";
@@ -7,7 +8,7 @@ const { source } = defineProps(["source"]);
 const emit = defineEmits(["error"]);
 const srcdoc = ref("");
 
-watch(
+debouncedWatch(
   () => source,
   () => {
     const { code, errors } = compileSfc(source);
@@ -16,7 +17,7 @@ watch(
     }
     srcdoc.value = template.replace("CODE;", code);
   },
-  { immediate: true }
+  { immediate: true, debounce: 300 }
 );
 </script>
 
