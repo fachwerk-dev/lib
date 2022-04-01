@@ -22,9 +22,9 @@ watch(
 
 <template>
   <iframe
-    style="width: 100%; height: auto; border: 1px solid red"
-    scrolling="no"
-    frameborder="0"
+    class="h-[75vh] w-full"
     :srcdoc="srcdoc"
+    frameborder="0"
+    scrolling="no"
   />
 </template>
