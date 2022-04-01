@@ -17,6 +17,11 @@ export function compileTemplate(source: string) {
   return { code, errors };
 }
 
+export function isScriptSetup(source: string) {
+  const regex = /(?:<script\s+setup>)([^]*?)(?:<\/script>)/gm;
+  return !![...source.matchAll(regex)][0];
+}
+
 export function compileSfc(source: string) {
   const regex = /(?:<script\s+setup>)([^]*?)(?:<\/script>)/gm;
   const results = [...source.matchAll(regex)][0];

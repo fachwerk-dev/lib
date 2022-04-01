@@ -4,7 +4,7 @@
 {{ f.a }}
 ```
 
-```vue
+```md
 <script setup>
 import { watchEffect } from "vue";
 import { BoxGeometry, MeshNormalMaterial } from "three";

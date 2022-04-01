@@ -4,16 +4,13 @@ import { ref, computed, onMounted } from "vue";
 import MarkdownIt from "markdown-it";
 import IconOpen from "~icons/tabler/layers-subtract";
 
-import CompileMd from "./CompileMd.vue";
-import CompileVue from "./CompileVue.vue";
-
+import Compile from "./Compile.vue";
 import { atou, utoa } from "../internal/encoding";
 
 type Props = {
   source: string;
-  lang?: "md" | "vue";
 };
-const { source: inputSource, lang = "md" } = defineProps<Props>();
+const { source: inputSource } = defineProps<Props>();
 const source = ref(atou(inputSource));
 
 function editorPlugin(md) {
@@ -84,11 +81,7 @@ const onError = (e: any | null) => (error.value = e);
       class="relative overflow-x-auto border-l-2 border-white p-4 lg:p-6"
       :class="{ '!border-red-500': error }"
     >
-      <component
-        :is="{ md: CompileMd, vue: CompileVue }[lang]"
-        :source="outputSource"
-        @error="onError"
-      />
+      <Compile :source="outputSource" @error="onError" />
     </div>
   </div>
 </template>
