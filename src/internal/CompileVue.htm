@@ -26,28 +26,7 @@
       }
     </script>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <style type="text/tailwindcss">
-      @tailwind base;
-      @tailwind components;
-      @tailwind utilities;
-
-      input[type="range"] {
-        @apply accent-lightblue-700;
-      }
-      .prose svg {
-        @apply mb-4 block;
-      }
-      .prose canvas {
-        @apply mb-4;
-      }
-      .prose mark {
-        @apply mr-1 rounded-sm bg-yellow-300 px-1;
-      }
-      .prose button {
-        @apply inline-block rounded border-2 border-sky-800 px-3 py-1 text-center font-medium text-lightblue-800 hover:bg-black/5;
-      }
-    </style>
-    <script type="module">
+    <script>
       tailwind.config = {
         theme: {
           fontFamily: {
@@ -56,7 +35,6 @@
           },
           extend: {
             screens: {
-              md: "400px",
               "2xl": "1600px",
             },
             colors: {
@@ -76,7 +54,25 @@
           },
         },
       };
-
+    </script>
+    <style type="text/tailwindcss">
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+      .prose svg {
+        @apply mb-4 block;
+      }
+      .prose canvas {
+        @apply mb-4;
+      }
+      .prose mark {
+        @apply mr-1 rounded-sm bg-yellow-300 px-1;
+      }
+      .prose button {
+        @apply inline-block rounded border-2 border-sky-800 px-3 py-1 text-center font-medium text-lightblue-800 hover:bg-black/5;
+      }
+    </style>
+    <script type="module">
       import { createApp, h } from "vue";
       import { Fachwerk } from "fachwerk";
       import { Content } from "fachwerk/internal";
@@ -86,7 +82,7 @@
       const app = createApp({
         components: { Content, App },
         setup() {
-          return () => h(Content, { class: "md:prose-lg" }, h(App));
+          return () => h(Content, {}, h(App));
         },
       });
       app.use(Fachwerk);

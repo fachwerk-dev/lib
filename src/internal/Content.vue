@@ -5,9 +5,9 @@
       prose
       max-w-[100ch]
       prose-headings:text-slate-800
-      prose-h3:!text-xl
-      prose-h4:!text-xl
-      prose-h4:!font-medium
+      --prose-h3:!text-xl
+      --prose-h4:!text-xl
+      --prose-h4:!font-medium
       prose-lead:w-[64ch]
       prose-p:mt-0
       prose-p:w-auto
@@ -39,9 +39,9 @@
       prose-pre:p-4
       prose-pre:md:-mx-0
       prose-pre:xl:rounded
-      lg:prose-lg
-      lg:prose-p:w-[64ch]
-      lg:prose-pre:p-6
+      --lg:prose-lg
+      --lg:prose-p:w-[64ch]
+      --lg:prose-pre:p-6
     ">
     <slot/>
   </article>
