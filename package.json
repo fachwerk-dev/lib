@@ -1,6 +1,6 @@
 {
   "name": "fachwerk",
-  "version": "0.0.18-beta.4",
+  "version": "0.0.18-beta.5",
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
@@ -27,13 +27,17 @@
       "import": "./dist/fachwerk.mjs",
       "require": "./dist/fachwerk.cjs"
     },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    },
     "./internal": {
       "import": "./dist/internal.mjs",
       "require": "./dist/internal.cjs"
     },
-    "./style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+    "./internal.css": {
+      "import": "./dist/internal.css",
+      "require": "./dist/internal.css"
     }
   },
   "typings": "./dist/lib.esm.ts",
