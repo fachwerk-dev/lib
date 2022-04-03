@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://unpkg.com/fachwerk/dist/style.css" rel="stylesheet" />
     <link
+      href="https://unpkg.com/fachwerk/dist/internal.css"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Cousine&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
       rel="stylesheet"
     />
@@ -25,53 +29,6 @@
         }
       }
     </script>
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          fontFamily: {
-            sans: ["IBM Plex Sans", "sans-serif"],
-            mono: ["Cousine", "monospace"],
-          },
-          extend: {
-            screens: {
-              "2xl": "1600px",
-            },
-            colors: {
-              lightblue: {
-                50: "#F7FBFD",
-                100: "#EFF8FA",
-                200: "#E0F0F5",
-                300: "#CCE7F0",
-                400: "#BDDFEB",
-                500: "#ADD8E6",
-                600: "#67B6D1",
-                700: "#338BA8",
-                800: "#1F5466",
-                900: "#0A1A1F",
-              },
-            },
-          },
-        },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @tailwind base;
-      @tailwind components;
-      @tailwind utilities;
-      .prose svg {
-        @apply mb-4 block;
-      }
-      .prose canvas {
-        @apply mb-4;
-      }
-      .prose mark {
-        @apply mr-1 rounded-sm bg-yellow-300 px-1;
-      }
-      .prose button {
-        @apply inline-block rounded border-2 border-sky-800 px-3 py-1 text-center font-medium text-lightblue-800 hover:bg-black/5;
-      }
-    </style>
     <script type="module">
       import { createApp, h } from "vue";
       import { Fachwerk } from "fachwerk";
