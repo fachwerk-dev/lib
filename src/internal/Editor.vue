@@ -10,9 +10,8 @@ import { atou, utoa } from "../internal/encoding";
 
 type Props = {
   source: string;
-  lang?: "md" | "vue";
 };
-const { source: inputSource, lang = "md" } = defineProps<Props>();
+const { source: inputSource } = defineProps<Props>();
 const source = ref(atou(inputSource));
 
 function editorPlugin(md) {
