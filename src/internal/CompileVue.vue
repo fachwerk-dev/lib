@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { debouncedWatch } from "@vueuse/core";
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import { compileSfc } from "./compile";
 import template from "./CompileVue.htm?raw";
 
@@ -17,13 +17,13 @@ debouncedWatch(
     }
     srcdoc.value = template.replace("CODE;", code);
   },
-  { immediate: true, debounce: 300 }
+  { immediate: true, debounce: 500 }
 );
 </script>
 
 <template>
   <iframe
-    class="h-[75vh] w-full"
+    class="h-[80vh] w-full"
     :srcdoc="srcdoc"
     frameborder="0"
     scrolling="no"
