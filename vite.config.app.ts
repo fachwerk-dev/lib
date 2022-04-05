@@ -14,11 +14,11 @@ function editorPlugin(md) {
   const defaultFence = md.renderer.rules.fence;
   md.renderer.rules.fence = function () {
     const [tokens, idx, _options, _env, _slf] = arguments;
-    const info = tokens[idx].info.trim();
+    const lang = tokens[idx].info.trim();
     const content = tokens[idx].content;
-    if (info === "md") {
+    if (lang === "md") {
       return `
-        <Editor content="${utoa(content)}" />
+        <Editor source="${utoa(content)}" />
       `;
     }
     return defaultFence(...arguments);

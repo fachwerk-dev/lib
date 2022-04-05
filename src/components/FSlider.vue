@@ -20,7 +20,11 @@ const computedValue = computed({
 });
 
 onMounted(() => {
-  computedValue.value = defaultValue ? defaultValue : 0;
+  computedValue.value = modelValue
+    ? modelValue
+    : defaultValue
+    ? defaultValue
+    : 0;
 });
 </script>
 
