@@ -27,5 +27,4 @@ const isFrontpage = frontmatter?.layout === "frontpage";
       <Content class="max-w-[100ch] p-5 md:p-12"><slot /></Content>
     </main>
   </div>
-  Lay
 </template>
