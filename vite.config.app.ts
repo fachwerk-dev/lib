@@ -7,8 +7,8 @@ import VitePages from "vite-plugin-pages";
 import ViteMarkdown from "vite-plugin-md";
 import ViteFonts from "vite-plugin-fonts";
 import ViteIcons from "unplugin-icons/vite";
-
 import { utoa } from "./src/internal/encoding";
+import postcss from "./postcss.config";
 
 function editorPlugin(md) {
   const defaultFence = md.renderer.rules.fence;
@@ -32,6 +32,7 @@ export default defineConfig({
       vue: "vue/dist/vue.esm-bundler.js",
     },
   },
+  css: { postcss },
   plugins: [
     ViteVue({ reactivityTransform: true, include: [/\.vue$/, /\.md$/] }),
     VitePages({
