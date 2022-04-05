@@ -2,7 +2,7 @@
 import { h, ComponentOptions, watch, shallowRef } from "vue";
 
 import { utils } from "../lib.esm";
-import { compileTemplate } from "./compile";
+import { compileTemplate } from "./compiler";
 
 export default {
   props: ["source"],
@@ -25,7 +25,8 @@ export default {
       },
       { immediate: true }
     );
-    return () => (compiledSource.value ? h(compiledSource.value) : null);
+    return () =>
+      compiledSource.value ? h("div", h(compiledSource.value)) : null;
   },
 };
 </script>

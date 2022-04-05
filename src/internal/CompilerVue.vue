@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { debouncedWatch } from "@vueuse/core";
 import { ref } from "vue";
-import { compileSfc } from "./compile";
-import template from "./CompileVue.htm?raw";
+import { compileSfc } from "./compiler";
+import template from "./CompilerVue.htm?raw";
 
 const { source } = defineProps(["source"]);
 const emit = defineEmits(["error"]);
@@ -22,10 +22,5 @@ debouncedWatch(
 </script>
 
 <template>
-  <iframe
-    class="h-[80vh] w-full"
-    :srcdoc="srcdoc"
-    frameborder="0"
-    scrolling="no"
-  />
+  <iframe :srcdoc="srcdoc" frameborder="0" scrolling="no" />
 </template>
