@@ -60,7 +60,7 @@ const onError = (e: any | null) => (error.value = e);
 </script>
 <template>
   <div
-    class="-mx-6 mb-6 grid grid-cols-1 grid-rows-[33vh_auto] overflow-hidden rounded-none shadow-md shadow-gray-100 md:mx-0 md:grid-cols-[2fr_3fr] md:grid-rows-[auto_auto] md:rounded-md"
+    class="-mx-6 mb-6 grid grid-cols-1 grid-rows-[33vh_auto] overflow-hidden rounded-none shadow-md shadow-gray-100 md:mx-0 md:grid-cols-[1fr_1.25fr] md:grid-rows-[auto_auto] md:rounded-md"
   >
     <div class="relative flex">
       <textarea
