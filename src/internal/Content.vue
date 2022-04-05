@@ -43,3 +43,18 @@
     <slot/>
   </article>
 </template>
+
+<style>
+.prose svg {
+  @apply mb-4 block;
+}
+.prose canvas {
+  @apply mb-4;
+}
+.prose mark {
+  @apply mr-1 rounded-sm bg-yellow-300 px-1;
+}
+.prose button {
+  @apply text-lightblue-800 inline-block rounded border-2 border-sky-800 px-3 py-1 text-center font-medium hover:bg-black/5;
+}
+</style>
