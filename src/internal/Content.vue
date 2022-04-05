@@ -39,10 +39,6 @@
       prose-pre:p-4
       prose-pre:md:-mx-0
       prose-pre:xl:rounded
-      md:p-12
-      lg:prose-lg
-      lg:prose-p:w-[64ch]
-      lg:prose-pre:p-6
     ">
     <slot/>
   </article>

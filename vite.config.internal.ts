@@ -7,20 +7,25 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
     lib: {
-      formats: ["es"],
-      entry: path.resolve(__dirname, "src/lib.esm.ts"),
+      formats: ["es", "cjs"],
+      entry: path.resolve(__dirname, "src/internal.ts"),
       name: "fachwerk",
       fileName: (format) => {
         return {
-          es: "fachwerk.mjs",
+          es: "internal.mjs",
+          cjs: "internal.cjs",
         }[format];
       },
     },
     rollupOptions: {
-      external: ["vue", "three"],
+      external: ["vue"],
       output: {
         globals: {
           vue: "Vue",
+        },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === "style.css") return "internal.css";
+          return assetInfo.name;
         },
       },
     },

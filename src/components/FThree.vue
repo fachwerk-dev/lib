@@ -37,6 +37,7 @@ const update = () => {
 //@ts-ignore
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.addEventListener("change", update);
+controls.enableZoom = false;
 
 onMounted(() => {
   //@ts-ignore

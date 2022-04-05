@@ -5,10 +5,15 @@ import MarkdownIt from "markdown-it";
 import IconOpen from "~icons/tabler/layers-subtract";
 
 import Compiler from "./Compiler.vue";
-import { atou, utoa } from "../internal/encoding";
 
-const { content: inputContent } = defineProps(["content"]);
-const content = ref(atou(inputContent));
+import { atou, utoa } from "../internal/encoding";
+import { isScriptSetup } from "./compiler";
+
+type Props = {
+  source: string;
+};
+const { source: inputSource } = defineProps<Props>();
+const source = ref(atou(inputSource));
 
 function editorPlugin(md) {
   md.renderer.rules.code_inline = function () {
@@ -26,10 +31,8 @@ const md = new MarkdownIt({ linkify: true, html: true, breaks: true }).use(
   editorPlugin
 );
 
-const initialContent = ref(md.render(content.value));
-
-const outputContent = computed(() => {
-  const r = md.render(content.value);
+const outputSource = computed(() => {
+  const r = md.render(source.value);
   return r;
 });
 
@@ -51,7 +54,7 @@ onMounted(() => {
 });
 
 const link = computed(
-  () => `https://editor.fachwerk.dev/#${utoa(content.value)}`
+  () => `https://editor.fachwerk.dev/#${utoa(source.value)}`
 );
 
 const error = ref(null);
@@ -64,7 +67,7 @@ const onError = (e: any | null) => (error.value = e);
     <div class="relative flex">
       <textarea
         ref="editor"
-        v-model="content"
+        v-model="source"
         class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
         spellcheck="false"
       />
@@ -80,12 +83,11 @@ const onError = (e: any | null) => (error.value = e);
       class="relative overflow-x-auto border-l-2 border-white p-4 lg:p-6"
       :class="{ '!border-red-500': error }"
     >
-      <div class="opacity-0">
-        <Compiler :content="initialContent" />
-      </div>
-      <div class="absolute inset-4 lg:inset-6 xl:inset-8">
-        <Compiler :content="outputContent" @error="onError" />
-      </div>
+      <Compiler
+        :source="outputSource"
+        @error="onError"
+        :class="{ 'h-[80vh] w-full': isScriptSetup(outputSource) }"
+      />
     </div>
   </div>
 </template>
