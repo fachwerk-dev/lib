@@ -3,16 +3,14 @@
 import { ref, computed, onMounted } from "vue";
 import MarkdownIt from "markdown-it";
 import IconOpen from "~icons/tabler/layers-subtract";
-
-import Compiler from "./Compiler.vue";
-
 import { atou, utoa } from "../internal/encoding";
-import { isScriptSetup } from "./compiler";
+import Compiler from "./Compiler.vue";
 
 type Props = {
   source: string;
 };
 const { source: inputSource } = defineProps<Props>();
+
 const source = ref(atou(inputSource));
 
 function editorPlugin(md) {
@@ -83,11 +81,7 @@ const onError = (e: any | null) => (error.value = e);
       class="relative overflow-x-auto border-l-2 border-white p-4 lg:p-6"
       :class="{ '!border-red-500': error }"
     >
-      <Compiler
-        :source="outputSource"
-        @error="onError"
-        :class="{ 'h-[80vh] w-full': isScriptSetup(outputSource) }"
-      />
+      <Compiler :source="outputSource" @error="onError" />
     </div>
   </div>
 </template>

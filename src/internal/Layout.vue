@@ -24,7 +24,8 @@ const isFrontpage = frontmatter?.layout === "frontpage";
       >
         <Nav class="sticky bottom-0 overflow-auto" />
       </div>
-      <Content class="p-5 md:p-12"><slot /></Content>
+      <Content class="max-w-[100ch] p-5 md:p-12"><slot /></Content>
     </main>
   </div>
+  Lay
 </template>
