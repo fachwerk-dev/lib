@@ -25,8 +25,7 @@ export default {
       },
       { immediate: true }
     );
-    return () =>
-      compiledSource.value ? h("div", h(compiledSource.value)) : null;
+    return () => (compiledSource.value ? h(compiledSource.value) : null);
   },
 };
 </script>
