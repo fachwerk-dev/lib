@@ -17,3 +17,5 @@ declare module "virtual:generated-pages" {
   //@ts-ignore
   export default routes;
 }
+
+declare module "@tailwindcss/typography";

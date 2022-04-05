@@ -8,7 +8,7 @@ import ViteMarkdown from "vite-plugin-md";
 import ViteFonts from "vite-plugin-fonts";
 import ViteIcons from "unplugin-icons/vite";
 import { utoa } from "./src/internal/encoding";
-import postcss from './postcss.config.js'
+import postcss from "./postcss.config";
 
 function editorPlugin(md) {
   const defaultFence = md.renderer.rules.fence;
