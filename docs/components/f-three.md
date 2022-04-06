@@ -10,7 +10,7 @@
 
 First, let's create a scene with `<f-three>` component. Then let's add `<f-three-mesh>` with `geometry` and `material` props.
 
-> <Icon name="hand-finger" /> Use the mouse or pointer to adjust the rotation of the scene.
+> <Icon id="tabler:hand-finger" /> Use the mouse or pointer to adjust the rotation of the scene.
 
 ```md
 <script setup>

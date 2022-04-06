@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import icons from "@iconify-json/tabler/icons.json";
+import tabler from "@iconify-json/tabler/icons.json";
+const icons = { tabler };
 
 type Props = {
-  name: string;
+  id: string;
 };
-const { name } = defineProps<Props>();
-
+const { id } = defineProps<Props>();
+const [collection, name] = id.split(":");
 //@ts-ignore
-const icon = icons.icons[name].body;
+const icon = icons[collection]?.icons[name]?.body;
 </script>
 
 <template>
