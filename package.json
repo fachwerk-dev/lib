@@ -42,9 +42,8 @@
   },
   "typings": "./dist/lib.esm.ts",
   "scripts": {
-    "dev": "vite --port 3000 --host -c vite.config.app.ts --open",
-    "build": "vite build -c vite.config.esm.ts && vite build -c vite.config.cjs.ts && vite build -c vite.config.app.ts && vite build -c vite.config.internal.ts",
-    "preview": "vite preview --port 5000",
+    "dev": "vite --open --port 3000 -c vite.config.app.ts",
+    "build": "vite build -c vite.config.app.ts && vite build -c vite.config.esm.ts && vite build -c vite.config.cjs.ts && vite build -c vite.config.internal.ts",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "release": "vitest --run && npm run build && vue-tsc --declaration --emitDeclarationOnly",
@@ -61,7 +60,7 @@
   },
   "devDependencies": {
     "@babel/types": "^7.17.0",
-    "@iconify-json/tabler": "^1.1.3",
+    "@iconify-json/tabler": "^1.1.8",
     "@tailwindcss/typography": "^0.5.2",
     "@types/d3-shape": "^3.0.2",
     "@types/katex": "^0.11.1",

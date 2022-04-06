@@ -71,7 +71,6 @@ export default defineConfig({
     ViteIcons({ autoInstall: true }),
   ],
   build: {
-    emptyOutDir: false,
     outDir: "dist/docs",
   },
 });

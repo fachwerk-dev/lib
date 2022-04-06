@@ -23,6 +23,7 @@ const defaultClass = `
   prose-a:text-lightblue-700
   prose-a:underline
   prose-a:underline-offset-2
+  prose-blockquote:text-gray-600
   prose-blockquote:border-l-4
   prose-blockquote:border-yellow-400
   prose-blockquote:pl-6
@@ -67,5 +68,25 @@ const mergedClass = computed(() => twMerge(`${defaultClass} ${customClass}`));
 }
 .prose button {
   @apply text-lightblue-800 inline-block rounded border-2 border-sky-800 px-3 py-1 text-center font-medium hover:bg-black/5;
+}
+.prose > * > h1:first-child,
+.prose > * > h2:first-child,
+.prose > * > h3:first-child,
+.prose > * > h3:first-child,
+.prose > * > h3:first-child,
+.prose > * > h3:first-child,
+.prose > * > h3:first-child,
+.prose > * > h5:first-child,
+.prose > * > h6:first-child {
+  @apply !mt-0;
+}
+
+.prose > * > * > h1,
+.prose > * > * > h2,
+.prose > * > * > h3,
+.prose > * > * > h4,
+.prose > * > * > h5,
+.prose > * > * > h6 {
+  @apply !mt-0;
 }
 </style>
