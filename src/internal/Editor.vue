@@ -1,9 +1,12 @@
 <script setup lang="ts">
 //@ts-nocheck
+// TODO: Refactor tab key handling
 import { ref, computed, onMounted } from "vue";
-import MarkdownIt from "markdown-it";
 import IconOpen from "~icons/tabler/layers-subtract";
+
 import { atou, utoa } from "../internal/encoding";
+import { compileMarkdown } from "./markdown";
+
 import Compiler from "./Compiler.vue";
 
 type Props = {
@@ -13,24 +16,8 @@ const { source: inputSource } = defineProps<Props>();
 
 const source = ref(atou(inputSource));
 
-function editorPlugin(md) {
-  md.renderer.rules.code_inline = function () {
-    const [tokens, idx, _options, _env, _slf] = arguments;
-    return tokens[idx].content;
-  };
-  md.renderer.rules.code_block = function () {
-    const [tokens, idx, _options, _env, _slf] = arguments;
-    return tokens[idx].content;
-  };
-  return md;
-}
-
-const md = new MarkdownIt({ linkify: true, html: true, breaks: true }).use(
-  editorPlugin
-);
-
 const outputSource = computed(() => {
-  const r = md.render(source.value);
+  const r = compileMarkdown(source.value);
   return r;
 });
 

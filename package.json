@@ -1,6 +1,6 @@
 {
   "name": "fachwerk",
-  "version": "0.0.20",
+  "version": "0.0.22",
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
@@ -65,6 +65,7 @@
     "@tailwindcss/typography": "^0.5.2",
     "@types/d3-shape": "^3.0.2",
     "@types/katex": "^0.11.1",
+    "@types/markdown-it-external-links": "^0.0.0",
     "@types/node": "^17.0.22",
     "@types/react": "file:src/types",
     "@types/three": "^0.138.0",
@@ -72,6 +73,7 @@
     "@vueuse/core": "^8.1.2",
     "bumpp": "^7.1.1",
     "gray-matter": "^4.0.3",
+    "markdown-it-external-links": "^0.0.6",
     "postcss": "^8.4.12",
     "prettier": "^2.6.0",
     "prettier-plugin-tailwindcss": "^0.1.8",

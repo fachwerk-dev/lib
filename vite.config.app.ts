@@ -5,6 +5,7 @@ import matter from "gray-matter";
 import ViteVue from "@vitejs/plugin-vue";
 import VitePages from "vite-plugin-pages";
 import ViteMarkdown from "vite-plugin-md";
+import MarkdownItExternalLinks from "markdown-it-external-links";
 import ViteFonts from "vite-plugin-fonts";
 import ViteIcons from "unplugin-icons/vite";
 import { utoa } from "./src/internal/encoding";
@@ -49,7 +50,11 @@ export default defineConfig({
     ViteMarkdown({
       wrapperComponent: "Layout",
       markdownItOptions: { typographer: false, breaks: true },
-      markdownItSetup: (md) => md.use(editorPlugin),
+      markdownItSetup: (md) =>
+        md.use(editorPlugin).use(MarkdownItExternalLinks, {
+          externalClassName: null,
+          externalTarget: "_blank",
+        }),
     }),
     //@ts-ignore
     ViteFonts.default({
