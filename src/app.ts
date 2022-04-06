@@ -20,8 +20,13 @@ const router = createRouter({
 const app = createApp(App);
 app.use(router);
 app.use(Fachwerk);
+
+// Used by vue-markdown
 app.component("Layout", Layout);
+
+// Used inside markdown documents
 app.component("Editor", Editor);
 app.component("Button", Button);
 app.component("Icon", Icon);
+
 app.mount("#app");
