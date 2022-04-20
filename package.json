@@ -27,9 +27,9 @@
       "import": "./dist/fachwerk.mjs",
       "require": "./dist/fachwerk.cjs"
     },
-    "./style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+    "./fachwerk.css": {
+      "import": "./dist/fachwerk.css",
+      "require": "./dist/fachwerk.css"
     },
     "./internal": {
       "import": "./dist/internal.mjs",
@@ -44,7 +44,6 @@
   "scripts": {
     "dev": "vite --port 3000 --host -c vite.config.app.ts --open",
     "build": "vite build -c vite.config.esm.ts && vite build -c vite.config.cjs.ts && vite build -c vite.config.app.ts && vite build -c vite.config.internal.ts",
-    "preview": "vite preview --port 5000",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "release": "vitest --run && npm run build && vue-tsc --declaration --emitDeclarationOnly",

@@ -25,6 +25,10 @@ export default defineConfig({
         globals: {
           vue: "Vue",
         },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === "style.css") return "fachwerk.css";
+          return assetInfo.name;
+        },
       },
     },
   },
