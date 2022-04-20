@@ -10,7 +10,10 @@ This allows simply to open the local HTML file in the browser and start explorin
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://unpkg.com/fachwerk/dist/style.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/fachwerk/dist/fachwerk.css"
+      rel="stylesheet"
+    />
     <style>
       body {
         margin: 0;
