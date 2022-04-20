@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [vue({ reactivityTransform: true })],
   css: { postcss },
   build: {
-    emptyOutDir: false,
+    emptyOutDir: true,
     lib: {
       formats: ["es"],
       entry: path.resolve(__dirname, "src/lib.esm.ts"),
@@ -23,6 +23,10 @@ export default defineConfig({
       output: {
         globals: {
           vue: "Vue",
+        },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === "style.css") return "fachwerk.css";
+          return assetInfo.name;
         },
       },
     },
