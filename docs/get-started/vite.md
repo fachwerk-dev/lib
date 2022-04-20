@@ -52,7 +52,7 @@ Next, modify the `/src/main.js` as follows:
 ```js
 import { createApp } from "vue";
 import { Fachwerk } from "fachwerk";
-import "fachwerk/style.css";
+import "fachwerk/fachwerk.css";
 import "./style.css";
 
 import index from "./index.md";

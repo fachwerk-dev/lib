@@ -124,33 +124,25 @@ if (slots && slots.default) {
 }
 @font-face {
   font-family: "KaTeX_Size2";
-  src: url(../fonts/KaTeX_Size2-Regular.woff2) format("woff2"),
-    url(../fonts/KaTeX_Size2-Regular.woff) format("woff"),
-    url(../fonts/KaTeX_Size2-Regular.ttf) format("truetype");
+  src: url(../fonts/KaTeX_Size2-Regular.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "KaTeX_Size3";
-  src: url(../fonts/KaTeX_Size3-Regular.woff2) format("woff2"),
-    url(../fonts/KaTeX_Size3-Regular.woff) format("woff"),
-    url(../fonts/KaTeX_Size3-Regular.ttf) format("truetype");
+  src: url(../fonts/KaTeX_Size3-Regular.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "KaTeX_Size4";
-  src: url(../fonts/KaTeX_Size4-Regular.woff2) format("woff2"),
-    url(../fonts/KaTeX_Size4-Regular.woff) format("woff"),
-    url(../fonts/KaTeX_Size4-Regular.ttf) format("truetype");
+  src: url(../fonts/KaTeX_Size4-Regular.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "KaTeX_Typewriter";
-  src: url(../fonts/KaTeX_Typewriter-Regular.woff2) format("woff2"),
-    url(../fonts/KaTeX_Typewriter-Regular.woff) format("woff"),
-    url(../fonts/KaTeX_Typewriter-Regular.ttf) format("truetype");
+  src: url(../fonts/KaTeX_Typewriter-Regular.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
 }

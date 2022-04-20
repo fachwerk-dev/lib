@@ -27,9 +27,9 @@
       "import": "./dist/fachwerk.mjs",
       "require": "./dist/fachwerk.cjs"
     },
-    "./style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+    "./fachwerk.css": {
+      "import": "./dist/fachwerk.css",
+      "require": "./dist/fachwerk.css"
     },
     "./internal": {
       "import": "./dist/internal.mjs",
