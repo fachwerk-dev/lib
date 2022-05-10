@@ -4,11 +4,12 @@ import MarkdownItExternalLinks from "markdown-it-external-links";
 export function MarkdownItFachwerk(md: MarkdownIt) {
   md.renderer.rules.code_inline = function () {
     const [tokens, idx, _options, _env, _slf] = arguments;
-    return tokens[idx].content;
+    return `<code>${md.utils.escapeHtml(tokens[idx].content)}</code>`;
   };
   md.renderer.rules.code_block = function () {
     const [tokens, idx, _options, _env, _slf] = arguments;
-    return tokens[idx].content;
+    console.log(md.utils.escapeHtml(tokens[idx].content));
+    return `<pre>${md.utils.escapeHtml(tokens[idx].content)}</pre>`;
   };
   return md;
 }
