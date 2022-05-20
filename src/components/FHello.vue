@@ -1,6 +1,6 @@
 <template>
   <h1>▦ Hello Fachwerk</h1>
-  <p>It works! <em>Wunderbar!</em> Now, here are some code snippets for you to to copy and try out:</p>
+  <p>It works! <em>Wunderbar!</em> Now, here are some code snippets for you to to copy and try out in your Markdown file or Vue template.</p>
   <details><summary><b>Use global data</b></summary>
   <p>Fachwerk exports a globally available <code>data</code> object, a group of variables that are accessible everywhere. Here is how to set and get the variable <code>data.something</code>:</p>
   <p class="language-">
@@ -16,12 +16,12 @@
   </p>
   </details>
   <details><summary><b>Use functions</b></summary>
-  <p>What can be more visual that circle with user-controllabe radius? Perhaps <em>two dozen circles with user-controllabe radius celebrating a divine beauty of mathematics?</em> Here we go:</p>
+  <p>What can be more visual that circle with user-controllabe radius? Perhaps <em>two dozen circles with user-controllable radius forming a single line celebrating a divine beauty of mathematics?</em> Here we go:</p>
   <p class="language-">
     <pre v-pre><code>&lt;f-svg centered>
   &lt;path
-    :d="circlepoints(24,data.something)
-      .map(point => circlepath(data.something,point))
+    :d="circlepoints(24,data.something / 2)
+      .map(point => circlepath(data.something / 2,point))
       .join('')
     "
     fill="none"
