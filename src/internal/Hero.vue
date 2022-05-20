@@ -24,10 +24,7 @@ import IconSlides from "~icons/bx/slideshow";
         <IconDocs />
         Play with docs
       </Button>
-      <Button
-        class="lg:text-xl"
-        href="https://editor.fachwerk.dev/#PHNjcmlwdCBzZXR1cD4KY29uc3QgeCA9ICRyZWYoMTApOwo8L3NjcmlwdD4KCiMgSGVsbG8gRmFjaHdlcmsKCiMjIExvY2FsIGRhdGEKCjxmLXNsaWRlciB2LW1vZGVsPSJ4IiAvPgoKPGYtbWF0aD54ID0ge3sgeCB9fTwvZi1tYXRoPgoKIyMgR2xvYmFsIGRhdGEKCjxmLXNsaWRlciB2LW1vZGVsPSJkYXRhLngiIC8+Cgo8Zi1tYXRoPmRhdGEueCA9IHt7IGRhdGEueCB9fTwvZi1tYXRoPgo="
-      >
+      <Button class="lg:text-xl" href="https://editor.fachwerk.dev">
         <IconEdit />
         Try the Fachwerk editor
       </Button>
