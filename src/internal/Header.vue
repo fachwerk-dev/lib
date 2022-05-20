@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import IconMenu from "~icons/tabler/menu-2";
 import { state } from "../internal/state";
-import IconOpen from "~icons/tabler/layers-subtract";
-import IconGithub from "~icons/tabler/brand-github";
+import IconGithub from "~icons/bx/bxl-github";
 </script>
 <template>
   <div class="overflow-auto bg-slate-900">
@@ -43,7 +41,6 @@ import IconGithub from "~icons/tabler/brand-github";
             class="group flex items-center gap-1 text-slate-400 hover:text-slate-300"
           >
             Editor
-            <IconOpen class="text-slate-600 group-hover:text-slate-500" />
           </a>
         </li>
         <li>
@@ -53,7 +50,6 @@ import IconGithub from "~icons/tabler/brand-github";
             class="group flex items-center gap-1 text-slate-400 hover:text-slate-300"
           >
             Slides
-            <IconOpen class="text-slate-600 group-hover:text-slate-500" />
           </a>
         </li>
       </ul>
