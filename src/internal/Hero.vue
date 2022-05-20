@@ -40,7 +40,7 @@ import IconSlides from "~icons/bx/slideshow";
     <p />
 
     <p class="w-full md:w-3/4 md:text-lg lg:text-xl">
-      To get started, pick a Stackblitz template
+      To get started, pick a template below:
     </p>
 
     <div class="grid gap-4 md:flex">
@@ -49,28 +49,28 @@ import IconSlides from "~icons/bx/slideshow";
         href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Fachwerk+Vite"
       >
         <IconStackblitz />
-        Fachwerk + Vite
+        Fachwerk + Vite in Stackblitz
       </Button>
       <Button
         class="lg:text-xl"
         href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vitepress?file=docs%2Findex.md&title=Fachwerk+Vitepress"
       >
         <IconStackblitz />
-        Fachwerk + Vitepress
+        Fachwerk + Vitepress in Stackblitz
       </Button>
       <Button
         class="lg:text-xl"
-        href="https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgZ2V0Q3VycmVudEluc3RhbmNlIH0gZnJvbSBcInZ1ZVwiO1xuaW1wb3J0IHsgRmFjaHdlcmsgfSBmcm9tIFwiZmFjaHdlcmtcIlxuICBcbmNvbnN0IGFwcCA9IGdldEN1cnJlbnRJbnN0YW5jZSgpLmFwcENvbnRleHQuYXBwO1xuYXBwLnVzZShGYWNod2VyaylcbiAgXG5jb25zdCB4ID0gJHJlZigxMCk7XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8aDE+SGVsbG8gRmFjaHdlcms8L2gxPlxuICA8aDI+TG9jYWwgZGF0YTwvaDI+XG4gIDxmLXNsaWRlciB2LW1vZGVsPVwieFwiIC8+XG4gIDxiciAvPlxuICA8Zi1tYXRoPnggPSB7eyB4IH19PC9mLW1hdGg+XG4gIDxoMj5HbG9iYWwgZGF0YTwvaDI+XG4gIDxmLXNsaWRlciB2LW1vZGVsPVwiZGF0YS54XCIgLz5cbiAgPGJyIC8+XG4gIDxmLW1hdGg+ZGF0YS54ID0ge3sgZGF0YS54IH19PC9mLW1hdGg+XG48L3RlbXBsYXRlPlxuXG48c3R5bGU+XG5AaW1wb3J0IFwiaHR0cHM6Ly91bnBrZy5jb20vZmFjaHdlcmsvZGlzdC9mYWNod2Vyay5jc3NcIlxuPC9zdHlsZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIixcbiAgICBcImZhY2h3ZXJrXCI6IFwiaHR0cHM6Ly91bnBrZy5jb20vZmFjaHdlcmsvZGlzdC9mYWNod2Vyay5tanNcIlxuICB9XG59In0="
+        href="https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgZ2V0Q3VycmVudEluc3RhbmNlIH0gZnJvbSBcInZ1ZVwiO1xuaW1wb3J0IHsgRmFjaHdlcmsgfSBmcm9tIFwiZmFjaHdlcmtcIlxuICBcbmNvbnN0IGFwcCA9IGdldEN1cnJlbnRJbnN0YW5jZSgpLmFwcENvbnRleHQuYXBwO1xuYXBwLnVzZShGYWNod2VyaylcbiAgXG5jb25zdCB4ID0gJHJlZigxMCk7XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8Zi1oZWxsbyAvPlxuPC90ZW1wbGF0ZT5cblxuPHN0eWxlPlxuQGltcG9ydCBcImh0dHBzOi8vdW5wa2cuY29tL2ZhY2h3ZXJrL2Rpc3QvZmFjaHdlcmsuY3NzXCJcbjwvc3R5bGU+IiwiaW1wb3J0LW1hcC5qc29uIjoie1xuICBcImltcG9ydHNcIjoge1xuICAgIFwidnVlXCI6IFwiaHR0cHM6Ly9zZmMudnVlanMub3JnL3Z1ZS5ydW50aW1lLmVzbS1icm93c2VyLmpzXCIsXG4gICAgXCJmYWNod2Vya1wiOiBcImh0dHBzOi8vdW5wa2cuY29tL2ZhY2h3ZXJrL2Rpc3QvZmFjaHdlcmsubWpzXCJcbiAgfVxufSJ9"
       >
         <IconVue />
-        Fachwerk + Vue SFC
+        Fachwerk in Vue SFC
       </Button>
     </div>
 
     <p />
 
     <p class="w-full md:w-3/4 md:text-lg lg:text-xl">
-      Alternatively, run the following in the command line
+      Alternatively, run the following in the command line:
     </p>
 
     <div

@@ -8,7 +8,7 @@
   </p>
   </details>
   <details><summary><b>Use components</b></summary>
-  <p>Let's assign the value <code>data.r</code> to something visual, say a <em>radius</em> of the circle:</p>
+  <p>Let's assign the value <code>data.something</code> to something visual, say a <em>radius</em> of the circle:</p>
   <p class="language-">
     <pre v-pre><code>&lt;f-svg centered>
   &lt;circle :r="data.something" />
@@ -16,10 +16,18 @@
   </p>
   </details>
   <details><summary><b>Use functions</b></summary>
-  <p>What can be more visual that circle with user-controllabe radius? A <em>coloured</em> circle with user-controllabe radius. Here we use a `hsl()` function that provides a convenient way to create and format CSS colors:</p>
+  <p>What can be more visual that circle with user-controllabe radius? Perhaps <em>two dozen circles with user-controllabe radius celebrating a divine beauty of mathematics?</em> Here we go:</p>
   <p class="language-">
     <pre v-pre><code>&lt;f-svg centered>
-  &lt;circle :r="data.something" :fill="hsl(data.something)" />
+  &lt;path
+    :d="circlepoints(24,data.something)
+      .map(point => circlepath(data.something,point))
+      .join('')
+    "
+    fill="none"
+    stroke="lightblue"
+    stroke-width="2"
+  />
 &lt;/f-svg></code></pre></p>
   </details>
   <p />
