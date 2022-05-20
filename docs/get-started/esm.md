@@ -18,8 +18,6 @@ Fachwerk provides ESM-compatible CDN build in https://unpkg.com/fachwerk/dist/fa
     />
     <style>
       body {
-        margin: 0;
-        padding: 1em;
         font-family: sans-serif;
       }
     </style>
@@ -30,36 +28,16 @@ Fachwerk provides ESM-compatible CDN build in https://unpkg.com/fachwerk/dist/fa
       {
         "imports": {
           "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js",
-          "fachwerk": "https://unpkg.com/fachwerk/dist/fachwerk.mjs",
-          "marked": "https://unpkg.com/marked/lib/marked.esm.js"
+          "fachwerk": "https://unpkg.com/fachwerk/dist/fachwerk.mjs"
         }
       }
     </script>
     <script type="module">
       import { createApp, ref } from "vue";
       import { Fachwerk } from "fachwerk";
-      import { parse } from "marked";
 
       const App = {
-        setup() {
-          const x = ref(0);
-          return { x };
-        },
-        template: parse(`
-# Hello Visualia
-
-## Local variable
-
-<v-slider v-model="x" />
-
-<v-math>x = {{ x }}</v-math>
-
-## Global variable
-
-<v-slider v-model="f.x" />
-
-<v-math>x = {{ f.x }}</v-math>
-        `),
+        template: `<f-hello />`,
       };
 
       const app = createApp(App);
