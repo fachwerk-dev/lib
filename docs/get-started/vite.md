@@ -4,7 +4,7 @@ There are multiple ways to get started with Vite and Fachwerk:
 
 ### Use Slackblitz
 
-<Button href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Fachwerk+Vite">Open in Stackblitz</Button>
+<Button href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Fachwerk+Vite"><IconStackblitz /> Open in Stackblitz</Button>
 
 Open Vite + Fachwerk project in Stackblitz and start editing the project right in the browser.
 

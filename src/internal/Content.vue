@@ -56,7 +56,7 @@ const mergedClass = computed(() => twMerge(`${defaultClass} ${customClass}`));
 </template>
 
 <style>
-.prose svg {
+p > svg {
   @apply mb-4 block;
 }
 .prose canvas {
