@@ -1,23 +1,19 @@
-# pointcircle
+# car2pol
 
-Converts `Point` in cartesian coordinates into polar coordinates. Inspired by [cart2pol()](https://rdrr.io/github/jaredlander/useful/man/cart2pol.html) function in R and Matlab.
+`car2pol()` function converts point in cartesian coordinates into polar coordinates.
 
-```ts
-type Point = [x: number, y: number];
-
-function pointcircle(point: Point): [angle: number, radius: number];
-```
-
-## Alias
+Inspired by [cart2pol()](https://rdrr.io/github/jaredlander/useful/man/cart2pol.html) function in R and Matlab.
 
 ```ts
-function car2pol(point: Point): [angle: number, radius: number];
+function car2pol(
+  point: [x: number, y: number]
+): [angle: number, radius: number];
 ```
 
 ## Usage
 
 ```md
-{{ pointcircle([0, -100]) }}
+{{ car2pol([0, -100]) }}
 ```
 
 ## Example
@@ -50,7 +46,7 @@ function car2pol(point: Point): [angle: number, radius: number];
     stroke-width="2"
   />
   <circle
-    :r="pointcircle([f.x,f.y])[1]"
+    :r="car2pol([f.x,f.y])[1]"
     fill="none"
     stroke="lightgray"
     stroke-width="2"
@@ -64,8 +60,8 @@ function car2pol(point: Point): [angle: number, radius: number];
 </f-svg>
 
 Point: [{{ f.x }},{{ f.y }}]
-Angle: {{ pointcircle([f.x,f.y])[0] }}
-Radius: {{ pointcircle([f.x,f.y])[1] }}
+Angle: {{ car2pol([f.x,f.y])[0] }}
+Radius: {{ car2pol([f.x,f.y])[1] }}
 
 <f-slider v-model="f.x" min="-100" max="100" />
 <br />

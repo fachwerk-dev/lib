@@ -24,13 +24,6 @@ export let sidebar: Link[] = [
     ],
   },
   {
-    text: "Point utilities",
-    children: [
-      { text: "circlepoint", link: "/utils/trig/circlepoint" },
-      { text: "pointcircle", link: "/utils/trig/pointcircle" },
-    ],
-  },
-  {
     text: "Points utilities",
     children: [
       { text: "circlepoints", link: "/utils/point/circlepoints" },
@@ -87,9 +80,11 @@ export let sidebar: Link[] = [
   {
     text: "Trig utilities",
     children: [
-      { text: "PI and TAU", link: "/utils/trig/pi-tau" },
+      { text: "pol2car", link: "/utils/trig/pol2car" },
+      { text: "car2pol", link: "/utils/trig/car2pol" },
       { text: "deg2rad", link: "/utils/trig/deg2rad" },
       { text: "rad2deg", link: "/utils/trig/rad2deg" },
+      { text: "PI and TAU", link: "/utils/trig/pi-tau" },
     ],
   },
   {
