@@ -80,11 +80,11 @@ export let sidebar: Link[] = [
   {
     text: "Trig utilities",
     children: [
-      { text: "pol2car", link: "/utils/trig/pol2car" },
-      { text: "car2pol", link: "/utils/trig/car2pol" },
       { text: "deg2rad", link: "/utils/trig/deg2rad" },
       { text: "rad2deg", link: "/utils/trig/rad2deg" },
       { text: "PI and TAU", link: "/utils/trig/pi-tau" },
+      { text: "pol2car", link: "/utils/trig/pol2car" },
+      { text: "car2pol", link: "/utils/trig/car2pol" },
     ],
   },
   {
