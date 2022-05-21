@@ -17,10 +17,7 @@ const style = computed(() =>
 </script>
 
 <template>
-  <component
-    :is="component"
-    :source="source"
-    @error="$emit('error')"
-    :style="style"
-  />
+  <div :style="style">
+    <component :is="component" :source="source" @error="$emit('error')" />
+  </div>
 </template>

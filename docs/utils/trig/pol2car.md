@@ -1,23 +1,17 @@
-# circlepoint
+# pol2car
 
-Converts polar coordinates to `Point` in cartesian coordinates. Inspired by [pol2cart()](https://rdrr.io/cran/useful/man/pol2cart.html) function in R and Matlab.
+`pol2car()` function converts point in polar coordinates `angle, radius` into cartesian `x, y` coordinates.
 
-```ts
-type Point = [x: number, y: number];
-
-function circlepoint(angle: number, radius: number): Point;
-```
-
-## Alias
+Inspired by [pol2cart()](https://rdrr.io/cran/useful/man/pol2cart.html) function in R and Matlab.
 
 ```ts
-function pol2car(angle: number, radius: number): Point;
+function pol2car(angle: number, radius: number): [x: number, y: number];
 ```
 
 ## Usage
 
 ```md
-{{ circlepoint(0, 100) }}
+{{ pol2car(0, 100) }}
 ```
 
 ## Example
@@ -26,9 +20,9 @@ function pol2car(angle: number, radius: number): Point;
 <f-svg width="400" height="400" centered rectgrid>
   <path :d="circlepath(100)" fill="none" stroke="lightgray" stroke-width="2" />
   <line
-    :x1="circlepoint(f.deg,100)[0]"
+    :x1="pol2car(data.angle,100)[0]"
     y1="-200"
-    :x2="circlepoint(f.deg,100)[0]"
+    :x2="pol2car(data.angle,100)[0]"
     y2="200"
     fill="none"
     stroke="lightgray"
@@ -36,26 +30,27 @@ function pol2car(angle: number, radius: number): Point;
   />
   <line
     x1="-200"
-    :y1="circlepoint(f.deg,100)[1]"
+    :y1="pol2car(data.angle,100)[1]"
     x2="200"
-    :y2="circlepoint(f.deg,100)[1]"
+    :y2="pol2car(data.angle,100)[1]"
     fill="none"
     stroke="lightgray"
     stroke-width="2"
   />
   <circle
-    :cx="circlepoint(f.deg,100)[0]"
-    :cy="circlepoint(f.deg,100)[1]"
+    :cx="pol2car(data.angle,100)[0]"
+    :cy="pol2car(data.angle,100)[1]"
     r="10"
     fill="lightblue"
   />
 </f-svg>
 
-Degrees: {{ f.deg }}
-Radius: 100
-Point: {{ circlepoint(f.deg,100) }}
+<br />
 
-<f-slider v-model="f.deg" max="360" />
+angle: <f-slider v-model="data.angle" max="360" /> {{ data.angle }}
+radius: 100
+x: {{ pol2car(data.angle,100)[0] }}
+y: {{ pol2car(data.angle,100)[1] }}
 ```
 
 ## Prior art

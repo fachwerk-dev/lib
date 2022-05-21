@@ -17,27 +17,23 @@ export function rad2deg(rad: number = 0): number {
 /**
  * Converts polar coordinates to Cartesian coordinates
  */
-export function circlepoint(angle: number, radius: number): Point {
+export function pol2car(angle: number, radius: number): Point {
   return [
     Math.cos((angle - 90) * (Math.PI / 180)) * radius,
     Math.sin((angle - 90) * (Math.PI / 180)) * radius,
   ].map((p) => trunc(p)) as Point;
 }
 
-export const pol2car = circlepoint;
-
 /**
  * Converts Cartesian coordinates to polar coordinates
  */
-export function pointcircle(point: Point): [number, number] {
+export function car2pol(point: Point): [number, number] {
   const [x, y] = point;
   return [
     Math.atan2(y, x) * (180 / Math.PI) + 90,
     Math.sqrt(x * x + y * y),
   ].map((p) => trunc(p)) as [number, number];
 }
-
-export const car2pol = pointcircle;
 
 /**
  * Returns π value
