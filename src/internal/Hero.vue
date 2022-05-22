@@ -17,18 +17,23 @@ import IconSlides from "~icons/bx/slideshow";
     </p>
 
     <div class="grid gap-4 md:flex">
+      <router-link to="/get-started/vite">
+        <Button class="bg-white hover:bg-white/80 md:px-8 md:py-4 md:text-xl">
+          <IconDocs />
+          Play with the docs
+        </Button>
+      </router-link>
       <Button
-        class="bg-white hover:bg-white/80 lg:text-xl"
-        to="/get-started/vite"
+        class="bg-white hover:bg-white/80 md:px-8 md:py-4 md:text-xl"
+        href="https://editor.fachwerk.dev"
       >
-        <IconDocs />
-        Play with docs
-      </Button>
-      <Button class="lg:text-xl" href="https://editor.fachwerk.dev">
         <IconEdit />
-        Try the Fachwerk editor
+        Try the editor
       </Button>
-      <Button class="lg:text-xl" href="https://slides.fachwerk.dev">
+      <Button
+        class="bg-white hover:bg-white/80 md:px-8 md:py-4 md:text-xl"
+        href="https://slides.fachwerk.dev"
+      >
         <IconSlides />
         See the slides
       </Button>
@@ -37,43 +42,43 @@ import IconSlides from "~icons/bx/slideshow";
     <p />
 
     <p class="w-full md:w-3/4 md:text-lg lg:text-xl">
-      To get started, pick a template below:
+      To get started, pick a Stackblitz or Vue template below:
     </p>
 
     <div class="grid gap-4 md:flex">
       <Button
-        class="lg:text-xl"
         href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Fachwerk+Vite"
+        class="border-none md:text-xl"
       >
-        <IconStackblitz />
-        Fachwerk + Vite in Stackblitz
+        <IconStackblitz class="text-blue-500" />
+        Fachwerk + Vite
       </Button>
       <Button
-        class="lg:text-xl"
         href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vitepress?file=docs%2Findex.md&title=Fachwerk+Vitepress"
+        class="border-none md:text-xl"
       >
-        <IconStackblitz />
-        Fachwerk + Vitepress in Stackblitz
+        <IconStackblitz class="text-blue-500" />
+        Fachwerk + Vitepress
       </Button>
       <Button
-        class="lg:text-xl"
         href="https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgZ2V0Q3VycmVudEluc3RhbmNlIH0gZnJvbSBcInZ1ZVwiO1xuaW1wb3J0IHsgRmFjaHdlcmsgfSBmcm9tIFwiZmFjaHdlcmtcIlxuICBcbmNvbnN0IGFwcCA9IGdldEN1cnJlbnRJbnN0YW5jZSgpLmFwcENvbnRleHQuYXBwO1xuYXBwLnVzZShGYWNod2Vyaylcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxmLWhlbGxvIC8+XG48L3RlbXBsYXRlPlxuXG48c3R5bGU+XG5AaW1wb3J0IFwiaHR0cHM6Ly91bnBrZy5jb20vZmFjaHdlcmsvZGlzdC9mYWNod2Vyay5jc3NcIlxuPC9zdHlsZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIixcbiAgICBcImZhY2h3ZXJrXCI6IFwiaHR0cHM6Ly91bnBrZy5jb20vZmFjaHdlcmsvZGlzdC9mYWNod2Vyay5tanNcIlxuICB9XG59In0="
+        class="border-none md:text-xl"
       >
-        <IconVue />
-        Fachwerk in Vue SFC
+        <IconVue class="text-green-600" />
+        Fachwerk + Vue SFC
       </Button>
     </div>
 
     <p />
 
     <p class="w-full md:w-3/4 md:text-lg lg:text-xl">
-      Alternatively, run the following in the command line:
+      If you have NodeJS installed, you can also run the following:
     </p>
 
     <div
       class="-mx-4 inline-block rounded-none bg-black px-6 py-4 font-mono text-white md:mx-0 md:place-self-start md:rounded lg:text-lg"
     >
-      npm init fachwerk@latest
+      npm init fachwerk
     </div>
 
     <p class="h-12" />
