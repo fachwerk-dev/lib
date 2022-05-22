@@ -13,7 +13,7 @@ const isFrontpage = frontmatter?.layout === "frontpage";
     <Header class="sticky top-0 z-50 md:relative" />
     <Hero
       v-if="isFrontpage"
-      class="mx:px-12 mx-auto max-w-7xl p-4 px-4 md:p-12"
+      class="mx-auto max-w-7xl py-4 px-4 md:p-12 md:px-12"
     />
     <main
       class="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-[250px_1fr] md:grid-rows-1"
@@ -24,7 +24,9 @@ const isFrontpage = frontmatter?.layout === "frontpage";
       >
         <Nav class="sticky bottom-0 overflow-auto" />
       </div>
-      <Content class="max-w-[100ch] p-5 md:p-12"><slot /></Content>
+      <Content v-if="!isFrontpage" class="max-w-[100ch] p-5 md:p-12"
+        ><slot
+      /></Content>
     </main>
   </div>
 </template>
