@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 import routes from "virtual:generated-pages";
-import { Fachwerk } from "./lib.esm";
+import { Fachwerk } from "./vue";
 
 import App from "./App.vue";
 import Layout from "./internal/Layout.vue";

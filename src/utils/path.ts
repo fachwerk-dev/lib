@@ -1,7 +1,7 @@
 import { arc } from "d3-shape";
 import svgpath from "svgpath";
 
-import { deg2rad } from "../lib.esm";
+import { deg2rad } from "./trig";
 import { Point, rectgridpoints } from "./point";
 import { PRECISION, rectpoints } from ".";
 
