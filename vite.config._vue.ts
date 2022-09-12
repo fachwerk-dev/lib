@@ -10,7 +10,7 @@ export default defineConfig({
     emptyOutDir: false,
     lib: {
       formats: ["es"],
-      entry: path.resolve(__dirname, "src/_vue.ts"),
+      entry: path.resolve(__dirname, "src/vue.ts"),
       fileName: (format) => {
         return {
           es: "vue.mjs",
