@@ -44,6 +44,7 @@
   "scripts": {
     "dev": "vite --port 3000 --host -c vite.config.app.ts --open",
     "build": "vite build -c vite.config.esm.ts && vite build -c vite.config.cjs.ts && vite build -c vite.config.app.ts && vite build -c vite.config.internal.ts",
+    "_build": "vite build -c vite.config._functions.ts",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "release": "vitest --run && npm run build && vue-tsc --declaration --emitDeclarationOnly",
