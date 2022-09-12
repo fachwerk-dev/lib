@@ -40,8 +40,7 @@
   },
   "scripts": {
     "dev": "vite --port 3000 --host -c vite.config.app.ts --open",
-    "build": "vite build -c vite.config.esm.ts && vite build -c vite.config.cjs.ts && vite build -c vite.config.app.ts && vite build -c vite.config.internal.ts",
-    "_build": "vite build -c vite.config._functions.ts && vite build -c vite.config._vue.ts",
+    "build": "vite build -c vite.config.functions.ts && vite build -c vite.config.vue.ts  && vite build -c vite.config.app.ts",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "bump": "bumpp --commit \"chore: v%s\""

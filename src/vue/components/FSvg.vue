@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed, Ref, ref } from "vue";
-import { on, seq, polygonpath, rectgridpath, translate } from "../lib.esm";
+import { polygonpath, rectgridpath } from "../../functions/path";
+import { seq } from "../../functions/array";
+import { translate } from "../../functions/transform";
+import { on } from "../functions";
 
 // TODO: Move to utilities
 

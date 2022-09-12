@@ -1,7 +1,7 @@
 <script lang="ts">
 import { h, ComponentOptions, watch, shallowRef } from "vue";
 
-import { utils } from "../lib.esm";
+import * as functions from "../functions";
 import { compileTemplate } from "./compiler";
 
 export default {
@@ -18,7 +18,7 @@ export default {
         }
         compiledSource.value = {
           setup() {
-            return { ...utils };
+            return { ...functions };
           },
           render: code,
         };

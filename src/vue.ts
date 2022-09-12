@@ -1,27 +1,8 @@
-import {
-  defineComponent,
-  Plugin,
-  ComponentOptionsWithoutProps,
-  reactive,
-} from "vue";
-import mitt from "mitt";
+import { defineComponent, Plugin, ComponentOptionsWithoutProps } from "vue";
 
-import * as components from "./components";
 import * as functions from "./functions";
-
-export * from "./components";
-
-export const data = reactive<Record<string, any>>({});
-
-const emitter = mitt();
-
-export function emit(name: string, payload?: any): void {
-  emitter.emit(name, payload);
-}
-
-export function on(name: string, handler = (payload?: any) => {}): void {
-  emitter.on(name, handler);
-}
+import * as components from "./vue/components";
+import * as vueFunctions from "./vue/functions";
 
 export const Fachwerk: Plugin = {
   install: (app) => {
@@ -31,8 +12,11 @@ export const Fachwerk: Plugin = {
         defineComponent(component as ComponentOptionsWithoutProps)
       );
     });
-    Object.entries({ ...functions, data, emit, on }).forEach(
+    Object.entries({ ...functions, ...vueFunctions }).forEach(
       ([name, fn]) => (app.config.globalProperties[name] = fn)
     );
   },
 };
+
+export * from "./vue/components";
+export * from "./vue/functions";

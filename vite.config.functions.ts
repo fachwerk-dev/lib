@@ -13,7 +13,7 @@ export default defineConfig({
     emptyOutDir: true,
     lib: {
       formats: ["es", "cjs", "umd"],
-      entry: path.resolve(__dirname, "src/_functions.ts"),
+      entry: path.resolve(__dirname, "src/functions.ts"),
       name: "fachwerk",
       fileName: (format) => {
         return {

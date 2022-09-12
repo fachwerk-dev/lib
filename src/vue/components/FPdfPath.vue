@@ -2,8 +2,9 @@
 import { ColorTypes } from "pdf-lib";
 import { inject, watch } from "vue";
 import processPath from "svgpath";
+
 import type { Context } from "./FPdf.vue";
-import { remap } from "../lib.esm";
+import { remap } from "../../functions/math";
 
 const { d, transform = "" } = defineProps(["d", "transform"]);
 const context = inject("context") as Context;

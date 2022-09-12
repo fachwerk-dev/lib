@@ -1,14 +1,14 @@
 import { createApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
-
 import routes from "virtual:generated-pages";
+
 import { Fachwerk } from "./vue";
 
 import App from "./App.vue";
 
-import Layout from "./internal/Layout.vue";
-import Editor from "./internal/Editor.vue";
-import Button from "./internal/Button.vue";
+import Layout from "./app/Layout.vue";
+import Editor from "./app/Editor.vue";
+import Button from "./app/Button.vue";
 
 import IconStackblitz from "~icons/bx/bxs-zap";
 import IconVue from "~icons/bx/bxl-vuejs";

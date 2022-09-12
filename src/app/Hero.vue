@@ -61,7 +61,7 @@ import IconSlides from "~icons/bx/slideshow";
         Fachwerk + Vitepress
       </Button>
       <Button
-        href="https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgZ2V0Q3VycmVudEluc3RhbmNlIH0gZnJvbSBcInZ1ZVwiO1xuaW1wb3J0IHsgRmFjaHdlcmsgfSBmcm9tIFwiZmFjaHdlcmtcIlxuICBcbmNvbnN0IGFwcCA9IGdldEN1cnJlbnRJbnN0YW5jZSgpLmFwcENvbnRleHQuYXBwO1xuYXBwLnVzZShGYWNod2Vyaylcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxmLWhlbGxvIC8+XG48L3RlbXBsYXRlPlxuXG48c3R5bGU+XG5AaW1wb3J0IFwiaHR0cHM6Ly91bnBrZy5jb20vZmFjaHdlcmsvZGlzdC9mYWNod2Vyay5jc3NcIlxuPC9zdHlsZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIixcbiAgICBcImZhY2h3ZXJrXCI6IFwiaHR0cHM6Ly91bnBrZy5jb20vZmFjaHdlcmsvZGlzdC9mYWNod2Vyay5tanNcIlxuICB9XG59In0="
+        href="https://sfc.vuejs.org/#eNqNkdtOwzAMhl/FytUmbel9KQg0CYl3yE0J7tatOSh2GWjqu+NkKwxpSNxE+X34/Mc5qacY9fuIqlYN2dRHBkIe44PxvYshMZwgYbeCLfJmTAk9v3ji1luECboUHBgl/UbdXXU8t3Z3xHT4KekukarUGg9gvA1CgjZGuL+BXyy1pDbBM35wvsoAOfVIuJj5S+Ob6mxbDItgdHFoGUUBNN16h8MQoBLZVFc5kcSfQ74+XkwbtWOOVFfV6ONhq21w1bfpt544O9eWKLuXoaVdrdS5fe3aqPcUvOzxVF53SUh5DSWSY+Xx9dUs6mze/p50SNsyIY2ee4caya1fUzgSJgEbtZoZs6nfoL9Mz0q7m5Dzd/wHlL0VRkZMxk9q+gIFIso6"
         class="md:text-xl"
       >
         <IconVue class="text-green-600" />

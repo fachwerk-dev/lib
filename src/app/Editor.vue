@@ -4,7 +4,7 @@
 import { ref, computed, onMounted } from "vue";
 import IconOpen from "~icons/tabler/layers-subtract";
 
-import { atou, utoa } from "../internal/encoding";
+import { atou, utoa } from "./encoding";
 import { compileMarkdown } from "./markdown";
 
 import Compiler from "./Compiler.vue";
