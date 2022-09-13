@@ -20,3 +20,5 @@ export const Fachwerk: Plugin = {
 
 export * from "./vue/components";
 export * from "./vue/functions";
+
+export { default as Content } from "./app/components/Content.vue";

@@ -3,14 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/fachwerk/dist/fachwerk.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/fachwerk/dist/internal.css"
-      rel="stylesheet"
-    />
+    <link href="https://unpkg.com/fachwerk/dist/vue.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cousine&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
       rel="stylesheet"
@@ -23,23 +16,23 @@
       async
       src="https://unpkg.com/es-module-shims/dist/es-module-shims.js"
     ></script>
+    <!--TODO: Remove fachwerk version signature-->
     <script type="importmap">
       {
         "imports": {
           "vue": "https://unpkg.com/vue/dist/vue.esm-browser.prod.js",
           "fachwerk": "https://unpkg.com/fachwerk/dist/fachwerk.mjs",
-          "fachwerk/internal": "https://unpkg.com/fachwerk/dist/internal.mjs",
-          "three": "https://unpkg.com/three/build/three.module.js",
+          "fachwerk/vue": "https://unpkg.com/fachwerk@0.0.28-beta.22/dist/vue.mjs",
           "vue-demi": "https://unpkg.com/vue-demi/lib/index.mjs",
           "@vueuse/shared": "https://unpkg.com/@vueuse/shared/index.mjs",
-          "@vueuse/core": "https://unpkg.com/@vueuse/core/index.mjs"
+          "@vueuse/core": "https://unpkg.com/@vueuse/core/index.mjs",
+          "three": "https://unpkg.com/three/build/three.module.js"
         }
       }
     </script>
     <script type="module">
       import { createApp, h } from "vue";
-      import { Fachwerk } from "fachwerk";
-      import { Content } from "fachwerk/internal";
+      import { Fachwerk, Content } from "fachwerk/vue";
 
       CODE;
 
