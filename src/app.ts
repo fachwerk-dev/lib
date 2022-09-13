@@ -6,7 +6,8 @@ import { Fachwerk } from "./vue";
 
 import App from "./App.vue";
 
-import Layout from "./app/components/Layout.vue";
+import Layout from "./app/layouts/Layout.vue";
+
 import Editor from "./app/components/Editor.vue";
 import Button from "./app/components/Button.vue";
 import Snippet from "./app/components/Snippet.vue";
