@@ -9,24 +9,19 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
     lib: {
-      formats: ["es", "cjs"],
-      entry: path.resolve(__dirname, "src/internal.ts"),
-      name: "fachwerk",
+      formats: ["es"],
+      entry: path.resolve(__dirname, "src/vue.ts"),
       fileName: (format) => {
         return {
-          es: "internal.mjs",
-          cjs: "internal.cjs",
+          es: "vue.mjs",
         }[format];
       },
     },
     rollupOptions: {
       external: ["vue"],
       output: {
-        globals: {
-          vue: "Vue",
-        },
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name === "style.css") return "internal.css";
+          if (assetInfo.name === "style.css") return "vue.css";
           return assetInfo.name;
         },
       },

@@ -1,6 +1,6 @@
 {
   "name": "fachwerk",
-  "version": "0.0.28-beta.14",
+  "version": "0.0.28-beta.21",
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
@@ -13,40 +13,36 @@
   "keywords": [
     "vite",
     "vue",
-    "vue-component"
+    "vue-component",
+    "svg",
+    "canvas",
+    "three"
   ],
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "type": "module",
-  "main": "./dist/fachwerk.cjs",
   "module": "./dist/fachwerk.mjs",
+  "main": "./dist/fachwerk.cjs",
   "exports": {
     ".": {
       "import": "./dist/fachwerk.mjs",
       "require": "./dist/fachwerk.cjs"
     },
-    "./fachwerk.css": {
-      "import": "./dist/fachwerk.css",
-      "require": "./dist/fachwerk.css"
+    "./vue": {
+      "import": "./dist/vue.mjs",
+      "require": "./dist/vue.cjs"
     },
-    "./internal": {
-      "import": "./dist/internal.mjs",
-      "require": "./dist/internal.cjs"
-    },
-    "./internal.css": {
-      "import": "./dist/internal.css",
-      "require": "./dist/internal.css"
+    "./vue.css": {
+      "import": "./dist/vue.css",
+      "require": "./dist/vue.css"
     }
   },
-  "typings": "./dist/lib.esm.ts",
   "scripts": {
     "dev": "vite --port 3000 --host -c vite.config.app.ts --open",
-    "build": "vite build -c vite.config.esm.ts && vite build -c vite.config.cjs.ts && vite build -c vite.config.app.ts && vite build -c vite.config.internal.ts",
+    "build": "vite build -c vite.config.functions.ts && vite build -c vite.config.vue.ts  && vite build -c vite.config.app.ts",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
-    "release": "vitest --run && npm run build && vue-tsc --declaration --emitDeclarationOnly",
     "bump": "bumpp --commit \"chore: v%s\""
   },
   "dependencies": {

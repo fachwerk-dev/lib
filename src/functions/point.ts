@@ -1,4 +1,5 @@
-import { pol2car, seq } from ".";
+import { seq } from "./array";
+import { pol2car } from "./trig";
 
 export type Point = [x: number, y: number];
 

@@ -29,5 +29,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <input type="range" v-model.number="computedValue" />
+  <input type="range" v-model.number="computedValue" style="display: block" />
 </template>

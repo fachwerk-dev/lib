@@ -4,6 +4,5 @@ export * from "./event";
 export * from "./math";
 export * from "./path";
 export * from "./point";
-export * from "./state";
 export * from "./transform";
 export * from "./trig";

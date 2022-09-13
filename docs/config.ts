@@ -8,34 +8,26 @@ export let sidebar: Link[] = [
   {
     text: "Get Started",
     children: [
-      { text: "Vite", link: "/get-started/vite" },
+      { text: "Vue", link: "/get-started/vite" },
       { text: "Vitepress", link: "/get-started/vitepress" },
-      { text: "JS module ", link: "/get-started/esm" },
-      { text: "JS global", link: "/get-started/global" },
+      { text: "Vanilla JS", link: "/get-started/vanilla" },
       { text: "Node", link: "/get-started/node" },
+      { text: "Deno", link: "/get-started/deno" },
     ],
   },
   {
-    text: "Components",
-    children: [
-      { text: "f-slider", link: "/components/f-slider" },
-      { text: "f-math", link: "/components/f-math" },
-      { text: "f-svg", link: "/components/f-svg" },
-    ],
-  },
-  {
-    text: "Points utilities",
+    text: "Points functions",
     children: [
       { text: "circlepoints", link: "/utils/point/circlepoints" },
       { text: "rectpoints", link: "/utils/point/rectpoints" },
     ],
   },
   {
-    text: "Gridpoints utilities",
+    text: "Gridpoints functions",
     children: [{ text: "rectgridpoints", link: "/utils/point/rectgridpoints" }],
   },
   {
-    text: "Path utilities",
+    text: "Path functions",
     children: [
       { text: "circlepath", link: "/utils/path/circlepath" },
       { text: "arcpath", link: "/utils/path/arcpath" },
@@ -44,11 +36,11 @@ export let sidebar: Link[] = [
     ],
   },
   {
-    text: "Gridpath utilities",
+    text: "Gridpath functions",
     children: [{ text: "rectgridpath", link: "/utils/path/rectgridpath" }],
   },
   {
-    text: "Transform utilities",
+    text: "Transform functions",
     children: [
       { text: "translate", link: "/utils/transform/translate" },
       { text: "rotate", link: "/utils/transform/rotate" },
@@ -57,34 +49,42 @@ export let sidebar: Link[] = [
     ],
   },
   {
-    text: "Array utilities",
+    text: "Array functions",
     children: [
       { text: "seq", link: "/utils/math/seq" },
       { text: "range", link: "/utils/array/range" },
     ],
   },
   {
-    text: "Math utilities",
+    text: "Math functions",
     children: [
       { text: "remap", link: "/utils/math/remap" },
       { text: "random", link: "/utils/math/random" },
     ],
   },
   {
-    text: "Color utilities",
+    text: "Color functions",
     children: [
       { text: "hsl", link: "/utils/color/hsl" },
       { text: "rgb", link: "/utils/color/rgb" },
     ],
   },
   {
-    text: "Trig utilities",
+    text: "Trig functions",
     children: [
       { text: "deg2rad", link: "/utils/trig/deg2rad" },
       { text: "rad2deg", link: "/utils/trig/rad2deg" },
       { text: "PI and TAU", link: "/utils/trig/pi-tau" },
       { text: "pol2car", link: "/utils/trig/pol2car" },
       { text: "car2pol", link: "/utils/trig/car2pol" },
+    ],
+  },
+  {
+    text: "Vue components",
+    children: [
+      { text: "f-slider", link: "/components/f-slider" },
+      { text: "f-math", link: "/components/f-math" },
+      { text: "f-svg", link: "/components/f-svg" },
     ],
   },
   {

@@ -9,8 +9,6 @@ declare module "*.vue" {
   export default component;
 }
 
-declare module "vitepress/theme";
-
 declare module "virtual:generated-pages" {
   import type { RouteRecordRaw } from "vue-router";
   const routes: RouteRecordRaw[];

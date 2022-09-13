@@ -1,13 +1,16 @@
 import { createApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
-
 import routes from "virtual:generated-pages";
-import { Fachwerk } from "./lib.esm";
+
+import { Fachwerk } from "./vue";
 
 import App from "./App.vue";
-import Layout from "./internal/Layout.vue";
-import Editor from "./internal/Editor.vue";
-import Button from "./internal/Button.vue";
+
+import Layout from "./app/components/Layout.vue";
+import Editor from "./app/components/Editor.vue";
+import Button from "./app/components/Button.vue";
+import Snippet from "./app/components/Snippet.vue";
+
 import IconStackblitz from "~icons/bx/bxs-zap";
 import IconVue from "~icons/bx/bxl-vuejs";
 
@@ -21,9 +24,13 @@ const router = createRouter({
 const app = createApp(App);
 app.use(router);
 app.use(Fachwerk);
+
 app.component("Layout", Layout);
 app.component("Editor", Editor);
 app.component("Button", Button);
+app.component("Snippet", Snippet);
+
 app.component("IconStackblitz", IconStackblitz);
 app.component("IconVue", IconVue);
+
 app.mount("#app");

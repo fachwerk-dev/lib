@@ -3,7 +3,7 @@ import { computed } from "vue";
 
 import CompilerVue from "./CompilerVue.vue";
 import CompilerMd from "./CompilerMd.vue";
-import { isScriptSetup } from "./compiler";
+import { isScriptSetup } from "../functions/compiler";
 
 const { source } = defineProps(["source"]);
 

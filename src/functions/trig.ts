@@ -1,4 +1,5 @@
-import { Point, trunc } from ".";
+import { Point } from "./point";
+import { trunc } from "./math";
 
 /**
  * Converts degrees to radians

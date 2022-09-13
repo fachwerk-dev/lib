@@ -1,9 +1,9 @@
 import { arc } from "d3-shape";
 import svgpath from "svgpath";
 
-import { deg2rad } from "../lib.esm";
-import { Point, rectgridpoints } from "./point";
-import { PRECISION, rectpoints } from ".";
+import { deg2rad } from "./trig";
+import { Point, rectgridpoints, rectpoints } from "./point";
+import { PRECISION } from "./math";
 
 export function rectpath(
   width: number,

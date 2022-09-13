@@ -13,7 +13,7 @@ import IconSlides from "~icons/bx/slideshow";
     </h1>
     <p class="w-full text-lg !leading-normal md:w-3/4 md:text-xl lg:text-2xl">
       An upcoming Javascript framework for interactive notebooks and
-      presentations built on top of VueJS and ViteJS.
+      presentations
     </p>
 
     <div class="grid gap-4 md:flex">
@@ -36,36 +36,6 @@ import IconSlides from "~icons/bx/slideshow";
       >
         <IconSlides />
         See the slides
-      </Button>
-    </div>
-
-    <p />
-
-    <p class="w-full md:w-3/4 md:text-lg lg:text-xl">
-      To get started, pick a Stackblitz or Vue template below:
-    </p>
-
-    <div class="grid gap-4 md:flex">
-      <Button
-        href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Fachwerk+Vite"
-        class="md:text-xl"
-      >
-        <IconStackblitz class="text-blue-500" />
-        Fachwerk + Vite
-      </Button>
-      <Button
-        href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vitepress?file=docs%2Findex.md&title=Fachwerk+Vitepress"
-        class="md:text-xl"
-      >
-        <IconStackblitz class="text-blue-500" />
-        Fachwerk + Vitepress
-      </Button>
-      <Button
-        href="https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgZ2V0Q3VycmVudEluc3RhbmNlIH0gZnJvbSBcInZ1ZVwiO1xuaW1wb3J0IHsgRmFjaHdlcmsgfSBmcm9tIFwiZmFjaHdlcmtcIlxuICBcbmNvbnN0IGFwcCA9IGdldEN1cnJlbnRJbnN0YW5jZSgpLmFwcENvbnRleHQuYXBwO1xuYXBwLnVzZShGYWNod2Vyaylcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxmLWhlbGxvIC8+XG48L3RlbXBsYXRlPlxuXG48c3R5bGU+XG5AaW1wb3J0IFwiaHR0cHM6Ly91bnBrZy5jb20vZmFjaHdlcmsvZGlzdC9mYWNod2Vyay5jc3NcIlxuPC9zdHlsZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIixcbiAgICBcImZhY2h3ZXJrXCI6IFwiaHR0cHM6Ly91bnBrZy5jb20vZmFjaHdlcmsvZGlzdC9mYWNod2Vyay5tanNcIlxuICB9XG59In0="
-        class="md:text-xl"
-      >
-        <IconVue class="text-green-600" />
-        Fachwerk + Vue SFC
       </Button>
     </div>
 
