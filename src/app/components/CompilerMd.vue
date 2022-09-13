@@ -1,8 +1,9 @@
 <script lang="ts">
 import { h, ComponentOptions, watch, shallowRef } from "vue";
 
-import * as functions from "../functions";
-import { compileTemplate } from "./compiler";
+import * as functions from "../../functions";
+import * as vueFunctions from "../../vue/functions";
+import { compileTemplate } from "../functions/compiler";
 
 export default {
   props: ["source"],
@@ -18,7 +19,7 @@ export default {
         }
         compiledSource.value = {
           setup() {
-            return { ...functions };
+            return { ...functions, ...vueFunctions };
           },
           render: code,
         };

@@ -6,10 +6,10 @@ import { Fachwerk } from "./vue";
 
 import App from "./App.vue";
 
-import Layout from "./app/Layout.vue";
-import Editor from "./app/Editor.vue";
-import Button from "./app/Button.vue";
-import Snippet from "./app/Snippet.vue";
+import Layout from "./app/components/Layout.vue";
+import Editor from "./app/components/Editor.vue";
+import Button from "./app/components/Button.vue";
+import Snippet from "./app/components/Snippet.vue";
 
 import IconStackblitz from "~icons/bx/bxs-zap";
 import IconVue from "~icons/bx/bxl-vuejs";

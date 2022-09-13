@@ -2,12 +2,11 @@
 //@ts-nocheck
 // TODO: Refactor tab key handling
 import { ref, computed, onMounted } from "vue";
-import IconOpen from "~icons/tabler/layers-subtract";
-
-import { atou, utoa } from "./encoding";
-import { compileMarkdown } from "./markdown";
+import { atou, utoa } from "../functions/encoding";
+import { compileMarkdown } from "../functions/markdown";
 
 import Compiler from "./Compiler.vue";
+import IconOpen from "~icons/tabler/layers-subtract";
 
 type Props = {
   source: string;

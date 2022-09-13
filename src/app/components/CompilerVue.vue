@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { debouncedWatch } from "@vueuse/core";
 import { ref } from "vue";
-import { compileSfc } from "./compiler";
+import { compileSfc } from "../functions/compiler";
 import template from "./CompilerVue.htm?raw";
 
 const { source } = defineProps(["source"]);

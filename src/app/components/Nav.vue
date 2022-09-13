@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { sidebar } from "../../docs/config";
-import { state } from "./state";
+import { sidebar } from "../../../docs/config";
+import { state } from "../functions/state";
+
 const onClick = () => {
   window.scrollTo({
     top: 0,

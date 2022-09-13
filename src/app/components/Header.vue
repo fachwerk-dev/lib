@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { state } from "./state";
+import { state } from "../functions/state";
 import IconGithub from "~icons/bx/bxl-github";
 </script>
 <template>
