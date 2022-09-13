@@ -7,7 +7,7 @@ https://fachwerk.dev
 ## Get started
 
 ```
-npm init fachwerk
+npm init fachwerk@latest
 ```
 
 ## Development
