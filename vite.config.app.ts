@@ -8,6 +8,9 @@ import ViteMarkdown from "vite-plugin-md";
 import MarkdownItExternalLinks from "markdown-it-external-links";
 import ViteFonts from "vite-plugin-fonts";
 import ViteIcons from "unplugin-icons/vite";
+import monaco from "vite-plugin-monaco-editor";
+//@ts-ignore
+const ViteMonaco = monaco.default;
 
 import postcss from "./postcss.config";
 import { utoa } from "./src/app/functions/encoding";
@@ -70,9 +73,18 @@ export default defineConfig({
       },
     }),
     ViteIcons({ autoInstall: true }),
+    ViteMonaco({}),
   ],
   build: {
     emptyOutDir: false,
     outDir: "dist/docs",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          htmlWorker: [`monaco-editor/esm/vs/language/html/html.worker`],
+          editorWorker: [`monaco-editor/esm/vs/editor/editor.worker`],
+        },
+      },
+    },
   },
 });
