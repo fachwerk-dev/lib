@@ -1,8 +1,8 @@
-export { default as FCanvas } from "./FMath.vue";
-export { default as FCanvasPath } from "./FMath.vue";
+export { default as FCanvas } from "./FCanvas.vue";
+export { default as FCanvasPath } from "./FCanvasPath.vue";
 export { default as FHello } from "./FHello.vue";
 export { default as FMath } from "./FMath.vue";
-export { default as FMouse } from "./FMath.vue";
+export { default as FMouse } from "./FMouse.vue";
 export { default as FPdf } from "./FPdf.vue";
 export { default as FPdfPath } from "./FPdfPath.vue";
 export { default as FSlider } from "./FSlider.vue";
