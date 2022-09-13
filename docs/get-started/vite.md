@@ -18,12 +18,12 @@ npm init fachwerk
 
 Next, pick a **Vite** template and follow the on-screen instructions.
 
-### Add Fachwerk to existing Vite project
+### Add Fachwerk to new Vite project
 
 Your can also use the standard [Vite installer](https://vitejs.dev/guide/#scaffolding-your-first-vite-project). Choose either `vue` or `vue-ts` project when setting up a project.
 
 ```bash
-npm init vite
+npm init vite@latest
 ```
 
 Next, install Fachwerk and `vite-plugin-md` (for Markdown support)
@@ -34,32 +34,14 @@ npm install fachwerk vite-plugin-md
 
 Next, add reactive variables shortcuts and Markdown support to `/vite.config.js`.
 
-```js{3,7-8}
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import markdown from "vite-plugin-md";
-
-export default defineConfig({
-  plugins: [
-    vue({ reactivityTransform: true, include: [/\.vue$/, /\.md$/] }),
-    markdown(),
-  ],
-});
-```
+<Snippet src="https://raw.githubusercontent.com/fachwerk-dev/create-fachwerk/main/vite/vite.config.js" />
 
 Next, modify the `/src/main.js` as follows:
 
-```js
-import { createApp } from "vue";
-import { Fachwerk } from "fachwerk";
-import "fachwerk/fachwerk.css";
-import "./style.css";
+<Snippet src="https://raw.githubusercontent.com/fachwerk-dev/create-fachwerk/main/vite/src/main.js" />
 
-import index from "./index.md";
+Finally, add `/src/index.md` to use Markdown and Fachwerk syntax:
 
-const app = createApp(index);
-app.use(Fachwerk);
-app.mount("#app");
-```
+<Snippet src="https://raw.githubusercontent.com/fachwerk-dev/create-fachwerk/main/vite/src/index.md" />
 
-Finally, add `/src/index.md` to use Markdown and Fachwerk syntax. Note that `/src/App.vue` is no longer needed and can be removed.
+> Note that `/src/App.vue` is no longer needed and can be removed.

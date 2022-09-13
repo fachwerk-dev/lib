@@ -9,6 +9,7 @@ import App from "./App.vue";
 import Layout from "./app/Layout.vue";
 import Editor from "./app/Editor.vue";
 import Button from "./app/Button.vue";
+import Snippet from "./app/Snippet.vue";
 
 import IconStackblitz from "~icons/bx/bxs-zap";
 import IconVue from "~icons/bx/bxl-vuejs";
@@ -27,6 +28,7 @@ app.use(Fachwerk);
 app.component("Layout", Layout);
 app.component("Editor", Editor);
 app.component("Button", Button);
+app.component("Snippet", Snippet);
 
 app.component("IconStackblitz", IconStackblitz);
 app.component("IconVue", IconVue);

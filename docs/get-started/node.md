@@ -1,6 +1,6 @@
 # Node
 
-Fachwerk utility functions are also available in NodeJS, both ESM and CommonJS packages.
+Fachwerk utility functions are available in NodeJS, both as ESM and CommonJS packages.
 
 ### Quickstart
 
@@ -16,95 +16,26 @@ npm create fachwerk
 npm install fachwerk
 ```
 
-### Usage with ESM
+### Usage
 
-Create the `index.mjs`:
+Create the `example1.mjs`:
 
-```js
-import * as f from "fachwerk";
-console.log(f.circlepoints(24, 50));
-```
+<Snippet src="https://raw.githubusercontent.com/fachwerk-dev/create-fachwerk/main/node/example1.mjs" />
 
 And run:
 
 ```bash
-node index.mjs
-```
-
-### Usage with CommonJS
-
-Crearte the `index.cjs`:
-
-```js
-const f = require("fachwerk");
-console.log(f.circlepoints(24, 50));
-```
-
-And run:
-
-```bash
-node index.cjs
+node example1.mjs
 ```
 
 ### Generating SVG with Node
 
 Here is an example how to use Fachwerk functions to generate SVG and convert it to PNG using [resvg-js](https://github.com/yisibl/resvg-js) package.
 
-```js
-import * as f from "fachwerk";
-import { writeFile } from "fs/promises";
-import { Resvg } from "@resvg/resvg-js";
-
-const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
-  <path
-    d="${f
-      .circlepoints(24, 50)
-      .map((point) => f.circlepath(50, point))
-      .join("")}"
-    fill="none"
-    stroke="lightblue"
-    stroke-width="2"
-    transform="translate(100,100)"
-  />
-</svg>
-`;
-
-const png = new Resvg(svg).render().asPng();
-await writeFile("./example1.png", png);
-```
+<Snippet src="https://raw.githubusercontent.com/fachwerk-dev/create-fachwerk/main/node/example2.mjs" />
 
 ### Generating SVG with Vue SSR and Node
 
 Here's a more elaborate example how to use VueJS template for generating SVG:
 
-```js
-import { Fachwerk } from "fachwerk/vue";
-import { writeFile } from "fs/promises";
-import { Resvg } from "@resvg/resvg-js";
-
-import { createSSRApp } from "vue";
-import { renderToString } from "vue/server-renderer";
-
-const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
-  <path
-    v-for="point in circlepoints(24,50)"
-    :d="circlepath(50,point)"
-    fill="none"
-    stroke="lightblue"
-    stroke-width="2"
-    transform="translate(100,100)"
-  />
-</svg>
-`;
-
-const app = createSSRApp({
-  template: svg,
-});
-app.use(Fachwerk);
-
-const renderedSvg = await renderToString(app);
-const png = new Resvg(renderedSvg).render().asPng();
-await writeFile("./example2.png", png);
-```
+<Snippet src="https://raw.githubusercontent.com/fachwerk-dev/create-fachwerk/main/node/example3.mjs" />

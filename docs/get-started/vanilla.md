@@ -10,31 +10,4 @@ Fachwerk provides a globally loadable UMD package https://unpkg.com/fachwerk/dis
 
 Create a local `index.html` file and open it in the browser:
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-
-  <body>
-    <svg width="500" height="500">
-      <path id="path" fill="none" stroke="lightblue" stroke-width="2" />
-    </svg>
-  </body>
-
-  <script src="https://unpkg.com/fachwerk/dist/fachwerk.js"></script>
-  <script>
-    const path = document.getElementById("path");
-    const r = 100;
-
-    // f is globally available object that contains
-    // all Fachwerk functions
-
-    const d = f.circlepoints(32, r).map((point) => f.circlepath(r, point));
-    path.setAttribute("d", d);
-    path.setAttribute("transform", f.translate(250, 250));
-  </script>
-</html>
-```
+<Snippet src="https://raw.githubusercontent.com/fachwerk-dev/create-fachwerk/main/vanilla/index.html" />
