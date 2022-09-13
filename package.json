@@ -1,6 +1,6 @@
 {
   "name": "fachwerk",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
@@ -52,6 +52,7 @@
     "pdf-lib": "^1.17.1",
     "svgpath": "^2.5.0",
     "three": "^0.140.2",
+    "vite-plugin-monaco-editor": "^1.1.0",
     "vue": "^3.2.34"
   },
   "devDependencies": {

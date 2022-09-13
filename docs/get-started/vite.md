@@ -6,7 +6,7 @@ There are multiple ways to get started with Vue and Fachwerk, powered by Vite.
 
 Open the project in Stackblitz and start editing right in the browser:
 
-<Button href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Vue+and+Vite+and+Fachwerk"><IconStackblitz />Open in Stackblitz</Button>
+<Button href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Vue+and+Vite+and+Fachwerk"><IconStackblitz class="text-blue-500" />Open in Stackblitz</Button>
 
 ### Use the command line
 
