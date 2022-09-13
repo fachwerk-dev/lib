@@ -8,9 +8,9 @@ export let sidebar: Link[] = [
   {
     text: "Get Started",
     children: [
-      { text: "Vanilla JS", link: "/get-started/vanilla" },
-      { text: "Vite", link: "/get-started/vite" },
+      { text: "Vue", link: "/get-started/vite" },
       { text: "Vitepress", link: "/get-started/vitepress" },
+      { text: "Vanilla JS", link: "/get-started/vanilla" },
       { text: "Node", link: "/get-started/node" },
       { text: "Deno", link: "/get-started/deno" },
     ],

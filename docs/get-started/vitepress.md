@@ -1,6 +1,6 @@
 # Vitepress and Fachwerk
 
-There are several ways to get started with Vitepress and Fachwerk:
+There are several ways to get started with Vitepress and Fachwerk.
 
 ### Use Slackblitz
 
@@ -30,7 +30,7 @@ Then, edit `.vitepress/theme/index.js` as follows to install the Fachwerk plugin
 
 <Snippet src="https://raw.githubusercontent.com/fachwerk-dev/create-fachwerk/main/vitepress/docs/.vitepress/theme/index.js" />
 
-### One more thing
+### Reactivity transforms
 
 We recommend VueJS [reactivity transforms](https://vuejs.org/guide/extras/reactivity-transform.html) for a better developer experience. This feature is not _required_ to use Fachwerk, but a lot of documentation refers to this syntax.
 
