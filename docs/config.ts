@@ -11,7 +11,7 @@ export let sidebar: Link[] = [
       { text: "Vite", link: "/get-started/vite" },
       { text: "Vitepress", link: "/get-started/vitepress" },
       { text: "JS module ", link: "/get-started/esm" },
-      { text: "JS global", link: "/get-started/global" },
+      { text: "Vanilla JS", link: "/get-started/vanilla" },
       { text: "Node", link: "/get-started/node" },
     ],
   },

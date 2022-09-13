@@ -2,7 +2,15 @@
 
 Fachwerk utility functions are also available in NodeJS, both ESM and CommonJS packages.
 
-### Installation
+### Quickstart
+
+Generate a template project, select **Node** as template:
+
+```
+npm create fachwerk
+```
+
+### Manual installation
 
 ```bash
 npm install fachwerk
@@ -10,16 +18,14 @@ npm install fachwerk
 
 ### Usage with ESM
 
-Edit the `index.mjs` as follows:
+Create the `index.mjs`:
 
 ```js
-// index.mjs
-
-import { circlepoints } from "fachwerk";
-console.log(circlepoints(24, 50));
+import * as f from "fachwerk";
+console.log(f.circlepoints(24, 50));
 ```
 
-Then run:
+And run:
 
 ```bash
 node index.mjs
@@ -27,16 +33,14 @@ node index.mjs
 
 ### Usage with CommonJS
 
-Edit the `index.cjs` as follows:
+Crearte the `index.cjs`:
 
 ```js
-// index.cjs
-
-const { circlepoints } = require("fachwerk");
-console.log(circlepoints(24, 50));
+const f = require("fachwerk");
+console.log(f.circlepoints(24, 50));
 ```
 
-Then run:
+And run:
 
 ```bash
 node index.cjs
@@ -47,15 +51,16 @@ node index.cjs
 Here is an example how to use Fachwerk functions to generate SVG and convert it to PNG using [resvg-js](https://github.com/yisibl/resvg-js) package.
 
 ```js
+import * as f from "fachwerk";
 import { writeFile } from "fs/promises";
-import { circlepoints, circlepath } from "fachwerk";
 import { Resvg } from "@resvg/resvg-js";
 
 const svg = `
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
   <path
-    d="${circlepoints(24, 50)
-      .map((point) => circlepath(50, point))
+    d="${f
+      .circlepoints(24, 50)
+      .map((point) => f.circlepath(50, point))
       .join("")}"
     fill="none"
     stroke="lightblue"
@@ -69,13 +74,13 @@ const png = new Resvg(svg).render().asPng();
 await writeFile("./example1.png", png);
 ```
 
-### Generating SVG with Vue and Node
+### Generating SVG with Vue SSR and Node
 
 Here's a more elaborate example how to use VueJS template for generating SVG:
 
-```
+```js
+import { Fachwerk } from "fachwerk/vue";
 import { writeFile } from "fs/promises";
-import { Fachwerk } from "fachwerk";
 import { Resvg } from "@resvg/resvg-js";
 
 import { createSSRApp } from "vue";
