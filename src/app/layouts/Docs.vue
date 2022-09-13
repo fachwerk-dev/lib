@@ -1,32 +1,19 @@
 <script setup lang="ts">
 import Header from "../components/Header.vue";
-import Hero from "../components/Hero.vue";
 import Nav from "../components/Nav.vue";
 import Content from "../components/Content.vue";
-
-const { frontmatter } = defineProps(["frontmatter"]);
-const isFrontpage = frontmatter?.layout === "frontpage";
 </script>
 
 <template>
-  <div :class="{ 'bg-lightblue-500': isFrontpage }">
+  <div>
     <Header class="sticky top-0 z-50 md:relative" />
-    <Hero
-      v-if="isFrontpage"
-      class="mx-auto max-w-7xl py-4 px-4 md:p-12 md:px-12"
-    />
     <main
       class="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-[250px_1fr] md:grid-rows-1"
     >
-      <div
-        :class="isFrontpage ? 'isFrontpage block md:hidden' : ''"
-        class="border-r-2 border-r-gray-100 p-4 md:p-12"
-      >
+      <div class="border-r-2 border-r-gray-100 p-4 md:p-12">
         <Nav class="sticky bottom-0 overflow-auto" />
       </div>
-      <Content v-if="!isFrontpage" class="max-w-[100ch] p-5 md:p-12"
-        ><slot
-      /></Content>
+      <Content class="max-w-[100ch] p-5 md:p-12"><slot /></Content>
     </main>
   </div>
 </template>

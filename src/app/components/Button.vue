@@ -1,14 +1,19 @@
 <script lang="ts">
 export default { inheritAttrs: false };
 </script>
+<script setup lang="ts">
+const { to } = defineProps(["to"]);
+</script>
 <template>
   <div class="not-prose">
-    <a
+    <component
+      :is="to ? 'router-link' : 'a'"
+      :to="to"
       v-bind="$attrs"
       target="blank"
-      class="decoration-none inline-flex w-full items-center justify-center gap-2 rounded border-2 border-black px-5 py-3 text-center font-medium transition hover:bg-black/5 md:flex md:w-max"
+      class="inline-flex w-full items-center justify-center gap-2 rounded border-2 border-black bg-white px-5 py-3 text-center font-medium transition hover:bg-sky-50 md:flex md:w-max"
     >
       <slot />
-    </a>
+    </component>
   </div>
 </template>

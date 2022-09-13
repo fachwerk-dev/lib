@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Header from "../components/Header.vue";
-import Hero from "../components/Hero.vue";
 import Nav from "../components/Nav.vue";
 import Content from "../components/Content.vue";
 </script>

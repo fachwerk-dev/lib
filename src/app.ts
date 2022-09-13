@@ -14,6 +14,9 @@ import Snippet from "./app/components/Snippet.vue";
 
 import IconStackblitz from "~icons/bx/bxs-zap";
 import IconVue from "~icons/bx/bxl-vuejs";
+import IconDocs from "~icons/bx/book-content";
+import IconEdit from "~icons/bx/pencil";
+import IconSlides from "~icons/bx/slideshow";
 
 import "./app.css";
 
@@ -33,5 +36,8 @@ app.component("Snippet", Snippet);
 
 app.component("IconStackblitz", IconStackblitz);
 app.component("IconVue", IconVue);
+app.component("IconDocs", IconDocs);
+app.component("IconEdit", IconEdit);
+app.component("IconSlides", IconSlides);
 
 app.mount("#app");

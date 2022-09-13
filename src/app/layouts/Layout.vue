@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Header from "../components/Header.vue";
 import frontpage from "./Frontpage.vue";
 import docs from "./Docs.vue";
 
