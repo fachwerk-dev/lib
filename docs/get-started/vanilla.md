@@ -4,7 +4,7 @@ Fachwerk provides a globally loadable UMD package https://unpkg.com/fachwerk/dis
 
 ### Use Stackblitz
 
-<Button href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vanilla?file=index.html&title=Fachwerk+and+Vanilla+JS"><IconStackblitz />Fachwerk and Vanilla JS in Stackblitz</Button>
+<Button href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vanilla?file=index.html&title=Fachwerk+and+Vanilla+JS"><IconStackblitz class="text-blue-500" />Fachwerk and Vanilla JS in Stackblitz</Button>
 
 ### Create a file
 

@@ -12,6 +12,7 @@ export let sidebar: Link[] = [
       { text: "Vitepress", link: "/get-started/vitepress" },
       { text: "Petite Vue", link: "/get-started/petite-vue" },
       { text: "Vanilla JS", link: "/get-started/vanilla" },
+      { text: "P5", link: "/get-started/p5" },
       { text: "Node", link: "/get-started/node" },
       { text: "Deno", link: "/get-started/deno" },
     ],
