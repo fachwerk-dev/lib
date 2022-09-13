@@ -33,7 +33,7 @@ Generate an array of numbers from `3` to `1`, in ascending order:
 ```md
 <f-svg width="400" height="50" padding="1" linegrid>
   <rect
-    v-for="x in range(f.start,f.end,f.step)"
+    v-for="x in range(data.start,data.end,data.step)"
     :x="x"
     width="1"
     height="100"
@@ -41,13 +41,13 @@ Generate an array of numbers from `3` to `1`, in ascending order:
   />
 </f-svg>
 
-<f-slider v-model="f.start" :value="0" /> Start: {{ f.start }}
+<f-slider v-model="data.start" :value="0" /> Start: {{ data.start }}
 
-<f-slider v-model="f.end" :value="100" max="400" /> End: {{ f.end }}
+<f-slider v-model="data.end" :value="100" max="400" /> End: {{ data.end }}
 
-<f-slider v-model="f.step" :value="1" max="100" /> Step: {{ f.step }}
+<f-slider v-model="data.step" :value="1" max="100" /> Step: {{ data.step }}
 
-Length: {{ range(f.start,f.end,f.step).length }}
+Length: {{ range(data.start,data.end,data.step).length }}
 ```
 
 ## Prior art

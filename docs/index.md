@@ -6,7 +6,7 @@ layout: frontpage
 
 <p class="lead">A set of Javascript functions and components for interactive graphics and educative notebooks. We support Vue, React, Svelte and more.</p>
 
-<div class="h-6" />
+## Get started
 
 Here are simplest way to get started:
 
@@ -16,29 +16,34 @@ Here are simplest way to get started:
     Play with the docs
   </Button>
   <Button
-    href="https://editor.fachwerk.dev"
+    to="/editor"
   >
     <IconEdit />
     Try the editor
   </Button>
-  <Button
-    href="https://slides.fachwerk.dev"
-  >
+</div>
+
+## Use the command line
+
+If you have NodeJS installed, you can also run the following command to create a local starter project:
+
+```
+npm init fachwerk@latest
+```
+
+## See the examples
+
+<div class="grid gap-4 md:flex">
+  <Button href="https://slides.fachwerk.dev">
     <IconSlides />
-    See the slides
+    slides.fachwerk.dev
+  </Button>
+  <Button href="https://links.fachwerk.dev">
+    <IconSlides />
+    links.fachwerk.dev
   </Button>
 </div>
 
-<div class="h-12" />
-
-If you have NodeJS installed, you can also run the following to create a local starter project:
-
- <div
-  class="-ml-5 -mr-5 md:inline-block rounded-none bg-black px-6 py-4 font-mono text-white md:mx-0 md:place-self-start md:rounded text-sm"
->
-  npm init fachwerk
-</div>
-
-<div class="h-8 md:h-64" />
+<div class="h-8 md:h-16" />
 
 All code is licenced under [MIT licence](https://choosealicense.com/licenses/mit). <br />All content is licenced under [Creative Commons BY-NC-SA 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0) {.opacity-50}

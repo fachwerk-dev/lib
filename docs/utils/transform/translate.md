@@ -25,7 +25,7 @@ SVG transforms are unitless, so we can just pass numeric values to `translate()`
 ```md
 <f-svg width="400" height="400" rectgrid>
   <rect
-    :transform="translate(f.x,f.y)"
+    :transform="translate(data.x,data.y)"
     width="100"
     height="100"
     fill="none"
@@ -34,11 +34,11 @@ SVG transforms are unitless, so we can just pass numeric values to `translate()`
   />
 </f-svg>
 
-SVG x transform is {{ f.x }}
-<f-slider v-model="f.x" max="400" step="100" />
+SVG x transform is {{ data.x }}
+<f-slider v-model="data.x" max="400" step="100" />
 
-SVG y transform is {{ f.y }}
-<f-slider v-model="f.y" max="400" step="100" />
+SVG y transform is {{ data.y }}
+<f-slider v-model="data.y" max="400" step="100" />
 ```
 
 ### CSS translate example
@@ -62,17 +62,17 @@ Note that for the CSS transform you will need to pass an unit to the `transform(
       height: 100px;
       border: 2px solid lightblue;
     "
-    :style="{transform: translate(f.x,f.y,'px')}"
+    :style="{transform: translate(data.x,data.y,'px')}"
   /> 
 </div>
 
 <br />
 
-CSS x transform is {{ f.x }}
-<f-slider v-model="f.x" max="400" step="100" />
+CSS x transform is {{ data.x }}
+<f-slider v-model="data.x" max="400" step="100" />
 
-CSS y transform is {{ f.y }}
-<f-slider v-model="f.y" max="400" step="100" />
+CSS y transform is {{ data.y }}
+<f-slider v-model="data.y" max="400" step="100" />
 ```
 
 ## Prior art

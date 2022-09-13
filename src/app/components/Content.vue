@@ -43,7 +43,7 @@ const defaultClass = `
   prose-pre:bg-lightblue-50
   prose-pre:p-4
   prose-pre:md:-mx-0
-  prose-pre:xl:rounded
+  prose-pre:md:rounded
   prose
 `;
 const mergedClass = computed(() => twMerge(`${defaultClass} ${customClass}`));

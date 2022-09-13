@@ -47,11 +47,11 @@ There is not much point nor flexibility for `linepoints()`. Better to use `seq()
 ```
 
 ```md
-{{ f.s = seq(10) }}
+{{ data.s = seq(10) }}
 
 <svg height="100">
 <circle
-    v-for="x in f.s"
+    v-for="x in data.s"
     :cx="x"
     cy="50"
     r="10"

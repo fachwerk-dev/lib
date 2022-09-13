@@ -13,7 +13,7 @@ Open Vitepress + Fachwerk sample project in Stackblitz and start editing the pro
 Run the following command:
 
 ```bash
-npm init fachwerk
+npm init fachwerk@latest
 ```
 
 Next, pick a **Vitepress** template and follow the on-screen instructions.

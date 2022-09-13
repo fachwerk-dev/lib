@@ -3,13 +3,13 @@
 `f-mouse` is a component that wraps any content and returns mouse data relative to child component.
 
 ```md
-<f-mouse v-model="f.mouse">
+<f-mouse v-model="data.mouse">
   <f-svg width="400" height="400">
     <rect width="400" height="400" fill="whitesmoke" />
     <circle
-      :cx="f.mouse[0]"
-      :cy="f.mouse[1]"
-      :r="f.mouse.pressed ? 20 : 10"
+      :cx="data.mouse[0]"
+      :cy="data.mouse[1]"
+      :r="data.mouse.pressed ? 20 : 10"
       fill="none"
       stroke="lightblue"
       stroke-width="2"
@@ -17,7 +17,7 @@
   </f-svg>
 </f-mouse>
 
-f.mouse is {{ f.mouse }}
+f.mouse is {{ data.mouse }}
 ```
 
 ## Prior art

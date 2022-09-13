@@ -11,7 +11,14 @@ import Content from "../components/Content.vue";
       <div class="isFrontpage block md:hidden">
         <Nav class="sticky bottom-0 overflow-auto bg-white p-4" />
       </div>
-      <Content class="max-w-[100ch] p-5 md:p-12"><slot /></Content>
+      <Content class="content max-w-[100ch] p-5 md:p-12"><slot /></Content>
     </main>
   </div>
 </template>
+
+<style>
+.content pre,
+.content code {
+  @apply !bg-gray-800 text-gray-200;
+}
+</style>

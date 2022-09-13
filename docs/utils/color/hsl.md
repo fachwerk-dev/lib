@@ -41,10 +41,10 @@ You can also set only the hue `h` parameter:
     :fill="hsl(h,100,50)"
   />
  <circle
-    :cx="f.h"
+    :cx="data.h"
     cy="25"
     r="10"
-    :fill="hsl(f.h,100,50)"
+    :fill="hsl(data.h,100,50)"
     stroke="white"
     stroke-width="2"
   />
@@ -57,23 +57,23 @@ You can also set only the hue `h` parameter:
     :y="l"
     width="10"
     height="10"
-    :fill="hsl(f.h,s / 2,l / 2)"
-    v-on:click="f.s = s; f.l = l"
+    :fill="hsl(data.h,s / 2,l / 2)"
+    v-on:click="data.s = s; data.l = l"
   />
   <circle
-    :cx="f.s * 2"
-    :cy="f.l * 2"
+    :cx="data.s * 2"
+    :cy="data.l * 2"
     r="10"
-    :fill="hsl(f.h,f.s,f.l)"
+    :fill="hsl(data.h,data.s,data.l)"
     stroke="white"
     stroke-width="2"
   />
 </f-svg>
 
-{{ hsl(f.h,f.s,f.l) }}
-<f-slider v-model="f.h" max="360" step="10" />
-<f-slider v-model="f.s" max="100" step="5" :value="100" />
-<f-slider v-model="f.l" max="100" step="5" :value="50" />
+{{ hsl(data.h,data.s,data.l) }}
+<f-slider v-model="data.h" max="360" step="10" />
+<f-slider v-model="data.s" max="100" step="5" :value="100" />
+<f-slider v-model="data.l" max="100" step="5" :value="50" />
 ```
 
 ## Prior art

@@ -8,13 +8,13 @@
     :path="circlepath(100,[200,200])"
   />
   <f-canvas-path
-    :rotate="f.r"
+    :rotate="data.r"
     :path="polygonpath(rectpoints(100, 100, [150, 150]), true)"
   />
 </f-canvas>
 
-Rotation: {{ f.r }}
-<f-slider v-model="f.r" max="360" step="any" />
+Rotation: {{ data.r }}
+<f-slider v-model="data.r" max="360" step="any" />
 ```
 
 ## Prior art

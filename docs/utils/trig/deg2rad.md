@@ -24,18 +24,18 @@ function deg2rad(deg: number = 0): number
     stroke-width="2"
   />
   <path
-    :d="arcpath(0,f.deg,100)"
+    :d="arcpath(0,data.deg,100)"
     fill="none"
     stroke="lightblue"
     stroke-width="2"
   />
 </f-svg>
 
-<f-slider v-model="f.deg" max="360" :value="180"/>
+<f-slider v-model="data.deg" max="360" :value="180"/>
 
-deg: {{ f.deg }} deg
-rad: {{ deg2rad(f.deg) }}
-rad / π: {{ deg2rad(f.deg) / PI }}
+deg: {{ data.deg }} deg
+rad: {{ deg2rad(data.deg) }}
+rad / π: {{ deg2rad(data.deg) / PI }}
 ```
 
 ## See also
