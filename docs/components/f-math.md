@@ -10,12 +10,12 @@ Here are some simple math expressions:
 <f-math>a = \frac{1}{10}</f-math>
 ```
 
-Lets assign <f-math>a</f-math> to a global variable `f.a` and use `<f-slider />` to control it.
+Lets assign to a global variable `data.a` and use `<f-slider />` to control it.
 
 ```md
-<f-math>a = \frac{ {{ f.a }} }{10} = {{ f.a / 10 }}</f-math>
+<f-math>a = \frac{ {{ data.a }} }{10} = 10</f-math>
 
-<f-slider v-model="f.a" />
+<f-slider v-model="data.a" />
 ```
 
 ## Syntax reference
