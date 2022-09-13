@@ -35,22 +35,12 @@ import IconGithub from "~icons/bx/bxl-github";
           </router-link>
         </li>
         <li>
-          <a
-            href="https://editor.fachwerk.dev"
-            target="_blank"
+          <router-link
+            to="/editor"
             class="group flex items-center gap-1 text-slate-400 hover:text-slate-300"
           >
             Editor
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://slides.fachwerk.dev"
-            target="_blank"
-            class="group flex items-center gap-1 text-slate-400 hover:text-slate-300"
-          >
-            Slides
-          </a>
+          </router-link>
         </li>
       </ul>
       <ul>

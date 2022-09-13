@@ -37,9 +37,7 @@ onMounted(() => {
   }
 });
 
-const link = computed(
-  () => `https://editor.fachwerk.dev/#${utoa(source.value)}`
-);
+const to = computed(() => `/editor#${utoa(source.value)}`);
 
 const error = ref(null);
 const onError = (e: any | null) => (error.value = e);
@@ -55,13 +53,13 @@ const onError = (e: any | null) => (error.value = e);
         class="w-full whitespace-pre bg-gray-800 p-5 font-mono text-sm leading-6 text-gray-100 outline-none md:p-6 lg:p-8"
         spellcheck="false"
       />
-      <a
-        class="absolute top-1 right-1 !text-gray-600 hover:!text-gray-400 md:top-2 md:right-2"
-        :href="link"
+      <router-link
+        class="absolute left-1 bottom-1 !text-gray-600 hover:!text-gray-400 md:bottom-2 md:left-2"
+        :to="to"
         target="_blank"
       >
-        <IconOpen class="w-4 stroke-current" />
-      </a>
+        <IconEdit class="w-4 stroke-current" />
+      </router-link>
     </div>
     <div
       class="relative overflow-x-auto border-l-2 border-white p-4 lg:p-6"
