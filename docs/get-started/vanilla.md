@@ -1,6 +1,6 @@
 # Fachwerk and Vanilla JS
 
-Fachwerk provides a globally loadable UMD package https://unpkg.com/fachwerk/dist/fachwerk.js that allows to use Fachwerk functiobs without any Javascript framework or tooling.
+Fachwerk provides a globally loadable UMD package https://unpkg.com/fachwerk/dist/fachwerk.js that allows to use Fachwerk functions without any Javascript framework or tooling.
 
 ### Use Stackblitz
 

@@ -13,7 +13,7 @@ import IconSlides from "~icons/bx/slideshow";
     </h1>
     <p class="w-full text-lg !leading-normal md:w-3/4 md:text-xl lg:text-2xl">
       An upcoming Javascript framework for interactive notebooks and
-      presentations built on top of VueJS and ViteJS.
+      presentations
     </p>
 
     <div class="grid gap-4 md:flex">
@@ -36,36 +36,6 @@ import IconSlides from "~icons/bx/slideshow";
       >
         <IconSlides />
         See the slides
-      </Button>
-    </div>
-
-    <p />
-
-    <p class="w-full md:w-3/4 md:text-lg lg:text-xl">
-      To get started, pick a Stackblitz or Vue template below:
-    </p>
-
-    <div class="grid gap-4 md:flex">
-      <Button
-        href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vite?file=src%2Findex.md&title=Fachwerk+Vite"
-        class="md:text-xl"
-      >
-        <IconStackblitz class="text-blue-500" />
-        Fachwerk + Vite
-      </Button>
-      <Button
-        href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vitepress?file=docs%2Findex.md&title=Fachwerk+Vitepress"
-        class="md:text-xl"
-      >
-        <IconStackblitz class="text-blue-500" />
-        Fachwerk + Vitepress
-      </Button>
-      <Button
-        href="https://sfc.vuejs.org/#eNqNkdtOwzAMhl/FytUmbel9KQg0CYl3yE0J7tatOSh2GWjqu+NkKwxpSNxE+X34/Mc5qacY9fuIqlYN2dRHBkIe44PxvYshMZwgYbeCLfJmTAk9v3ji1luECboUHBgl/UbdXXU8t3Z3xHT4KekukarUGg9gvA1CgjZGuL+BXyy1pDbBM35wvsoAOfVIuJj5S+Ob6mxbDItgdHFoGUUBNN16h8MQoBLZVFc5kcSfQ74+XkwbtWOOVFfV6ONhq21w1bfpt544O9eWKLuXoaVdrdS5fe3aqPcUvOzxVF53SUh5DSWSY+Xx9dUs6mze/p50SNsyIY2ee4caya1fUzgSJgEbtZoZs6nfoL9Mz0q7m5Dzd/wHlL0VRkZMxk9q+gIFIso6"
-        class="md:text-xl"
-      >
-        <IconVue class="text-green-600" />
-        Fachwerk + Vue SFC
       </Button>
     </div>
 
