@@ -414,7 +414,7 @@ https://visualia.netlify.app/utils/events.html
 
 https://visualia.netlify.app/utils/variables.html#local-variables
 
-## Snippets
+## Other content
 
 Combined with point-generating functions, we can make a simple coordinate grid:
 

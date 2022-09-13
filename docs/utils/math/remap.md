@@ -43,7 +43,7 @@ Remapped value:
 Remapping can be done on anything numeric, here we are mapping the input `0 → 19` into HSL hue value ranging `0 → 360`
 
 ```md
-<f-svg width="400" height="50" padding="10">
+<f-svg width="400" height="200" padding="10">
   <circle
     v-for="x in seq(20)"
     :fill="hsl(remap(x,0,19,0,360))"
