@@ -25,21 +25,21 @@ By default SVG scales the border size of the element along with the rest of the 
 ```md
 <f-svg width="400" height="400" padding="5" rectgrid>
   <rect
-    :transform="scale(f.scale)"
+    :transform="scale(data.scale)"
     width="100"
     height="100"
     fill="none"
     stroke="lightblue"
     stroke-width="2"
-    :vector-effect="['','non-scaling-stroke'][f.nss]"
+    :vector-effect="['','non-scaling-stroke'][data.nss]"
   />
 </f-svg>
 
-SVG scaling factor is {{ f.scale }}
-<f-slider v-model="f.scale" max="4" step="any" :value="1" />
+SVG scaling factor is {{ data.scale }}
+<f-slider v-model="data.scale" max="4" step="any" :value="1" />
 
-Non scaling stroke is {{ ['false','true'][f.nss] }}
-<f-slider v-model="f.nss" max="1" />
+Non scaling stroke is {{ ['false','true'][data.nss] }}
+<f-slider v-model="data.nss" max="1" />
 ```
 
 ### CSS scale example
@@ -74,14 +74,14 @@ Note that you can also set scale unit to `%`.
       height: 100px;
       border: 2px solid lightblue;
     "
-    :style="{transform: scale(f.scale)}"
+    :style="{transform: scale(data.scale)}"
   /> 
 </div>
 
 <br />
 
-CSS scaling factor is {{ f.scale }}
-<f-slider v-model="f.scale" max="4" step="any" :value="1" />
+CSS scaling factor is {{ data.scale }}
+<f-slider v-model="data.scale" max="4" step="any" :value="1" />
 ```
 
 ## Prior art

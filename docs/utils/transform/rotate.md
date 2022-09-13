@@ -33,7 +33,7 @@ To rotate around the center of the object, add the following properties to the e
 ```md
 <f-svg width="400" height="400" rectgrid>
   <rect
-    :transform="rotate(f.angle)"
+    :transform="rotate(data.angle)"
     width="100"
     height="100"
     fill="none"
@@ -42,8 +42,8 @@ To rotate around the center of the object, add the following properties to the e
   />
 </f-svg>
 
-SVG rotation angle is `{{ f.angle }}`
-<f-slider v-model="f.angle" max="360" />
+SVG rotation angle is `{{ data.angle }}`
+<f-slider v-model="data.angle" max="360" />
 ```
 
 ### CSS transform example
@@ -79,14 +79,14 @@ Note that CSS `transform()` function requires an unit, either `deg`, `rad` or `t
       border: 2px solid lightblue;
       position: relative;
     "
-    :style="{transform: rotate(f.angle, 'deg')}"
+    :style="{transform: rotate(data.angle, 'deg')}"
   /> 
 </div>
 
 <br />
 
-CSS rotation angle is {{ f.angle }}
-<f-slider v-model="f.angle" max="360" />
+CSS rotation angle is {{ data.angle }}
+<f-slider v-model="data.angle" max="360" />
 ```
 
 ## Prior art

@@ -34,10 +34,10 @@ Let's draw a RGB color picker:
     :fill="rgb(r,g,0)"
   />
   <circle
-    :cx="f.r"
-    :cy="f.g"
+    :cx="data.r"
+    :cy="data.g"
     r="10"
-    :fill="rgb(f.r,f.g,0)"
+    :fill="rgb(data.r,data.g,0)"
     stroke="white"
     stroke-width="2"
   />
@@ -49,22 +49,22 @@ Let's draw a RGB color picker:
     :x="b"
     width="10"
     height="50"
-    :fill="rgb(f.r,f.g,b)"
+    :fill="rgb(data.r,data.g,b)"
   />
   <circle
-    :cx="f.b"
+    :cx="data.b"
     cy="25"
     r="10"
-    :fill="rgb(f.r,f.g,f.b)"
+    :fill="rgb(data.r,data.g,data.b)"
     stroke="white"
     stroke-width="2"
   />
 </f-svg>
 
-{{ rgb(f.r,f.g,f.b) }}
-<f-slider v-model="f.r" max="255" />
-<f-slider v-model="f.g" max="255" />
-<f-slider v-model="f.b" max="255" />
+{{ rgb(data.r,data.g,data.b) }}
+<f-slider v-model="data.r" max="255" />
+<f-slider v-model="data.g" max="255" />
+<f-slider v-model="data.b" max="255" />
 ```
 
 ## Prior art

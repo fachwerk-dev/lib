@@ -44,7 +44,7 @@ Alternatively, you can define `step` parameter as a function that allows to crea
 ```md
 <f-svg width="400" height="50" padding="1" linegrid>
   <rect
-    v-for="x in seq(f.count,f.step,f.start)"
+    v-for="x in seq(data.count,data.step,data.start)"
     :x="x"
     width="1"
     height="100"
@@ -52,11 +52,11 @@ Alternatively, you can define `step` parameter as a function that allows to crea
   />
 </f-svg>
 
-<f-slider v-model="f.count" :value="20" min="1" /> Count: {{ f.count }}
+<f-slider v-model="data.count" :value="20" min="1" /> Count: {{ data.count }}
 
-<f-slider v-model="f.step" :value="10" min="1" /> Step: {{ f.step }}
+<f-slider v-model="data.step" :value="10" min="1" /> Step: {{ data.step }}
 
-<f-slider v-model="f.start" :value="0" /> Start: {{ f.start }}
+<f-slider v-model="data.start" :value="0" /> Start: {{ data.start }}
 ```
 
 ### Prior art

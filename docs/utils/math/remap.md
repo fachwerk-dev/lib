@@ -24,20 +24,20 @@ Here we map the input value `0 → 100` to output value `200 → 400`. Yes it ca
 
 ```md
 <f-svg width="400" height="50" padding="10" linegrid>
-  <circle :cx="f.value" cy="25" r="10" fill="lightblue" />
+  <circle :cx="data.value" cy="25" r="10" fill="lightblue" />
 </f-svg>
 
 Initial value:
-{{ f.value }}
+{{ data.value }}
 
 <f-svg width="400" height="50" padding="10" linegrid>
-  <circle :cx="remap(f.value,0,100,200,400)" cy="25" r="10" fill="lightblue" />
+  <circle :cx="remap(data.value,0,100,200,400)" cy="25" r="10" fill="lightblue" />
 </f-svg>
 
 Remapped value:
-{{ remap(f.value,0,200,0,400) }}
+{{ remap(data.value,0,200,0,400) }}
 
-<f-slider v-model="f.value" max="100" />
+<f-slider v-model="data.value" max="100" />
 ```
 
 Remapping can be done on anything numeric, here we are mapping the input `0 → 19` into HSL hue value ranging `0 → 360`
