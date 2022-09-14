@@ -4,9 +4,9 @@ There are several ways to get started with Vitepress and Fachwerk.
 
 ### Use Slackblitz
 
-<Button href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vitepress?file=docs%2Findex.md&title=Fachwerk+Vitepress"><IconStackblitz class="text-blue-500" />Open in Slackblitz</Button>
+Open the project in Stackblitz and start editing right in the browser:
 
-Open Vitepress + Fachwerk sample project in Stackblitz and start editing the project right in the browser.
+<Button href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vitepress?file=docs%2Findex.md&title=Vitepress+and+Fachwerk"><IconStackblitz class="text-blue-500" />Vitepress and Fachwerk in Slackblitz</Button>
 
 ### Use the command line
 

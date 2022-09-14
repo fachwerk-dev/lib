@@ -4,7 +4,17 @@ Fachwerk provides a globally loadable UMD package https://unpkg.com/fachwerk/dis
 
 ### Use Stackblitz
 
+Open the project in Stackblitz and start editing right in the browser:
+
 <Button href="https://stackblitz.com/fork/github/fachwerk-dev/create-fachwerk/tree/main/vanilla?file=index.html&title=Fachwerk+and+Vanilla+JS"><IconStackblitz class="text-blue-500" />Fachwerk and Vanilla JS in Stackblitz</Button>
+
+### Use the command line
+
+Run the following command, pick `Vanilla JS` template and follow the on-screen instructions:
+
+```bash
+npm init fachwerk@latest
+```
 
 ### Create a file
 
