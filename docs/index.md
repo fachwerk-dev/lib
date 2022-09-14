@@ -11,7 +11,7 @@ layout: frontpage
 Here are simplest way to get started:
 
 <div class="grid gap-4 md:flex">
-  <Button to="/get-started/vite">
+  <Button to="/get-started/vue">
     <IconDocs />
     Play with the docs
   </Button>

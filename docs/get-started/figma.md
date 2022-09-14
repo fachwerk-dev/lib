@@ -22,7 +22,7 @@ Can create following files in a plugin directory:
 
 #### ui.html
 
-<Snippet src="https://raw.githubusercontent.com/fachwerk-dev/create-fachwerk/main/figma/code.js" />
+<Snippet src="https://raw.githubusercontent.com/fachwerk-dev/create-fachwerk/main/figma/ui.html" />
 
 #### code.js
 
