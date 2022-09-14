@@ -2,12 +2,12 @@
 
 Fachwerk utility functions are available in Deno.
 
-### Quickstart
+### Command line
 
-Generate a template project, select **Deno** as template:
+Run the following command, pick `Deno` template and follow the on-screen instructions:
 
 ```
-npm create fachwerk
+npm create fachwerk@latest
 ```
 
 ### Usage

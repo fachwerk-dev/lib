@@ -4,7 +4,7 @@ Fachwerk utility functions are available in NodeJS, both as ESM and CommonJS pac
 
 ### Quickstart
 
-Generate a template project, select **Node** as template:
+Run the following command, pick `Node` template and follow the on-screen instructions:
 
 ```
 npm create fachwerk
@@ -36,6 +36,6 @@ Here is an example how to use Fachwerk functions to generate SVG and convert it 
 
 ### Generating SVG with Vue SSR and Node
 
-Here's a more elaborate example how to use VueJS template for generating SVG:
+Here's a more elaborate example how to use server-side Vue rendering for generating SVG:
 
 <Snippet src="https://raw.githubusercontent.com/fachwerk-dev/create-fachwerk/main/node/example3.mjs" />
