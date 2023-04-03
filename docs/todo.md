@@ -437,3 +437,10 @@ Combined with point-generating functions, we can make a simple coordinate grid:
   />
 </svg>
 ```
+
+## LERP
+
+https://limnu.com/sketch-lerp-unlerp-remap/
+https://twitter.com/FreyaHolmer/status/1184218791334612999
+https://twitter.com/mattdesl/status/1031305279227478016
+
