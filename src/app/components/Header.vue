@@ -46,7 +46,7 @@ import IconGithub from "~icons/bx/bxl-github";
       <ul>
         <li>
           <a
-            href="https://github.com/fachwerk-dev/fachwerk"
+            href="https://github.com/fachwerk-dev/lib"
             target="_blank"
             class="text-slate-400 hover:text-slate-300"
           >
